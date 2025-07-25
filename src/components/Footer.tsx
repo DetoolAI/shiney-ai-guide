@@ -7,9 +7,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold">D</span>
-              </div>
+              <img 
+                src="/src/assets/detool-logo.png" 
+                alt="Detool.AI Logo" 
+                className="w-8 h-8 rounded-lg"
+              />
               <span className="text-lg font-bold text-foreground">
                 detool<span className="text-primary">.ai</span>
               </span>
@@ -33,7 +35,7 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Support</h3>
             <ul className="space-y-2">
               <li><a href="#help" className="text-muted-foreground hover:text-primary transition-colors">Help Center</a></li>
-              <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
+              <li><a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
               <li><a href="#documentation" className="text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
               <li><a href="#status" className="text-muted-foreground hover:text-primary transition-colors">Status</a></li>
             </ul>
