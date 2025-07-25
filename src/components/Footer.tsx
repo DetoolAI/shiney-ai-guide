@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/src/assets/detool-logo.png" 
+                src="/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png" 
                 alt="Detool.AI Logo" 
                 className="w-8 h-8 rounded-lg"
               />
@@ -25,7 +25,7 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-2">
               <li><a href="#features" className="text-muted-foreground hover:text-primary transition-colors">Features</a></li>
-              <li><a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
+              <li><a href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
               <li><a href="#integrations" className="text-muted-foreground hover:text-primary transition-colors">Integrations</a></li>
               <li><a href="#api" className="text-muted-foreground hover:text-primary transition-colors">API</a></li>
             </ul>

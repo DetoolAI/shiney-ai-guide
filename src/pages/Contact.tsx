@@ -71,7 +71,7 @@ const Contact = () => {
                         929-471-7198
                       </a>
                     </div>
-                    <p className="text-muted-foreground mt-2">Co-Founder & Technical Lead</p>
+                    <p className="text-muted-foreground mt-2">Founder & CEO</p>
                   </CardContent>
                 </Card>
 

@@ -7,7 +7,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <img 
-              src="/src/assets/detool-logo.png" 
+              src="/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png" 
               alt="Detool.AI Logo" 
               className="w-10 h-10 rounded-lg"
             />
@@ -23,7 +23,7 @@ const Header = () => {
             <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">
               Features
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
               Pricing
             </a>
             <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
