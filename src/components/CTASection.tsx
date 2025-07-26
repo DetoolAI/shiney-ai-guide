@@ -4,11 +4,11 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   const benefits = [
-    "Get your first AI bot instantly",
+    "Free 14-day trial with full features",
     "Setup completed in under 7 days",
-    "ROI guaranteed within 30 days",
+    "No upfront costs or hidden fees",
     "24/7 customer support included",
-    "Risk-free money-back guarantee"
+    "Cancel anytime, no contracts"
   ];
 
   return (
@@ -48,6 +48,15 @@ const CTASection = () => {
               </div>
             </div>
 
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4 shadow-glow">
+                Start Free Trial
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4">
+                Schedule Demo
+              </Button>
+            </div>
 
             <p className="text-sm text-muted-foreground mt-6">
               No credit card required • Setup in minutes • Full support included
