@@ -49,9 +49,6 @@ const Header = () => {
                 <span>@detool.ai</span>
               </a>
             </Button>
-            <Button variant="outline" className="hidden md:inline-flex">
-              Login
-            </Button>
           </div>
         </div>
       </div>
