@@ -4,11 +4,11 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   const benefits = [
-    "Free 14-day trial with full features",
+    "Get your first AI bot instantly",
     "Setup completed in under 7 days",
-    "No upfront costs or hidden fees",
+    "ROI guaranteed within 30 days",
     "24/7 customer support included",
-    "Cancel anytime, no contracts"
+    "Risk-free money-back guarantee"
   ];
 
   return (
