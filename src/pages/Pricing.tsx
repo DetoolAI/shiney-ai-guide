@@ -93,8 +93,14 @@ const Pricing = () => {
               Choose the perfect plan for your car detailing business. All plans include our AI bot, integrations, and support.
             </p>
             
-            <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 max-w-2xl mx-auto">
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 max-w-2xl mx-auto mb-4">
               <p className="text-primary font-semibold">
+                💰 All pricing is negotiable - Let's find the perfect plan for your business!
+              </p>
+            </div>
+            
+            <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 max-w-2xl mx-auto">
+              <p className="text-accent font-semibold">
                 🎉 Limited Time: Get 2 months FREE when you pay annually
               </p>
             </div>
