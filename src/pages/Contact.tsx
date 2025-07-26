@@ -251,26 +251,6 @@ ${formData.message}
               </CardContent>
             </Card>
           </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <Card className="bg-primary/10 border-primary/20 shadow-glow max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Ready to Get Started?
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Book a free consultation call to see how Detool.AI can transform your business
-                </p>
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-primary hover:opacity-90 shadow-glow"
-                >
-                  Schedule Free Demo
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
       
