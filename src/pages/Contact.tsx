@@ -6,8 +6,77 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, User, MapPin, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Create mailto link with form data
+      const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
+      const body = `
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Company: ${formData.company || 'Not provided'}
+
+Message:
+${formData.message}
+      `.trim();
+
+      const mailtoLink = `mailto:detoolai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
+
+      toast({
+        title: "Email client opened!",
+        description: "Your default email client should open with the message pre-filled. Just click send!",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Error opening email client:', error);
+      toast({
+        title: "Please email us directly",
+        description: "Send your message to detoolai@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -101,31 +170,61 @@ const Contact = () => {
                 <CardTitle className="text-2xl text-foreground">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="John" />
+                      <Input 
+                        id="firstName" 
+                        placeholder="John" 
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Doe" />
+                      <Input 
+                        id="lastName" 
+                        placeholder="Doe" 
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        required
+                      />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="john@example.com" />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="john@example.com" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                    <Input 
+                      id="phone" 
+                      type="tel" 
+                      placeholder="(555) 123-4567" 
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                    />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="company">Business Name</Label>
-                    <Input id="company" placeholder="Your Car Detailing Business" />
+                    <Input 
+                      id="company" 
+                      placeholder="Your Car Detailing Business" 
+                      value={formData.company}
+                      onChange={handleInputChange}
+                    />
                   </div>
                   
                   <div className="space-y-2">
@@ -134,6 +233,9 @@ const Contact = () => {
                       id="message" 
                       placeholder="Tell us about your business and how we can help..."
                       className="min-h-[120px]"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                     />
                   </div>
                   
@@ -141,30 +243,11 @@ const Contact = () => {
                     type="submit" 
                     className="w-full bg-gradient-primary hover:opacity-90 shadow-glow"
                     size="lg"
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <Card className="bg-primary/10 border-primary/20 shadow-glow max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Ready to Get Started?
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Book a free consultation call to see how Detool.AI can transform your business
-                </p>
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-primary hover:opacity-90 shadow-glow"
-                >
-                  Schedule Free Demo
-                </Button>
               </CardContent>
             </Card>
           </div>

@@ -8,52 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 240 5% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 92% 45%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 85%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 75%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 210 92% 45%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 85%;
 
     --radius: 0.75rem;
     
-    /* Car detailing theme colors */
-    --automotive-blue: 210 92% 45%;
-    --automotive-blue-dark: 210 92% 35%;
-    --automotive-silver: 240 5% 64.9%;
-    --automotive-dark: 240 10% 3.9%;
-    --automotive-accent: 142 76% 36%;
+    /* Logo-based color scheme - black, white, grays */
+    --automotive-blue: 0 0% 85%;
+    --automotive-blue-dark: 0 0% 70%;
+    --automotive-silver: 0 0% 60%;
+    --automotive-dark: 0 0% 0%;
+    --automotive-accent: 0 0% 75%;
     --automotive-red: 0 84.2% 60.2%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--automotive-blue-dark)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(240 6% 8%));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(142 76% 26%));
+    /* Gradients matching logo */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 85%), hsl(0 0% 70%));
+    --gradient-hero: radial-gradient(circle at center, hsl(0 0% 8%), hsl(0 0% 0%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 0% 75%), hsl(0 0% 60%));
     
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 20px 50px -10px hsl(240 10% 3.9% / 0.5);
+    /* Shadows with logo colors */
+    --shadow-glow: 0 0 40px hsl(0 0% 85% / 0.3);
+    --shadow-card: 0 20px 50px -10px hsl(0 0% 0% / 0.8);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
