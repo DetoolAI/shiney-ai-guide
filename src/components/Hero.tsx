@@ -21,8 +21,19 @@ const Hero = () => {
   ];
 
   return (
-    <section className="pt-24 pb-16 bg-gradient-hero min-h-screen flex items-center">
-      <div className="container mx-auto px-4">
+    <section className="pt-24 pb-16 min-h-screen flex items-center relative overflow-hidden">
+      {/* Logo background */}
+      <div 
+        className="absolute inset-0 opacity-5 bg-center bg-no-repeat bg-contain"
+        style={{
+          backgroundImage: "url('/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png')"
+        }}
+      />
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-hero" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             DON'T <span className="text-primary">LOSE</span> YOUR LEADS
