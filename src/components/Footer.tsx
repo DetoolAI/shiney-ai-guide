@@ -19,6 +19,16 @@ const Footer = () => {
             <p className="text-muted-foreground">
               AI-powered sales automation for car detailing businesses.
             </p>
+            <div className="flex items-center space-x-4 mt-4">
+              <a 
+                href="https://www.instagram.com/detool.ai/?hl=en" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Follow us on Instagram
+              </a>
+            </div>
           </div>
           
           <div>
