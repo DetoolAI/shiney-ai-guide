@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,17 +35,18 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Direct fetch to Supabase function instead of using client
-      const response = await fetch(`/functions/v1/send-contact-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+      console.log('Submitting form data:', formData);
+      console.log('Supabase URL available:', !!import.meta.env.VITE_SUPABASE_URL);
+      
+      // Use Supabase client to invoke the function
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
+      console.log('Function response:', { data, error });
+
+      if (error) {
+        throw error;
       }
 
       toast({
