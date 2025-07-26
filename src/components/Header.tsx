@@ -35,9 +35,6 @@ const Header = () => {
             <Button variant="outline" className="hidden md:inline-flex">
               Login
             </Button>
-            <Button className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow">
-              Start Free Trial
-            </Button>
           </div>
         </div>
       </div>

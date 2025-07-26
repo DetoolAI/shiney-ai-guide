@@ -43,14 +43,6 @@ const Hero = () => {
             Capture more leads, book more appointments, and boost revenue with intelligent automation.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4 shadow-glow">
-              Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4">
-              Watch Demo
-            </Button>
-          </div>
         </div>
 
         {/* Features Grid */}
