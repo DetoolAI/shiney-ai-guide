@@ -51,7 +51,7 @@ const Footer = () => {
         
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-muted-foreground">
-            © 2024 Detool.AI. All rights reserved.
+            © 2025 Detool.AI. All rights reserved.
           </p>
         </div>
       </div>
