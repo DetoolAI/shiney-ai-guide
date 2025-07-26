@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -122,14 +123,12 @@ const HelpCenter = () => {
                 <p className="text-muted-foreground mb-6">
                   Can't find what you're looking for? Our support team is here to help.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-gradient-primary hover:opacity-90">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Contact Support
-                  </Button>
-                  <Button variant="outline">
-                    <MessageCircle className="mr-2 h-4 w-4" />
-                    Live Chat
+                <div className="flex justify-center">
+                  <Button asChild className="bg-gradient-primary hover:opacity-90">
+                    <Link to="/contact">
+                      <Mail className="mr-2 h-4 w-4" />
+                      Contact Support
+                    </Link>
                   </Button>
                 </div>
               </CardContent>

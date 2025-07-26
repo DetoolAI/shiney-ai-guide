@@ -104,7 +104,7 @@ const Privacy = () => {
 
               <div className="bg-muted/20 p-6 rounded-lg">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Last Updated:</strong> January 2024<br />
+                  <strong>Last Updated:</strong> January 2025<br />
                   This privacy policy may be updated periodically. We will notify users of significant changes via email or platform notifications.
                 </p>
               </div>

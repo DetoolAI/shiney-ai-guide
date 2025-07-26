@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -104,19 +105,13 @@ const Pricing = () => {
                     Most clients see ROI within the first month.
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex justify-center">
                     <Button 
                       size="lg" 
                       className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4 shadow-glow"
+                      asChild
                     >
-                      Schedule Pricing Call
-                    </Button>
-                    <Button 
-                      size="lg" 
-                      variant="outline" 
-                      className="text-lg px-8 py-4"
-                    >
-                      Get Quote via Email
+                      <Link to="/contact">Schedule Pricing Call</Link>
                     </Button>
                   </div>
                   

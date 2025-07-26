@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code, Book, Zap, Globe, MessageSquare, Settings } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 const Documentation = () => {
   const apiEndpoints = [
     {
@@ -235,12 +237,9 @@ const Documentation = () => {
                 <p className="text-muted-foreground mb-6">
                   Can't find what you're looking for? Our technical team is ready to assist.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-gradient-primary hover:opacity-90">
-                    Contact Support
-                  </Button>
-                  <Button variant="outline">
-                    Join Developer Community
+                <div className="flex justify-center">
+                  <Button asChild className="bg-gradient-primary hover:opacity-90">
+                    <Link to="/contact">Contact Support</Link>
                   </Button>
                 </div>
               </CardContent>
