@@ -19,14 +19,14 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">
-              Solutions
-            </a>
             <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">
               Features
             </a>
             <a href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
               Pricing
+            </a>
+            <a href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+              Blog
             </a>
             <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
               Contact
