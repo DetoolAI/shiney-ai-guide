@@ -8,7 +8,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,23 +34,26 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting form data:', formData);
-      console.log('Supabase URL available:', !!import.meta.env.VITE_SUPABASE_URL);
+      // Create mailto link with form data
+      const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
+      const body = `
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Company: ${formData.company || 'Not provided'}
+
+Message:
+${formData.message}
+      `.trim();
+
+      const mailtoLink = `mailto:detoolai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
-      // Use Supabase client to invoke the function
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
-      });
-
-      console.log('Function response:', { data, error });
-
-      if (error) {
-        throw error;
-      }
+      // Open default email client
+      window.location.href = mailtoLink;
 
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+        title: "Email client opened!",
+        description: "Your default email client should open with the message pre-filled. Just click send!",
       });
 
       // Reset form
@@ -65,10 +67,10 @@ const Contact = () => {
       });
 
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error('Error opening email client:', error);
       toast({
-        title: "Error sending message",
-        description: "Please try again or contact us directly at detoolai@gmail.com",
+        title: "Please email us directly",
+        description: "Send your message to detoolai@gmail.com",
         variant: "destructive",
       });
     } finally {
