@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Instagram } from "lucide-react";
 
 const Header = () => {
   return (
@@ -32,6 +33,22 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-4">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              asChild
+              className="bg-gradient-to-r from-pink-500 to-violet-500 border-0 text-white hover:from-pink-600 hover:to-violet-600 hidden md:inline-flex"
+            >
+              <a 
+                href="https://www.instagram.com/detool.ai/?hl=en" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
+                <Instagram size={16} />
+                <span>@detool.ai</span>
+              </a>
+            </Button>
             <Button variant="outline" className="hidden md:inline-flex">
               Login
             </Button>

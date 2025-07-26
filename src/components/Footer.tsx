@@ -20,24 +20,6 @@ const Footer = () => {
             <p className="text-muted-foreground">
               AI-powered sales automation for car detailing businesses.
             </p>
-            <div className="flex items-center space-x-4 mt-4">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                asChild
-                className="bg-gradient-to-r from-pink-500 to-violet-500 border-0 text-white hover:from-pink-600 hover:to-violet-600"
-              >
-                <a 
-                  href="https://www.instagram.com/detool.ai/?hl=en" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2"
-                >
-                  <Instagram size={16} />
-                  <span>Follow @detool.ai</span>
-                </a>
-              </Button>
-            </div>
           </div>
           
           <div>
