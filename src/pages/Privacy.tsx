@@ -97,7 +97,7 @@ const Privacy = () => {
                   For privacy-related questions or requests, contact our Data Protection Officer at:
                 </p>
                 <p className="text-foreground font-medium mt-2">
-                  Email: privacy@detoolai.com<br />
+                  Email: detoolai@gmail.com<br />
                   Phone: 347-938-5782
                 </p>
               </div>
