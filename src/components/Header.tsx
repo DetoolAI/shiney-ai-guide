@@ -19,16 +19,32 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">
+            <a 
+              href="#solutions" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               Solutions
             </a>
-            <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">
+            <a 
+              href="#features" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               Features
             </a>
-            <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link 
+              to="/pricing" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               Pricing
             </Link>
-            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link 
+              to="/contact" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               Contact
             </Link>
           </nav>
