@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -27,7 +28,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">Solutions</a></li>
               <li><a href="#features" className="text-muted-foreground hover:text-primary transition-colors">Features</a></li>
-              <li><a href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
+              <li><Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
               <li><a href="#integrations" className="text-muted-foreground hover:text-primary transition-colors">Integrations</a></li>
             </ul>
           </div>
@@ -35,9 +36,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><a href="/help" className="text-muted-foreground hover:text-primary transition-colors">Help Center</a></li>
-              <li><a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
-              <li><a href="/documentation" className="text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
+              <li><Link to="/help" className="text-muted-foreground hover:text-primary transition-colors">Help Center</Link></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</Link></li>
+              <li><Link to="/documentation" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
             </ul>
           </div>
           
@@ -45,7 +46,7 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-2">
               <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a></li>
-              <li><a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy</a></li>
+              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
             </ul>
           </div>
         </div>
