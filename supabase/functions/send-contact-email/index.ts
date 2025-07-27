@@ -1,15 +1,17 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { Resend } from "npm:resend@4.0.0"
 
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
+
+const resend = new Resend(Deno.env.get('RESEND_API_KEY'))
 
 serve(async (req) => {
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: { 
-      "Access-Control-Allow-Origin": "https://detoolai.com",
-      "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-      "X-Content-Type-Options": "nosniff",
-      "X-Frame-Options": "DENY"
-    }})
+    return new Response('ok', { headers: corsHeaders })
   }
 
   try {
@@ -25,9 +27,7 @@ serve(async (req) => {
           status: 400, 
           headers: { 
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://detoolai.com",
-            "X-Content-Type-Options": "nosniff",
-            "X-Frame-Options": "DENY"
+            ...corsHeaders
           } 
         }
       )
@@ -41,25 +41,21 @@ serve(async (req) => {
           status: 400, 
           headers: { 
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://detoolai.com",
-            "X-Content-Type-Options": "nosniff",
-            "X-Frame-Options": "DENY"
+            ...corsHeaders
           } 
         }
       )
     }
 
     // Validate field lengths and sanitize input
-    if (firstName.length > 50 || lastName.length > 50 || message.length > 5000) {
+    if (firstName.length > 50 || (lastName && lastName.length > 50) || message.length > 5000) {
       return new Response(
         JSON.stringify({ error: 'Input exceeds maximum length' }),
         { 
           status: 400, 
           headers: { 
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://detoolai.com",
-            "X-Content-Type-Options": "nosniff",
-            "X-Frame-Options": "DENY"
+            ...corsHeaders
           } 
         }
       )
@@ -94,50 +90,42 @@ serve(async (req) => {
       <p>${sanitizedMessage}</p>
     `
 
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-      },
-      body: JSON.stringify({
-        from: 'Detool.AI Contact Form <noreply@detoolai.com>',
-        to: ['detoolai@gmail.com'],
-        subject: `New Contact Form Submission from ${sanitizedFirstName} ${sanitizedLastName}`,
-        html: emailContent,
-        reply_to: email,
-      }),
+    console.log('Attempting to send email...')
+
+    const { data, error } = await resend.emails.send({
+      from: 'Detool.AI Contact Form <noreply@detoolai.com>',
+      to: ['detoolai@gmail.com'],
+      subject: `New Contact Form Submission from ${sanitizedFirstName} ${sanitizedLastName}`,
+      html: emailContent,
+      reply_to: email,
     })
 
-    if (res.ok) {
-      return new Response(
-        JSON.stringify({ message: 'Email sent successfully' }),
-        { 
-          status: 200, 
-          headers: { 
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://detoolai.com",
-            "X-Content-Type-Options": "nosniff",
-            "X-Frame-Options": "DENY"
-          }
-        }
-      )
-    } else {
-      const error = await res.text()
-      console.error('Resend API error:', error)
+    if (error) {
+      console.error('Resend error:', error)
       return new Response(
         JSON.stringify({ error: 'Failed to send email' }),
         { 
           status: 500, 
           headers: { 
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://detoolai.com",
-            "X-Content-Type-Options": "nosniff",
-            "X-Frame-Options": "DENY"
+            ...corsHeaders
           }
         }
       )
     }
+
+    console.log('Email sent successfully:', data)
+
+    return new Response(
+      JSON.stringify({ message: 'Email sent successfully' }),
+      { 
+        status: 200, 
+        headers: { 
+          "Content-Type": "application/json",
+          ...corsHeaders
+        }
+      }
+    )
   } catch (error) {
     console.error('Error:', error)
     return new Response(
@@ -146,9 +134,7 @@ serve(async (req) => {
         status: 500, 
         headers: { 
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://detoolai.com",
-          "X-Content-Type-Options": "nosniff",
-          "X-Frame-Options": "DENY"
+          ...corsHeaders
         }
       }
     )
