@@ -1,12 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, ChevronDown } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -25,35 +19,12 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-                Sections
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border-border">
-                <DropdownMenuItem asChild>
-                  <a href="#about" className="w-full cursor-pointer">About</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#testimonials" className="w-full cursor-pointer">Testimonials</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#solutions" className="w-full cursor-pointer">Solutions</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#features" className="w-full cursor-pointer">Features</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#integrations" className="w-full cursor-pointer">Integrations</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#faq" className="w-full cursor-pointer">FAQ</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#cta" className="w-full cursor-pointer">Get Started</a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">
+              Solutions
+            </a>
+            <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">
+              Features
+            </a>
             <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
               Pricing
             </Link>
