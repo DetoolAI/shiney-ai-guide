@@ -15,7 +15,13 @@ const ThirdPartyScripts = () => {
     scriptUrl: "https://buildmyagent.io/widget/68863adc401fa64b17cd3c3c/widget.js", // Add your script URL here
     widgetId: "68863adc401fa64b17cd3c3c", // Add your widget ID here
     initFunction: "AIChatWidget", // Change if your chatbot uses a different global function
-    customConfig: {} // Add any custom configuration options
+    customConfig: {
+      logo: "/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png",
+      logoUrl: "/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png",
+      brandName: "Detool.AI",
+      useLogoForAvatar: true,
+      useLogoForMinimizedWidget: true
+    } // Add any custom configuration options
   };
 
   useEffect(() => {
