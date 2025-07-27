@@ -35,11 +35,29 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
+      // Validate form data before sending
+      if (!formData.firstName.trim() || !formData.email.trim() || !formData.message.trim()) {
+        toast({
+          title: "Missing required fields",
+          description: "Please fill in all required fields.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          firstName: formData.firstName.trim(),
+          lastName: formData.lastName.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          company: formData.company.trim(),
+          message: formData.message.trim()
+        }
       });
 
       if (error) {
+        console.error('Supabase function error:', error);
         throw error;
       }
 

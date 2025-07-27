@@ -1,17 +1,28 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { Resend } from "npm:resend@4.0.0"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS'
 }
-
-const resend = new Resend(Deno.env.get('RESEND_API_KEY'))
 
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
+    return new Response(null, { headers: corsHeaders })
+  }
+
+  if (req.method !== 'POST') {
+    return new Response(
+      JSON.stringify({ error: 'Method not allowed' }),
+      { 
+        status: 405, 
+        headers: { 
+          "Content-Type": "application/json",
+          ...corsHeaders
+        } 
+      }
+    )
   }
 
   try {
@@ -47,7 +58,7 @@ serve(async (req) => {
       )
     }
 
-    // Validate field lengths and sanitize input
+    // Validate field lengths
     if (firstName.length > 50 || (lastName && lastName.length > 50) || message.length > 5000) {
       return new Response(
         JSON.stringify({ error: 'Input exceeds maximum length' }),
@@ -90,18 +101,26 @@ serve(async (req) => {
       <p>${sanitizedMessage}</p>
     `
 
-    console.log('Attempting to send email...')
+    console.log('Attempting to send email with Resend...')
 
-    const { data, error } = await resend.emails.send({
-      from: 'Detool.AI Contact Form <noreply@detoolai.com>',
-      to: ['detoolai@gmail.com'],
-      subject: `New Contact Form Submission from ${sanitizedFirstName} ${sanitizedLastName}`,
-      html: emailContent,
-      reply_to: email,
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${Deno.env.get('RESEND_API_KEY')}`,
+      },
+      body: JSON.stringify({
+        from: 'Detool.AI Contact Form <noreply@detoolai.com>',
+        to: ['detoolai@gmail.com'],
+        subject: `New Contact Form Submission from ${sanitizedFirstName} ${sanitizedLastName}`,
+        html: emailContent,
+        reply_to: sanitizedEmail,
+      }),
     })
 
-    if (error) {
-      console.error('Resend error:', error)
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error('Resend API error:', response.status, errorText)
       return new Response(
         JSON.stringify({ error: 'Failed to send email' }),
         { 
@@ -114,7 +133,8 @@ serve(async (req) => {
       )
     }
 
-    console.log('Email sent successfully:', data)
+    const emailResult = await response.json()
+    console.log('Email sent successfully:', emailResult)
 
     return new Response(
       JSON.stringify({ message: 'Email sent successfully' }),
@@ -127,7 +147,7 @@ serve(async (req) => {
       }
     )
   } catch (error) {
-    console.error('Error:', error)
+    console.error('Error in send-contact-email function:', error)
     return new Response(
       JSON.stringify({ error: 'Internal server error' }),
       { 
