@@ -11,9 +11,9 @@ interface ChatbotConfig {
 const ThirdPartyScripts = () => {
   // Configure your chatbot here
   const chatbotConfig: ChatbotConfig = {
-    enabled: false, // Set to true to enable
-    scriptUrl: "", // Add your script URL here
-    widgetId: "", // Add your widget ID here
+    enabled: true, // Set to true to enable
+    scriptUrl: "https://buildmyagent.io/widget/68863adc401fa64b17cd3c3c/widget.js", // Add your script URL here
+    widgetId: "68863adc401fa64b17cd3c3c", // Add your widget ID here
     initFunction: "AIChatWidget", // Change if your chatbot uses a different global function
     customConfig: {} // Add any custom configuration options
   };
