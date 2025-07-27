@@ -8,11 +8,11 @@ import { Check } from "lucide-react";
 
 const Pricing = () => {
   const guarantees = [
-    "30-day money-back guarantee",
     "ROI guarantee within 60 days",
     "Free migration from existing systems",
     "No setup fees or hidden costs",
-    "Cancel anytime, no contracts"
+    "Dedicated account manager included",
+    "24/7 priority support access"
   ];
 
   return (
