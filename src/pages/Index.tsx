@@ -9,7 +9,7 @@ import IntegrationsSection from "@/components/IntegrationsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import LiveChatWidget from "@/components/LiveChatWidget";
+
 
 const Index = () => {
   return (
@@ -25,7 +25,7 @@ const Index = () => {
       <FAQSection />
       <CTASection />
       <Footer />
-      <LiveChatWidget />
+      
     </div>
   );
 };
