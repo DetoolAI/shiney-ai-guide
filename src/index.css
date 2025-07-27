@@ -117,6 +117,7 @@ All colors MUST be HSL.
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
   }
   
   * {
