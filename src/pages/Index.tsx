@@ -10,7 +10,6 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
-
 import { useNavigateToSection } from "@/hooks/useNavigateToSection";
 
 
@@ -30,7 +29,6 @@ const Index = () => {
       <CTASection />
       <Footer />
       <ThirdPartyScripts />
-      
       
     </div>
   );
