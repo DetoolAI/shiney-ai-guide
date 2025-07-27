@@ -21,24 +21,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- AI Chat Widget -->
-    <script src="https://buildmyagent.io/widget/68863523c4e233cf0b5c522d/widget.js"></script>
-    <script>
-      console.log('Widget script loading...');
-      // Initialize the widget after the script loads
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM loaded, checking for AIChatWidget...');
-        if (window.AIChatWidget) {
-          console.log('AIChatWidget found, initializing...');
-          window.AIChatWidget.init({
-            widgetId: "68863523c4e233cf0b5c522d"
-          });
-          console.log('Widget initialized');
-        } else {
-          console.error('AIChatWidget not found on window object');
-        }
-      });
-    </script>
   </body>
 </html>
