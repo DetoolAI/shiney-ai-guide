@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useNavigateToSection } from "@/hooks/useNavigateToSection";
 
 const Footer = () => {
+  const navigateToSection = useNavigateToSection();
   return (
     <footer className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-4">
@@ -26,10 +28,31 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><Link to="/#solutions" className="text-muted-foreground hover:text-primary transition-colors">Solutions</Link></li>
-              <li><Link to="/#features" className="text-muted-foreground hover:text-primary transition-colors">Features</Link></li>
+              <li>
+                <button 
+                  onClick={() => navigateToSection('solutions')} 
+                  className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+                >
+                  Solutions
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => navigateToSection('features')} 
+                  className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+                >
+                  Features
+                </button>
+              </li>
               <li><Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
-              <li><Link to="/#integrations" className="text-muted-foreground hover:text-primary transition-colors">Integrations</Link></li>
+              <li>
+                <button 
+                  onClick={() => navigateToSection('integrations')} 
+                  className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+                >
+                  Integrations
+                </button>
+              </li>
             </ul>
           </div>
           
@@ -45,7 +68,14 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link to="/#solutions" className="text-muted-foreground hover:text-primary transition-colors">About</Link></li>
+              <li>
+                <button 
+                  onClick={() => navigateToSection('solutions')} 
+                  className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+                >
+                  About
+                </button>
+              </li>
               <li><Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
             </ul>
           </div>
