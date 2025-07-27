@@ -21,5 +21,16 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Add this to your HTML page, preferably before the closing </body> tag -->
+    <script src="https://buildmyagent.io/widget/68863adc401fa64b17cd3c3c/widget.js"></script>
+    <script>
+      // Initialize the widget after the script loads
+      document.addEventListener('DOMContentLoaded', function() {
+        window.AIChatWidget.init({
+          widgetId: "68863adc401fa64b17cd3c3c"
+        });
+      });
+    </script>
   </body>
 </html>
