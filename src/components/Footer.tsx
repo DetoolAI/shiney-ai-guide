@@ -26,10 +26,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">Solutions</a></li>
-              <li><a href="#features" className="text-muted-foreground hover:text-primary transition-colors">Features</a></li>
+              <li><Link to="/#solutions" className="text-muted-foreground hover:text-primary transition-colors">Solutions</Link></li>
+              <li><Link to="/#features" className="text-muted-foreground hover:text-primary transition-colors">Features</Link></li>
               <li><Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
-              <li><a href="#integrations" className="text-muted-foreground hover:text-primary transition-colors">Integrations</a></li>
+              <li><Link to="/#integrations" className="text-muted-foreground hover:text-primary transition-colors">Integrations</Link></li>
             </ul>
           </div>
           
@@ -45,7 +45,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">About</a></li>
+              <li><Link to="/#solutions" className="text-muted-foreground hover:text-primary transition-colors">About</Link></li>
               <li><Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
             </ul>
           </div>
