@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,26 +35,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data
-      const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
-      const body = `
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
-Company: ${formData.company || 'Not provided'}
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
 
-Message:
-${formData.message}
-      `.trim();
-
-      const mailtoLink = `mailto:detoolai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      
-      // Open default email client
-      window.location.href = mailtoLink;
+      if (error) {
+        throw error;
+      }
 
       toast({
-        title: "Email client opened!",
-        description: "Your default email client should open with the message pre-filled. Just click send!",
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
       });
 
       // Reset form
@@ -67,10 +59,10 @@ ${formData.message}
       });
 
     } catch (error) {
-      console.error('Error opening email client:', error);
+      console.error('Error sending message:', error);
       toast({
-        title: "Please email us directly",
-        description: "Send your message to detoolai@gmail.com",
+        title: "Failed to send message",
+        description: "Please try again or email us directly at detoolai@gmail.com",
         variant: "destructive",
       });
     } finally {
