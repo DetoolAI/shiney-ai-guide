@@ -12,6 +12,8 @@ import Footer from "@/components/Footer";
 
 
 const Index = () => {
+  console.log("Index component is rendering");
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
