@@ -21,7 +21,16 @@ const LogoProcessor = () => {
       const url = URL.createObjectURL(processedBlob);
       setProcessedUrl(url);
       
-      // Download the processed image
+      // Update all favicon links immediately
+      const favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
+      const appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]') as HTMLLinkElement;
+      const shortcutIcon = document.querySelector('link[rel="shortcut icon"]') as HTMLLinkElement;
+      
+      if (favicon) favicon.href = url;
+      if (appleTouchIcon) appleTouchIcon.href = url;
+      if (shortcutIcon) shortcutIcon.href = url;
+      
+      // Also download the processed image
       const link = document.createElement('a');
       link.href = url;
       link.download = 'detool-logo-no-bg.png';
@@ -30,8 +39,8 @@ const LogoProcessor = () => {
       document.body.removeChild(link);
       
       toast({
-        title: "Background Removed!",
-        description: "Your logo has been processed and downloaded. Upload it to replace the current favicon.",
+        title: "Favicon Updated!",
+        description: "Background removed and favicon updated automatically.",
       });
     } catch (error) {
       console.error('Error processing logo:', error);
