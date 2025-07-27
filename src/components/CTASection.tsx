@@ -12,7 +12,7 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-hero">
+    <section id="cta" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <Card className="bg-card/50 backdrop-blur-sm border-border shadow-card max-w-4xl mx-auto">
           <CardContent className="p-12 text-center">
