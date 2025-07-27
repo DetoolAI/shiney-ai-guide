@@ -26,27 +26,27 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Solutions</a></li>
-              <li><a href="#features" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Features</a></li>
-              <li><Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Pricing</Link></li>
-              <li><a href="#integrations" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Integrations</a></li>
+              <li><a href="#solutions" className="text-muted-foreground hover:text-primary transition-colors">Solutions</a></li>
+              <li><a href="#features" className="text-muted-foreground hover:text-primary transition-colors">Features</a></li>
+              <li><Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
+              <li><a href="#integrations" className="text-muted-foreground hover:text-primary transition-colors">Integrations</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-foreground mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><Link to="/help" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Help Center</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact Us</Link></li>
-              <li><Link to="/documentation" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Documentation</Link></li>
+              <li><Link to="/help" className="text-muted-foreground hover:text-primary transition-colors">Help Center</Link></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</Link></li>
+              <li><Link to="/documentation" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About</a></li>
-              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Privacy</Link></li>
+              <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a></li>
+              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
             </ul>
           </div>
         </div>
