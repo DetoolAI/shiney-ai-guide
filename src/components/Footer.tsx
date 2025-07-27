@@ -70,7 +70,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <button 
-                  onClick={() => navigateToSection('solutions')} 
+                  onClick={() => navigateToSection('about')} 
                   className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
                 >
                   About
