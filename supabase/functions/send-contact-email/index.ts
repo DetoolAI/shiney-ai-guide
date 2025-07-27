@@ -7,11 +7,14 @@ const corsHeaders = {
 }
 
 serve(async (req) => {
-  console.log('Function called with method:', req.method)
+  console.log('=== FUNCTION START ===')
+  console.log('Method:', req.method)
+  console.log('URL:', req.url)
+  console.log('Headers:', Object.fromEntries(req.headers.entries()))
   
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    console.log('Handling OPTIONS request')
+    console.log('Returning OPTIONS response')
     return new Response(null, { 
       status: 200,
       headers: corsHeaders 
@@ -19,7 +22,7 @@ serve(async (req) => {
   }
 
   if (req.method !== 'POST') {
-    console.log('Method not allowed:', req.method)
+    console.log('Invalid method, returning 405')
     return new Response(
       JSON.stringify({ error: 'Method not allowed' }),
       { 
@@ -33,9 +36,28 @@ serve(async (req) => {
   }
 
   try {
-    console.log('Processing POST request')
-    const body = await req.json()
-    console.log('Request body received:', JSON.stringify(body, null, 2))
+    console.log('=== PROCESSING POST REQUEST ===')
+    
+    // Read body
+    let body
+    try {
+      const bodyText = await req.text()
+      console.log('Raw body:', bodyText)
+      body = JSON.parse(bodyText)
+      console.log('Parsed body:', body)
+    } catch (e) {
+      console.error('Failed to parse body:', e)
+      return new Response(
+        JSON.stringify({ error: 'Invalid JSON body' }),
+        { 
+          status: 400, 
+          headers: { 
+            "Content-Type": "application/json",
+            ...corsHeaders
+          } 
+        }
+      )
+    }
 
     const { firstName, lastName, email, phone, company, message } = body
 
@@ -54,64 +76,15 @@ serve(async (req) => {
       )
     }
 
-    // Check if RESEND_API_KEY exists
+    // Check environment variables
     const apiKey = Deno.env.get('RESEND_API_KEY')
-    if (!apiKey) {
-      console.error('RESEND_API_KEY not found in environment variables')
-      return new Response(
-        JSON.stringify({ error: 'Email service not configured' }),
-        { 
-          status: 500, 
-          headers: { 
-            "Content-Type": "application/json",
-            ...corsHeaders
-          }
-        }
-      )
-    }
-
-    console.log('RESEND_API_KEY found, preparing email...')
-
-    // Sanitize inputs
-    const sanitize = (str: string) => str.replace(/[<>&"]/g, '')
+    console.log('RESEND_API_KEY exists:', !!apiKey)
+    console.log('RESEND_API_KEY length:', apiKey?.length || 0)
     
-    const emailData = {
-      from: 'contact@resend.dev', // Using resend.dev default for testing
-      to: ['detoolai@gmail.com'],
-      subject: `Contact Form: ${sanitize(firstName)} ${sanitize(lastName || '')}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${sanitize(firstName)} ${sanitize(lastName || '')}</p>
-        <p><strong>Email:</strong> ${sanitize(email)}</p>
-        <p><strong>Phone:</strong> ${sanitize(phone || 'Not provided')}</p>
-        <p><strong>Company:</strong> ${sanitize(company || 'Not provided')}</p>
-        <p><strong>Message:</strong></p>
-        <p>${sanitize(message).replace(/\n/g, '<br>')}</p>
-      `,
-      reply_to: email,
-    }
-
-    console.log('Sending email with data:', JSON.stringify(emailData, null, 2))
-
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify(emailData),
-    })
-
-    console.log('Resend API response status:', response.status)
-
-    if (!response.ok) {
-      const errorText = await response.text()
-      console.error('Resend API error:', response.status, errorText)
+    if (!apiKey) {
+      console.error('RESEND_API_KEY not found')
       return new Response(
-        JSON.stringify({ 
-          error: 'Failed to send email', 
-          details: `API returned ${response.status}: ${errorText}` 
-        }),
+        JSON.stringify({ error: 'Email service not configured - missing API key' }),
         { 
           status: 500, 
           headers: { 
@@ -122,13 +95,26 @@ serve(async (req) => {
       )
     }
 
-    const result = await response.json()
-    console.log('Email sent successfully:', result)
-
+    // For now, let's just return success without actually sending email
+    // This will help us isolate if the issue is with the function setup or email sending
+    console.log('=== WOULD SEND EMAIL ===')
+    console.log('From: contact@resend.dev')
+    console.log('To: detoolai@gmail.com')
+    console.log('Subject: Contact Form:', firstName, lastName)
+    console.log('Message preview:', message.substring(0, 100))
+    
+    // Simulate successful email sending
+    console.log('=== SIMULATING SUCCESS ===')
+    
     return new Response(
       JSON.stringify({ 
-        message: 'Email sent successfully',
-        id: result.id 
+        message: 'Email would be sent successfully (test mode)',
+        details: {
+          to: 'detoolai@gmail.com',
+          from: firstName + ' ' + (lastName || ''),
+          hasApiKey: true,
+          messageLength: message.length
+        }
       }),
       { 
         status: 200, 
@@ -138,12 +124,18 @@ serve(async (req) => {
         }
       }
     )
+
   } catch (error) {
-    console.error('Unexpected error:', error)
+    console.error('=== UNEXPECTED ERROR ===')
+    console.error('Error name:', error.name)
+    console.error('Error message:', error.message)
+    console.error('Error stack:', error.stack)
+    
     return new Response(
       JSON.stringify({ 
         error: 'Internal server error',
-        details: error.message 
+        details: error.message,
+        type: error.name
       }),
       { 
         status: 500, 
