@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
 
 const FAQSection = () => {
   const faqs = [
@@ -82,12 +83,12 @@ const FAQSection = () => {
           <p className="text-muted-foreground mb-4">
             Still have questions? We're here to help!
           </p>
-          <a 
-            href="/contact" 
+          <Link 
+            to="/contact" 
             className="text-primary hover:underline font-medium"
           >
             Contact our team for personalized answers →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Calculator, TrendingUp, DollarSign, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ROICalculator = () => {
   const [currentBookings, setCurrentBookings] = useState([30]);
@@ -178,7 +179,7 @@ const ROICalculator = () => {
                 className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4 shadow-glow"
                 asChild
               >
-                <a href="/contact">Get These Results for Your Business</a>
+                <Link to="/contact">Get These Results for Your Business</Link>
               </Button>
               <p className="text-sm text-muted-foreground mt-3">
                 Free consultation • 30-day money-back guarantee
