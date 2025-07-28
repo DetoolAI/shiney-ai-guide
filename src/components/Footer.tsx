@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png" 
+                src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png" 
                 alt="Detool.AI Logo" 
                 className="w-8 h-8 rounded-lg"
               />

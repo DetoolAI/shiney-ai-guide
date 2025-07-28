@@ -16,8 +16,8 @@ const ThirdPartyScripts = () => {
     widgetId: "68863adc401fa64b17cd3c3c", // Add your widget ID here
     initFunction: "AIChatWidget", // Change if your chatbot uses a different global function
     customConfig: {
-      logo: "/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png",
-      logoUrl: "/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png",
+      logo: "/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png",
+      logoUrl: "/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png",
       brandName: "Detool.AI",
       useLogoForAvatar: true,
       useLogoForMinimizedWidget: true

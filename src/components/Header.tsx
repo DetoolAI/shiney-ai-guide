@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer">
             <img 
-              src="/lovable-uploads/710113d7-81ef-41c9-9319-ba9612fc9114.png" 
+              src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png" 
               alt="Detool.AI Logo" 
               className="w-10 h-10 rounded-lg"
             />
