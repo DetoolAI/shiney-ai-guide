@@ -23,71 +23,172 @@ const Privacy = () => {
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-primary">Information We Collect</h2>
                 <p className="text-muted-foreground mb-4">
-                  At Detool.AI, we collect information necessary to provide our AI-powered booking and customer management services:
+                  At Detool.AI, we collect information necessary to provide our AI-powered automation services for car detailing businesses:
                 </p>
                 <ul className="list-disc ml-6 text-muted-foreground space-y-2">
-                  <li>Business information (company name, contact details, service offerings)</li>
-                  <li>Customer interaction data (messages, booking requests, appointment details)</li>
-                  <li>Usage analytics to improve our AI performance</li>
-                  <li>Payment and billing information for subscription management</li>
+                  <li>Car detailing business information (company name, location, contact details, service offerings, pricing)</li>
+                  <li>Customer data (names, phone numbers, email addresses, vehicle information, service history)</li>
+                  <li>Communication data (SMS messages, phone calls, appointment requests, customer inquiries)</li>
+                  <li>Vehicle information (make, model, year, license plates, photos, service requirements)</li>
+                  <li>Appointment and scheduling data (dates, times, locations, service types, duration)</li>
+                  <li>Payment and billing information for our automation services</li>
+                  <li>Usage analytics and performance metrics to improve AI effectiveness</li>
+                  <li>Marketing and promotional data for lead generation and customer acquisition</li>
+                  <li>Location data for service area optimization and logistics</li>
                 </ul>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-primary">How We Use Your Data</h2>
                 <p className="text-muted-foreground mb-4">
-                  We use collected information to:
+                  We process collected information to:
                 </p>
                 <ul className="list-disc ml-6 text-muted-foreground space-y-2">
-                  <li>Provide AI-powered customer service and booking automation</li>
-                  <li>Train and improve our AI models for better customer interactions</li>
-                  <li>Generate analytics and insights for your business growth</li>
-                  <li>Process payments and manage your subscription</li>
-                  <li>Provide customer support and technical assistance</li>
+                  <li>Provide AI-powered customer service automation for car detailing businesses</li>
+                  <li>Automate appointment scheduling, reminders, and follow-up communications</li>
+                  <li>Train and improve our AI models for better customer interactions and industry-specific responses</li>
+                  <li>Generate business analytics, performance insights, and operational reports</li>
+                  <li>Process payments and manage service subscriptions</li>
+                  <li>Provide technical support and system maintenance</li>
+                  <li>Facilitate lead generation and customer acquisition for detailing businesses</li>
+                  <li>Optimize service delivery and operational efficiency</li>
+                  <li>Comply with legal obligations and industry regulations</li>
+                  <li>Protect against fraud, abuse, and security threats</li>
                 </ul>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-primary">Data Security & Protection</h2>
                 <p className="text-muted-foreground mb-4">
-                  We implement industry-standard security measures:
+                  We implement comprehensive security measures to protect your data:
                 </p>
                 <ul className="list-disc ml-6 text-muted-foreground space-y-2">
-                  <li>End-to-end encryption for all customer communications</li>
-                  <li>Secure cloud infrastructure with regular security audits</li>
-                  <li>Limited access controls and employee background checks</li>
-                  <li>Regular data backups and disaster recovery procedures</li>
-                  <li>GDPR and CCPA compliance for international data protection</li>
+                  <li>End-to-end encryption for all communications and data transmissions</li>
+                  <li>SOC 2 compliant cloud infrastructure with regular third-party security audits</li>
+                  <li>Multi-factor authentication and role-based access controls</li>
+                  <li>Employee background checks and confidentiality agreements</li>
+                  <li>Regular automated backups and disaster recovery procedures</li>
+                  <li>GDPR, CCPA, and other applicable privacy law compliance</li>
+                  <li>PCI DSS compliance for payment data processing</li>
+                  <li>Regular penetration testing and vulnerability assessments</li>
+                  <li>Data anonymization and pseudonymization where applicable</li>
+                  <li>Incident response procedures and breach notification protocols</li>
                 </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-primary">Data Sharing and Disclosure</h2>
+                <p className="text-muted-foreground mb-4">
+                  We may share your information in the following circumstances:
+                </p>
+                <ul className="list-disc ml-6 text-muted-foreground space-y-2">
+                  <li>With your explicit consent for specific integrations or services</li>
+                  <li>With service providers who assist in delivering our AI automation services</li>
+                  <li>When required by law, court order, or government regulation</li>
+                  <li>To protect our rights, property, or safety, or that of our users</li>
+                  <li>In connection with a merger, acquisition, or sale of assets (with prior notice)</li>
+                  <li>For fraud prevention and security monitoring</li>
+                </ul>
+                <p className="text-muted-foreground mt-4">
+                  We never sell personal data to third parties for marketing purposes.
+                </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-primary">Third-Party Integrations</h2>
                 <p className="text-muted-foreground mb-4">
-                  Our platform integrates with various services to enhance functionality:
+                  Our AI automation platform integrates with various services:
                 </p>
                 <ul className="list-disc ml-6 text-muted-foreground space-y-2">
-                  <li>SMS providers for automated messaging (with appropriate consent)</li>
-                  <li>Social media platforms (Instagram, Facebook) for customer communication</li>
-                  <li>Calendar services for appointment scheduling</li>
-                  <li>Payment processors for billing and subscriptions</li>
+                  <li>SMS and communication providers (Twilio, etc.) for automated messaging</li>
+                  <li>Social media platforms (Instagram, Facebook, Google) for customer outreach</li>
+                  <li>Calendar and scheduling services for appointment management</li>
+                  <li>Payment processors (Stripe, PayPal) for billing and subscriptions</li>
+                  <li>CRM systems for customer relationship management</li>
+                  <li>Analytics providers for performance tracking and optimization</li>
+                  <li>Cloud storage services for data backup and accessibility</li>
                 </ul>
                 <p className="text-muted-foreground mt-4">
-                  All third-party integrations are vetted for security and privacy compliance.
+                  All integrations undergo security and privacy compliance review before implementation.
                 </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-primary">Data Retention</h2>
+                <p className="text-muted-foreground mb-4">
+                  We retain data for the following periods:
+                </p>
+                <ul className="list-disc ml-6 text-muted-foreground space-y-2">
+                  <li>Customer communication data: 7 years for business records compliance</li>
+                  <li>Payment and billing information: As required by law and tax regulations</li>
+                  <li>AI training data: Anonymized and retained indefinitely for model improvement</li>
+                  <li>Account information: Until account deletion or 3 years of inactivity</li>
+                  <li>Analytics data: Aggregated and anonymized for business intelligence</li>
+                </ul>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-primary">Your Rights & Control</h2>
                 <p className="text-muted-foreground mb-4">
-                  You have complete control over your data:
+                  You have comprehensive rights regarding your data:
                 </p>
                 <ul className="list-disc ml-6 text-muted-foreground space-y-2">
-                  <li>Access and download your data at any time</li>
-                  <li>Request corrections to inaccurate information</li>
-                  <li>Delete your account and all associated data</li>
-                  <li>Opt-out of data processing for AI training</li>
-                  <li>Export customer data when switching services</li>
+                  <li>Right to access: Request copies of your personal data</li>
+                  <li>Right to rectification: Correct inaccurate or incomplete information</li>
+                  <li>Right to erasure: Delete your account and associated data</li>
+                  <li>Right to restrict processing: Limit how we use your data</li>
+                  <li>Right to data portability: Export your data in machine-readable format</li>
+                  <li>Right to object: Opt-out of certain data processing activities</li>
+                  <li>Right to withdraw consent: Revoke previously given permissions</li>
+                  <li>Right to opt-out of AI training: Exclude your data from model training</li>
+                  <li>Right to human review: Request human oversight of automated decisions</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-primary">Artificial Intelligence and Automated Decision Making</h2>
+                <p className="text-muted-foreground mb-4">
+                  Our AI systems may make automated decisions affecting your business operations:
+                </p>
+                <ul className="list-disc ml-6 text-muted-foreground space-y-2">
+                  <li>Customer response generation and communication automation</li>
+                  <li>Appointment scheduling and optimization</li>
+                  <li>Lead qualification and customer segmentation</li>
+                  <li>Pricing recommendations and service suggestions</li>
+                </ul>
+                <p className="text-muted-foreground mt-4">
+                  You have the right to request human review of any automated decision that significantly affects your business.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-primary">International Data Transfers</h2>
+                <p className="text-muted-foreground mb-4">
+                  Data may be transferred to and processed in countries other than your own. We ensure adequate protection through:
+                </p>
+                <ul className="list-disc ml-6 text-muted-foreground space-y-2">
+                  <li>Standard Contractual Clauses (SCCs) for EU data transfers</li>
+                  <li>Adequacy decisions where available</li>
+                  <li>Additional safeguards for cross-border data protection</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-primary">Children's Privacy</h2>
+                <p className="text-muted-foreground mb-4">
+                  Our services are not intended for individuals under 18 years of age. We do not knowingly collect personal information from children. If we become aware of such collection, we will delete the information immediately.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-primary">Changes to This Policy</h2>
+                <p className="text-muted-foreground mb-4">
+                  We may update this privacy policy periodically. Significant changes will be communicated via:
+                </p>
+                <ul className="list-disc ml-6 text-muted-foreground space-y-2">
+                  <li>Email notification to all active users</li>
+                  <li>Prominent notice on our platform</li>
+                  <li>Updated "Last Modified" date below</li>
                 </ul>
               </div>
 
