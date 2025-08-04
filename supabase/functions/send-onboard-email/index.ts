@@ -36,7 +36,6 @@ serve(async (req) => {
       fullName, 
       legalBusinessName, 
       phone, 
-      website, 
       email, 
       openingHours, 
       salesRepInfo, 
@@ -95,7 +94,6 @@ serve(async (req) => {
           <p><strong>Legal Business Name:</strong> ${legalBusinessName}</p>
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Email:</strong> ${email}</p>
-          ${website ? `<p><strong>Website:</strong> ${website}</p>` : ''}
           
           <h3>Communication & Sales Setup</h3>
           <p><strong>Opening Hours:</strong> ${openingHours}</p>

@@ -18,7 +18,7 @@ const clientOnboardSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
   legalBusinessName: z.string().min(2, "Legal business name is required"),
   phone: z.string().min(10, "Valid phone number is required"),
-  website: z.string().url("Valid website URL is required").optional().or(z.literal("")),
+  
   email: z.string().email("Valid email is required"),
   openingHours: z.string().min(1, "Opening hours are required"),
   salesRepInfo: z.string().min(1, "Sales rep information is required"),
@@ -44,7 +44,7 @@ const ClientOnboardForm = () => {
       fullName: "",
       legalBusinessName: "",
       phone: "",
-      website: "",
+      
       email: "",
       openingHours: "",
       salesRepInfo: "",
@@ -153,35 +153,19 @@ const ClientOnboardForm = () => {
                     )}
                   />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="(555) 123-4567" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="website"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Website</FormLabel>
-                          <FormControl>
-                            <Input placeholder="https://yourwebsite.com" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Phone *</FormLabel>
+                        <FormControl>
+                          <Input placeholder="(555) 123-4567" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
                   <FormField
                     control={form.control}
