@@ -25,9 +25,9 @@ const clientOnboardSchema = z.object({
   termsAccepted: z.boolean().refine((val) => val === true, "You must accept the terms and conditions"),
   forwardCalls: z.boolean(),
   crmName: z.string().min(1, "CRM name is required"),
-  leadInfo: z.string().min(10, "Lead information is required"),
-  companyInfo: z.string().min(10, "Company information is required"),
-  valuePropositions: z.string().min(10, "Value propositions are required"),
+  leadInfo: z.string().min(1, "Lead information is required"),
+  companyInfo: z.string().min(1, "Company information is required"),
+  valuePropositions: z.string().min(1, "Value propositions are required"),
   specialPromotions: z.string().optional(),
 });
 
