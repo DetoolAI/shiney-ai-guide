@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -61,19 +62,31 @@ const ClientOnboardForm = () => {
   const onSubmit = async (data: ClientOnboardFormData) => {
     setIsSubmitting(true);
     try {
-      // Here you would typically send the data to your backend
-      console.log("Client onboard data:", data);
+      console.log("Submitting client onboard data:", data);
+      
+      // Send email via Supabase Edge Function
+      const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-onboard-email', {
+        body: data
+      });
+
+      if (emailError) {
+        console.error("Email error:", emailError);
+        throw new Error(emailError.message || "Failed to send email");
+      }
+
+      console.log("Email sent successfully:", emailResult);
       
       toast({
         title: "Form Submitted Successfully!",
-        description: "We'll review your information and get back to you soon.",
+        description: "We've received your onboarding information and will review it shortly.",
       });
       
       form.reset();
     } catch (error) {
+      console.error("Submission error:", error);
       toast({
         title: "Submission Failed",
-        description: "Please try again or contact support.",
+        description: "Please try again or contact support if the problem persists.",
         variant: "destructive",
       });
     } finally {
