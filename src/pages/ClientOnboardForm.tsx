@@ -18,17 +18,13 @@ const clientOnboardSchema = z.object({
   legalBusinessName: z.string().min(2, "Legal business name is required"),
   phone: z.string().min(10, "Valid phone number is required"),
   website: z.string().url("Valid website URL is required").optional().or(z.literal("")),
-  legalBusinessAddress: z.string().min(10, "Complete business address is required"),
   email: z.string().email("Valid email is required"),
-  businessType: z.string().min(1, "Business type is required"),
-  taxNumber: z.string().min(1, "Tax number is required for A2P application"),
-  preferredAreaCodes: z.string().min(1, "At least one area code preference is required"),
   openingHours: z.string().min(1, "Opening hours are required"),
   salesRepInfo: z.string().min(1, "Sales rep information is required"),
   callsPerHour: z.string().min(1, "Call capacity is required"),
   termsAccepted: z.boolean().refine((val) => val === true, "You must accept the terms and conditions"),
   forwardCalls: z.boolean(),
-  crmEmail: z.string().email("Valid CRM email is required"),
+  crmName: z.string().min(1, "CRM name is required"),
   leadInfo: z.string().min(10, "Lead information is required"),
   companyInfo: z.string().min(10, "Company information is required"),
   valuePropositions: z.string().min(10, "Value propositions are required"),
@@ -48,17 +44,13 @@ const ClientOnboardForm = () => {
       legalBusinessName: "",
       phone: "",
       website: "",
-      legalBusinessAddress: "",
       email: "",
-      businessType: "",
-      taxNumber: "",
-      preferredAreaCodes: "",
       openingHours: "",
       salesRepInfo: "",
       callsPerHour: "",
       termsAccepted: false,
       forwardCalls: false,
-      crmEmail: "",
+      crmName: "",
       leadInfo: "",
       companyInfo: "",
       valuePropositions: "",
@@ -180,20 +172,6 @@ const ClientOnboardForm = () => {
 
                   <FormField
                     control={form.control}
-                    name="legalBusinessAddress"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Legal Business Address *</FormLabel>
-                        <FormControl>
-                          <Textarea placeholder="Enter your complete business address" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
                     name="email"
                     render={({ field }) => (
                       <FormItem>
@@ -207,70 +185,9 @@ const ClientOnboardForm = () => {
                   />
                 </div>
 
-                {/* Business Details */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold border-b pb-2">Business Details</h3>
-                  
-                  <FormField
-                    control={form.control}
-                    name="businessType"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>What legal business type do you have? *</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select business type" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            {businessTypes.map((type) => (
-                              <SelectItem key={type} value={type}>
-                                {type}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="taxNumber"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Tax Number (for A2P Application) *</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Enter your tax number" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
                 {/* Phone & Communication */}
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold border-b pb-2">Phone & Communication Setup</h3>
-                  
-                  <FormField
-                    control={form.control}
-                    name="preferredAreaCodes"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Preferred Area Codes for AI Outreach *</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Please state multiple options (e.g., 555, 444, 333)" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
 
                   <FormField
                     control={form.control}
@@ -342,12 +259,12 @@ const ClientOnboardForm = () => {
 
                   <FormField
                     control={form.control}
-                    name="crmEmail"
+                    name="crmName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email to use for CRM login *</FormLabel>
+                        <FormLabel>CRM Name *</FormLabel>
                         <FormControl>
-                          <Input placeholder="crm.email@company.com" type="email" {...field} />
+                          <Input placeholder="e.g., Salesforce, HubSpot, etc." {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
