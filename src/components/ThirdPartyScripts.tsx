@@ -20,7 +20,21 @@ const ThirdPartyScripts = () => {
       logoUrl: "/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png",
       brandName: "Detool.AI",
       useLogoForAvatar: true,
-      useLogoForMinimizedWidget: true
+      useLogoForMinimizedWidget: true,
+      onRedirect: (url: string) => {
+        window.location.href = url;
+      },
+      availablePages: [
+        { name: "Home", url: "/" },
+        { name: "Contact", url: "/contact" },
+        { name: "Pricing", url: "/pricing" },
+        { name: "Help Center", url: "/help" },
+        { name: "Privacy", url: "/privacy" },
+        { name: "Documentation", url: "/documentation" },
+        { name: "Marketing Templates", url: "/marketing" },
+        { name: "Phone Script", url: "/phone-script" },
+        { name: "Client Onboard Form", url: "/client-onboard-form" }
+      ]
     } // Add any custom configuration options
   };
 
