@@ -12,8 +12,8 @@ const ThirdPartyScripts = () => {
   // Configure your chatbot here
   const chatbotConfig: ChatbotConfig = {
     enabled: true, // Set to true to enable
-    scriptUrl: "https://buildmyagent.io/widget/68863adc401fa64b17cd3c3c/widget.js", // Add your script URL here
-    widgetId: "68863adc401fa64b17cd3c3c", // Add your widget ID here
+    scriptUrl: "https://www.buildmyagent.io/widget/689bbcf8b88cbf42cad87911/widget-professional.js?widgetId=689bbcf8b88cbf42cad87911", // Add your script URL here
+    widgetId: "689bbcf8b88cbf42cad87911", // Add your widget ID here
     initFunction: "AIChatWidget", // Change if your chatbot uses a different global function
     customConfig: {
       logo: "/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png",
