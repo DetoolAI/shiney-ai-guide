@@ -5,7 +5,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Marcus Johnson",
-      business: "Elite Auto Detailing",
+      business: "Elite Services Co",
       location: "Miami, FL",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       rating: 5,
@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "Sarah Chen",
-      business: "Premium Car Care",
+      business: "Premium Solutions",
       location: "Los Angeles, CA", 
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
       rating: 5,
@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "David Rodriguez",
-      business: "Shine & Detail Pro",
+      business: "Growth Partners Pro",
       location: "Austin, TX",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
       rating: 5,
@@ -44,7 +44,7 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Trusted by <span className="text-primary">150+</span> Car Detailing Businesses
+            Trusted by <span className="text-primary">150+</span> Businesses
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             See how real businesses are transforming their operations with Detool.AI
@@ -101,7 +101,7 @@ const TestimonialsSection = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">
-            Join hundreds of successful car detailing businesses
+            Join hundreds of successful businesses
           </p>
           <div className="flex justify-center space-x-2">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>

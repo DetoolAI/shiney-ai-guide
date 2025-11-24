@@ -32,7 +32,7 @@ const ROICalculator = () => {
             <span className="text-primary">ROI Calculator</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See exactly how much revenue Detool.AI can generate for your car detailing business
+            See exactly how much revenue Detool.AI can generate for your business
           </p>
         </div>
 

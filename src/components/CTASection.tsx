@@ -21,7 +21,7 @@ const CTASection = () => {
             </h2>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join hundreds of car detailing businesses already using Detool.AI to automate their operations, 
+              Join hundreds of businesses already using Detool.AI to automate their operations, 
               increase bookings, and boost revenue.
             </p>
 
