@@ -31,10 +31,10 @@ const ProblemsSection = () => {
     {
       title: "Low Sales of Premium Services",
       icon: TrendingDown,
-      problem: "Frontline workers don't consistently promote high-value services like ceramic coating or deep interior cleans. Customers often aren't aware of service add-ons or their long-term benefits. There's no structured system to suggest enhancements before or after a booking.",
+      problem: "Staff don't consistently promote high-value services or upgrades. Customers often aren't aware of premium options or their benefits. There's no structured system to suggest enhancements before or after a purchase.",
       costs: [],
       solution: "AI Service Recommender suggests premium service options during online booking or via follow-up messages.",
-      benefits: "Uses customer data (vehicle type, location, service history) to tailor upgrade suggestions. Continuously learns which offers and messages lead to more sales over time.",
+      benefits: "Uses customer data (preferences, location, purchase history) to tailor upgrade suggestions. Continuously learns which offers and messages lead to more sales over time.",
       result: "15–30% increase in revenue per customer by automatically promoting relevant higher-ticket services."
     },
     {
@@ -56,7 +56,7 @@ const ProblemsSection = () => {
             Common Problems <span className="text-primary">Solved</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Every car detailing business faces these challenges. Here's how Detool.AI eliminates them with intelligent automation.
+            Every business faces these challenges. Here's how Detool.AI eliminates them with intelligent automation.
           </p>
         </div>
 

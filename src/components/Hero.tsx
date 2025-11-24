@@ -39,7 +39,7 @@ const Hero = () => {
             DON'T <span className="text-primary">LOSE</span> YOUR LEADS
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            The AI-powered sales automation platform built specifically for car detailing businesses. 
+            The AI-powered sales automation platform for any business. 
             Capture more leads, book more appointments, and boost revenue with intelligent automation.
           </p>
           
