@@ -21,7 +21,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground">
-              AI-powered sales automation for car detailing businesses.
+              AI-powered sales automation for every business.
             </p>
           </div>
           
