@@ -26,7 +26,7 @@ const Pricing = () => {
               Flexible <span className="text-primary">Pricing</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              We believe every car detailing business is unique. That's why we work with you to create a pricing plan that fits your specific needs and budget.
+              We believe every business is unique. That's why we work with you to create a pricing plan that fits your specific needs and budget.
             </p>
           </div>
 

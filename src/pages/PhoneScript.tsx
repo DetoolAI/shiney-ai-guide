@@ -20,7 +20,7 @@ const PhoneScript = () => {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📞 OPENING HOOK (First 10 seconds)
-"Hi [Name], this is [Your Name] from Detool.AI. I help car detailing businesses like [Business Name] capture customers who text and message after hours. Quick question - how many potential bookings do you think you lose each week because you can't respond to texts and Instagram DMs at night?"
+"Hi [Name], this is [Your Name] from Detool.AI. I help businesses like [Business Name] capture customers who text and message after hours. Quick question - how many potential sales do you think you lose each week because you can't respond to texts and Instagram DMs at night?"
 
 [PAUSE - Let them answer]
 
@@ -30,13 +30,13 @@ const PhoneScript = () => {
 
 "That's exactly what I help with. Let me ask you a few quick questions:
 
-1. Do customers ever text you after 6pm or on weekends asking about pricing or availability?
+1. Do customers ever text you after business hours or on weekends asking about your services or pricing?
 
-2. How about Instagram DMs - do people message you there asking about services?
+2. How about Instagram DMs - do people message you there asking about what you offer?
 
-3. When someone calls and you're busy detailing a car, what happens to that call?
+3. When someone calls and you're busy with a customer, what happens to that call?
 
-4. How many appointments would you say you could handle per week if you had perfect booking coverage?"
+4. How many more appointments or sales could you handle per week if you had perfect coverage?"
 
 [Listen to their answers - take notes]
 
@@ -44,9 +44,9 @@ const PhoneScript = () => {
 
 💡 SOLUTION INTRODUCTION
 
-"Here's what's happening - you're probably losing 30-40% of potential bookings just from after-hours inquiries. That's exactly what Detool.AI solves.
+"Here's what's happening - you're probably losing 30-40% of potential business just from after-hours inquiries. That's exactly what Detool.AI solves.
 
-We built an AI system specifically for car detailing businesses that:
+We built an AI system that works for any business that:
 
 ✓ Responds to text messages instantly - even at 2AM
 ✓ Handles Instagram and Facebook DM conversations 
@@ -55,7 +55,7 @@ We built an AI system specifically for car detailing businesses that:
 ✓ Follows up with customers automatically
 ✓ Never sleeps, never takes a day off
 
-Our clients typically see a 50% increase in bookings within the first month. One shop owner told me he went from 30 appointments per month to 45 just from capturing those after-hours inquiries he was missing."
+Our clients typically see a 50% increase in bookings within the first month. One business owner told me they went from 30 appointments per month to 45 just from capturing those after-hours inquiries they were missing."
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -70,7 +70,7 @@ Would you be available for a quick demo this afternoon or would tomorrow morning
 🛡️ OBJECTION HANDLING
 
 ❌ "I'm not interested"
-"I totally understand. Can I ask what you're currently doing to capture customers who reach out after hours? Most shop owners tell me they had no idea how much revenue they were missing until they saw the numbers."
+"I totally understand. Can I ask what you're currently doing to capture customers who reach out after hours? Most business owners tell me they had no idea how much revenue they were missing until they saw the numbers."
 
 ❌ "It sounds expensive"
 "I haven't even mentioned pricing yet! Actually, most of our clients tell me it pays for itself in the first week just from the bookings they capture. Plus, I'm running a special right now - would you be open to seeing how it works first?"
@@ -79,7 +79,7 @@ Would you be available for a quick demo this afternoon or would tomorrow morning
 "Absolutely, that makes sense. The demo is just 5 minutes with no commitment - think of it as getting a free consultation on how to capture more bookings. What part would you want to think about after seeing how it actually works?"
 
 ❌ "I don't have time"
-"I get it - you're busy running your business. That's exactly why this works so well. It handles all the customer conversations you don't have time for. The demo takes 5 minutes - less time than detailing a headlight. When's your slowest time of day?"
+"I get it - you're busy running your business. That's exactly why this works so well. It handles all the customer conversations you don't have time for. The demo takes 5 minutes. When's your slowest time of day?"
 
 ❌ "My customers prefer calling"
 "That's great - ours handles calls too. But here's what's interesting: 70% of customers under 40 prefer texting over calling. Are you capturing those customers? The demo will show you exactly what messages you might be missing."
@@ -120,7 +120,7 @@ If they didn't book:
 
 "Hi [Name], thanks for your time today. I know you're busy running [Business Name]. 
 
-Just so you know - I'm offering the first month free to the first 3 detailing shops that try Detool.AI. 
+Just so you know - I'm offering the first month free to the first 3 businesses that try Detool.AI. 
 
 If you change your mind about that demo, just reply to this text. No pressure!
 
@@ -129,7 +129,7 @@ If you change your mind about that demo, just reply to this text. No pressure!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📊 KEY STATS TO MENTION
-✓ 150+ car detailing businesses already use Detool.AI
+✓ 150+ businesses already use Detool.AI
 ✓ Average 50% increase in bookings
 ✓ Works 24/7 - never misses a customer
 ✓ Handles SMS, Instagram, Facebook, and calls

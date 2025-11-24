@@ -86,7 +86,7 @@ const FeaturesSection = () => {
             Key <span className="text-primary">Features</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to automate your car detailing business and maximize revenue
+            Everything you need to automate your business and maximize revenue
           </p>
         </div>
 

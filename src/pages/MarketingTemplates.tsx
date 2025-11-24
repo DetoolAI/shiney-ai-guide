@@ -18,12 +18,12 @@ const MarketingTemplates = () => {
 
   const emailTemplates = [
     {
-      subject: "Lost 40% of bookings last month?",
+      subject: "Lost 40% of leads last month?",
       body: `Hi [Name],
 
 I noticed [Business Name] on Google and wanted to reach out about something that might interest you.
 
-Most car detailing shops lose 30-40% of potential bookings because they can't answer calls 24/7. 
+Most businesses lose 30-40% of potential customers because they can't answer calls and messages 24/7. 
 
 I built an AI system that automatically responds to customers on text, Instagram, and calls - even at 2am on weekends.
 
@@ -35,7 +35,7 @@ Best,
 [Your Name]
 [Your Phone]
 
-P.S. - I'm offering the first month free to the first 3 detailing shops that try it.`
+P.S. - I'm offering the first month free to the first 3 businesses that try it.`
     },
     {
       subject: "Your competitors are booking customers while you sleep",
@@ -43,7 +43,7 @@ P.S. - I'm offering the first month free to the first 3 detailing shops that try
 
 Quick question - how many potential customers text or DM you after hours?
 
-I help car detailing businesses like [Business Name] capture those late-night inquiries that usually get lost.
+I help businesses like [Business Name] capture those late-night inquiries that usually get lost.
 
 My AI responds to customers instantly on:
 ✓ Text messages
@@ -64,9 +64,9 @@ Want to see a 3-minute demo of how it works?
       subject: "Why [Business Name] is losing money every night",
       body: `[Name],
 
-I analyzed 100+ car detailing businesses and found something shocking:
+I analyzed 100+ businesses and found something shocking:
 
-The average shop loses $2,400/month in potential revenue from missed after-hours inquiries.
+The average business loses $2,400/month in potential revenue from missed after-hours inquiries.
 
 Here's what happens:
 • Customer texts at 8pm → No response
@@ -75,7 +75,7 @@ Here's what happens:
 
 By Monday, they've already booked with your competitor.
 
-I solved this with an AI that works 24/7 for detailing businesses.
+I solved this with an AI that works 24/7 for businesses.
 
 [Client Name] added $18,000 in new revenue last quarter just from after-hours bookings.
 
@@ -94,7 +94,7 @@ detool.ai`
 [WAIT FOR RESPONSE]
 
 [PROBLEM IDENTIFICATION]
-"I work with car detailing shops and found most lose 30-40% of potential bookings because they can't respond 24/7. Does that sound familiar?"
+"I work with businesses and found most lose 30-40% of potential bookings because they can't respond 24/7. Does that sound familiar?"
 
 [SOLUTION INTRO]
 "I built an AI system that automatically responds to customers on text, Instagram, and calls - even at 2am. One client went from 30 to 45 bookings per month in 3 weeks."
@@ -108,7 +108,7 @@ IF "Not interested":
 "I understand. Can I ask - what's your current system for handling after-hours inquiries?"
 
 IF "Too expensive":
-"I haven't mentioned price yet, but I'm actually offering the first month free to the first 3 shops that try it. Would that change things?"
+"I haven't mentioned price yet, but I'm actually offering the first month free to the first 3 businesses that try it. Would that change things?"
 
 IF "Need to think about it":
 "Totally understand. The demo takes 5 minutes and there's no commitment. When would be better - tomorrow morning or afternoon?"
