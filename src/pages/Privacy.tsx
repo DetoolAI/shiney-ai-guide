@@ -23,13 +23,13 @@ const Privacy = () => {
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-primary">Information We Collect</h2>
                 <p className="text-muted-foreground mb-4">
-                  At Detool.AI, we collect information necessary to provide our AI-powered automation services for car detailing businesses:
+                  At Detool.AI, we collect information necessary to provide our AI-powered automation services for businesses:
                 </p>
                 <ul className="list-disc ml-6 text-muted-foreground space-y-2">
-                  <li>Car detailing business information (company name, location, contact details, service offerings, pricing)</li>
-                  <li>Customer data (names, phone numbers, email addresses, vehicle information, service history)</li>
+                  <li>Business information (company name, location, contact details, service offerings, pricing)</li>
+                  <li>Customer data (names, phone numbers, email addresses, purchase history, preferences)</li>
                   <li>Communication data (SMS messages, phone calls, appointment requests, customer inquiries)</li>
-                  <li>Vehicle information (make, model, year, license plates, photos, service requirements)</li>
+                  <li>Customer information (relevant details for service delivery and customer management)</li>
                   <li>Appointment and scheduling data (dates, times, locations, service types, duration)</li>
                   <li>Payment and billing information for our automation services</li>
                   <li>Usage analytics and performance metrics to improve AI effectiveness</li>
@@ -44,13 +44,13 @@ const Privacy = () => {
                   We process collected information to:
                 </p>
                 <ul className="list-disc ml-6 text-muted-foreground space-y-2">
-                  <li>Provide AI-powered customer service automation for car detailing businesses</li>
+                  <li>Provide AI-powered customer service automation for businesses</li>
                   <li>Automate appointment scheduling, reminders, and follow-up communications</li>
                   <li>Train and improve our AI models for better customer interactions and industry-specific responses</li>
                   <li>Generate business analytics, performance insights, and operational reports</li>
                   <li>Process payments and manage service subscriptions</li>
                   <li>Provide technical support and system maintenance</li>
-                  <li>Facilitate lead generation and customer acquisition for detailing businesses</li>
+                  <li>Facilitate lead generation and customer acquisition for businesses</li>
                   <li>Optimize service delivery and operational efficiency</li>
                   <li>Comply with legal obligations and industry regulations</li>
                   <li>Protect against fraud, abuse, and security threats</li>

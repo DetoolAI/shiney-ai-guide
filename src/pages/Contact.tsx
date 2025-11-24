@@ -98,7 +98,7 @@ const Contact = () => {
               Get in <span className="text-primary">Touch</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to transform your car detailing business with AI? Contact our team today for a personalized consultation.
+              Ready to transform your business with AI? Contact our team today for a personalized consultation.
             </p>
           </div>
 
@@ -231,7 +231,7 @@ const Contact = () => {
                     <Label htmlFor="company">Business Name</Label>
                     <Input 
                       id="company" 
-                      placeholder="Your Car Detailing Business" 
+                      placeholder="Your Business Name" 
                       value={formData.company}
                       onChange={handleInputChange}
                     />
