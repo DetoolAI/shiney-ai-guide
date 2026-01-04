@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { CheckCircle, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -97,10 +99,7 @@ const Auth = () => {
           return;
         }
 
-        toast({
-          title: "Account created!",
-          description: "Please check your email to verify your account.",
-        });
+        setShowConfirmation(true);
       }
     } catch (error) {
       toast({
@@ -112,6 +111,56 @@ const Auth = () => {
       setLoading(false);
     }
   };
+
+  if (showConfirmation) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        
+        <main className="pt-32 pb-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-md mx-auto text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Mail className="w-10 h-10 text-primary" />
+                </div>
+              </div>
+              
+              <h1 className="text-3xl font-bold text-foreground mb-4">
+                Thank You!
+              </h1>
+              
+              <p className="text-lg text-muted-foreground mb-6">
+                A confirmation email will be sent out in a few minutes. Please check your inbox to verify your account.
+              </p>
+              
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 text-left">
+                    <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                    <span className="text-muted-foreground">Check your email at <strong className="text-foreground">{email}</strong></span>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <button
+                type="button"
+                onClick={() => {
+                  setShowConfirmation(false);
+                  setIsLogin(true);
+                }}
+                className="mt-6 text-sm text-primary hover:underline"
+              >
+                Back to login
+              </button>
+            </div>
+          </div>
+        </main>
+        
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
