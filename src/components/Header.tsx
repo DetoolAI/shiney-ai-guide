@@ -1,10 +1,33 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Instagram } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Instagram, LogIn, LogOut } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { useNavigateToSection } from "@/hooks/useNavigateToSection";
+import { supabase } from "@/integrations/supabase/client";
+import { User } from "@supabase/supabase-js";
 
 const Header = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const navigate = useNavigate();
   const navigateToSection = useNavigateToSection();
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate("/");
+  };
+
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4">
@@ -61,6 +84,29 @@ const Header = () => {
                 <span>@detool.ai</span>
               </a>
             </Button>
+            
+            {user ? (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={handleLogout}
+                className="flex items-center space-x-2"
+              >
+                <LogOut size={16} />
+                <span className="hidden sm:inline">Logout</span>
+              </Button>
+            ) : (
+              <Button 
+                variant="default" 
+                size="sm" 
+                asChild
+              >
+                <Link to="/auth" className="flex items-center space-x-2">
+                  <LogIn size={16} />
+                  <span>Login</span>
+                </Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>
