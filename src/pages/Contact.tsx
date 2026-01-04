@@ -46,6 +46,12 @@ const Contact = () => {
         return;
       }
 
+      // Track lead event in Meta Pixel (fires as soon as the user submits a valid form)
+      trackLead({
+        content_name: 'Contact Form',
+        content_category: 'Lead',
+      });
+
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
           firstName: formData.firstName.trim(),
@@ -61,12 +67,6 @@ const Contact = () => {
         console.error('Supabase function error:', error);
         throw error;
       }
-
-      // Track lead event in Meta Pixel
-      trackLead({
-        content_name: 'Contact Form',
-        content_category: 'Lead',
-      });
 
       toast({
         title: "Message sent successfully!",

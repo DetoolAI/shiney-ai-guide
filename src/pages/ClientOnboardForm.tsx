@@ -64,6 +64,12 @@ const ClientOnboardForm = () => {
     setIsSubmitting(true);
     try {
       console.log("Submitting client onboard data:", data);
+
+      // Track lead event in Meta Pixel (fires as soon as the user submits a valid form)
+      trackLead({
+        content_name: 'Client Onboard Form',
+        content_category: 'Lead',
+      });
       
       // Send email via Supabase Edge Function
       const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-onboard-email', {
@@ -76,12 +82,6 @@ const ClientOnboardForm = () => {
       }
 
       console.log("Email sent successfully:", emailResult);
-
-      // Track lead event in Meta Pixel
-      trackLead({
-        content_name: 'Client Onboard Form',
-        content_category: 'Lead',
-      });
       
       toast({
         title: "Form Submitted Successfully!",
