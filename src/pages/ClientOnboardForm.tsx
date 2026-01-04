@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { trackLead } from "@/lib/metaPixel";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -75,6 +76,12 @@ const ClientOnboardForm = () => {
       }
 
       console.log("Email sent successfully:", emailResult);
+
+      // Track lead event in Meta Pixel
+      trackLead({
+        content_name: 'Client Onboard Form',
+        content_category: 'Lead',
+      });
       
       toast({
         title: "Form Submitted Successfully!",

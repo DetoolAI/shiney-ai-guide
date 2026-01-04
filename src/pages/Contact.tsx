@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { trackLead } from "@/lib/metaPixel";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -60,6 +61,12 @@ const Contact = () => {
         console.error('Supabase function error:', error);
         throw error;
       }
+
+      // Track lead event in Meta Pixel
+      trackLead({
+        content_name: 'Contact Form',
+        content_category: 'Lead',
+      });
 
       toast({
         title: "Message sent successfully!",
