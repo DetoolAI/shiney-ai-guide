@@ -16,6 +16,7 @@ import PhoneScript from "./pages/PhoneScript";
 import Welcome from "./pages/Welcome";
 import Auth from "./pages/Auth";
 import ClientOnboardForm from "./pages/ClientOnboardForm";
+import DemoThankYou from "./pages/DemoThankYou";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/client-onboard-form" element={<ClientOnboardForm />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/demo-thank-you" element={<DemoThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
