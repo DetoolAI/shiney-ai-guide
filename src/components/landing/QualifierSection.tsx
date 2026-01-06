@@ -2,9 +2,9 @@ import { CheckCircle } from "lucide-react";
 
 const QualifierSection = () => {
   const qualifiers = [
-    "Real estate agents",
-    "Sales teams handling inbound leads",
-    "Agents receiving 10+ leads per week"
+    "Sales professionals across industries",
+    "Teams handling inbound leads",
+    "Anyone receiving 10+ leads per week"
   ];
 
   return (

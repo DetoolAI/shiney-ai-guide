@@ -163,7 +163,7 @@ const DemoRequestForm = () => {
             </form>
             
             <p className="text-sm text-muted-foreground text-center mt-6">
-              Built for real estate agents and sales teams across the U.S.
+              Trusted by sales professionals and teams across the U.S.
             </p>
           </div>
         </div>
