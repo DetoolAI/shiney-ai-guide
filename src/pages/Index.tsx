@@ -9,8 +9,6 @@ import IntegrationsSection from "@/components/IntegrationsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
-
 import { useNavigateToSection } from "@/hooks/useNavigateToSection";
 
 
@@ -29,7 +27,6 @@ const Index = () => {
       <FAQSection />
       <CTASection />
       <Footer />
-      <ExitIntentPopup />
     </div>
   );
 };
