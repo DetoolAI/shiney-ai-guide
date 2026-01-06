@@ -158,7 +158,7 @@ const DemoRequestForm = () => {
                 className="w-full h-14 text-lg font-semibold"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Processing..." : "Book My Demo"}
+                {isSubmitting ? "Processing..." : "Book My Meeting"}
               </Button>
             </form>
             
