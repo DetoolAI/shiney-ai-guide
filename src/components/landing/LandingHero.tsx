@@ -38,8 +38,13 @@ const LandingHero = () => {
           </h1>
           
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-3xl mx-auto leading-relaxed">
             Detool.AI instantly responds to new inquiries, follows up automatically via SMS and email, and books qualified appointments so agents can focus on closing deals.
+          </p>
+          
+          {/* Qualifier line */}
+          <p className="text-sm text-muted-foreground/80 mb-10">
+            Built for real estate agents and sales teams handling inbound leads daily.
           </p>
           
           {/* Single Primary CTA */}

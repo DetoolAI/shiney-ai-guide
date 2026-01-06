@@ -25,7 +25,7 @@ const QualifierSection = () => {
           </div>
           
           <p className="text-muted-foreground mt-8 max-w-2xl mx-auto">
-            Built for professionals who handle inbound leads daily and don't have time to manually follow up with every prospect.
+            If you're manually following up with every lead and still missing opportunities, Detool.AI is built for you.
           </p>
         </div>
       </div>
