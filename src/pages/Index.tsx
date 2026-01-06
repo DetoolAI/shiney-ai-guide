@@ -4,7 +4,6 @@ import OutcomeSection from "@/components/landing/OutcomeSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import LeadScraperSection from "@/components/landing/LeadScraperSection";
 import OutreachEngineSection from "@/components/landing/OutreachEngineSection";
-import DemoVideoSection from "@/components/landing/DemoVideoSection";
 import TrustSection from "@/components/landing/TrustSection";
 import DemoRequestForm from "@/components/landing/DemoRequestForm";
 import FinalCTA from "@/components/landing/FinalCTA";
@@ -19,7 +18,6 @@ const Index = () => {
       <HowItWorksSection />
       <LeadScraperSection />
       <OutreachEngineSection />
-      <DemoVideoSection />
       <TrustSection />
       <DemoRequestForm />
       <FinalCTA />
