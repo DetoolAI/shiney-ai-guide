@@ -53,7 +53,7 @@ const LandingHero = () => {
             onClick={scrollToForm}
             className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform"
           >
-            Book a Free Demo
+            Book a Free Meeting
           </Button>
           
           <p className="text-sm text-muted-foreground mt-6">
