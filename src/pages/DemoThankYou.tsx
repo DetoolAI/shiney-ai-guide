@@ -26,10 +26,10 @@ const DemoThankYou = () => {
         
         {/* Main Message */}
         <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Thanks, {firstName}!
+          Your Demo Request Is Confirmed
         </h1>
         <p className="text-xl text-muted-foreground mb-8">
-          Your demo request has been received. Our team will contact you shortly to schedule your personalized demo.
+          Thanks {firstName}! Our team will contact you shortly to walk you through how the system works and answer any questions.
         </p>
         
         {/* What to expect */}

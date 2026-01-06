@@ -103,10 +103,10 @@ const DemoRequestForm = () => {
         <div className="max-w-lg mx-auto">
           <div className="bg-card rounded-2xl border border-border p-8 md:p-10 shadow-card">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
-              See How Detool.AI Can Book More Appointments for You
+              Book Your Free Demo
             </h2>
             <p className="text-muted-foreground text-center mb-8">
-              Book your free demo in 30 seconds
+              See how Detool.AI can book more appointments for you
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -162,8 +162,8 @@ const DemoRequestForm = () => {
               </Button>
             </form>
             
-            <p className="text-xs text-muted-foreground text-center mt-6">
-              No spam. We'll reach out to schedule your personalized demo.
+            <p className="text-sm text-muted-foreground text-center mt-6">
+              Built for real estate agents and sales teams across the U.S.
             </p>
           </div>
         </div>

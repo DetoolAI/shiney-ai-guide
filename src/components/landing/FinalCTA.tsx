@@ -16,7 +16,7 @@ const FinalCTA = () => {
             Stop Losing Leads to Slow Follow-Ups
           </h2>
           <p className="text-xl text-muted-foreground mb-10">
-            Let Detool.AI book appointments for you automatically. Join 150+ agents already closing more deals.
+            Let Detool.AI respond, follow up, and book appointments automatically.
           </p>
           
           <Button 

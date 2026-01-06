@@ -1,6 +1,7 @@
 import LandingHero from "@/components/landing/LandingHero";
 import QualifierSection from "@/components/landing/QualifierSection";
 import OutcomeSection from "@/components/landing/OutcomeSection";
+import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import DemoVideoSection from "@/components/landing/DemoVideoSection";
 import TrustSection from "@/components/landing/TrustSection";
 import DemoRequestForm from "@/components/landing/DemoRequestForm";
@@ -13,6 +14,7 @@ const Index = () => {
       <LandingHero />
       <QualifierSection />
       <OutcomeSection />
+      <HowItWorksSection />
       <DemoVideoSection />
       <TrustSection />
       <DemoRequestForm />
