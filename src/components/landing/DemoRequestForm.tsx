@@ -103,7 +103,7 @@ const DemoRequestForm = () => {
         <div className="max-w-lg mx-auto">
           <div className="bg-card rounded-2xl border border-border p-8 md:p-10 shadow-card">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
-              Book Your Free Demo
+              Book Your Free Meeting
             </h2>
             <p className="text-muted-foreground text-center mb-8">
               See how Detool.AI can book more appointments for you

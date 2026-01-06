@@ -24,7 +24,7 @@ const FinalCTA = () => {
             onClick={scrollToForm}
             className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform"
           >
-            Book a Free Demo
+            Book a Meeting
           </Button>
           
           <p className="text-sm text-muted-foreground mt-6">
