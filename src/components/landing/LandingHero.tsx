@@ -44,7 +44,7 @@ const LandingHero = () => {
           
           {/* Qualifier line */}
           <p className="text-sm text-muted-foreground/80 mb-10">
-            Built for real estate agents and sales teams handling inbound leads daily.
+            Built for sales professionals and teams who handle inbound leads daily.
           </p>
           
           {/* Single Primary CTA */}
