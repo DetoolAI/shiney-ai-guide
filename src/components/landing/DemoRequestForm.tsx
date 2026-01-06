@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { trackLead, trackCompleteRegistration } from "@/lib/metaPixel";
+import { supabase } from "@/integrations/supabase/client";
 
 const DemoRequestForm = () => {
   const navigate = useNavigate();
@@ -48,25 +49,45 @@ const DemoRequestForm = () => {
     
     setIsSubmitting(true);
     
-    // Track Meta Pixel events before redirect
-    trackLead({
-      content_name: "Demo Request",
-      content_category: "Landing Page"
-    });
-    
-    trackCompleteRegistration({
-      content_name: "Demo Request Form"
-    });
-    
-    // Store form data for thank you page
-    sessionStorage.setItem("demoFormData", JSON.stringify({
-      firstName: formData.firstName.trim(),
-      email: formData.email.trim(),
-      phone: formData.phone.trim()
-    }));
-    
-    // Redirect to thank you page
-    navigate("/demo-thank-you");
+    try {
+      // Send email notification via edge function
+      const { error } = await supabase.functions.invoke('send-demo-request', {
+        body: {
+          firstName: formData.firstName.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim()
+        }
+      });
+
+      if (error) {
+        console.error('Error sending demo request:', error);
+        // Still proceed to thank you page even if email fails
+      }
+
+      // Track Meta Pixel events
+      trackLead({
+        content_name: "Demo Request",
+        content_category: "Landing Page"
+      });
+      
+      trackCompleteRegistration({
+        content_name: "Demo Request Form"
+      });
+      
+      // Store form data for thank you page
+      sessionStorage.setItem("demoFormData", JSON.stringify({
+        firstName: formData.firstName.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim()
+      }));
+      
+      // Redirect to thank you page
+      navigate("/demo-thank-you");
+    } catch (err) {
+      console.error('Error:', err);
+      // Still redirect on error - don't block the user
+      navigate("/demo-thank-you");
+    }
   };
 
   const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
