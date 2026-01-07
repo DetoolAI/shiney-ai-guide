@@ -30,20 +30,6 @@ const ThirdPartyScripts = () => {
     };
 
     initMetaPixel();
-
-    // Create and append the chatbot script
-    const chatbotScript = document.createElement('script');
-    chatbotScript.src = 'https://buildmyagent.io/widget/68a504abb0dac7433e1ca791/widget-professional.js?widgetId=68a504abb0dac7433e1ca791';
-    chatbotScript.async = true;
-    document.body.appendChild(chatbotScript);
-
-    // Cleanup function
-    return () => {
-      const existingChatbot = document.querySelector(`script[src="${chatbotScript.src}"]`);
-      if (existingChatbot) {
-        document.body.removeChild(existingChatbot);
-      }
-    };
   }, []);
 
   // Meta Pixel noscript fallback
