@@ -11,16 +11,12 @@ const HowItWorksSection = () => {
           
           {/* Video container */}
           <div className="aspect-video rounded-2xl overflow-hidden border border-border bg-card shadow-card">
-            {/* Replace the src with your actual video URL */}
-            <video 
-              className="w-full h-full object-cover"
-              controls
-              poster="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png"
-            >
-              {/* Add your video source here */}
-              {/* <source src="your-video-url.mp4" type="video/mp4" /> */}
-              Your browser does not support the video tag.
-            </video>
+            <iframe 
+              src="https://drive.google.com/file/d/1SfJkcxYSs__tcZQOp-_yfyWc0Io8FiYi/preview"
+              className="w-full h-full"
+              allow="autoplay"
+              allowFullScreen
+            />
           </div>
           
           <p className="text-muted-foreground text-center mt-6 text-sm">
