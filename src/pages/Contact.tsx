@@ -161,23 +161,6 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-card/50 backdrop-blur-sm border-border shadow-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-foreground flex items-center space-x-3">
-                      <User className="h-5 w-5 text-primary" />
-                      <span>Gaven Kelly</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="h-5 w-5 text-primary" />
-                      <a href="tel:347-938-5782" className="text-primary hover:underline">
-                        347-938-5782
-                      </a>
-                    </div>
-                    <p className="text-muted-foreground mt-2">Co-Founder & Business Development</p>
-                  </CardContent>
-                </Card>
               </div>
             </div>
 
