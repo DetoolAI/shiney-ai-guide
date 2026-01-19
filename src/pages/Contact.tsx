@@ -141,27 +141,6 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              {/* Team Members */}
-              <div className="grid gap-6">
-                <Card className="bg-card/50 backdrop-blur-sm border-border shadow-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-foreground flex items-center space-x-3">
-                      <User className="h-5 w-5 text-primary" />
-                      <span>Justin Iheme</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="h-5 w-5 text-primary" />
-                      <a href="tel:929-471-7198" className="text-primary hover:underline">
-                        929-471-7198
-                      </a>
-                    </div>
-                    <p className="text-muted-foreground mt-2">Founder & CEO</p>
-                  </CardContent>
-                </Card>
-
-              </div>
             </div>
 
             {/* Contact Form */}
