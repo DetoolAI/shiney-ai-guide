@@ -31,13 +31,24 @@ const HowItWorksSection = () => {
                 </Button>
               </div>
               
-              {/* Desktop: Show iframe */}
+              {/* Desktop: Show iframe with Safari fallback */}
               <div className="hidden md:block">
                 <iframe
                   src={demoUrl}
                   style={{ width: '100%', height: '700px', border: 0, borderRadius: '20px' }}
                   allow="microphone"
                 />
+                <p className="text-center mt-4 text-sm text-muted-foreground">
+                  Demo not loading?{" "}
+                  <a 
+                    href={demoUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline inline-flex items-center gap-1"
+                  >
+                    Open in new tab <ExternalLink className="h-3 w-3" />
+                  </a>
+                </p>
               </div>
             </div>
             
