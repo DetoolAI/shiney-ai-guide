@@ -1,12 +1,10 @@
 import { Maximize2, X, ExternalLink } from "lucide-react";
 import { useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 
 const HowItWorksSection = () => {
   const videoId = "1SfJkcxYSs__tcZQOp-_yfyWc0Io8FiYi";
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const isMobile = useIsMobile();
   const demoUrl = "https://detool.onrender.com";
   
   return (
@@ -20,25 +18,27 @@ const HowItWorksSection = () => {
             
             {/* Interactive Demo */}
             <div className="mb-16 md:mb-20">
-              {isMobile ? (
-                <div className="flex flex-col items-center gap-4 p-8 rounded-2xl border border-border bg-card">
-                  <p className="text-muted-foreground text-center">
-                    Try our AI receptionist demo with voice interaction
-                  </p>
-                  <Button asChild size="lg">
-                    <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Open Interactive Demo
-                    </a>
-                  </Button>
-                </div>
-              ) : (
+              {/* Mobile: Show button to open demo in new tab */}
+              <div className="flex flex-col items-center gap-4 p-8 rounded-2xl border border-border bg-card md:hidden">
+                <p className="text-muted-foreground text-center">
+                  Try our AI receptionist demo with voice interaction
+                </p>
+                <Button asChild size="lg">
+                  <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Open Interactive Demo
+                  </a>
+                </Button>
+              </div>
+              
+              {/* Desktop: Show iframe */}
+              <div className="hidden md:block">
                 <iframe
                   src={demoUrl}
                   style={{ width: '100%', height: '700px', border: 0, borderRadius: '20px' }}
                   allow="microphone"
                 />
-              )}
+              </div>
             </div>
             
             {/* Video container */}
