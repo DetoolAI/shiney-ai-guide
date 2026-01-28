@@ -15,7 +15,7 @@ const HowItWorksSection = () => {
             </h2>
             
             {/* Interactive Demo */}
-            <div className="mb-12">
+            <div className="mb-16 md:mb-20">
               <iframe
                 src="https://detool.onrender.com"
                 style={{ width: '100%', height: '700px', border: 0, borderRadius: '20px' }}
