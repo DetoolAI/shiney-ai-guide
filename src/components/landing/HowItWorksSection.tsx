@@ -18,17 +18,11 @@ const HowItWorksSection = () => {
             
             {/* Interactive Demo */}
             <div className="mb-16 md:mb-20">
-              {/* Mobile: Show button to open demo in new tab */}
-              <div className="flex flex-col items-center gap-4 p-8 rounded-2xl border border-border bg-card md:hidden">
-                <p className="text-muted-foreground text-center">
-                  Try our AI receptionist demo with voice interaction
+            {/* Mobile: Direct users to desktop */}
+              <div className="flex flex-col items-center gap-4 p-6 rounded-2xl border border-border bg-card md:hidden">
+                <p className="text-muted-foreground text-center text-sm">
+                  For the best experience with our interactive AI demo, please visit this page on a desktop or laptop computer.
                 </p>
-                <Button asChild size="lg">
-                  <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Open Interactive Demo
-                  </a>
-                </Button>
               </div>
               
               {/* Desktop: Show iframe with Safari fallback */}
