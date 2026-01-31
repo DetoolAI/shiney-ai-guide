@@ -1,9 +1,30 @@
 import { useEffect } from 'react';
 
 const PIXEL_ID = '1423176479316771';
+const GOOGLE_ADS_ID = 'AW-17894527490';
 
 const ThirdPartyScripts = () => {
   useEffect(() => {
+    // Google Ads / gtag.js initialization
+    const initGoogleAds = () => {
+      if (typeof window !== 'undefined' && !(window as any).gtag) {
+        // Load the gtag.js script
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
+        document.head.appendChild(script);
+
+        // Initialize dataLayer and gtag function
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        function gtag(...args: any[]) {
+          (window as any).dataLayer.push(args);
+        }
+        (window as any).gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GOOGLE_ADS_ID);
+      }
+    };
+
     // Meta Pixel initialization
     const initMetaPixel = () => {
       if (typeof window !== 'undefined' && !(window as any).fbq) {
@@ -29,6 +50,7 @@ const ThirdPartyScripts = () => {
       }
     };
 
+    initGoogleAds();
     initMetaPixel();
   }, []);
 
