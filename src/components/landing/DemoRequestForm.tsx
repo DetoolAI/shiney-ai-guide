@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { trackLead, trackCompleteRegistration } from "@/lib/metaPixel";
+import { trackLead, trackCompleteRegistration, trackGoogleAdsConversion } from "@/lib/metaPixel";
 import { supabase } from "@/integrations/supabase/client";
 
 const DemoRequestForm = () => {
@@ -73,6 +73,9 @@ const DemoRequestForm = () => {
       trackCompleteRegistration({
         content_name: "Demo Request Form"
       });
+
+      // Track Google Ads conversion
+      trackGoogleAdsConversion();
       
       // Store form data for thank you page
       sessionStorage.setItem("demoFormData", JSON.stringify({
