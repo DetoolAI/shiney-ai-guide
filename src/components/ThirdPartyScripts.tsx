@@ -2,9 +2,27 @@ import { useEffect } from 'react';
 
 const PIXEL_ID = '1423176479316771';
 const GOOGLE_ADS_ID = 'AW-17894527490';
+const GTM_ID = 'GTM-5C5R5KWC';
 
 const ThirdPartyScripts = () => {
   useEffect(() => {
+    // Google Tag Manager initialization
+    const initGTM = () => {
+      if (typeof window !== 'undefined' && !(window as any).gtmLoaded) {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+        document.head.appendChild(script);
+        (window as any).gtmLoaded = true;
+      }
+    };
+
     // Google Ads / gtag.js initialization
     const initGoogleAds = () => {
       if (typeof window !== 'undefined' && !(window as any).gtag) {
@@ -50,21 +68,35 @@ const ThirdPartyScripts = () => {
       }
     };
 
+    initGTM();
     initGoogleAds();
     initMetaPixel();
   }, []);
 
-  // Meta Pixel noscript fallback
+  // Noscript fallbacks for GTM and Meta Pixel
   return (
-    <noscript>
-      <img 
-        height="1" 
-        width="1" 
-        style={{ display: 'none' }}
-        src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
-        alt=""
-      />
-    </noscript>
+    <>
+      {/* Google Tag Manager noscript fallback */}
+      <noscript>
+        <iframe 
+          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+          height="0" 
+          width="0" 
+          style={{ display: 'none', visibility: 'hidden' }}
+          title="Google Tag Manager"
+        />
+      </noscript>
+      {/* Meta Pixel noscript fallback */}
+      <noscript>
+        <img 
+          height="1" 
+          width="1" 
+          style={{ display: 'none' }}
+          src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
+          alt=""
+        />
+      </noscript>
+    </>
   );
 };
 
