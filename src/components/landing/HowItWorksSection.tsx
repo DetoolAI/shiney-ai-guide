@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const HowItWorksSection = () => {
-  const videoId = "1SfJkcxYSs__tcZQOp-_yfyWc0Io8FiYi";
+  const videoId = "1uJ12TPvQaseBLW47tdugAMP3zph_N9_6";
   const [isFullscreen, setIsFullscreen] = useState(false);
   const demoUrl = "https://detool.onrender.com";
   
