@@ -16,36 +16,6 @@ const HowItWorksSection = () => {
               How Detool.AI Works
             </h2>
             
-            {/* Interactive Demo */}
-            <div className="mb-16 md:mb-20">
-            {/* Mobile: Direct users to desktop */}
-              <div className="flex flex-col items-center gap-4 p-6 rounded-2xl border border-border bg-card md:hidden">
-                <p className="text-muted-foreground text-center text-sm">
-                  For the best experience with our interactive AI demo, please visit this page on a desktop or laptop computer.
-                </p>
-              </div>
-              
-              {/* Desktop: Show iframe with Safari fallback */}
-              <div className="hidden md:block">
-                <iframe
-                  src={demoUrl}
-                  style={{ width: '100%', height: '700px', border: 0, borderRadius: '20px' }}
-                  allow="microphone"
-                />
-                <p className="text-center mt-4 text-sm text-muted-foreground">
-                  Demo not loading?{" "}
-                  <a 
-                    href={demoUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline inline-flex items-center gap-1"
-                  >
-                    Open in new tab <ExternalLink className="h-3 w-3" />
-                  </a>
-                </p>
-              </div>
-            </div>
-            
             {/* Video container */}
             <div className="relative">
               <div 
@@ -73,6 +43,7 @@ const HowItWorksSection = () => {
             <p className="text-muted-foreground text-center mt-6 text-sm">
               Watch how Detool.AI handles leads from start to finish
             </p>
+
           </div>
         </div>
       </section>
