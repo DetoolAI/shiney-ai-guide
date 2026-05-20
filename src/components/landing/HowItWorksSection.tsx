@@ -1,11 +1,11 @@
-import { Maximize2, X, ExternalLink } from "lucide-react";
+import { Maximize2, X } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 
 const HowItWorksSection = () => {
   const videoId = "1uJ12TPvQaseBLW47tdugAMP3zph_N9_6";
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const demoUrl = "https://detool.onrender.com";
+  
+
   
   return (
     <>
