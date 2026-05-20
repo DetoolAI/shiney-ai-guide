@@ -32,20 +32,30 @@ const LandingHero = () => {
             />
           </div>
           
+          {/* Pill badge */}
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm text-foreground/80 tracking-wide">AI growth studio</span>
+            </div>
+          </div>
+
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Stop Chasing Leads. Let AI Follow Up and Book Appointments for You.
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
+            Websites, automation,<br />
+            <span className="text-primary italic">and leads that close.</span>
           </h1>
           
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-3xl mx-auto leading-relaxed">
-            Detool.AI instantly responds to new inquiries, follows up automatically via SMS and email, and books qualified appointments so agents can focus on closing deals.
+            We build high-converting websites, AI follow-up systems, and lead generation engines — everything you need to turn traffic into booked appointments.
           </p>
           
           {/* Qualifier line */}
           <p className="text-sm text-muted-foreground/80 mb-10">
-            Built for sales professionals and teams who handle inbound leads daily.
+            One team. Websites • AI automation • Outreach • Paid traffic.
           </p>
+
           
           {/* Single Primary CTA */}
           <Button 
