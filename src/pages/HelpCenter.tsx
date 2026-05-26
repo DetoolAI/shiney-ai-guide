@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Book, MessageCircle, Phone, Mail, HelpCircle } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const HelpCenter = () => {
   const categories = [
@@ -45,6 +46,7 @@ const HelpCenter = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Help Center — Detool.AI"} description={"Answers to common questions about Detool.AI: setup, AI assistant, integrations, billing, and more."} path={"/help"} />
       <Header />
       
       <main className="pt-24 pb-16">

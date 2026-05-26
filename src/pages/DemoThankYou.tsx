@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CheckCircle, Calendar, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 const DemoThankYou = () => {
   const [firstName, setFirstName] = useState("there");
@@ -18,6 +19,7 @@ const DemoThankYou = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <SEO title={"Thanks — Detool.AI"} description={"Thanks for requesting a demo. We'll be in touch shortly."} path={"/demo-thank-you"} />
       <div className="max-w-xl mx-auto text-center">
         {/* Success Icon */}
         <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-8">

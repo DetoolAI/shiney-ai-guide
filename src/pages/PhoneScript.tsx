@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Copy, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import SEO from "@/components/SEO";
 
 const PhoneScript = () => {
   const { toast } = useToast();
@@ -145,6 +146,7 @@ If you change your mind about that demo, just reply to this text. No pressure!
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Phone Script — Detool.AI"} description={"The Detool.AI phone script for converting cold leads into booked discovery calls."} path={"/phone-script"} />
       <Header />
       <div className="pt-20">
         <div className="container mx-auto px-4 py-12">

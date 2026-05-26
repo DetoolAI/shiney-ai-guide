@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Copy, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import SEO from "@/components/SEO";
 
 const MarketingTemplates = () => {
   const { toast } = useToast();
@@ -135,6 +136,7 @@ IF "Already have a system":
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Marketing Templates — Detool.AI"} description={"Copy-and-paste email, SMS, and outreach templates Detool.AI uses to book more appointments."} path={"/marketing"} />
       <Header />
       <div className="pt-20">
         <div className="container mx-auto px-4 py-12">

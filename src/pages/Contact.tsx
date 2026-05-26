@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { trackLead } from "@/lib/metaPixel";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -96,6 +97,7 @@ const Contact = () => {
   };
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Contact Detool.AI — Book a Free Meeting"} description={"Get in touch with Detool.AI to book a free strategy meeting about websites, AI automation, and lead follow-up."} path={"/contact"} />
       <Header />
       
       <section className="pt-24 pb-16 bg-gradient-hero">
