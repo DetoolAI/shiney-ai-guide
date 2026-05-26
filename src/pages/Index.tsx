@@ -9,10 +9,12 @@ import TrustSection from "@/components/landing/TrustSection";
 import DemoRequestForm from "@/components/landing/DemoRequestForm";
 import FinalCTA from "@/components/landing/FinalCTA";
 import LandingFooter from "@/components/landing/LandingFooter";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Detool.AI — Websites, AI Automation & Lead Follow-Up"} description={"Websites, AI automation, outreach, and paid traffic that close leads. One team building the system that books your appointments."} path={"/"} />
       <LandingHero />
       <HowItWorksSection />
       <QualifierSection />

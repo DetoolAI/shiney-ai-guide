@@ -4,10 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Welcome = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Welcome to Detool.AI"} description={"Your Detool.AI account is ready — next steps to start automating lead follow-up."} path={"/welcome"} />
       <Header />
       
       <main className="pt-32 pb-20">

@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code, Book, Zap, Globe, MessageSquare, Settings } from "lucide-react";
 
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const Documentation = () => {
   const apiEndpoints = [
@@ -58,6 +59,7 @@ const Documentation = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Documentation — Detool.AI"} description={"Developer documentation and integration guides for Detool.AI booking and automation APIs."} path={"/documentation"} />
       <Header />
       
       <main className="pt-24 pb-16">

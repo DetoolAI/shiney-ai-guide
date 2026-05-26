@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Pricing = () => {
   const guarantees = [
@@ -17,6 +18,7 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Pricing — Detool.AI"} description={"Flexible pricing for Detool.AI websites, AI automation, outreach, and paid traffic services. Custom plans built around your business."} path={"/pricing"} />
       <Header />
       
       <section className="pt-24 pb-16 bg-gradient-hero">

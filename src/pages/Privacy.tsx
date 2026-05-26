@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import SEO from "@/components/SEO";
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Privacy Policy — Detool.AI"} description={"How Detool.AI collects, uses, and protects your business and customer information."} path={"/privacy"} />
       <Header />
       
       <main className="pt-24 pb-16">

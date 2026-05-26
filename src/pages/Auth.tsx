@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { CheckCircle, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -115,6 +116,7 @@ const Auth = () => {
   if (showConfirmation) {
     return (
       <div className="min-h-screen bg-background">
+        <SEO title={"Sign in — Detool.AI"} description={"Sign in or create your Detool.AI account."} path={"/auth"} />
         <Header />
         
         <main className="pt-32 pb-20">

@@ -14,6 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { trackLead } from "@/lib/metaPixel";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const clientOnboardSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
@@ -114,6 +115,7 @@ const ClientOnboardForm = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Client Onboarding — Detool.AI"} description={"Onboarding form for new Detool.AI clients."} path={"/client-onboard-form"} />
       <Header />
       
       <div className="container mx-auto px-4 py-12">
