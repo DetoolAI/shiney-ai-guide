@@ -1,0 +1,14 @@
+# Detool.AI
+
+> AI-powered growth studio: high-converting websites, AI lead follow-up automation, outreach, and paid traffic that books appointments for service businesses.
+
+## Pages
+
+- [Home](/): What Detool.AI does — websites, AI automation, outreach, and paid traffic that close leads.
+- [Pricing](/pricing): Plans and pricing for Detool.AI services.
+- [Contact](/contact): Book a free meeting with Detool.AI.
+- [Help Center](/help): Answers to common questions about Detool.AI.
+- [Documentation](/documentation): Guides for using Detool.AI.
+- [Marketing Templates](/marketing): Marketing assets and templates.
+- [Phone Script](/phone-script): Sales phone script resource.
+- [Privacy](/privacy): Privacy policy.
