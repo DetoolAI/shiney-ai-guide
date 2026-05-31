@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const SITE = "https://detoolai.lovable.app";
+const SITE = "https://detool.ai";
 const DEFAULT_IMAGE = `${SITE}/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png`;
 
 interface SEOProps {
