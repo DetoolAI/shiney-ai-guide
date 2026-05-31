@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://detoolai.lovable.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://detoolai.lovable.app/pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://detoolai.lovable.app/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://detoolai.lovable.app/help</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://detoolai.lovable.app/documentation</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://detoolai.lovable.app/marketing</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://detoolai.lovable.app/phone-script</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://detoolai.lovable.app/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://detool.ai/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://detool.ai/pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://detool.ai/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://detool.ai/help</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://detool.ai/documentation</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://detool.ai/marketing</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://detool.ai/phone-script</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://detool.ai/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
