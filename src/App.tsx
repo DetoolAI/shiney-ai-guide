@@ -17,6 +17,7 @@ import Welcome from "./pages/Welcome";
 import Auth from "./pages/Auth";
 import ClientOnboardForm from "./pages/ClientOnboardForm";
 import DemoThankYou from "./pages/DemoThankYou";
+import Beauty from "./pages/Beauty";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,8 @@ const App = () => (
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/demo-thank-you" element={<DemoThankYou />} />
+          <Route path="/beauty" element={<Beauty />} />
+          <Route path="/salons" element={<Beauty />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
