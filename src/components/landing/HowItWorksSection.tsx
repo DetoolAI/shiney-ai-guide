@@ -24,14 +24,14 @@ const HowItWorksSection = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-4">
                 <Play className="w-3.5 h-3.5 text-primary fill-primary" />
                 <span className="text-xs uppercase tracking-widest text-primary font-semibold">
-                  See it in action
+                  Website showcase
                 </span>
               </div>
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-3">
-                How Detool.AI Works
+                See What We Build For You
               </h2>
               <p className="text-muted-foreground text-base md:text-lg">
-                Watch how we turn cold leads into booked appointments — start to finish.
+                A look at the kind of professional websites we create for our clients — fast, modern, and built to convert.
               </p>
             </div>
 
