@@ -2,40 +2,22 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Marcus T.",
+    name: "Jayden Gutierrez",
+    rating: 5,
+    date: "a day ago",
+    text: "My experience with this marketing agency was a 10/10, definitely recommend."
+  },
+  {
+    name: "Spencer Shadrach",
     rating: 5,
     date: "2 weeks ago",
-    text: "Detool.AI completely transformed how I handle leads. I went from missing half my inquiries to booking 3x more appointments in the first month. The setup was fast and the AI sounds just like me."
+    text: "We worked together & the communication was great. Would work together again."
   },
   {
-    name: "Priya S.",
+    name: "Creme De La Creme N/LLC",
     rating: 5,
-    date: "1 month ago",
-    text: "I was skeptical at first but the results speak for themselves. My response time went from hours to seconds and my conversion rate jumped immediately. Best investment I've made for my business."
-  },
-  {
-    name: "James R.",
-    rating: 5,
-    date: "3 weeks ago",
-    text: "The team at Detool had everything running in under 3 days. The AI handles all my follow-ups automatically and I haven't lost a lead since. Highly recommend to any agent trying to scale."
-  },
-  {
-    name: "Aisha M.",
-    rating: 5,
-    date: "1 month ago",
-    text: "Game changer. I used to spend hours chasing leads that never responded. Now the AI follows up for me and I only talk to people who are ready to book. My calendar has never been fuller."
-  },
-  {
-    name: "Derek L.",
-    rating: 5,
-    date: "2 months ago",
-    text: "Incredible service and support. Within the first week I had more booked appointments than the entire previous month. The AI qualifies leads perfectly so I'm only talking to serious buyers."
-  },
-  {
-    name: "Tanya W.",
-    rating: 5,
-    date: "3 months ago",
-    text: "I run a small team and Detool.AI is like having a full-time follow-up assistant that never sleeps. Worth every penny. Setup was seamless and the results were immediate."
+    date: "2 weeks ago",
+    text: "Justin does an amazing job at paying attention to detail and at making sure he achieves client satisfaction. Incredibly professional website design! Look no further!"
   }
 ];
 
