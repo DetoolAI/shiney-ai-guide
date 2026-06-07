@@ -1,13 +1,10 @@
 import LandingHero from "@/components/landing/LandingHero";
-import QualifierSection from "@/components/landing/QualifierSection";
-import OutcomeSection from "@/components/landing/OutcomeSection";
-import HowItWorksSection from "@/components/landing/HowItWorksSection";
-import LeadScraperSection from "@/components/landing/LeadScraperSection";
-import OutreachEngineSection from "@/components/landing/OutreachEngineSection";
-import PaidTrafficSection from "@/components/landing/PaidTrafficSection";
 import TrustSection from "@/components/landing/TrustSection";
-import AboutSection from "@/components/landing/AboutSection";
+import ServicesSection from "@/components/landing/ServicesSection";
+import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import OutcomeSection from "@/components/landing/OutcomeSection";
 import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
+import AboutSection from "@/components/landing/AboutSection";
 import ReviewsSection from "@/components/landing/ReviewsSection";
 import DemoRequestForm from "@/components/landing/DemoRequestForm";
 import FAQSection from "@/components/landing/FAQSection";
@@ -77,14 +74,11 @@ const Index = () => {
         ]}
       />
       <LandingHero />
-      <HowItWorksSection />
-      <QualifierSection />
-      <OutcomeSection />
-      <LeadScraperSection />
-      <OutreachEngineSection />
-      <PaidTrafficSection />
-      <BeforeAfterSection />
       <TrustSection />
+      <ServicesSection />
+      <HowItWorksSection />
+      <OutcomeSection />
+      <BeforeAfterSection />
       <AboutSection />
       <ReviewsSection />
       <DemoRequestForm />
