@@ -57,17 +57,25 @@ const LandingHero = () => {
           </p>
 
           
-          {/* Single Primary CTA */}
-          <Button 
-            size="lg" 
-            onClick={scrollToForm}
-            className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform"
-          >
-            Book a Free Meeting
-          </Button>
-          
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              size="lg"
+              onClick={scrollToForm}
+              className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform"
+            >
+              Book a Free Meeting
+            </Button>
+            <a
+              href="/pricing"
+              className="text-base font-medium text-primary hover:text-accent transition-colors underline underline-offset-4"
+            >
+              See Pricing →
+            </a>
+          </div>
+
           <p className="text-sm text-muted-foreground mt-6">
-            No credit card required • See results in minutes
+            No credit card required • Plans starting at $297/mo
           </p>
         </div>
       </div>

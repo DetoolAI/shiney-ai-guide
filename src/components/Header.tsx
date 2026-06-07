@@ -72,7 +72,7 @@ const Header = () => {
               variant="outline" 
               size="sm" 
               asChild
-              className="bg-gradient-to-r from-pink-500 to-violet-500 border-0 text-white hover:from-pink-600 hover:to-violet-600 hidden md:inline-flex"
+              className="bg-gradient-to-br from-orange-500 to-pink-500 border-0 text-white hover:opacity-90 hidden md:inline-flex"
             >
               <a 
                 href="https://www.instagram.com/detool.ai/?hl=en" 

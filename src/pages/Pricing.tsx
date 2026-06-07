@@ -33,7 +33,7 @@ const plans = [
   {
     name: "Digital Marketing",
     price: "Custom",
-    period: "",
+    period: " — book a call for quote",
     badge: "Most Popular",
     icon: TrendingUp,
     tagline: "Full-stack marketing engine — leads, outreach, follow-up, and ads that convert.",
@@ -57,7 +57,7 @@ const plans = [
   {
     name: "Full Growth Suite",
     price: "Custom",
-    period: "",
+    period: " — book a call for quote",
     badge: "Best Value",
     icon: Sparkles,
     tagline: "Every tool we have, fully managed, for businesses ready to scale fast.",

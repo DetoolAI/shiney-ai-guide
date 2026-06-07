@@ -6,6 +6,8 @@ import LeadScraperSection from "@/components/landing/LeadScraperSection";
 import OutreachEngineSection from "@/components/landing/OutreachEngineSection";
 import PaidTrafficSection from "@/components/landing/PaidTrafficSection";
 import TrustSection from "@/components/landing/TrustSection";
+import AboutSection from "@/components/landing/AboutSection";
+import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
 import ReviewsSection from "@/components/landing/ReviewsSection";
 import DemoRequestForm from "@/components/landing/DemoRequestForm";
 import FAQSection from "@/components/landing/FAQSection";
@@ -81,7 +83,9 @@ const Index = () => {
       <LeadScraperSection />
       <OutreachEngineSection />
       <PaidTrafficSection />
+      <BeforeAfterSection />
       <TrustSection />
+      <AboutSection />
       <ReviewsSection />
       <DemoRequestForm />
       <FAQSection />
