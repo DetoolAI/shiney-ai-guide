@@ -8,15 +8,18 @@ const AboutSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            {/* Photo side */}
+            {/* Video side */}
             <div className="flex justify-center">
               <div className="relative">
                 <div className="absolute -inset-3 rounded-3xl opacity-40 blur-2xl bg-gradient-primary" />
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-primary/30 bg-card flex items-center justify-center">
-                  <img
-                    src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png"
-                    alt="Justin — Founder of Detool.AI"
-                    className="w-40 h-40 object-contain opacity-80"
+                <div className="relative w-64 md:w-80 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-warm">
+                  <video
+                    src="/justin-intro.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 {/* Badge */}
