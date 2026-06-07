@@ -44,23 +44,8 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => navigateToSection('solutions')} 
-              className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Solutions
-            </button>
-            <button 
-              onClick={() => navigateToSection('features')} 
-              className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Features
-            </button>
             <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
               Pricing
-            </Link>
-            <Link to="/client-onboard-form" className="text-muted-foreground hover:text-primary transition-colors">
-              Forms
             </Link>
             <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
               Contact
