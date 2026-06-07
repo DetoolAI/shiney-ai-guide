@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const LandingFooter = () => {
   return (
@@ -25,14 +25,9 @@ const LandingFooter = () => {
             <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
           </div>
 
-          <div className="flex flex-col gap-1 text-sm text-muted-foreground text-right">
-            <a href="mailto:detoolai@gmail.com" className="hover:text-primary transition-colors flex items-center gap-1 justify-end">
-              <Mail className="w-3.5 h-3.5" /> detoolai@gmail.com
-            </a>
-            <a href="tel:+19294985564" className="hover:text-primary transition-colors flex items-center gap-1 justify-end">
-              <Phone className="w-3.5 h-3.5" /> (929) 498-5564
-            </a>
-          </div>
+          <a href="mailto:detoolai@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+            <Mail className="w-3.5 h-3.5" /> detoolai@gmail.com
+          </a>
         </div>
 
         <div className="border-t border-border mt-8 pt-5 text-center text-sm text-muted-foreground">
