@@ -144,7 +144,7 @@ const Documentation = () => {
                         <div className="flex items-center gap-3 mb-2">
                           <span className={`px-2 py-1 rounded text-xs font-semibold ${
                             endpoint.method === 'POST' ? 'bg-green-500/20 text-green-400' :
-                            endpoint.method === 'GET' ? 'bg-blue-500/20 text-blue-400' :
+                            endpoint.method === 'GET' ? 'bg-amber-500/20 text-amber-400' :
                             endpoint.method === 'PUT' ? 'bg-yellow-500/20 text-yellow-400' :
                             'bg-red-500/20 text-red-400'
                           }`}>
