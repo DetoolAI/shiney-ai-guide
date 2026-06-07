@@ -4,8 +4,8 @@ const PIXEL_ID = '1423176479316771';
 const GOOGLE_ADS_ID = 'AW-17894527490';
 const GTM_ID = 'GTM-5C5R5KWC';
 // Replace with your Tawk.to Property ID and Widget ID from tawk.to dashboard
-const TAWKTO_PROPERTY_ID = 'YOUR_PROPERTY_ID';
-const TAWKTO_WIDGET_ID = '1default';
+const TAWKTO_PROPERTY_ID = '6a24edd36d77da1c401dea06';
+const TAWKTO_WIDGET_ID = '1jqg420d3';
 
 const ThirdPartyScripts = () => {
   useEffect(() => {
