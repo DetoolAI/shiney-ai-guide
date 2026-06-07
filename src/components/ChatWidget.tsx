@@ -99,10 +99,42 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
 
   // Pricing / cost
   {
-    patterns: /price|pricing|cost|how much|plan|fee|charge|pay|afford|budget|quote/i,
+    patterns: /price|pricing|cost|how much|plan|fee|charge|pay|afford|budget|quote|297/i,
     answer:
-      "Our pricing is fully custom — no rigid tiers. On a call we'll discuss:\n\n• Your business size and volume\n• Which services you need (follow-up, scraping, outreach, ads)\n• Required integrations\n• Your budget\n\n🎁 Guarantees included with every plan:\n✅ ROI guarantee within 60 days\n✅ Free migration from your current system\n✅ No setup fees or hidden costs\n✅ Dedicated account manager\n✅ 24/7 priority support\n\nBook a free call and we'll build a plan around you — no obligations.",
-    suggestions: ["Book a meeting", "Is there a contract?", "What's included?"],
+      "Here are our plans:\n\n🌐 Starter Website — $297/mo\nCustom website + AI chatbot + missed call text-back + automated review requests + one-click marketing + on-site SEO. Live in 3 days.\n\n📈 Digital Marketing — Custom\nEverything above + AI lead follow-up, automated booking, lead scraping, outreach campaigns, and paid ads (Facebook, Instagram, Google).\n\n✨ Full Growth Suite — Custom\nEvery tool we have, fully managed. Includes pipeline automation, A/B ad creatives, monthly strategy calls, and a 60-day ROI guarantee.\n\nAll plans: no contracts, no setup fees, cancel anytime.",
+    suggestions: ["What's in the $297 plan?", "Book a meeting", "Is there a contract?"],
+  },
+
+  // $297 plan details
+  {
+    patterns: /297|starter|website plan|what.s included|what is included/i,
+    answer:
+      "The $297/month Starter plan includes:\n\n🌐 Custom professional website\n🤖 AI chatbot on your site\n📞 Missed call text-back — auto-texts anyone who calls and you miss\n⭐ Automated review requests — texts clients asking for a Google review\n📣 One-click marketing campaigns\n🔍 On-site SEO setup\n📅 Setup in under 3 days\n🔓 No contracts, cancel anytime",
+    suggestions: ["How does missed call text-back work?", "How does review automation work?", "Book a meeting"],
+  },
+
+  // Missed call text back
+  {
+    patterns: /missed call|text.?back|call back|miss a call/i,
+    answer:
+      "Missed call text-back works like this:\n\n📞 Someone calls your business\n❌ You don't pick up\n📱 They instantly get a text:\n\n\"Hey! Sorry I missed your call. I'm Justin from Detool.AI — how can I help? Reply here and I'll get back to you ASAP.\"\n\nYou never lose a lead to a missed call again. Included in every plan.",
+    suggestions: ["Tell me about review automation", "What's in the $297 plan?", "Book a meeting"],
+  },
+
+  // Automated reviews
+  {
+    patterns: /review|reputation|google review|ask for review|review request/i,
+    answer:
+      "Our automated review system works like this:\n\n✅ After working with a client, we auto-send them a text:\n\n\"Thanks for choosing Detool.AI! If you had a great experience, we'd love a Google review — it only takes 30 seconds: [your link]\"\n\nMore 5-star reviews = higher Google ranking = more clients finding you. Included in the $297/month plan.",
+    suggestions: ["Tell me about one-click marketing", "What's in the $297 plan?", "Book a meeting"],
+  },
+
+  // One-click marketing
+  {
+    patterns: /one.?click|marketing campaign|blast|bulk (text|message|sms)/i,
+    answer:
+      "One-click marketing lets you send promotions, announcements, or offers to your entire contact list instantly — with one click.\n\nExamples:\n📣 \"We're running a special this week — reply to claim it\"\n🎉 \"Referring a friend? Get $50 off your next service\"\n📅 \"Spots are filling up fast — book before Friday\"\n\nIncluded in the $297/month Starter plan.",
+    suggestions: ["What else is in the $297 plan?", "Book a meeting", "How much does it cost?"],
   },
 
   // Contract / cancel
