@@ -52,14 +52,6 @@ const AboutSection = () => {
                 <Button className="bg-gradient-primary hover:opacity-90 shadow-glow" asChild>
                   <Link to="/contact">Work With Me</Link>
                 </Button>
-                <a
-                  href="https://www.instagram.com/detool.ai/?hl=en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2 rounded-lg border border-border text-foreground hover:border-primary hover:text-primary transition-colors text-sm font-medium"
-                >
-                  Follow on Instagram
-                </a>
               </div>
             </div>
           </div>

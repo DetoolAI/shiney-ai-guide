@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const LandingFooter = () => {
   return (
@@ -30,15 +30,6 @@ const LandingFooter = () => {
               <a href="tel:+19294985564" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary" />
                 (929) 498-5564
-              </a>
-              <a
-                href="https://www.instagram.com/detool.ai/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-primary transition-colors"
-              >
-                <Instagram className="w-4 h-4 text-primary" />
-                @detool.ai
               </a>
             </div>
           </div>
@@ -93,16 +84,11 @@ const LandingFooter = () => {
         <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Detool.AI. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link>
             <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
-            <a
-              href="https://www.instagram.com/detool.ai/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              Instagram
-            </a>
+            <Link to="/help" className="hover:text-primary transition-colors">Help Center</Link>
+            <Link to="/documentation" className="hover:text-primary transition-colors">Documentation</Link>
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
           </div>
         </div>
       </div>

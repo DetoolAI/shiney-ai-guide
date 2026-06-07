@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Instagram, LogIn, LogOut } from "lucide-react";
+import { LogIn, LogOut } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useNavigateToSection } from "@/hooks/useNavigateToSection";
 import { supabase } from "@/integrations/supabase/client";
@@ -53,23 +53,6 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              asChild
-              className="bg-gradient-to-br from-orange-500 to-pink-500 border-0 text-white hover:opacity-90 hidden md:inline-flex"
-            >
-              <a 
-                href="https://www.instagram.com/detool.ai/?hl=en" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2"
-              >
-                <Instagram size={16} />
-                <span>@detool.ai</span>
-              </a>
-            </Button>
-            
             {user ? (
               <Button 
                 variant="outline" 
