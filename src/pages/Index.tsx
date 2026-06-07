@@ -7,6 +7,7 @@ import OutreachEngineSection from "@/components/landing/OutreachEngineSection";
 import PaidTrafficSection from "@/components/landing/PaidTrafficSection";
 import TrustSection from "@/components/landing/TrustSection";
 import DemoRequestForm from "@/components/landing/DemoRequestForm";
+import FAQSection from "@/components/landing/FAQSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import LandingFooter from "@/components/landing/LandingFooter";
 import SEO from "@/components/SEO";
@@ -24,6 +25,7 @@ const Index = () => {
       <PaidTrafficSection />
       <TrustSection />
       <DemoRequestForm />
+      <FAQSection />
       <FinalCTA />
       <LandingFooter />
     </div>

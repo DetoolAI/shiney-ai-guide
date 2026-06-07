@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 const PIXEL_ID = '1423176479316771';
 const GOOGLE_ADS_ID = 'AW-17894527490';
 const GTM_ID = 'GTM-5C5R5KWC';
+// Replace with your Tawk.to Property ID and Widget ID from tawk.to dashboard
+const TAWKTO_PROPERTY_ID = 'YOUR_PROPERTY_ID';
+const TAWKTO_WIDGET_ID = '1default';
 
 const ThirdPartyScripts = () => {
   useEffect(() => {
@@ -68,9 +71,24 @@ const ThirdPartyScripts = () => {
       }
     };
 
+    // Tawk.to live chat initialization
+    const initTawkTo = () => {
+      if (typeof window !== 'undefined' && !(window as any).Tawk_API) {
+        (window as any).Tawk_API = (window as any).Tawk_API || {};
+        (window as any).Tawk_LoadStart = new Date();
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://embed.tawk.to/${TAWKTO_PROPERTY_ID}/${TAWKTO_WIDGET_ID}`;
+        script.charset = 'UTF-8';
+        script.setAttribute('crossorigin', '*');
+        document.head.appendChild(script);
+      }
+    };
+
     initGTM();
     initGoogleAds();
     initMetaPixel();
+    initTawkTo();
   }, []);
 
   // Noscript fallbacks for GTM and Meta Pixel
