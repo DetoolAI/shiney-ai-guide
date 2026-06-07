@@ -37,24 +37,24 @@ const LandingHero = () => {
           <div className="flex justify-center mb-6">
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-foreground/80 tracking-wide">AI growth studio</span>
+              <span className="text-sm text-foreground/80 tracking-wide">Real results. Real businesses.</span>
             </div>
           </div>
 
           {/* Main Headline */}
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
-            Websites, automation,<br />
-            <span className="text-primary italic">and leads that close.</span>
+            You're losing leads<br />
+            <span className="text-primary italic">right now.</span>
           </h1>
-          
+
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-3xl mx-auto leading-relaxed">
-            We build high-converting websites, AI follow-up systems, and lead generation engines — everything you need to turn traffic into booked appointments.
+            Every lead that calls and gets no answer, every text that goes unanswered for hours — that's money walking out the door. I built Detool.AI to make sure that never happens again.
           </p>
-          
+
           {/* Qualifier line */}
           <p className="text-sm text-muted-foreground/80 mb-10">
-            One team. Websites • AI automation • Outreach • Paid traffic.
+            Websites · AI follow-up · Automated booking · Paid ads · Lead scraping
           </p>
 
           

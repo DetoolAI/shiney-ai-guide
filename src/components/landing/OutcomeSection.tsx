@@ -4,18 +4,18 @@ const OutcomeSection = () => {
   const outcomes = [
     {
       icon: Zap,
-      headline: "Never Miss Another Lead",
-      description: "Detool.AI responds to new leads instantly, ensuring every inquiry receives a fast, professional reply within seconds—not hours."
+      headline: "Someone texts you at 11pm. They get a reply in seconds.",
+      description: "Not tomorrow. Not when you wake up. Instantly. Most leads go with whoever responds first — and now that's always you, even when you're off the clock."
     },
     {
       icon: MessageSquare,
-      headline: "Automatic Follow-Ups That Convert",
-      description: "The system continues follow-ups via SMS and email until the lead responds or books an appointment. No more leads falling through the cracks."
+      headline: "They didn't reply? The AI follows up. And again. And again.",
+      description: "Most people give up after one follow-up. Detool.AI keeps going via SMS and email until they respond or book — without you lifting a finger or feeling annoying."
     },
     {
       icon: Calendar,
-      headline: "Appointments Booked Without Manual Work",
-      description: "Detool.AI handles scheduling automatically so agents don't waste time chasing unresponsive prospects. Focus on closing, not chasing."
+      headline: "They're ready to book. It's done before you knew they asked.",
+      description: "The AI qualifies them, checks your calendar, and locks in the appointment automatically. You just show up to calls that are already confirmed."
     }
   ];
 

@@ -13,18 +13,18 @@ const AboutSection = () => {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
-                Built by someone who understands your hustle
+                I built this because I was tired of watching good businesses lose for the wrong reasons
               </h2>
 
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Hey, I'm Justin — founder of Detool.AI. I built this because I watched too many business owners lose leads simply because they couldn't respond fast enough or follow up consistently.
+                  I'm Justin. I started Detool.AI after seeing the same thing over and over — business owners putting in real work to get leads, then losing them because follow-up was too slow, too inconsistent, or just didn't happen.
                 </p>
                 <p>
-                  So I built the system I wish existed — one that responds instantly, follows up automatically, and books appointments without you lifting a finger.
+                  That's not a skill problem. That's a systems problem. And it's fixable.
                 </p>
                 <p>
-                  Today we've helped 150+ agents and teams across the US stop chasing leads and start closing them. If you're ready to build a business that runs itself, I'd love to help.
+                  So I built the system myself. One that responds in seconds, follows up automatically, and books appointments while you sleep. 150+ businesses are running on it right now. Yours can too.
                 </p>
               </div>
 
@@ -34,6 +34,7 @@ const AboutSection = () => {
                 </Button>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </section>

@@ -2,10 +2,10 @@ import { Star, Shield, TrendingUp } from "lucide-react";
 
 const TrustSection = () => {
   const stats = [
-    { number: "150+", label: "Agents & Teams Served" },
-    { number: "50%", label: "Avg. Booking Increase" },
-    { number: "24/7", label: "Automated Response" },
-    { number: "< 3 Days", label: "Setup Time" }
+    { number: "150+", label: "businesses already using this" },
+    { number: "50%", label: "more bookings on average" },
+    { number: "24/7", label: "responding so you don't have to" },
+    { number: "7–10", label: "days to go fully live" }
   ];
 
   return (
@@ -13,7 +13,7 @@ const TrustSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12">
-            Why Agents Trust Detool.AI
+            The numbers don't lie
           </h2>
           
           {/* Stats */}
@@ -30,25 +30,25 @@ const TrustSection = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-card/50 p-6 rounded-xl border border-border text-center">
               <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">No Hiring Required</h3>
+              <h3 className="font-semibold text-foreground mb-2">No extra staff. Ever.</h3>
               <p className="text-sm text-muted-foreground">
-                Get the response time of a full team without the overhead of additional staff.
+                You get the output of a full follow-up team without hiring, training, or managing anyone.
               </p>
             </div>
             
             <div className="bg-card/50 p-6 rounded-xl border border-border text-center">
               <TrendingUp className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">Results Guaranteed</h3>
+              <h3 className="font-semibold text-foreground mb-2">If it doesn't work, we make it right.</h3>
               <p className="text-sm text-muted-foreground">
-                Designed to increase response rates and booked appointments from day one.
+                60-day ROI guarantee. No results? We don't just walk away — we fix it.
               </p>
             </div>
             
             <div className="bg-card/50 p-6 rounded-xl border border-border text-center">
               <Star className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">Trusted Nationwide</h3>
+              <h3 className="font-semibold text-foreground mb-2">Real businesses. Real owners like you.</h3>
               <p className="text-sm text-muted-foreground">
-                Used by real estate agents and sales teams across the United States.
+                Not a Fortune 500 tool. Built for everyday business owners who are tired of losing leads they worked hard to get.
               </p>
             </div>
           </div>
