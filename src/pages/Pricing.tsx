@@ -25,7 +25,7 @@ const plans = [
       "On-site SEO setup",
       "Google Business optimization",
       "Contact & booking forms",
-      "Setup in under 3 days",
+      "Setup in 7–10 days",
       "Monthly updates included",
       "24/7 support",
     ],
@@ -82,7 +82,7 @@ const plans = [
 
 const guarantees = [
   { icon: "✅", text: "ROI guarantee within 60 days" },
-  { icon: "🚀", text: "Setup in under 3 days" },
+  { icon: "🚀", text: "Setup in 7–10 days" },
   { icon: "🔓", text: "No long-term contracts — month-to-month" },
   { icon: "💸", text: "No setup fees or hidden costs" },
   { icon: "👤", text: "Dedicated account manager included" },
@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     q: "How fast will my site be ready?",
-    a: "Most clients are fully live in under 3 days. We handle everything — design, setup, and automation.",
+    a: "Most clients are fully live within 7–10 days. We handle everything — design, setup, and automation.",
   },
   {
     q: "What is missed call text-back?",
@@ -269,12 +269,12 @@ const Pricing = () => {
             Ready to Get Started?
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Book a free call and we'll have you live in under 3 days.
+            Book a free call and we'll have you live within 7–10 days.
           </p>
           <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 font-semibold shadow-glow" asChild>
             <Link to="/contact">Book Your Free Call</Link>
           </Button>
-          <p className="text-sm text-muted-foreground mt-4">No credit card required • Setup in under 3 days</p>
+          <p className="text-sm text-muted-foreground mt-4">No credit card required • Setup in 7–10 days</p>
         </div>
       </section>
 
