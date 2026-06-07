@@ -13,12 +13,9 @@ const AboutSection = () => {
               <div className="relative">
                 <div className="absolute -inset-3 rounded-3xl opacity-40 blur-2xl bg-gradient-primary" />
                 <div className="relative w-64 md:w-80 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-warm">
-                  <video
-                    src="/justin-intro.mp4"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                  <img
+                    src="/justin.png"
+                    alt="Justin — Founder of Detool.AI"
                     className="w-full h-full object-cover"
                   />
                 </div>
