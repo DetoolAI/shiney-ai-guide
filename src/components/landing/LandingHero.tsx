@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const LandingHero = () => {
   const scrollToForm = () => {
@@ -66,12 +67,12 @@ const LandingHero = () => {
             >
               Book a Free Meeting
             </Button>
-            <a
-              href="/pricing"
+            <Link
+              to="/pricing"
               className="text-base font-medium text-primary hover:text-accent transition-colors underline underline-offset-4"
             >
               See Pricing →
-            </a>
+            </Link>
           </div>
 
           <p className="text-sm text-muted-foreground mt-6">

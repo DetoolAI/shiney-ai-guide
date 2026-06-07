@@ -2,8 +2,7 @@ import { Maximize2, X, Play } from "lucide-react";
 import { useState } from "react";
 
 const HowItWorksSection = () => {
-  // YouTube video ID — replace with your real YouTube video ID (the part after ?v= in the URL)
-  const youtubeId = "dQw4w9WgXcQ";
+  const videoId = "1uJ12TPvQaseBLW47tdugAMP3zph_N9_6";
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   return (
@@ -47,11 +46,10 @@ const HowItWorksSection = () => {
                 onClick={() => setIsFullscreen(true)}
               >
                 <iframe
-                  src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src={`https://drive.google.com/file/d/${videoId}/preview`}
+                  className="w-full h-full pointer-events-none md:pointer-events-auto"
+                  allow="autoplay"
                   allowFullScreen
-                  title="Detool.AI Website Showcase"
                 />
               </div>
 
@@ -85,11 +83,10 @@ const HowItWorksSection = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <iframe
-              src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
+              src={`https://drive.google.com/file/d/${videoId}/preview`}
               className="w-full aspect-video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="autoplay"
               allowFullScreen
-              title="Detool.AI Website Showcase Fullscreen"
             />
           </div>
         </div>
