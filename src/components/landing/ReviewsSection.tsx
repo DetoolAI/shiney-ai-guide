@@ -18,6 +18,24 @@ const reviews = [
     rating: 5,
     date: "2 weeks ago",
     text: "Justin does an amazing job at paying attention to detail and at making sure he achieves client satisfaction. Incredibly professional website design! Look no further!"
+  },
+  {
+    name: "Tito Greene",
+    rating: 5,
+    date: "a month ago",
+    text: "Wonderful service and quite helpful I must say."
+  },
+  {
+    name: "Leah M",
+    rating: 5,
+    date: "a month ago",
+    text: "Detool AI is the real deal. Smart strategies, fast results, and clear communication. If you want marketing that actually converts, this is it."
+  },
+  {
+    name: "Vanessa Iheme",
+    rating: 5,
+    date: "a month ago",
+    text: "I had a great experience with Detool Ai. He is such a professional and affordable marketing agency!! He offered 24/7 support, delivered on time, and did an amazing job. I'm very happy with the results and would recommend him to anyone. I will definitely be working with him again in the near future!"
   }
 ];
 
