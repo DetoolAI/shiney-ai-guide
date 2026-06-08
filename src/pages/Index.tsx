@@ -1,6 +1,7 @@
 import LandingHero from "@/components/landing/LandingHero";
 import TrustSection from "@/components/landing/TrustSection";
 import ServicesSection from "@/components/landing/ServicesSection";
+import ProcessSection from "@/components/landing/ProcessSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import OutcomeSection from "@/components/landing/OutcomeSection";
 import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
@@ -76,8 +77,8 @@ const Index = () => {
       <LandingHero />
       <TrustSection />
       <ServicesSection />
+      <ProcessSection />
       <HowItWorksSection />
-      <OutcomeSection />
       <BeforeAfterSection />
       <AboutSection />
       <ReviewsSection />
