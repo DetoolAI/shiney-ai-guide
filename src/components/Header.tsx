@@ -11,9 +11,10 @@ const Header = () => {
 
   const scrollTo = (id: string) => {
     setOpen(false);
+    setServicesOpen(false);
     if (pathname !== "/") {
-      navigate("/");
-      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 300);
+      navigate(`/#${id}`);
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 600);
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     }
@@ -28,7 +29,7 @@ const Header = () => {
             <img src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png" alt="Detool.AI" className="w-10 h-10 rounded-lg" />
             <div className="leading-none">
               <span className="block text-xl font-black text-gray-900 tracking-tight">DETOOL</span>
-              <span className="block text-xl font-black text-primary tracking-tight -mt-1">SYSTEMS</span>
+              <span className="block text-xl font-black text-primary tracking-tight -mt-1">.AI</span>
             </div>
           </Link>
 
