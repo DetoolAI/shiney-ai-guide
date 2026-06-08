@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
 import ChatWidget from "@/components/ChatWidget";
 import Index from "./pages/Index";
+import Websites from "./pages/Websites";
+import Automation from "./pages/Automation";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
@@ -32,6 +35,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/websites" element={<Websites />} />
+          <Route path="/automation" element={<Automation />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/help" element={<HelpCenter />} />
