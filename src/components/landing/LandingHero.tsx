@@ -1,24 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 
 const LandingHero = () => {
   const scrollToForm = () => {
-    const formSection = document.getElementById("demo-form");
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden pt-20" style={{ background: "#0f1b2d" }}>
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center min-h-[85vh]">
 
-          {/* Left — text */}
+          {/* Left */}
           <div className="py-16">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-8">
               Website Design &<br />
@@ -30,7 +25,6 @@ const LandingHero = () => {
               Cut the bulls**t — no agency has a miracle solution to all your problems. We'll give you the tools that work, but you need to commit to using them.
             </p>
 
-            {/* Face stack + CTA */}
             <div className="flex items-center gap-5 mb-10 flex-wrap">
               <div className="flex -space-x-3">
                 {["J","S","L","V","C"].map((letter, i) => (
@@ -39,15 +33,11 @@ const LandingHero = () => {
                   </div>
                 ))}
               </div>
-              <Button
-                onClick={scrollToForm}
-                className="rounded-lg px-8 py-4 text-base font-bold bg-primary hover:bg-primary/90 shadow-lg"
-              >
+              <Button onClick={scrollToForm} className="rounded-lg px-8 py-4 text-base font-bold bg-primary hover:bg-primary/90 shadow-lg">
                 Book A Call
               </Button>
             </div>
 
-            {/* Rating badges */}
             <div className="flex flex-wrap gap-6">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
@@ -55,42 +45,31 @@ const LandingHero = () => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 font-medium">Google</p>
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-primary text-primary" />)}
-                  </div>
+                  <div className="flex gap-0.5">{[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-primary text-primary" />)}</div>
                 </div>
               </div>
               <div className="w-px h-8 bg-gray-600 self-center" />
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-black text-gray-700">★</div>
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-black text-gray-700">150+</div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">150+ Clients</p>
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-primary text-primary" />)}
-                  </div>
+                  <p className="text-xs text-gray-400 font-medium">Clients Served</p>
+                  <div className="flex gap-0.5">{[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-primary text-primary" />)}</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right — Justin's photo or logo */}
-          <div className="hidden md:flex items-end justify-center h-full pt-16">
-            <div className="relative">
-              <div className="w-80 h-96 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl">
-                <img
-                  src="/justin.png"
-                  alt="Justin — Detool.AI Founder"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl px-4 py-3 shadow-xl border border-gray-100">
-                <p className="text-xs text-gray-500 font-medium">Founded by</p>
-                <p className="text-sm font-black text-gray-900">Justin · Detool.AI</p>
-              </div>
+          {/* Right — Logo */}
+          <div className="hidden md:flex items-center justify-center h-full">
+            <div className="relative flex items-center justify-center">
+              <div className="absolute w-96 h-96 rounded-full opacity-10 bg-primary blur-3xl" />
+              <img
+                src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png"
+                alt="Detool.AI"
+                className="w-72 h-72 object-contain relative z-10 drop-shadow-2xl"
+              />
             </div>
           </div>
-
         </div>
       </div>
     </section>

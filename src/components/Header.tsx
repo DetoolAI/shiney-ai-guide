@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -7,6 +7,17 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const scrollTo = (id: string) => {
+    setOpen(false);
+    if (pathname !== "/") {
+      navigate("/");
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 300);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -23,48 +34,44 @@ const Header = () => {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {/* Services dropdown */}
             <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
               <button className="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
-                Services <ChevronDown className="w-4 h-4" />
+                Products <ChevronDown className="w-4 h-4" />
               </button>
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-lg py-2 z-50">
-                  <Link to="/websites" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary transition-colors font-medium">
-                    Website Design
-                  </Link>
-                  <Link to="/automation" className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary transition-colors font-medium">
-                    Automation Tools
-                  </Link>
+                <div className="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-lg py-2 z-50">
+                  <button onClick={() => { setServicesOpen(false); scrollTo("features"); }} className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary font-medium">Website Design</button>
+                  <button onClick={() => { setServicesOpen(false); scrollTo("features"); }} className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary font-medium">Missed Call Text-Back</button>
+                  <button onClick={() => { setServicesOpen(false); scrollTo("features"); }} className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary font-medium">Review Automation</button>
+                  <button onClick={() => { setServicesOpen(false); scrollTo("features"); }} className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary font-medium">Marketing Campaigns</button>
+                  <button onClick={() => { setServicesOpen(false); scrollTo("features"); }} className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary font-medium">AI Chatbot</button>
                 </div>
               )}
             </div>
-            <Link to="/pricing" className={`text-sm font-semibold transition-colors ${pathname === '/pricing' ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}>Pricing</Link>
-            <Link to="/#reviews" className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">Testimonials</Link>
-            <Link to="/about" className={`text-sm font-semibold transition-colors ${pathname === '/about' ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}>About</Link>
+            <button onClick={() => scrollTo("pricing")} className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">Pricing</button>
+            <button onClick={() => scrollTo("reviews")} className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">Testimonials</button>
+            <button onClick={() => scrollTo("about")} className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">About</button>
           </nav>
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/contact" className="text-sm font-semibold text-primary hover:underline">Contact</Link>
+            <Link to="/contact" className="text-sm font-semibold text-gray-500 hover:text-primary transition-colors">Contact</Link>
             <Button asChild className="rounded-lg px-6 py-2.5 text-sm font-bold bg-primary hover:bg-primary/90 shadow-md">
               <Link to="/contact">Book A Call</Link>
             </Button>
           </div>
 
-          {/* Mobile toggle */}
           <button className="md:hidden p-2 text-gray-700" onClick={() => setOpen(!open)}>
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile menu */}
         {open && (
           <div className="md:hidden pt-4 pb-2 border-t border-gray-200 mt-4 flex flex-col gap-3">
-            <Link to="/websites" onClick={() => setOpen(false)} className="text-sm font-semibold text-gray-700">Website Design</Link>
-            <Link to="/automation" onClick={() => setOpen(false)} className="text-sm font-semibold text-gray-700">Automation Tools</Link>
-            <Link to="/pricing" onClick={() => setOpen(false)} className="text-sm font-semibold text-gray-700">Pricing</Link>
-            <Link to="/about" onClick={() => setOpen(false)} className="text-sm font-semibold text-gray-700">About</Link>
+            <button onClick={() => scrollTo("features")} className="text-left text-sm font-semibold text-gray-700">Products</button>
+            <button onClick={() => scrollTo("pricing")} className="text-left text-sm font-semibold text-gray-700">Pricing</button>
+            <button onClick={() => scrollTo("reviews")} className="text-left text-sm font-semibold text-gray-700">Testimonials</button>
+            <button onClick={() => scrollTo("about")} className="text-left text-sm font-semibold text-gray-700">About</button>
             <Link to="/contact" onClick={() => setOpen(false)} className="text-sm font-semibold text-gray-700">Contact</Link>
             <Button asChild className="rounded-lg w-full font-bold mt-2">
               <Link to="/contact" onClick={() => setOpen(false)}>Book A Call</Link>
