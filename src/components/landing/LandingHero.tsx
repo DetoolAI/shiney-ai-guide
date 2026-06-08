@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 
 const LandingHero = () => {
@@ -10,55 +11,86 @@ const LandingHero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-24 pb-20">
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-15 blur-[140px] pointer-events-none bg-primary" />
+    <section className="min-h-screen flex items-center relative overflow-hidden pt-20" style={{ background: "#0f1b2d" }}>
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center min-h-[85vh]">
 
-          {/* Star ratings */}
-          <div className="flex items-center justify-center gap-6 mb-10 flex-wrap">
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
+          {/* Left — text */}
+          <div className="py-16">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-8">
+              Website Design &<br />
+              Automation Systems<br />
+              <span className="text-primary">For Service Businesses.</span>
+            </h1>
+
+            <p className="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">
+              Cut the bulls**t — no agency has a miracle solution to all your problems. We'll give you the tools that work, but you need to commit to using them.
+            </p>
+
+            {/* Face stack + CTA */}
+            <div className="flex items-center gap-5 mb-10 flex-wrap">
+              <div className="flex -space-x-3">
+                {["J","S","L","V","C"].map((letter, i) => (
+                  <div key={i} className="w-10 h-10 rounded-full bg-primary border-2 border-white flex items-center justify-center text-white font-bold text-sm">
+                    {letter}
+                  </div>
+                ))}
               </div>
-              <span className="text-sm text-muted-foreground">Google Reviews</span>
+              <Button
+                onClick={scrollToForm}
+                className="rounded-lg px-8 py-4 text-base font-bold bg-primary hover:bg-primary/90 shadow-lg"
+              >
+                Book A Call
+              </Button>
             </div>
-            <div className="w-px h-4 bg-border hidden sm:block" />
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
+
+            {/* Rating badges */}
+            <div className="flex flex-wrap gap-6">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                  <span className="text-sm font-black" style={{ color: "#4285F4" }}>G</span>
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-medium">Google</p>
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-primary text-primary" />)}
+                  </div>
+                </div>
               </div>
-              <span className="text-sm text-muted-foreground">150+ Businesses</span>
+              <div className="w-px h-8 bg-gray-600 self-center" />
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-black text-gray-700">★</div>
+                <div>
+                  <p className="text-xs text-gray-400 font-medium">150+ Clients</p>
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-primary text-primary" />)}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Headline */}
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground mb-6 leading-[1.06] tracking-tight">
-            Website Design & Automation<br />
-            <span className="text-primary italic">For Service Businesses.</span>
-          </h1>
+          {/* Right — Justin's photo or logo */}
+          <div className="hidden md:flex items-end justify-center h-full pt-16">
+            <div className="relative">
+              <div className="w-80 h-96 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl">
+                <img
+                  src="/justin.png"
+                  alt="Justin — Detool.AI Founder"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl px-4 py-3 shadow-xl border border-gray-100">
+                <p className="text-xs text-gray-500 font-medium">Founded by</p>
+                <p className="text-sm font-black text-gray-900">Justin · Detool.AI</p>
+              </div>
+            </div>
+          </div>
 
-          <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
-            Look, we're not going to promise you'll 10x your revenue overnight. What we <em>will</em> do is build you a damn good website and set up the tools that make sure you never miss a lead again.
-          </p>
-
-          <p className="text-sm text-muted-foreground/60 mb-10">
-            Websites · Missed Call Text-Back · Automated Reviews · AI Chatbot · Paid Ads
-          </p>
-
-          <Button
-            size="lg"
-            onClick={scrollToForm}
-            className="px-10 py-7 text-lg font-semibold shadow-glow hover:scale-105 transition-transform rounded-full"
-          >
-            Book A Free Call
-          </Button>
-
-          <p className="text-xs text-muted-foreground/50 mt-4 tracking-wide">
-            20 minutes · No pressure · No credit card
-          </p>
         </div>
       </div>
     </section>
