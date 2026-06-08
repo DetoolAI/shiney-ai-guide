@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
 const LandingHero = () => {
   const scrollToForm = () => {
@@ -18,57 +17,49 @@ const LandingHero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
 
-          {/* Social proof bar */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-10">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
-              ))}
+          {/* Star ratings */}
+          <div className="flex items-center justify-center gap-6 mb-10 flex-wrap">
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
+              </div>
+              <span className="text-sm text-muted-foreground">Google Reviews</span>
             </div>
-            <span className="text-xs text-muted-foreground">5.0 · Trusted by 150+ businesses</span>
+            <div className="w-px h-4 bg-border hidden sm:block" />
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
+              </div>
+              <span className="text-sm text-muted-foreground">150+ Businesses</span>
+            </div>
           </div>
 
           {/* Headline */}
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground mb-6 leading-[1.06] tracking-tight">
-            We build websites that<br />
-            <span className="text-primary italic">actually get you clients.</span>
+            Website Design & Automation<br />
+            <span className="text-primary italic">For Service Businesses.</span>
           </h1>
 
-          {/* Sub */}
           <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
-            A professional website built for your business — fast, mobile-ready, and designed to convert visitors into paying customers. Live in 7–10 days.
-          </p>
-          <p className="text-sm text-muted-foreground/70 mb-10">
-            + AI follow-up · Missed call text-back · Review automation · Paid ads
+            Look, we're not going to promise you'll 10x your revenue overnight. What we <em>will</em> do is build you a damn good website and set up the tools that make sure you never miss a lead again.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
-            <Button
-              size="lg"
-              onClick={scrollToForm}
-              className="px-8 py-6 text-base font-semibold shadow-glow hover:scale-105 transition-transform rounded-full"
-            >
-              Get My Website <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Link
-              to="/pricing"
-              className="px-8 py-6 text-base font-medium text-foreground border border-border hover:border-primary hover:text-primary transition-colors rounded-full"
-            >
-              See Pricing
-            </Link>
-          </div>
+          <p className="text-sm text-muted-foreground/60 mb-10">
+            Websites · Missed Call Text-Back · Automated Reviews · AI Chatbot · Paid Ads
+          </p>
 
-          <p className="text-xs text-muted-foreground/50 tracking-wide">
-            Starting at $297/mo &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; No credit card required
+          <Button
+            size="lg"
+            onClick={scrollToForm}
+            className="px-10 py-7 text-lg font-semibold shadow-glow hover:scale-105 transition-transform rounded-full"
+          >
+            Book A Free Call
+          </Button>
+
+          <p className="text-xs text-muted-foreground/50 mt-4 tracking-wide">
+            20 minutes · No pressure · No credit card
           </p>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-30">
-        <div className="w-px h-8 bg-primary animate-pulse" />
-        <span className="text-xs text-muted-foreground tracking-widest uppercase">scroll</span>
       </div>
     </section>
   );

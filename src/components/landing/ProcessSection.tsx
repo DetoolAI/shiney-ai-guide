@@ -3,18 +3,21 @@ import { Link } from "react-router-dom";
 const steps = [
   {
     number: "01",
-    title: "Book a Free Call",
-    desc: "We jump on a quick call to learn your business, your goals, and what you need. No pressure, no pitch deck — just a real conversation.",
+    title: "Free Demo Call",
+    time: "20 minutes",
+    desc: "We hop on a quick call, learn about your business, show you what we'd build, and answer any questions. No hard sell. Just a real conversation.",
   },
   {
     number: "02",
-    title: "We Build It",
-    desc: "We design and build your custom website from scratch. You'll see it before it goes live and give feedback. We handle everything.",
+    title: "We Build Your System",
+    time: "7–10 days",
+    desc: "We build your website and set up whatever tools you need — chatbot, missed call text-back, review automation. You see it before it goes live.",
   },
   {
     number: "03",
-    title: "Go Live & Get Clients",
-    desc: "Your site goes live within 7–10 days. From there, we can layer on automations — AI follow-up, review requests, missed call text-back — to make it work even harder.",
+    title: "Launch & Get Clients",
+    time: "Launch call included",
+    desc: "We walk you through everything on a launch call so you know exactly how it works. Then you go live and start getting leads.",
   },
 ];
 
@@ -24,27 +27,26 @@ const ProcessSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-primary font-medium tracking-widest text-sm uppercase mb-3">How it works</p>
+            <p className="text-primary font-medium tracking-widest text-sm uppercase mb-3">The process</p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Simple as 1, 2, 3.
+              What working with us looks like...
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              No complicated onboarding. No waiting months. Just a website that works, built fast.
+              No complicated onboarding. No waiting 3 months. Here's exactly how it goes.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            {/* Connector line */}
-            <div className="hidden md:block absolute top-10 left-[calc(16.6%+1rem)] right-[calc(16.6%+1rem)] h-px bg-border" />
+          <div className="grid md:grid-cols-3 gap-6 relative">
+            {/* Connector */}
+            <div className="hidden md:block absolute top-10 left-[calc(16.6%+2rem)] right-[calc(16.6%+2rem)] h-px bg-border z-0" />
 
             {steps.map((step, i) => (
-              <div key={i} className="relative text-center md:text-left">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center flex-shrink-0 shadow-glow">
-                    <span className="text-xl font-bold text-primary-foreground">{step.number}</span>
-                  </div>
+              <div key={i} className="bg-card border border-border rounded-2xl p-8 text-center relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-5 shadow-glow">
+                  <span className="text-xl font-bold text-white">{step.number}</span>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                <p className="text-xs text-primary font-medium tracking-widest uppercase mb-2">{step.time}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -53,11 +55,11 @@ const ProcessSection = () => {
           <div className="text-center mt-12">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-glow"
+              className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-10 py-5 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-glow text-base"
             >
-              Book Your Free Call →
+              Book A Free Call →
             </Link>
-            <p className="text-xs text-muted-foreground mt-3">Takes 15 minutes. No obligation.</p>
+            <p className="text-xs text-muted-foreground mt-3">20 minutes. No obligation. No credit card.</p>
           </div>
         </div>
       </div>

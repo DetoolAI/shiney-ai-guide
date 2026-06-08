@@ -13,10 +13,10 @@ const FinalCTA = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Ready to get a website that actually works?
+            Want to schedule a time to talk?
           </h2>
           <p className="text-xl text-muted-foreground mb-10">
-            Book a free 15-minute call. We'll talk about your business, show you what we'd build, and get you live in 7–10 days.
+            20 minutes. We'll look at your current situation, tell you exactly what we'd build, and give you a straight answer on whether we're a good fit. No pitch. No pressure.
           </p>
 
           <Button
@@ -24,11 +24,11 @@ const FinalCTA = () => {
             onClick={scrollToForm}
             className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform rounded-full"
           >
-            Get My Website — Free Call
+            Book A Free Call
           </Button>
 
           <p className="text-sm text-muted-foreground mt-6">
-            Starting at $297/mo · No contracts · No credit card
+            Starting at $297/mo · No contracts · No credit card required
           </p>
         </div>
       </div>
