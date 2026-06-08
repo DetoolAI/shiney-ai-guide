@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import BookCallButton from "@/components/BookCallButton";
 import { CheckCircle2 } from "lucide-react";
 
 const features = [
@@ -199,12 +199,7 @@ const FeatureSections = () => {
                   ))}
                 </div>
                 <div className="mt-8">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center bg-primary text-white px-8 py-4 rounded-lg font-bold text-sm hover:bg-primary/90 transition-colors shadow-md"
-                  >
-                    Book A Free Call
-                  </Link>
+                  <BookCallButton className="px-8 py-4 text-sm">Book A Free Call</BookCallButton>
                 </div>
               </div>
             </div>

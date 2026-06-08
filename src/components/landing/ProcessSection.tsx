@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import BookCallButton from "@/components/BookCallButton";
 
 const steps = [
   {
@@ -28,7 +28,7 @@ const ProcessSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-primary font-medium tracking-widest text-sm uppercase mb-3">The process</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
               What working with us looks like...
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
@@ -36,30 +36,24 @@ const ProcessSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 relative">
-            {/* Connector */}
-            <div className="hidden md:block absolute top-10 left-[calc(16.6%+2rem)] right-[calc(16.6%+2rem)] h-px bg-border z-0" />
-
+          <div className="grid md:grid-cols-3 gap-6">
             {steps.map((step, i) => (
-              <div key={i} className="bg-white border border-gray-200 rounded-2xl p-8 text-center relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-5 shadow-glow">
-                  <span className="text-xl font-bold text-white">{step.number}</span>
+              <div key={i} className="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-5">
+                  <span className="text-xl font-black text-white">{step.number}</span>
                 </div>
-                <p className="text-xs text-primary font-medium tracking-widest uppercase mb-2">{step.time}</p>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <p className="text-xs text-primary font-bold tracking-widest uppercase mb-2">{step.time}</p>
+                <h3 className="text-xl font-black text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-10 py-5 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-glow text-base"
-            >
+            <BookCallButton className="px-10 py-5 text-base">
               Book A Free Call →
-            </Link>
-            <p className="text-xs text-gray-500 mt-3">20 minutes. No obligation. No credit card.</p>
+            </BookCallButton>
+            <p className="text-xs text-gray-400 mt-3">20 minutes. No obligation. No credit card.</p>
           </div>
         </div>
       </div>
