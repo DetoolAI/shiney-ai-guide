@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
+import RobotLogo from "@/components/RobotLogo";
 
 const Footer = () => {
   return (
@@ -9,8 +10,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png" alt="Detool.AI" className="w-9 h-9 rounded-lg" />
-              <span className="text-lg font-bold text-foreground">detool<span className="text-primary">.ai</span></span>
+              <RobotLogo size={36} />
+              <div className="leading-none">
+                <span className="block text-base font-black text-gray-900 tracking-tight">DETOOL</span>
+                <span className="block text-base font-black text-primary tracking-tight -mt-1">.AI</span>
+              </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Website design & automation for service businesses. Real tools, real results.

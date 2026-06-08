@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
+import RobotLogo from "@/components/RobotLogo";
 
 const LandingFooter = () => {
   return (
@@ -7,14 +8,11 @@ const LandingFooter = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-2">
-            <img
-              src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png"
-              alt="Detool.AI"
-              className="w-9 h-9 rounded-lg"
-            />
-            <span className="text-lg font-bold text-gray-900">
-              detool<span className="text-primary">.ai</span>
-            </span>
+            <RobotLogo size={36} />
+            <div className="leading-none">
+              <span className="block text-base font-black text-gray-900 tracking-tight">DETOOL</span>
+              <span className="block text-base font-black text-primary tracking-tight -mt-1">.AI</span>
+            </div>
           </Link>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
