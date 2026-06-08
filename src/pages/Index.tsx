@@ -6,6 +6,7 @@ import ProcessSection from "@/components/landing/ProcessSection";
 import WhyDifferentSection from "@/components/landing/WhyDifferentSection";
 import HomeAboutSection from "@/components/landing/HomeAboutSection";
 import HomePricingSection from "@/components/landing/HomePricingSection";
+import DemoRequestForm from "@/components/landing/DemoRequestForm";
 import FAQSection from "@/components/landing/FAQSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import LandingFooter from "@/components/landing/LandingFooter";
@@ -19,27 +20,17 @@ const Index = () => {
         description="We build custom websites and automation tools for service businesses. Missed call text-back, automated reviews, AI chatbot. Starting at $297/mo."
         path="/"
       />
-      {/* 1. Hero — dark navy, huge headline */}
       <LandingHero />
-      {/* 2. Testimonials — proof right after hero */}
-      <div id="reviews"><ReviewsSection /></div>
-      {/* 3. Feature sections — website, reviews, missed call, marketing, chatbot */}
-      <div id="features"><FeatureSections /></div>
-      {/* 4. Who we serve */}
+      <section id="reviews"><ReviewsSection /></section>
+      <section id="features"><FeatureSections /></section>
       <WhoWeServeSection />
-      {/* 5. Process — how it works */}
       <ProcessSection />
-      {/* 6. Why different */}
       <WhyDifferentSection />
-      {/* 7. About */}
-      <HomeAboutSection />
-      {/* 8. Pricing */}
-      <HomePricingSection />
-      {/* 9. FAQ */}
+      <section id="about"><HomeAboutSection /></section>
+      <section id="pricing"><HomePricingSection /></section>
+      <DemoRequestForm />
       <FAQSection />
-      {/* 10. Final CTA */}
       <FinalCTA />
-      {/* 11. Footer */}
       <LandingFooter />
     </div>
   );
