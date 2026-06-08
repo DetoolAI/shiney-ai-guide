@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import RobotLogo from "@/components/RobotLogo";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -30,8 +31,8 @@ const Header = () => {
         <div className="flex items-center h-20 gap-8">
 
           {/* Logo — LEFT */}
-          <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity flex-shrink-0">
-            <img src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png" alt="Detool.AI" className="w-11 h-11 rounded-lg" />
+          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
+            <RobotLogo size={44} />
             <div className="leading-none">
               <span className="block text-xl font-black text-gray-900 tracking-tight">DETOOL</span>
               <span className="block text-xl font-black text-primary tracking-tight -mt-1">.AI</span>

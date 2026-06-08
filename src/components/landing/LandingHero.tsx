@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import RobotLogo from "@/components/RobotLogo";
 
 const LandingHero = () => {
   const scrollToForm = () => {
@@ -59,15 +60,11 @@ const LandingHero = () => {
             </div>
           </div>
 
-          {/* Right — Logo */}
-          <div className="hidden md:flex items-center justify-center h-full">
+          {/* Right — Robot mascot */}
+          <div className="hidden md:flex items-end justify-center h-full pb-0 pt-16">
             <div className="relative flex items-center justify-center">
-              <div className="absolute w-96 h-96 rounded-full opacity-10 bg-primary blur-3xl" />
-              <img
-                src="/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png"
-                alt="Detool.AI"
-                className="w-72 h-72 object-contain relative z-10 drop-shadow-2xl"
-              />
+              <div className="absolute w-80 h-80 rounded-full opacity-20 bg-primary blur-3xl" />
+              <RobotLogo size={320} className="relative z-10 drop-shadow-2xl" />
             </div>
           </div>
         </div>
