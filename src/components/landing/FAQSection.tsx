@@ -40,14 +40,14 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-muted/20">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-gray-500 text-lg">
               Everything you need to know before getting started.
             </p>
           </div>
@@ -56,13 +56,13 @@ const FAQSection = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl overflow-hidden"
+                className="bg-white border border-gray-200 rounded-xl overflow-hidden"
               >
                 <button
                   className="w-full flex items-center justify-between px-6 py-5 text-left gap-4"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 >
-                  <span className="font-semibold text-foreground">{faq.question}</span>
+                  <span className="font-semibold text-gray-900">{faq.question}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-200 ${
                       openIndex === index ? "rotate-180" : ""
@@ -70,7 +70,7 @@ const FAQSection = () => {
                   />
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 pb-5 text-muted-foreground leading-relaxed">
+                  <div className="px-6 pb-5 text-gray-500 leading-relaxed">
                     {faq.answer}
                   </div>
                 )}

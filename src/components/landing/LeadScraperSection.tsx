@@ -20,13 +20,13 @@ const LeadScraperSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
             Extract High-Quality Leads From Everywhere
           </h2>
-          <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 text-center mb-12 max-w-3xl mx-auto">
             Stop searching manually. Our AI Scraper pulls fresh, unique leads from the most powerful platforms on the web instantly.
           </p>
           
@@ -34,17 +34,17 @@ const LeadScraperSection = () => {
             {platforms.map((platform, index) => (
               <div 
                 key={index} 
-                className="bg-card rounded-xl border border-border p-6 hover:border-primary/50 transition-colors"
+                className="bg-white rounded-xl border border-gray-200 p-6 hover:border-primary/50 transition-colors"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-5">
                   <platform.icon className="w-7 h-7 text-primary" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {platform.title}
                 </h3>
                 
-                <p className="text-muted-foreground">
+                <p className="text-gray-500">
                   {platform.description}
                 </p>
               </div>

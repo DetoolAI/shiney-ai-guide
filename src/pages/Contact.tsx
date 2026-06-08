@@ -96,17 +96,17 @@ const Contact = () => {
     }
   };
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SEO title={"Contact Detool.AI — Book a Free Meeting"} description={"Get in touch with Detool.AI to book a free strategy meeting about websites, AI automation, and lead follow-up."} path={"/contact"} />
       <Header />
       
-      <section className="pt-24 pb-16 bg-gradient-hero">
+      <section className="pt-24 pb-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Get in <span className="text-primary">Touch</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-gray-500 max-w-3xl mx-auto">
               Ready to transform your business with AI? Contact our team today for a personalized consultation.
             </p>
           </div>
@@ -114,9 +114,9 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card className="bg-card/50 backdrop-blur-sm border-border shadow-card">
+              <Card className="bg-white/50 backdrop-blur-sm border-gray-200 shadow-card">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-foreground">Contact Information</CardTitle>
+                  <CardTitle className="text-2xl text-gray-900">Contact Information</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -124,7 +124,7 @@ const Contact = () => {
                       <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Email</h3>
+                      <h3 className="font-semibold text-gray-900">Email</h3>
                       <a href="mailto:detoolai@gmail.com" className="text-primary hover:underline">
                         detoolai@gmail.com
                       </a>
@@ -136,8 +136,8 @@ const Contact = () => {
                       <Clock className="h-6 w-6 text-accent" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Business Hours</h3>
-                      <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                      <h3 className="font-semibold text-gray-900">Business Hours</h3>
+                      <p className="text-gray-500">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
                     </div>
                   </div>
                 </CardContent>
@@ -146,9 +146,9 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border shadow-card">
+            <Card className="bg-white/50 backdrop-blur-sm border-gray-200 shadow-card">
               <CardHeader>
-                <CardTitle className="text-2xl text-foreground">Send us a Message</CardTitle>
+                <CardTitle className="text-2xl text-gray-900">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">

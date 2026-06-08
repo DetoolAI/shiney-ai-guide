@@ -27,10 +27,10 @@ const HowItWorksSection = () => {
                   Website showcase
                 </span>
               </div>
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-3">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-gray-900 mb-3">
                 See What We Build For You
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg">
+              <p className="text-gray-500 text-base md:text-lg">
                 A look at the kind of professional websites we create for our clients — fast, modern, and built to convert.
               </p>
             </div>
@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
                 style={{ background: "var(--gradient-primary)" }}
               />
               <div
-                className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary/30 bg-card shadow-warm cursor-pointer md:cursor-default"
+                className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary/30 bg-white shadow-warm cursor-pointer md:cursor-default"
                 onClick={() => setIsFullscreen(true)}
               >
                 <iframe
@@ -55,7 +55,7 @@ const HowItWorksSection = () => {
 
               <button
                 onClick={() => setIsFullscreen(true)}
-                className="mt-4 flex items-center justify-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm md:hidden w-full"
+                className="mt-4 flex items-center justify-center gap-2 text-gray-500 hover:text-primary transition-colors text-sm md:hidden w-full"
               >
                 <Maximize2 className="w-4 h-4" />
                 <span>Tap video to watch fullscreen</span>

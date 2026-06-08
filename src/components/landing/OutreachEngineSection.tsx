@@ -20,13 +20,13 @@ const OutreachEngineSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/10">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
             Launch Automated Outreach on Autopilot
           </h2>
-          <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 text-center mb-12 max-w-3xl mx-auto">
             Once your leads are extracted, Detool.AI launches a multi-channel attack to get you noticed. No manual work required.
           </p>
           
@@ -34,17 +34,17 @@ const OutreachEngineSection = () => {
             {channels.map((channel, index) => (
               <div 
                 key={index} 
-                className="bg-card rounded-xl border border-border p-6 text-center hover:border-primary/50 transition-colors"
+                className="bg-white rounded-xl border border-gray-200 p-6 text-center hover:border-primary/50 transition-colors"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
                   <channel.icon className="w-7 h-7 text-primary" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {channel.title}
                 </h3>
                 
-                <p className="text-muted-foreground">
+                <p className="text-gray-500">
                   {channel.description}
                 </p>
               </div>

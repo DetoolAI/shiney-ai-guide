@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const AboutSection = () => {
   return (
-    <section className="py-20 bg-muted/20">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl mx-auto text-center">
@@ -12,11 +12,11 @@ const AboutSection = () => {
                 <span className="text-sm font-medium text-primary">Who's behind Detool.AI</span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
                 I built this because I was tired of watching good businesses lose for the wrong reasons
               </h2>
 
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-gray-500 leading-relaxed">
                 <p>
                   I'm Justin. I started Detool.AI after seeing the same thing over and over — business owners putting in real work to get leads, then losing them because follow-up was too slow, too inconsistent, or just didn't happen.
                 </p>

@@ -18,7 +18,7 @@ const DemoThankYou = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+    <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <SEO title={"Thanks — Detool.AI"} description={"Thanks for requesting a demo. We'll be in touch shortly."} path={"/demo-thank-you"} />
       <div className="max-w-xl mx-auto text-center">
         {/* Success Icon */}
@@ -27,24 +27,24 @@ const DemoThankYou = () => {
         </div>
         
         {/* Main Message */}
-        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Your Demo Request Is Confirmed
         </h1>
-        <p className="text-xl text-muted-foreground mb-8">
+        <p className="text-xl text-gray-500 mb-8">
           Thanks {firstName}! Our team will contact you shortly to walk you through how the system works and answer any questions.
         </p>
         
         {/* What to expect */}
-        <div className="bg-card rounded-xl border border-border p-6 mb-8">
-          <h2 className="text-lg font-semibold text-foreground mb-4">What happens next?</h2>
+        <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">What happens next?</h2>
           <div className="space-y-4 text-left">
             <div className="flex items-start gap-4">
               <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                 <Phone className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <p className="font-medium text-foreground">We'll reach out within 24 hours</p>
-                <p className="text-sm text-muted-foreground">Via phone or email to schedule your demo</p>
+                <p className="font-medium text-gray-900">We'll reach out within 24 hours</p>
+                <p className="text-sm text-gray-500">Via phone or email to schedule your demo</p>
               </div>
             </div>
             
@@ -53,15 +53,15 @@ const DemoThankYou = () => {
                 <Calendar className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <p className="font-medium text-foreground">Personalized 15-minute demo</p>
-                <p className="text-sm text-muted-foreground">See exactly how Detool.AI can work for your business</p>
+                <p className="font-medium text-gray-900">Personalized 15-minute demo</p>
+                <p className="text-sm text-gray-500">See exactly how Detool.AI can work for your business</p>
               </div>
             </div>
           </div>
         </div>
         
         {/* WhatsApp option */}
-        <p className="text-muted-foreground mb-4">Want to chat right now?</p>
+        <p className="text-gray-500 mb-4">Want to chat right now?</p>
         <Button 
           variant="outline"
           size="lg"
@@ -81,7 +81,7 @@ const DemoThankYou = () => {
             alt="Detool.AI" 
             className="w-8 h-8 rounded"
           />
-          <span className="text-foreground font-semibold">
+          <span className="text-gray-900 font-semibold">
             detool<span className="text-primary">.ai</span>
           </span>
         </div>

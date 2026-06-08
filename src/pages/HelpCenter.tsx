@@ -45,7 +45,7 @@ const HelpCenter = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SEO title={"Help Center — Detool.AI"} description={"Answers to common questions about Detool.AI: setup, AI assistant, integrations, billing, and more."} path={"/help"} />
       <Header />
       
@@ -56,13 +56,13 @@ const HelpCenter = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-primary">Help</span> Center
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-500 mb-8 max-w-2xl mx-auto">
               Find answers, guides, and resources to get the most out of Detool.AI
             </p>
             
             {/* Search Bar */}
             <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5" />
               <Input 
                 placeholder="Search for help articles, guides, and FAQs..." 
                 className="pl-12 py-4 text-lg"
@@ -75,9 +75,9 @@ const HelpCenter = () => {
             <h2 className="text-2xl font-bold mb-8 text-center">Popular Articles</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {popularArticles.map((article, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:shadow-card transition-all duration-300 cursor-pointer">
+                <Card key={index} className="bg-white/50 backdrop-blur-sm border-gray-200 hover:shadow-card transition-all duration-300 cursor-pointer">
                   <CardContent className="p-6">
-                    <p className="text-foreground font-medium">{article}</p>
+                    <p className="text-gray-900 font-medium">{article}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -89,15 +89,15 @@ const HelpCenter = () => {
             <h2 className="text-3xl font-bold mb-8 text-center">Browse by Category</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {categories.map((category, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:shadow-card transition-all duration-300">
+                <Card key={index} className="bg-white/50 backdrop-blur-sm border-gray-200 hover:shadow-card transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
                       <div className="p-3 bg-primary/20 rounded-lg">
                         <category.icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl text-foreground">{category.title}</CardTitle>
-                        <p className="text-muted-foreground">{category.description}</p>
+                        <CardTitle className="text-xl text-gray-900">{category.title}</CardTitle>
+                        <p className="text-gray-500">{category.description}</p>
                       </div>
                     </div>
                   </CardHeader>
@@ -105,7 +105,7 @@ const HelpCenter = () => {
                     <ul className="space-y-2">
                       {category.articles.map((article, articleIndex) => (
                         <li key={articleIndex}>
-                          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                          <a href="#" className="text-gray-500 hover:text-primary transition-colors">
                             {article}
                           </a>
                         </li>
@@ -119,10 +119,10 @@ const HelpCenter = () => {
 
           {/* Contact Support */}
           <div className="text-center">
-            <Card className="bg-card/50 backdrop-blur-sm border-border max-w-2xl mx-auto">
+            <Card className="bg-white/50 backdrop-blur-sm border-gray-200 max-w-2xl mx-auto">
               <CardContent className="p-12">
                 <h3 className="text-2xl font-bold mb-4">Still need help?</h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-gray-500 mb-6">
                   Can't find what you're looking for? Our support team is here to help.
                 </p>
                 <div className="flex justify-center">

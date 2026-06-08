@@ -8,13 +8,13 @@ const QualifierSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/20">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Sound familiar?
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+          <p className="text-gray-500 mb-8 max-w-xl mx-auto">
             If any of these describe you, keep reading — this was built for exactly this.
           </p>
 
@@ -22,12 +22,12 @@ const QualifierSection = () => {
             {qualifiers.map((qualifier, index) => (
               <div key={index} className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-foreground font-medium">{qualifier}</span>
+                <span className="text-gray-900 font-medium">{qualifier}</span>
               </div>
             ))}
           </div>
 
-          <p className="text-muted-foreground mt-8 max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-8 max-w-2xl mx-auto">
             You shouldn't have to chase every lead manually. That's exactly what Detool.AI fixes.
           </p>
         </div>

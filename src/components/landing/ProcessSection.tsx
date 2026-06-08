@@ -23,15 +23,15 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="py-24 bg-muted/20">
+    <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-primary font-medium tracking-widest text-sm uppercase mb-3">The process</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               What working with us looks like...
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">
               No complicated onboarding. No waiting 3 months. Here's exactly how it goes.
             </p>
           </div>
@@ -41,13 +41,13 @@ const ProcessSection = () => {
             <div className="hidden md:block absolute top-10 left-[calc(16.6%+2rem)] right-[calc(16.6%+2rem)] h-px bg-border z-0" />
 
             {steps.map((step, i) => (
-              <div key={i} className="bg-card border border-border rounded-2xl p-8 text-center relative z-10">
+              <div key={i} className="bg-white border border-gray-200 rounded-2xl p-8 text-center relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-5 shadow-glow">
                   <span className="text-xl font-bold text-white">{step.number}</span>
                 </div>
                 <p className="text-xs text-primary font-medium tracking-widest uppercase mb-2">{step.time}</p>
-                <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -59,7 +59,7 @@ const ProcessSection = () => {
             >
               Book A Free Call →
             </Link>
-            <p className="text-xs text-muted-foreground mt-3">20 minutes. No obligation. No credit card.</p>
+            <p className="text-xs text-gray-500 mt-3">20 minutes. No obligation. No credit card.</p>
           </div>
         </div>
       </div>

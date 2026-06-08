@@ -82,7 +82,7 @@ const tools = [
 
 const Automation = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SEO
         title="Automation Tools — Detool.AI"
         description="Missed call text-back, automated review requests, AI chatbot, one-click marketing, and more. Add-on tools that make your website work harder."
@@ -91,27 +91,27 @@ const Automation = () => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-hero">
+      <section className="pt-32 pb-20 bg-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <span className="text-xs font-semibold text-primary uppercase tracking-wider">Automation Tools</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             Make your website<br />
             <span className="text-primary italic font-serif">work while you don't.</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
             These tools run in the background 24/7 — responding to leads, asking for reviews, sending marketing texts — so you don't have to. No extra staff. No extra hours.
           </p>
           <Button asChild size="lg" className="rounded-full px-10 py-6 text-base font-semibold shadow-warm">
             <Link to="/contact">Book A Free Call</Link>
           </Button>
-          <p className="text-xs text-muted-foreground/60 mt-4">Most tools included in the $297/mo plan</p>
+          <p className="text-xs text-gray-500/60 mt-4">Most tools included in the $297/mo plan</p>
         </div>
       </section>
 
       {/* Tools */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-5xl space-y-20">
           {tools.map((tool, i) => {
             const Icon = tool.icon;
@@ -120,7 +120,7 @@ const Automation = () => {
               <div key={i} className={`flex flex-col ${flip ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-12`}>
                 {/* Visual */}
                 <div className="w-full md:w-5/12 flex-shrink-0">
-                  <div className="bg-card border border-border rounded-2xl p-10 flex flex-col items-center justify-center text-center shadow-sm">
+                  <div className="bg-white border border-gray-200 rounded-2xl p-10 flex flex-col items-center justify-center text-center shadow-sm">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
                       <Icon className="w-8 h-8 text-primary" />
                     </div>
@@ -132,15 +132,15 @@ const Automation = () => {
 
                 {/* Text */}
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-foreground mb-3">{tool.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{tool.desc}</p>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3">{tool.title}</h3>
+                  <p className="text-gray-500 mb-6 leading-relaxed">{tool.desc}</p>
                   <ul className="space-y-3">
                     {tool.bullets.map((b, bi) => (
                       <li key={bi} className="flex items-start gap-3">
                         <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                           <Check className="w-3 h-3 text-white" />
                         </div>
-                        <span className="text-foreground text-sm">{b}</span>
+                        <span className="text-gray-900 text-sm">{b}</span>
                       </li>
                     ))}
                   </ul>
@@ -152,10 +152,10 @@ const Automation = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center max-w-2xl">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Ready to set this up?</h2>
-          <p className="text-muted-foreground text-lg mb-8">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to set this up?</h2>
+          <p className="text-gray-500 text-lg mb-8">
             Book a free call. We'll figure out which tools make sense for your business and get them running.
           </p>
           <Button asChild size="lg" className="rounded-full px-10 py-6 font-semibold shadow-warm">

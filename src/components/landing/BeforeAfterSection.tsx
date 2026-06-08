@@ -22,14 +22,14 @@ const after = [
 
 const BeforeAfterSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Life Before vs. After <span className="text-primary">Detool.AI</span>
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-gray-500 text-lg">
               Stop working harder. Start working smarter.
             </p>
           </div>
@@ -41,11 +41,11 @@ const BeforeAfterSection = () => {
                 <div className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center">
                   <X className="w-4 h-4 text-destructive" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Before Detool.AI</h3>
+                <h3 className="text-xl font-bold text-gray-900">Before Detool.AI</h3>
               </div>
               <ul className="space-y-3">
                 {before.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  <li key={i} className="flex items-start gap-3 text-gray-500 text-sm">
                     <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -59,11 +59,11 @@ const BeforeAfterSection = () => {
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                   <Check className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">After Detool.AI</h3>
+                <h3 className="text-xl font-bold text-gray-900">After Detool.AI</h3>
               </div>
               <ul className="space-y-3">
                 {after.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-foreground text-sm">
+                  <li key={i} className="flex items-start gap-3 text-gray-900 text-sm">
                     <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -80,9 +80,9 @@ const BeforeAfterSection = () => {
               { stat: "24/7", label: "AI works around the clock" },
               { stat: "3 days", label: "Time to go fully live" },
             ].map((item, i) => (
-              <div key={i} className="bg-card border border-border rounded-xl p-4 text-center">
+              <div key={i} className="bg-white border border-gray-200 rounded-xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-primary mb-1">{item.stat}</p>
-                <p className="text-xs text-muted-foreground">{item.label}</p>
+                <p className="text-xs text-gray-500">{item.label}</p>
               </div>
             ))}
           </div>

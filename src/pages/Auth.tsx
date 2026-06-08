@@ -115,7 +115,7 @@ const Auth = () => {
 
   if (showConfirmation) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-white">
         <SEO title={"Sign in — Detool.AI"} description={"Sign in or create your Detool.AI account."} path={"/auth"} />
         <Header />
         
@@ -128,11 +128,11 @@ const Auth = () => {
                 </div>
               </div>
               
-              <h1 className="text-3xl font-bold text-foreground mb-4">
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">
                 Thank You!
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-lg text-gray-500 mb-6">
                 A confirmation email will be sent out in a few minutes. Please check your inbox to verify your account.
               </p>
               
@@ -140,7 +140,7 @@ const Auth = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 text-left">
                     <CheckCircle className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-muted-foreground">Check your email at <strong className="text-foreground">{email}</strong></span>
+                    <span className="text-gray-500">Check your email at <strong className="text-gray-900">{email}</strong></span>
                   </div>
                 </CardContent>
               </Card>
@@ -165,7 +165,7 @@ const Auth = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       
       <main className="pt-32 pb-20">

@@ -101,14 +101,14 @@ const DemoRequestForm = () => {
   };
 
   return (
-    <section id="demo-form" className="py-20 bg-muted/20">
+    <section id="demo-form" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-lg mx-auto">
-          <div className="bg-card rounded-2xl border border-border p-8 md:p-10 shadow-card">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
+          <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-10 shadow-card">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4">
               Book Your Free Meeting
             </h2>
-            <p className="text-muted-foreground text-center mb-8">
+            <p className="text-gray-500 text-center mb-8">
               See how Detool.AI can book more appointments for you
             </p>
             
@@ -165,7 +165,7 @@ const DemoRequestForm = () => {
               </Button>
             </form>
             
-            <p className="text-sm text-muted-foreground text-center mt-6">
+            <p className="text-sm text-gray-500 text-center mt-6">
               Trusted by sales professionals and teams across the U.S.
             </p>
           </div>

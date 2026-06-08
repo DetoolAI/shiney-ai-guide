@@ -20,7 +20,7 @@ const OutcomeSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="grid gap-16">
@@ -40,10 +40,10 @@ const OutcomeSection = () => {
                 
                 {/* Content */}
                 <div className="text-center md:text-left flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                     {outcome.headline}
                   </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-gray-500 leading-relaxed">
                     {outcome.description}
                   </p>
                 </div>

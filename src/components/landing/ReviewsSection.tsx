@@ -52,7 +52,7 @@ const StarRating = ({ rating }: { rating: number }) => (
 
 const ReviewsSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -60,10 +60,10 @@ const ReviewsSection = () => {
               <Star className="w-4 h-4 fill-primary text-primary" />
               <span className="text-sm font-medium text-primary">5.0 on Google</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               What Our Clients Are Saying
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-gray-500 text-lg">
               Real results from real businesses across the country.
             </p>
           </div>
@@ -72,20 +72,20 @@ const ReviewsSection = () => {
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-4"
+                className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col gap-4"
               >
                 <StarRating rating={review.rating} />
-                <p className="text-foreground text-sm leading-relaxed flex-1">
+                <p className="text-gray-900 text-sm leading-relaxed flex-1">
                   "{review.text}"
                 </p>
-                <div className="flex items-center justify-between pt-2 border-t border-border">
+                <div className="flex items-center justify-between pt-2 border-t border-gray-200">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">
                       {review.name[0]}
                     </div>
-                    <span className="font-semibold text-foreground text-sm">{review.name}</span>
+                    <span className="font-semibold text-gray-900 text-sm">{review.name}</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">{review.date}</span>
+                  <span className="text-xs text-gray-500">{review.date}</span>
                 </div>
               </div>
             ))}

@@ -145,7 +145,7 @@ If you change your mind about that demo, just reply to this text. No pressure!
 • Mention you're local/understand their market`;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SEO title={"Phone Script — Detool.AI"} description={"The Detool.AI phone script for converting cold leads into booked discovery calls."} path={"/phone-script"} />
       <Header />
       <div className="pt-20">
@@ -155,7 +155,7 @@ If you change your mind about that demo, just reply to this text. No pressure!
               <h1 className="text-4xl font-bold mb-4">
                 Complete Phone Script for <span className="text-primary">Detool.AI</span>
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-gray-500">
                 Professional phone script based on your website content and value proposition
               </p>
             </div>
@@ -177,7 +177,7 @@ If you change your mind about that demo, just reply to this text. No pressure!
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-muted/50 p-6 rounded text-sm whitespace-pre-line font-mono">
+                <div className="bg-gray-100/50 p-6 rounded text-sm whitespace-pre-line font-mono">
                   {phoneScript}
                 </div>
               </CardContent>
@@ -192,7 +192,7 @@ If you change your mind about that demo, just reply to this text. No pressure!
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold mb-3 text-primary">Before the Call:</h3>
-                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                    <ul className="list-disc list-inside space-y-2 text-gray-500">
                       <li>Research their business on Google/Instagram</li>
                       <li>Check their current response time on social</li>
                       <li>Note their service types and pricing if visible</li>
@@ -201,7 +201,7 @@ If you change your mind about that demo, just reply to this text. No pressure!
                   </div>
                   <div>
                     <h3 className="font-semibold mb-3 text-primary">During the Call:</h3>
-                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                    <ul className="list-disc list-inside space-y-2 text-gray-500">
                       <li>Smile while talking - it comes through in your voice</li>
                       <li>Mirror their energy level and speaking pace</li>
                       <li>Take notes on their specific challenges</li>

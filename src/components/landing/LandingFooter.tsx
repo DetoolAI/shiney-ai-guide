@@ -12,7 +12,7 @@ const LandingFooter = () => {
               alt="Detool.AI"
               className="w-9 h-9 rounded-lg"
             />
-            <span className="text-lg font-bold text-foreground">
+            <span className="text-lg font-bold text-gray-900">
               detool<span className="text-primary">.ai</span>
             </span>
           </Link>

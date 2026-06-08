@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 
 const Welcome = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SEO title={"Welcome to Detool.AI"} description={"Your Detool.AI account is ready — next steps to start automating lead follow-up."} path={"/welcome"} />
       <Header />
       
@@ -21,20 +21,20 @@ const Welcome = () => {
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Welcome Aboard!
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-gray-500 mb-8">
               Your account has been successfully created. We're excited to have you with us!
             </p>
             
             <Card className="mb-8">
               <CardContent className="p-6">
-                <h2 className="text-lg font-semibold text-foreground mb-4">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">
                   What happens next?
                 </h2>
-                <ul className="text-left space-y-3 text-muted-foreground">
+                <ul className="text-left space-y-3 text-gray-500">
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary text-sm font-medium shrink-0">1</span>
                     <span>Our team will review your information and reach out within 24 hours.</span>

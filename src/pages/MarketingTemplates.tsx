@@ -135,7 +135,7 @@ IF "Already have a system":
 "Hi [Name], great talking with you! Here's the demo link: [calendar link]. Looking forward to showing you how [Business Name] can capture those after-hours bookings!"`;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SEO title={"Marketing Templates — Detool.AI"} description={"Copy-and-paste email, SMS, and outreach templates Detool.AI uses to book more appointments."} path={"/marketing"} />
       <Header />
       <div className="pt-20">
@@ -145,7 +145,7 @@ IF "Already have a system":
               <h1 className="text-4xl font-bold mb-4">
                 Marketing Templates for <span className="text-primary">Detool.AI</span>
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-gray-500">
                 Ready-to-use cold email templates and phone scripts to close your first deals
               </p>
             </div>
@@ -161,7 +161,7 @@ IF "Already have a system":
               <CardContent>
                 <div className="space-y-6">
                   {emailTemplates.map((template, index) => (
-                    <div key={index} className="border border-border rounded-lg p-4">
+                    <div key={index} className="border border-gray-200 rounded-lg p-4">
                       <div className="flex justify-between items-start mb-3">
                         <h3 className="font-semibold text-lg">Template {index + 1}</h3>
                         <Button
@@ -176,7 +176,7 @@ IF "Already have a system":
                       <div className="mb-3">
                         <strong>Subject:</strong> {template.subject}
                       </div>
-                      <div className="bg-muted/50 p-4 rounded text-sm whitespace-pre-line">
+                      <div className="bg-gray-100/50 p-4 rounded text-sm whitespace-pre-line">
                         {template.body}
                       </div>
                     </div>
@@ -203,7 +203,7 @@ IF "Already have a system":
                     Copy Script
                   </Button>
                 </div>
-                <div className="bg-muted/50 p-6 rounded text-sm whitespace-pre-line font-mono">
+                <div className="bg-gray-100/50 p-6 rounded text-sm whitespace-pre-line font-mono">
                   {phoneScript}
                 </div>
               </CardContent>
@@ -218,7 +218,7 @@ IF "Already have a system":
                 <div className="space-y-4">
                   <div>
                     <h3 className="font-semibold mb-2">Email Strategy:</h3>
-                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                    <ul className="list-disc list-inside space-y-1 text-gray-500">
                       <li>Send emails Tuesday-Thursday, 10am-2pm for best response rates</li>
                       <li>Personalize [Name] and [Business Name] for each prospect</li>
                       <li>Follow up 3 times: Day 3, Day 7, Day 14</li>
@@ -227,7 +227,7 @@ IF "Already have a system":
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Phone Strategy:</h3>
-                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                    <ul className="list-disc list-inside space-y-1 text-gray-500">
                       <li>Call Tuesday-Thursday, 9am-11am or 2pm-4pm</li>
                       <li>Practice the script until it sounds natural</li>
                       <li>Always ask questions and listen</li>

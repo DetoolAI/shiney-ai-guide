@@ -9,10 +9,10 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             The numbers don't lie
           </h2>
           
@@ -21,33 +21,33 @@ const TrustSection = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-gray-500">{stat.label}</div>
               </div>
             ))}
           </div>
           
           {/* Trust statements */}
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-card/50 p-6 rounded-xl border border-border text-center">
+            <div className="bg-white/50 p-6 rounded-xl border border-gray-200 text-center">
               <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">No extra staff. Ever.</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-semibold text-gray-900 mb-2">No extra staff. Ever.</h3>
+              <p className="text-sm text-gray-500">
                 You get the output of a full follow-up team without hiring, training, or managing anyone.
               </p>
             </div>
             
-            <div className="bg-card/50 p-6 rounded-xl border border-border text-center">
+            <div className="bg-white/50 p-6 rounded-xl border border-gray-200 text-center">
               <TrendingUp className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">If it doesn't work, we make it right.</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-semibold text-gray-900 mb-2">If it doesn't work, we make it right.</h3>
+              <p className="text-sm text-gray-500">
                 60-day ROI guarantee. No results? We don't just walk away — we fix it.
               </p>
             </div>
             
-            <div className="bg-card/50 p-6 rounded-xl border border-border text-center">
+            <div className="bg-white/50 p-6 rounded-xl border border-gray-200 text-center">
               <Star className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">Real businesses. Real owners like you.</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-semibold text-gray-900 mb-2">Real businesses. Real owners like you.</h3>
+              <p className="text-sm text-gray-500">
                 Not a Fortune 500 tool. Built for everyday business owners who are tired of losing leads they worked hard to get.
               </p>
             </div>

@@ -114,7 +114,7 @@ const ClientOnboardForm = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SEO title={"Client Onboarding — Detool.AI"} description={"Onboarding form for new Detool.AI clients."} path={"/client-onboard-form"} />
       <Header />
       
