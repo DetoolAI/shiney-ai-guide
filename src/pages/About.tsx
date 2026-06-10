@@ -1,58 +1,57 @@
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LandingFooter from "@/components/landing/LandingFooter";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Star, CheckCircle2 } from "lucide-react";
-import SEO from "@/components/SEO";
-
-const reviews = [
-  { name: "Jayden Gutierrez", text: "My experience with this marketing agency was a 10/10, definitely recommend.", date: "a day ago" },
-  { name: "Leah M", text: "Detool AI is the real deal. Smart strategies, fast results, and clear communication. If you want marketing that actually converts, this is it.", date: "a month ago" },
-  { name: "Vanessa Iheme", text: "I had a great experience with Detool Ai. Such a professional and affordable marketing agency. Offered 24/7 support, delivered on time, and did an amazing job.", date: "a month ago" },
-];
+import { CheckCircle2, Star } from "lucide-react";
 
 const values = [
-  "We don't oversell — we tell you what actually works",
+  "We don't oversell — we tell you what actually works for beauty businesses",
   "We build it, set it up, and support you after launch",
-  "Month-to-month only — no long-term contracts ever",
-  "150+ service businesses already running on our system",
+  "Month-to-month only — no long-term contracts, ever",
+  "Real clients, real reviews — you can verify every one on Google",
   "Real support from a real person, not a chatbot ticket",
-  "We improve your site over time — no extra charge",
+  "We improve your system over time — no extra charge",
+];
+
+const reviews = [
+  { name: "Creme De La Creme N/LLC", text: "Justin does an amazing job at paying attention to detail and making sure he achieves client satisfaction. Incredibly professional website design! Look no further!" },
+  { name: "Leah M", text: "Detool AI is the real deal. Smart strategies, fast results, and clear communication. If you want marketing that actually converts, this is it." },
+  { name: "Vanessa Iheme", text: "I had a great experience with Detool AI. Such a professional and affordable agency. 24/7 support, delivered on time, amazing results. I will definitely be working with him again." },
 ];
 
 const About = () => {
   return (
     <div className="min-h-screen bg-white">
-      <SEO title="About — Detool.AI" description="Learn about Detool.AI — built to help service businesses stop losing leads and get more clients." path="/about" />
       <Header />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20" style={{ background: "#0f1b2d" }}>
+      <section style={{ background: "#0f1b2d" }} className="pt-40 pb-20">
         <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-            Built by someone sick of watching<br />
-            <span className="text-primary">good businesses lose</span><br />
-            for dumb reasons.
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+            Built for beauty business owners who are done leaving money on the table.
           </h1>
-          <p className="text-xl text-gray-400">The story behind Detool.AI.</p>
+          <p className="text-white/70 text-xl">The story behind Detool.AI.</p>
         </div>
       </section>
 
-      {/* Story */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
             <p>
-              I started Detool.AI after seeing the same thing over and over — business owners busting their ass to get leads, then losing them because follow-up was too slow or they didn't have a decent website.
+              I started Detool.AI after seeing the same pattern over and over — beauty business owners working incredibly hard, doing great work, but losing clients because their systems were broken.
             </p>
             <p>
-              That's not a hustle problem. That's a systems problem. And it's 100% fixable.
+              No-shows killing revenue. Missed calls going to voicemail and never converting. Clients finishing an appointment and never hearing from the business again. Slow weeks with no way to fill them fast.
             </p>
             <p>
-              So I built the fix. A real website that makes you look like a legit business. Automated follow-up so you never miss a lead. Review requests that go out without you thinking about it.
+              That's not a work ethic problem. That's a systems problem. And every single one of those problems is 100% fixable with the right tools.
             </p>
             <p>
-              We're not some big agency with 50 employees. We're a small team that actually gives a damn about the businesses we work with. 150+ clients in, and we're just getting started.
+              So we built the fix. A branded booking website that collects deposits automatically. Missed call text-back that fires within seconds. Post-visit review requests that go out without you thinking about them. Campaigns that fill your schedule in one click.
+            </p>
+            <p>
+              We set it all up for you in 48 hours. You launch it in 25 minutes. And from that point on, it runs in the background while you focus on your clients.
+            </p>
+            <p>
+              We're not a big agency. We're a small, focused team that actually gives a damn about the beauty businesses we work with. Every client matters to us.
             </p>
           </div>
 
@@ -66,17 +65,16 @@ const About = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <Button asChild size="lg" className="rounded-lg px-10 py-6 font-bold shadow-md">
-              <Link to="/contact">Work With Us</Link>
-            </Button>
+            <Link to="/book-a-call" className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
+              Book A Free Call
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Reviews */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-4xl font-black text-gray-900 text-center mb-12">What clients say</h2>
+          <h2 className="text-3xl font-black text-gray-900 text-center mb-12">What our clients say</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {reviews.map((r, i) => (
               <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
@@ -84,10 +82,7 @@ const About = () => {
                 <p className="text-gray-700 text-sm leading-relaxed mb-5">"{r.text}"</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
                   <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-black text-sm">{r.name[0]}</div>
-                  <div>
-                    <p className="font-bold text-gray-900 text-sm">{r.name}</p>
-                    <p className="text-xs text-gray-400">{r.date}</p>
-                  </div>
+                  <p className="font-bold text-gray-900 text-sm">{r.name}</p>
                 </div>
               </div>
             ))}
@@ -95,7 +90,7 @@ const About = () => {
         </div>
       </section>
 
-      <Footer />
+      <LandingFooter />
     </div>
   );
 };
