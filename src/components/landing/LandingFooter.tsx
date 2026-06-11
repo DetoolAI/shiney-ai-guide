@@ -15,7 +15,7 @@ const LandingFooter = () => {
                 <span className="block text-base font-black text-primary tracking-tight -mt-1">.AI</span>
               </div>
             </Link>
-            <p className="text-xs text-gray-400 leading-relaxed mb-4">The complete booking & automation system for beauty businesses.</p>
+            <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for beauty businesses.</p>
             <div className="flex items-center gap-3">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
@@ -76,7 +76,7 @@ const LandingFooter = () => {
         </div>
 
         <div className="border-t border-gray-200 pt-5 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Detool.AI. All rights reserved. · The Complete Booking & Automation System for Beauty Businesses.
+          © {new Date().getFullYear()} Detool.AI. All rights reserved. · Website Design & Marketing For Beauty Businesses.
         </div>
       </div>
     </footer>

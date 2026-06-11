@@ -69,8 +69,8 @@ const Beauty = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="AI Booking & Marketing for Salons | Detool.AI"
-        description="Detool.AI books more appointments, cuts no-shows, and gets more 5-star reviews for hair, lash, brow, and beauty salons — automatically."
+        title="Website Design & Marketing for Salons | Detool.AI"
+        description="Detool.AI designs beautiful websites and runs marketing for hair, lash, brow, and beauty salons — more bookings, fewer no-shows, and 5-star reviews on autopilot."
         path="/beauty"
       />
 

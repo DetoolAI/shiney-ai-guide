@@ -30,7 +30,7 @@ const OurWork = () => {
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/60 font-medium mb-2 uppercase tracking-wide text-sm">Case Study</p>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Crème de la Crème Nails</h1>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">How we built a complete booking & automation system for a nail salon — in 48 hours.</p>
+          <p className="text-white/70 text-xl max-w-2xl mx-auto">How we designed a complete website and marketing system for a nail salon — in 48 hours.</p>
         </div>
       </section>
 

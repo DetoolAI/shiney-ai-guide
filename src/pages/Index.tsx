@@ -65,11 +65,11 @@ const Index = () => {
       <section className="bg-detool-dark pt-40 pb-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] max-w-5xl mx-auto mb-6">
-            Booking & Marketing Systems For Beauty Businesses
+            Website Design & Marketing For Beauty Businesses
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-            Cut the BS — marketing isn't rocket science. No agency (including ours) has the miracle fix for all your problems.
-            We'll give you the tools to win, but you need to commit to using them.
+            We design stunning websites and run marketing that fills your calendar — built for nail salons, lash studios, spas, and beauty pros.
+            No miracle fix. Just tools that work when you commit to using them.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <Link
@@ -219,7 +219,7 @@ const Index = () => {
       <section className="bg-detool-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Want to schedule a time to talk?</h2>
-          <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">See everything we do to help you grow your beauty business — then let us build it for you.</p>
+          <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website design, marketing, and automations — all built to grow your beauty business.</p>
           <Link
             to="/book-a-call"
             className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl"
