@@ -90,7 +90,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center h-20 gap-8">
           <Link to="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
-            <DetoolLogo size={44} wordmarkSize="md" />
+            <DetoolLogo size="md" />
           </Link>
 
           <nav className="hidden md:flex flex-1 items-center justify-center gap-7">

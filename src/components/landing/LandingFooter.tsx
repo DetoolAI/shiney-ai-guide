@@ -9,7 +9,7 @@ const LandingFooter = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-flex mb-3">
-              <DetoolLogo size={36} wordmarkSize="sm" />
+              <DetoolLogo size="sm" />
             </Link>
             <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for beauty businesses.</p>
             <div className="flex items-center gap-3">

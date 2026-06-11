@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-flex mb-4">
-              <DetoolLogo size={36} wordmarkSize="sm" />
+              <DetoolLogo size="sm" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Website design & automation for service businesses. Real tools, real results.

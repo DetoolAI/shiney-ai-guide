@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <rect width="1200" height="630" fill="#0a0a0a"/>
-  <rect x="520" y="118" width="160" height="160" rx="36" fill="#e8702a"/>
-  <path d="M556 158 H628 C660 158 680 178 680 198 V198 C680 218 660 238 628 238 H556 V158 Z M572 174 V222 H620 C636 222 648 210 648 198 C648 186 636 174 620 174 H572 Z" fill="white"/>
-  <text x="600" y="400" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">DETOOL</text>
-  <text x="600" y="470" text-anchor="middle" fill="#e8702a" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="900">.AI</text>
-  <text x="600" y="540" text-anchor="middle" fill="#ffffff" opacity="0.7" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Website Design &amp; Marketing For Beauty Businesses</text>
+  <text x="600" y="300" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="900" letter-spacing="-2">
+    <tspan fill="white">Detool</tspan><tspan fill="#e8702a">.AI</tspan>
+  </text>
+  <text x="600" y="380" text-anchor="middle" fill="#ffffff" opacity="0.7" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Website Design &amp; Marketing For Beauty Businesses</text>
 </svg>
