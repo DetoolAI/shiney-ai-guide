@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LandingFooter from "@/components/landing/LandingFooter";
 import { Card, CardContent } from "@/components/ui/card";
 import SEO from "@/components/SEO";
 
@@ -215,7 +215,7 @@ const Privacy = () => {
         </div>
       </main>
       
-      <Footer />
+      <LandingFooter />
     </div>
   );
 };

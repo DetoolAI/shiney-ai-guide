@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
+import DepositROICalculator from "@/components/landing/DepositROICalculator";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { useState } from "react";
@@ -51,7 +52,7 @@ const Pricing = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section style={{ background: "#0f1b2d" }} className="pt-40 pb-20">
+      <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Simple Pricing.<br />No Surprises.</h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto">One plan. Everything included. Done for you in 48 hours.</p>
@@ -93,29 +94,13 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* ROI Box */}
-      <section className="py-20 bg-gray-50">
+      {/* ROI Calculator */}
+      <section className="py-20 bg-detool-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Does $397/month make sense?</h2>
-            <div className="bg-white border border-gray-200 rounded-2xl p-8 space-y-4">
-              <div className="flex justify-between items-center border-b border-gray-200 pb-4">
-                <span className="text-gray-700 font-medium">25 deposits/week × $20 each</span>
-                <span className="font-bold text-gray-900">$500/week</span>
-              </div>
-              <div className="flex justify-between items-center border-b border-gray-200 pb-4">
-                <span className="text-gray-700 font-medium">Monthly secured revenue from deposits</span>
-                <span className="font-bold text-gray-900">$2,000/month</span>
-              </div>
-              <div className="flex justify-between items-center border-b border-gray-200 pb-4">
-                <span className="text-gray-700 font-medium">Cost of Detool.AI</span>
-                <span className="font-bold text-primary">$397/month</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="font-bold text-gray-900 text-lg">Profit from deposits alone</span>
-                <span className="font-black text-primary text-xl">$1,603/month</span>
-              </div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4">Does $397/month make sense?</h2>
+            <p className="text-gray-500 text-center mb-8">Drag the slider — see your deposit math in real time.</p>
+            <DepositROICalculator />
             <p className="text-center text-gray-500 mt-4 text-sm">That's before counting the extra bookings from missed call recovery, marketing campaigns, and loyalty programs.</p>
           </div>
         </div>
@@ -133,7 +118,7 @@ const Pricing = () => {
         </div>
       </section>
 
-      <section style={{ background: "#0f1b2d" }} className="py-20">
+      <section className="bg-detool-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Ready to see if this is right for you?</h2>
           <p className="text-white/70 text-lg mb-8">Book a free 20-minute call. No pressure. We'll walk you through exactly what you'll get.</p>

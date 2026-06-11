@@ -46,7 +46,7 @@ const Blog = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section style={{ background: "#0f1b2d" }} className="pt-40 pb-20">
+      <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">The Beauty Business Blog</h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto">Practical advice for nail salons, lash studios, spas, and beauty pros who want more bookings and less stress.</p>

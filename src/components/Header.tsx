@@ -17,6 +17,7 @@ const featureLinks = [
 
 const aboutLinks = [
   { label: "About Us", to: "/about" },
+  { label: "Contact", to: "/contact" },
   { label: "Nail Salons", to: "/industries/nail-salons" },
   { label: "Lash Studios", to: "/industries/lash-studios" },
   { label: "Spas", to: "/industries/spas" },
@@ -73,6 +74,7 @@ const Header = () => {
             <Link to="/pricing" className={`font-semibold text-base transition-colors ${isActive("/pricing") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Pricing</Link>
             <Link to="/testimonials" className={`font-semibold text-base transition-colors ${isActive("/testimonials") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Testimonials</Link>
             <Link to="/our-work" className={`font-semibold text-base transition-colors ${isActive("/our-work") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Our Work</Link>
+            <Link to="/blog" className={`font-semibold text-base transition-colors ${isActive("/blog") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Blog</Link>
 
             {/* About dropdown */}
             <div className="relative" onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
@@ -91,8 +93,11 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Book A Call — RIGHT */}
-          <div className="hidden md:block flex-shrink-0">
+          {/* Actions — RIGHT */}
+          <div className="hidden md:flex items-center gap-4 flex-shrink-0">
+            <Link to="/auth" className="font-semibold text-base text-gray-800 hover:text-primary transition-colors">
+              Log In
+            </Link>
             <Button onClick={handleBookCall} className="rounded-lg px-7 py-3 text-base font-bold bg-primary hover:bg-primary/90 shadow-md h-auto">
               Book A Call
             </Button>
@@ -124,6 +129,7 @@ const Header = () => {
             <hr className="border-gray-200 my-1" />
             <Link to="/about" onClick={() => setOpen(false)} className="font-semibold text-gray-800">About</Link>
             <Link to="/contact" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Contact</Link>
+            <Link to="/auth" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Log In</Link>
             <Button onClick={handleBookCall} className="rounded-lg w-full font-bold mt-2 bg-primary hover:bg-primary/90">Book A Call</Button>
           </div>
         )}

@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import DemoThankYou from "./pages/DemoThankYou";
 import OurWork from "./pages/OurWork";
 import BookACall from "./pages/BookACall";
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/demo-thank-you" element={<DemoThankYou />} />
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/book-a-call" element={<BookACall />} />

@@ -23,7 +23,7 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section style={{ background: "#0f1b2d" }} className="pt-40 pb-20">
+      <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Built for beauty business owners who are done leaving money on the table.
@@ -34,7 +34,13 @@ const About = () => {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+          <div className="flex flex-col md:flex-row gap-10 items-start mb-12">
+            <div className="w-full md:w-64 flex-shrink-0">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-detool-dark to-primary/60 flex items-center justify-center text-white font-bold text-center p-4">
+                Justin<br />Founder, Detool.AI
+              </div>
+            </div>
+            <div className="space-y-6 text-gray-600 text-lg leading-relaxed flex-1">
             <p>
               I started Detool.AI after seeing the same pattern over and over — beauty business owners working incredibly hard, doing great work, but losing clients because their systems were broken.
             </p>
@@ -53,6 +59,7 @@ const About = () => {
             <p>
               We're not a big agency. We're a small, focused team that actually gives a damn about the beauty businesses we work with. Every client matters to us.
             </p>
+            </div>
           </div>
 
           <div className="mt-12 grid md:grid-cols-2 gap-4">

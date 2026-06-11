@@ -19,7 +19,15 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
 				serif: ['"Playfair Display"', 'Georgia', 'serif'],
+			},
+			colors: {
+				detool: {
+					dark: '#0a0a0a',
+					cream: '#fafaf7',
+					amber: '#e8702a',
+				},
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail } from "lucide-react";
+import { Mail, Instagram, Youtube } from "lucide-react";
 import RobotLogo from "@/components/RobotLogo";
 
 const LandingFooter = () => {
@@ -7,7 +7,6 @@ const LandingFooter = () => {
     <footer className="bg-white border-t border-gray-200 pt-12 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-          {/* Logo + tagline */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-3">
               <RobotLogo size={36} />
@@ -16,10 +15,20 @@ const LandingFooter = () => {
                 <span className="block text-base font-black text-primary tracking-tight -mt-1">.AI</span>
               </div>
             </Link>
-            <p className="text-xs text-gray-400 leading-relaxed">The complete booking & automation system for beauty businesses.</p>
+            <p className="text-xs text-gray-400 leading-relaxed mb-4">The complete booking & automation system for beauty businesses.</p>
+            <div className="flex items-center gap-3">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors" aria-label="YouTube">
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors text-xs font-bold" aria-label="TikTok">
+                TT
+              </a>
+            </div>
           </div>
 
-          {/* Products */}
           <div>
             <p className="font-bold text-gray-900 text-sm mb-3">Products</p>
             <div className="space-y-2 text-sm text-gray-500">
@@ -34,7 +43,6 @@ const LandingFooter = () => {
             </div>
           </div>
 
-          {/* Company */}
           <div>
             <p className="font-bold text-gray-900 text-sm mb-3">Company</p>
             <div className="space-y-2 text-sm text-gray-500">
@@ -44,11 +52,12 @@ const LandingFooter = () => {
               <Link to="/blog" className="block hover:text-primary transition-colors">Blog</Link>
               <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
               <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
+              <Link to="/book-a-call" className="block hover:text-primary transition-colors">Book A Call</Link>
               <Link to="/privacy" className="block hover:text-primary transition-colors">Privacy</Link>
+              <Link to="/terms" className="block hover:text-primary transition-colors">Terms</Link>
             </div>
           </div>
 
-          {/* Industries */}
           <div>
             <p className="font-bold text-gray-900 text-sm mb-3">Industries</p>
             <div className="space-y-2 text-sm text-gray-500">
@@ -61,6 +70,9 @@ const LandingFooter = () => {
                 <Mail className="w-3.5 h-3.5" /> detoolai@gmail.com
               </a>
             </div>
+            <Link to="/book-a-call" className="inline-block mt-4 text-sm font-bold text-primary hover:text-primary/80">
+              Book A Call →
+            </Link>
           </div>
         </div>
 

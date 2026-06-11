@@ -24,7 +24,7 @@ const NailSalons = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section style={{ background: "#0f1b2d" }} className="pt-40 pb-20">
+      <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/60 font-medium mb-2 uppercase tracking-wide text-sm">Built for</p>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Nail Salons</h1>
@@ -71,7 +71,7 @@ const NailSalons = () => {
         </div>
       </section>
 
-      <section style={{ background: "#0f1b2d" }} className="py-20">
+      <section className="bg-detool-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-white mb-4">Ready to run your nail salon smarter?</h2>
           <p className="text-white/70 text-lg mb-8">Book a free call. We'll build your complete system in 48 hours.</p>

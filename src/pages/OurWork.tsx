@@ -26,7 +26,7 @@ const OurWork = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section style={{ background: "#0f1b2d" }} className="pt-40 pb-20">
+      <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/60 font-medium mb-2 uppercase tracking-wide text-sm">Case Study</p>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Crème de la Crème Nails</h1>
@@ -63,7 +63,16 @@ const OurWork = () => {
             </div>
 
             <h2 className="text-2xl font-bold text-gray-900 mb-6">What We Built</h2>
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 mb-10">
+
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              {["Booking Flow", "Admin Dashboard", "Member Portal"].map((label) => (
+                <div key={label} className="aspect-video rounded-2xl bg-gradient-to-br from-detool-dark via-gray-800 to-primary/40 flex items-center justify-center">
+                  <span className="text-white/80 font-semibold text-sm">{label} Screenshot</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-detool-cream border border-gray-200 rounded-2xl p-8 mb-10">
               <ul className="space-y-3">
                 {built.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-700">
@@ -89,7 +98,7 @@ const OurWork = () => {
         </div>
       </section>
 
-      <section style={{ background: "#0f1b2d" }} className="py-20">
+      <section className="bg-detool-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Want us to build this for your salon?</h2>
           <p className="text-white/70 text-lg mb-8">Book a free 20-minute call. We'll show you exactly what your system will look like.</p>

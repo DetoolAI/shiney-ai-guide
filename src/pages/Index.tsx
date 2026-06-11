@@ -1,13 +1,15 @@
 import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
-import DemoRequestForm from "@/components/landing/DemoRequestForm";
-import ReviewsSection from "@/components/landing/ReviewsSection";
+import VideoTestimonialGrid from "@/components/landing/VideoTestimonialGrid";
+import PartnersSection from "@/components/landing/PartnersSection";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
     title: "Branded Booking Website",
+    slug: "/features/booking-website",
     description: "Your own professional booking site that works 24/7 — no phone tag, no missed appointments. Clients book, pay deposits, and confirm in minutes.",
     bullets: [
       "Custom domain and your branding",
@@ -18,6 +20,7 @@ const features = [
   },
   {
     title: "Missed Call Text Back",
+    slug: "/features/missed-call-text-back",
     description: "Every missed call automatically gets a text back within seconds. Never lose a client to voicemail again.",
     bullets: [
       "Instant automated text reply to every missed call",
@@ -28,6 +31,7 @@ const features = [
   },
   {
     title: "5 Star Review Funnel",
+    slug: "/features/review-funnel",
     description: "After every appointment, clients get an automated message asking for a review. Happy clients leave reviews. Unhappy clients reach you first — not Google.",
     bullets: [
       "Automated post-appointment review requests",
@@ -38,6 +42,7 @@ const features = [
   },
   {
     title: "One Click Campaigns",
+    slug: "/features/marketing-campaigns",
     description: "Send a text or email campaign to all your clients in one click. Promote a slow week, launch a new service, or re-engage clients who haven't been back.",
     bullets: [
       "Pre-written beauty campaign templates included",
@@ -49,7 +54,12 @@ const features = [
 ];
 
 const industries = [
-  "Nail Salons", "Lash Studios", "Spas", "Brow Bars", "Hair Salons", "Waxing Studios",
+  { name: "Nail Salons", slug: "/industries/nail-salons" },
+  { name: "Lash Studios", slug: "/industries/lash-studios" },
+  { name: "Spas", slug: "/industries/spas" },
+  { name: "Brow Bars", slug: null },
+  { name: "Hair Salons", slug: null },
+  { name: "Waxing Studios", slug: null },
 ];
 
 const steps = [
@@ -98,73 +108,80 @@ const Index = () => {
       <Header />
 
       {/* Hero */}
-      <section style={{ background: "#0f1b2d" }} className="pt-40 pb-24">
+      <section className="bg-detool-dark pt-40 pb-24">
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
             <span className="text-white/80 text-sm font-medium">The Complete Booking & Automation System for Beauty Businesses</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight max-w-4xl mx-auto mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight max-w-5xl mx-auto mb-6">
             Stop Losing Money to No-Shows, Missed Calls & Clients Who Never Come Back
           </h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto mb-10">
-            Detool.AI gives your beauty business a branded booking system, automated follow-ups, deposit collection, and marketing campaigns — all done for you in 48 hours.
+            We build a complete booking and automation system for your beauty business. Deposits collected automatically. Clients come back on their own.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <a
-              href="#demo-form"
-              onClick={e => { e.preventDefault(); document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" }); }}
+            <Link
+              to="/book-a-call"
               className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-8 py-4 text-lg"
             >
-              Book A Free Call
-            </a>
-            <a href="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-base underline underline-offset-4">
+              Book A Call
+            </Link>
+            <Link to="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-base underline underline-offset-4">
               See Our Work
-            </a>
+            </Link>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <div className="flex items-center">
               <div className="flex -space-x-2">
-                {["A","B","C","D","E"].map((l, i) => (
+                {["A", "B", "C", "D", "E"].map((l, i) => (
                   <div key={i} className="w-9 h-9 rounded-full bg-primary/80 border-2 border-white flex items-center justify-center text-white font-bold text-sm">{l}</div>
                 ))}
               </div>
-              <span className="ml-3 text-white/70 text-sm">Trusted by beauty pros</span>
+              <span className="ml-3 text-white/70 text-sm">Trusted by beauty businesses across the US</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2">
-              <span className="text-yellow-400 text-sm font-bold">★★★★★</span>
-              <span className="text-white text-sm font-semibold">5.0 on Google</span>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2">
+                <span className="text-yellow-400 text-sm font-bold">★★★★★</span>
+                <span className="text-white text-sm font-semibold">Google</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2">
+                <span className="text-yellow-400 text-sm font-bold">★★★★★</span>
+                <span className="text-white text-sm font-semibold">Facebook</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials strip */}
-      <ReviewsSection />
+      <VideoTestimonialGrid showSeeAll />
 
       {/* Feature blocks */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-detool-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything Your Beauty Business Needs</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Simple systems that actually work</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">One platform. Eight tools. Built specifically for beauty businesses that are serious about growth.</p>
             </div>
             <div className="flex flex-col gap-16">
               {features.map((f, i) => (
                 <div key={i} className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-10 items-center`}>
-                  <div className="flex-1 bg-white border border-gray-200 rounded-2xl shadow-sm h-56 flex items-center justify-center">
-                    <span className="text-gray-300 text-sm font-medium">{f.title}</span>
+                  <div className="flex-1 aspect-video bg-gradient-to-br from-detool-dark via-gray-800 to-primary/40 rounded-2xl shadow-lg flex items-center justify-center">
+                    <span className="text-white/80 font-semibold">{f.title}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{f.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">{f.title}</h3>
                     <p className="text-gray-500 mb-5 leading-relaxed">{f.description}</p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-5">
                       {f.bullets.map((b, j) => (
                         <li key={j} className="flex items-start gap-2 text-gray-700">
                           <span className="text-primary font-bold mt-0.5">✓</span> {b}
                         </li>
                       ))}
                     </ul>
+                    <Link to={f.slug} className="text-primary font-semibold hover:underline">
+                      See Demo →
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -177,9 +194,9 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Math Is Simple</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">The Math Is Simple</h2>
             <p className="text-gray-500 text-lg mb-10">Let's talk deposits. Even if this is the only feature you use, it pays for itself — ten times over.</p>
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-left space-y-4 mb-8">
+            <div className="bg-detool-cream border border-gray-200 rounded-2xl p-8 text-left space-y-4 mb-8">
               <div className="flex justify-between items-center border-b border-gray-200 pb-4">
                 <span className="text-gray-700 font-medium">25 bookings/week × $20 deposit</span>
                 <span className="font-bold text-gray-900">$500/week</span>
@@ -203,15 +220,21 @@ const Index = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-detool-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Built for Every Beauty Business</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Built for Every Beauty Business</h2>
             <p className="text-gray-500 text-lg mb-10">Whether you run a solo studio or a multi-chair salon, Detool.AI works for you.</p>
             <div className="flex flex-wrap justify-center gap-4">
-              {industries.map((ind, i) => (
-                <span key={i} className="px-6 py-3 bg-white border border-gray-200 rounded-full font-semibold text-gray-700 shadow-sm text-sm">{ind}</span>
-              ))}
+              {industries.map((ind, i) =>
+                ind.slug ? (
+                  <Link key={i} to={ind.slug} className="px-6 py-3 bg-white border border-gray-200 rounded-full font-semibold text-gray-700 shadow-sm text-sm hover:border-primary hover:text-primary transition-colors">
+                    {ind.name}
+                  </Link>
+                ) : (
+                  <span key={i} className="px-6 py-3 bg-white border border-gray-200 rounded-full font-semibold text-gray-700 shadow-sm text-sm">{ind.name}</span>
+                )
+              )}
             </div>
           </div>
         </div>
@@ -222,12 +245,12 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">What working with us looks like...</h2>
               <p className="text-gray-500 text-lg">You're 3 steps away from a fully automated booking system.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {steps.map((s, i) => (
-                <div key={i} className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center">
+                <div key={i} className="bg-detool-cream border border-gray-200 rounded-2xl p-6 text-center">
                   <div className="text-5xl font-black text-primary/20 mb-3">{s.num}</div>
                   <h3 className="font-bold text-gray-900 text-lg mb-3">{s.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
@@ -239,11 +262,11 @@ const Index = () => {
       </section>
 
       {/* Why Us */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-detool-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Beauty Pros Choose Detool.AI</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Why we're "totally unique"... just like everyone else, right?</h2>
               <p className="text-gray-500 text-lg">We built this for business owners — not for tech bros.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -258,11 +281,13 @@ const Index = () => {
         </div>
       </section>
 
+      <PartnersSection />
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
             <div className="space-y-3">
               {faqs.map((f, i) => <FAQItem key={i} q={f.q} a={f.a} />)}
             </div>
@@ -270,21 +295,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Demo Form */}
-      <DemoRequestForm />
+      <VideoTestimonialGrid dark showSeeAll={false} title="Still not convinced? Hear it from them." />
 
       {/* Final CTA */}
-      <section style={{ background: "#0f1b2d" }} className="py-20">
+      <section className="bg-detool-dark py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to Stop Losing Clients?</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to stop losing money?</h2>
           <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Book a free 20-minute call. We'll show you exactly what your system will look like and what results to expect.</p>
-          <a
-            href="#demo-form"
-            onClick={e => { e.preventDefault(); document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" }); }}
+          <Link
+            to="/book-a-call"
             className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl"
           >
-            Book A Free Call Today
-          </a>
+            Book A Call
+          </Link>
           <p className="text-white/40 mt-4 text-sm">No contracts. No setup fees. Just results.</p>
         </div>
       </section>
