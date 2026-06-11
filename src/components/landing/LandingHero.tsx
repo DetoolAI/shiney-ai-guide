@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
-import DetoolLogo from "@/components/DetoolLogo";
+import { DetoolMark, DetoolWordmark } from "@/components/DetoolLogo";
 
 const LandingHero = () => {
   const scrollToForm = () => {
@@ -69,7 +69,8 @@ const LandingHero = () => {
           <div className="hidden md:flex items-center justify-center h-full">
             <div className="relative text-center">
               <div className="absolute inset-0 m-auto w-72 h-72 rounded-full opacity-20 bg-primary blur-3xl" />
-              <DetoolLogo size="xl" inverse className="relative z-10 drop-shadow-2xl" />
+              <DetoolMark size={140} className="relative z-10 mx-auto drop-shadow-2xl" />
+              <DetoolWordmark size="xl" inverse className="relative z-10 mt-6 block" />
             </div>
           </div>
 
