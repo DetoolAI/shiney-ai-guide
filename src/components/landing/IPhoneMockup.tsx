@@ -7,11 +7,9 @@ type Props = {
   label?: string;
   children?: ReactNode;
   className?: string;
-  /** 'cover' fills the screen (cropped). 'contain' shows the full frame (zoomed out). */
-  videoFit?: "cover" | "contain";
 };
 
-const IPhoneMockup = ({ videoSrc, poster, label, children, className = "", videoFit = "cover" }: Props) => {
+const IPhoneMockup = ({ videoSrc, poster, label, children, className = "" }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
@@ -31,12 +29,12 @@ const IPhoneMockup = ({ videoSrc, poster, label, children, className = "", video
           <div className="absolute -right-[10px] top-32 w-[3px] h-16 bg-gray-700 rounded-r" />
 
           {/* Screen */}
-          <div className={`absolute inset-[4px] rounded-[2.5rem] overflow-hidden ${videoFit === "contain" ? "bg-white" : "bg-black"}`}>
+          <div className="absolute inset-[4px] rounded-[2.5rem] overflow-hidden bg-black">
             {videoSrc ? (
               <>
                 <video
                   ref={videoRef}
-                  className={`w-full h-full ${videoFit === "contain" ? "object-contain object-top scale-[0.92] origin-top" : "object-cover"}`}
+                  className="w-full h-full object-cover"
                   autoPlay
                   muted
                   loop
@@ -65,7 +63,7 @@ const IPhoneMockup = ({ videoSrc, poster, label, children, className = "", video
             )}
           </div>
 
-          {/* Notch — pointer-events-none so it doesn't block video controls */}
+          {/* Notch */}
           <div className="absolute top-0 inset-x-0 z-10 flex justify-center pt-2 pointer-events-none">
             <div className="w-28 h-7 bg-gray-900 rounded-b-2xl" />
           </div>
