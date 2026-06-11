@@ -7,9 +7,11 @@ type Props = {
   label?: string;
   children?: ReactNode;
   className?: string;
+  /** 'cover' fills the screen (cropped). 'contain' shows the full frame (zoomed out). */
+  videoFit?: "cover" | "contain";
 };
 
-const IPhoneMockup = ({ videoSrc, poster, label, children, className = "" }: Props) => {
+const IPhoneMockup = ({ videoSrc, poster, label, children, className = "", videoFit = "cover" }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
@@ -29,12 +31,12 @@ const IPhoneMockup = ({ videoSrc, poster, label, children, className = "" }: Pro
           <div className="absolute -right-[10px] top-32 w-[3px] h-16 bg-gray-700 rounded-r" />
 
           {/* Screen */}
-          <div className="absolute inset-[4px] rounded-[2.5rem] overflow-hidden bg-black">
+          <div className={`absolute inset-[4px] rounded-[2.5rem] overflow-hidden ${videoFit === "contain" ? "bg-white" : "bg-black"}`}>
             {videoSrc ? (
               <>
                 <video
                   ref={videoRef}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${videoFit === "contain" ? "object-contain object-top scale-[0.92] origin-top" : "object-cover"}`}
                   autoPlay
                   muted
                   loop

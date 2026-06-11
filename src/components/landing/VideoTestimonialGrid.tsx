@@ -1,4 +1,4 @@
-import { Star, Play } from "lucide-react";
+import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export type VideoTestimonial = {
@@ -78,31 +78,21 @@ const VideoTestimonialGrid = ({
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex flex-col"
+                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col"
               >
-                <div className="relative aspect-video bg-gradient-to-br from-gray-900 via-gray-800 to-primary/40 flex items-center justify-center group cursor-pointer">
-                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                    <Play className="w-6 h-6 text-primary fill-primary ml-1" />
-                  </div>
-                  <span className="absolute bottom-3 left-3 text-white/80 text-xs font-medium">
-                    Client testimonial
-                  </span>
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, si) => (
+                    <Star key={si} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
                 </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex gap-0.5 mb-3">
-                    {[...Array(5)].map((_, si) => (
-                      <Star key={si} className="w-4 h-4 fill-primary text-primary" />
-                    ))}
+                <p className="text-gray-700 text-base leading-relaxed flex-1 mb-6">"{t.quote}"</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-black text-sm">
+                    {t.name[0]}
                   </div>
-                  <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">"{t.quote}"</p>
-                  <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
-                    <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-black text-sm">
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-900 text-sm">{t.name}</p>
-                      <p className="text-xs text-gray-400">{t.biz}</p>
-                    </div>
+                  <div>
+                    <p className="font-bold text-gray-900 text-sm">{t.name}</p>
+                    <p className="text-xs text-gray-400">{t.biz}</p>
                   </div>
                 </div>
               </div>

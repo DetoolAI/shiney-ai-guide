@@ -10,6 +10,7 @@ const features = [
     slug: "/features/booking-website",
     videoSrc: "/videos/creme-de-la-creme-preview.mp4",
     videoLabel: "Live booking site demo",
+    videoFit: "contain" as const,
     bullets: [
       { heading: "Actually Get Found Online", body: "If a client Googles your salon and can't find you — that's awkward. We won't let that happen." },
       { heading: "Showcase Your Best Work", body: "Your site shows your services, pricing, and reviews so clients trust you before they book." },
@@ -81,6 +82,7 @@ const HomeFeatureSections = () => {
                 <IPhoneMockup
                   videoSrc={f.videoSrc}
                   label={f.videoLabel || (f.videoSrc ? "Live demo" : undefined)}
+                  videoFit={"videoFit" in f ? f.videoFit : "cover"}
                 />
               </div>
 
