@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
-import RobotLogo from "@/components/RobotLogo";
+import { DetoolMark, DetoolWordmark } from "@/components/DetoolLogo";
 
 const LandingHero = () => {
   const scrollToForm = () => {
@@ -66,10 +66,11 @@ const LandingHero = () => {
           </div>
 
           {/* RIGHT — brand mark */}
-          <div className="hidden md:flex items-end justify-center h-full">
-            <div className="relative" style={{ marginBottom: "-2px" }}>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full opacity-20 bg-primary blur-3xl" />
-              <RobotLogo size={320} className="relative z-10 drop-shadow-2xl" />
+          <div className="hidden md:flex items-center justify-center h-full">
+            <div className="relative text-center">
+              <div className="absolute inset-0 m-auto w-72 h-72 rounded-full opacity-20 bg-primary blur-3xl" />
+              <DetoolMark size={200} className="relative z-10 mx-auto drop-shadow-2xl" />
+              <DetoolWordmark size="lg" inverse className="relative z-10 mt-8" />
             </div>
           </div>
 

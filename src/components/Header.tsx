@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import RobotLogo from "@/components/RobotLogo";
+import DetoolLogo from "@/components/DetoolLogo";
 
 const featureLinks = [
   { label: "Booking Website", to: "/features/booking-website" },
@@ -89,12 +89,8 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center h-20 gap-8">
-          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
-            <RobotLogo size={44} />
-            <div className="leading-none">
-              <span className="block text-2xl font-black text-gray-900 tracking-tight">DETOOL</span>
-              <span className="block text-2xl font-black text-primary tracking-tight -mt-1">.AI</span>
-            </div>
+          <Link to="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
+            <DetoolLogo size={44} wordmarkSize="md" />
           </Link>
 
           <nav className="hidden md:flex flex-1 items-center justify-center gap-7">

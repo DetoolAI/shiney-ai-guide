@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Instagram, Youtube } from "lucide-react";
-import RobotLogo from "@/components/RobotLogo";
+import DetoolLogo from "@/components/DetoolLogo";
 
 const LandingFooter = () => {
   return (
@@ -8,12 +8,8 @@ const LandingFooter = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-3">
-              <RobotLogo size={36} />
-              <div className="leading-none">
-                <span className="block text-base font-black text-gray-900 tracking-tight">DETOOL</span>
-                <span className="block text-base font-black text-primary tracking-tight -mt-1">.AI</span>
-              </div>
+            <Link to="/" className="inline-flex mb-3">
+              <DetoolLogo size={36} wordmarkSize="sm" />
             </Link>
             <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for beauty businesses.</p>
             <div className="flex items-center gap-3">
