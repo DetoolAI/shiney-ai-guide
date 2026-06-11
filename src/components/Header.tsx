@@ -89,11 +89,9 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center h-20 gap-8">
-          <Link to="/" className="flex items-end gap-0 hover:opacity-80 transition-opacity flex-shrink-0 relative">
-            <div className="relative z-10 -mr-1" style={{ marginBottom: "-8px" }}>
-              <RobotLogo size={56} />
-            </div>
-            <div className="leading-none pb-1">
+          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
+            <RobotLogo size={44} />
+            <div className="leading-none">
               <span className="block text-2xl font-black text-gray-900 tracking-tight">DETOOL</span>
               <span className="block text-2xl font-black text-primary tracking-tight -mt-1">.AI</span>
             </div>

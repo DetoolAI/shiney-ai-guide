@@ -65,12 +65,11 @@ const LandingHero = () => {
             </div>
           </div>
 
-          {/* RIGHT — Robot standing full body at bottom, arms crossed */}
+          {/* RIGHT — brand mark */}
           <div className="hidden md:flex items-end justify-center h-full">
             <div className="relative" style={{ marginBottom: "-2px" }}>
-              {/* Orange glow behind robot */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full opacity-20 bg-primary blur-3xl" />
-              <RobotLogo size={420} className="relative z-10 drop-shadow-2xl" />
+              <RobotLogo size={320} className="relative z-10 drop-shadow-2xl" />
             </div>
           </div>
 

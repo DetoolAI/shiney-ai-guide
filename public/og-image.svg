@@ -1,12 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <rect width="1200" height="630" fill="#0a0a0a"/>
-  <ellipse cx="600" cy="200" rx="90" ry="32" fill="#e8702a"/>
-  <rect x="528" y="188" width="144" height="24" rx="6" fill="#e8702a"/>
-  <ellipse cx="600" cy="228" rx="100" ry="16" fill="#cf5e1a"/>
-  <rect x="540" y="220" width="120" height="100" rx="28" fill="#0f1b2d"/>
-  <rect x="558" y="252" width="32" height="22" rx="6" fill="#e8702a"/>
-  <rect x="610" y="252" width="32" height="22" rx="6" fill="#e8702a"/>
-  <rect x="568" y="292" width="64" height="10" rx="5" fill="#e8702a" opacity="0.8"/>
+  <!-- Logo mark -->
+  <circle cx="600" cy="210" r="88" fill="#e8702a" opacity="0.12"/>
+  <circle cx="600" cy="210" r="82" fill="#0f1b2d"/>
+  <rect x="548" y="168" width="104" height="96" rx="32" fill="#1a2035"/>
+  <rect x="554" y="174" width="92" height="84" rx="28" fill="#0f1b2d"/>
+  <line x1="600" y1="128" x2="600" y2="168" stroke="#e8702a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="600" cy="122" r="6" fill="#e8702a"/>
+  <path d="M668 148 L671 158 L681 161 L671 164 L668 174 L665 164 L655 161 L665 158 Z" fill="#e8702a" opacity="0.85"/>
+  <rect x="568" y="204" width="26" height="18" rx="6" fill="#e8702a"/>
+  <rect x="606" y="204" width="26" height="18" rx="6" fill="#e8702a"/>
+  <path d="M574 238 Q600 248 626 238" stroke="#e8702a" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M536 252 Q548 236 568 242 L632 242 Q652 236 664 252 L664 268 Q600 276 536 268 Z" fill="#1a2035"/>
+  <!-- Wordmark -->
   <text x="600" y="400" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">DETOOL</text>
   <text x="600" y="470" text-anchor="middle" fill="#e8702a" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="900">.AI</text>
   <text x="600" y="540" text-anchor="middle" fill="#ffffff" opacity="0.7" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Website Design &amp; Marketing For Beauty Businesses</text>
