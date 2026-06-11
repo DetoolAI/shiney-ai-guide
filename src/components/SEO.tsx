@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 const SITE = "https://detool.ai";
-const DEFAULT_IMAGE = `${SITE}/lovable-uploads/ca46362a-ecff-4aef-b0d3-5d2e8e8497ac.png`;
+const DEFAULT_IMAGE = `${SITE}/og-image.svg`;
 
 interface SEOProps {
   title: string;
