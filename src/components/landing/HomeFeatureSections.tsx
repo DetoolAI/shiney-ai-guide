@@ -9,6 +9,7 @@ const features = [
     subtitle: "Get a website that turns visitors into booked appointments — with deposits collected automatically.",
     slug: "/features/booking-website",
     videoSrc: "/videos/creme-de-la-creme-preview.mp4",
+    videoLabel: "Live booking site demo",
     bullets: [
       { heading: "Actually Get Found Online", body: "If a client Googles your salon and can't find you — that's awkward. We won't let that happen." },
       { heading: "Showcase Your Best Work", body: "Your site shows your services, pricing, and reviews so clients trust you before they book." },
@@ -28,7 +29,8 @@ const features = [
       { heading: "Stop Worrying About Bad Reviews", body: "We guide the good experiences to Google and handle complaints privately." },
     ],
     flip: true,
-    phoneDemo: "review",
+    videoSrc: "/justin-intro.mp4",
+    videoLabel: "Review funnel demo",
   },
   {
     title: "Missed Call Text Back",
@@ -41,7 +43,8 @@ const features = [
       { heading: "Be Available 24/7", body: "Missed a call after hours? We make sure every lead feels looked after." },
     ],
     flip: false,
-    phoneDemo: "missed-call",
+    videoSrc: "/justin-intro.mp4",
+    videoLabel: "Missed call text-back demo",
   },
   {
     title: "One-Click Marketing Campaigns",
@@ -54,65 +57,10 @@ const features = [
       { heading: "Fill Slow Days Fast", body: "Slow Tuesday? Blast a promo to your list and watch slots fill in hours." },
     ],
     flip: true,
-    phoneDemo: "campaigns",
+    videoSrc: "/justin-intro.mp4",
+    videoLabel: "Marketing campaigns demo",
   },
 ];
-
-const ReviewPhoneDemo = () => (
-  <div className="w-full h-full bg-gradient-to-b from-gray-900 to-gray-800 flex flex-col items-center justify-center p-4 animate-pulse-slow">
-    <div className="w-full bg-white/10 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
-      <p className="text-white font-black text-xs mb-2">HOW WAS YOUR VISIT?</p>
-      <div className="flex justify-center gap-1 mb-3">
-        {[...Array(5)].map((_, i) => (
-          <span key={i} className="text-primary text-lg animate-[bounce_1s_ease-in-out_infinite]" style={{ animationDelay: `${i * 0.1}s` }}>★</span>
-        ))}
-      </div>
-      <div className="bg-primary rounded-xl py-2 text-white text-xs font-bold">Leave a Google Review</div>
-    </div>
-    <p className="text-white/50 text-[10px] mt-3">Sent automatically after every appointment</p>
-  </div>
-);
-
-const MissedCallPhoneDemo = () => (
-  <div className="w-full h-full bg-black p-3 pt-8 flex flex-col">
-    <div className="bg-red-500/20 rounded-xl p-2 flex items-center gap-2 mb-3">
-      <div className="w-7 h-7 rounded-full bg-gray-600 flex items-center justify-center text-white text-[10px] font-bold">?</div>
-      <div className="flex-1">
-        <p className="text-white text-[10px] font-semibold">New Client</p>
-        <p className="text-red-400 text-[10px]">Missed call · 2s ago</p>
-      </div>
-    </div>
-    <div className="space-y-2 flex-1">
-      <div className="bg-primary rounded-2xl rounded-tl-sm p-2 ml-0 mr-8 animate-[fadeIn_0.5s_ease-in]">
-        <p className="text-white text-[10px] leading-relaxed">Hey! Sorry we missed your call — book here: your-salon.detool.ai 💅</p>
-      </div>
-      <div className="bg-gray-700 rounded-2xl rounded-tr-sm p-2 ml-8 mr-0">
-        <p className="text-white text-[10px]">Perfect! Booking now</p>
-      </div>
-    </div>
-  </div>
-);
-
-const CampaignPhoneDemo = () => (
-  <div className="w-full h-full bg-gray-950 p-3 pt-8 flex flex-col">
-    <p className="text-white/60 text-[10px] font-bold uppercase tracking-wider mb-2">Campaigns</p>
-    {["Slow Day Special ✨", "Refer a Friend 🤝", "We Miss You 💅"].map((c, i) => (
-      <div key={i} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-2 py-2 mb-2">
-        <div className={`w-3 h-3 rounded-full border-2 ${i === 0 ? "border-primary bg-primary/30" : "border-gray-500"}`} />
-        <span className="text-white text-[10px] font-medium">{c}</span>
-      </div>
-    ))}
-    <div className="mt-auto bg-primary rounded-xl py-2.5 text-center text-white text-[10px] font-bold animate-pulse">
-      Send To 248 Clients →
-    </div>
-  </div>
-);
-
-const phoneDemoMap = {
-  review: <ReviewPhoneDemo />,
-  "missed-call": <MissedCallPhoneDemo />,
-  campaigns: <CampaignPhoneDemo />,
-};
 
 const HomeFeatureSections = () => {
   return (
@@ -132,10 +80,8 @@ const HomeFeatureSections = () => {
               <div className="w-full md:w-5/12 flex-shrink-0">
                 <IPhoneMockup
                   videoSrc={f.videoSrc}
-                  label={f.videoSrc ? "Live demo" : undefined}
-                >
-                  {f.phoneDemo ? phoneDemoMap[f.phoneDemo as keyof typeof phoneDemoMap] : null}
-                </IPhoneMockup>
+                  label={f.videoLabel || (f.videoSrc ? "Live demo" : undefined)}
+                />
               </div>
 
               <div className="flex-1">
