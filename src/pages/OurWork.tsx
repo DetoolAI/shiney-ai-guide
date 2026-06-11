@@ -64,12 +64,21 @@ const OurWork = () => {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-6">What We Built</h2>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-10">
-              {["Booking Flow", "Admin Dashboard", "Member Portal"].map((label) => (
-                <div key={label} className="aspect-video rounded-2xl bg-gradient-to-br from-detool-dark via-gray-800 to-primary/40 flex items-center justify-center">
-                  <span className="text-white/80 font-semibold text-sm">{label} Screenshot</span>
-                </div>
-              ))}
+            <div className="mb-10 rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-detool-dark">
+              <video
+                className="w-full aspect-video object-contain bg-black"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Crème de la Crème Nails booking website preview"
+              >
+                <source src="/videos/creme-de-la-creme-preview.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="px-6 py-4 bg-detool-cream border-t border-gray-200">
+                <p className="font-bold text-gray-900">Crème de la Crème Nails — Live Booking Website</p>
+                <p className="text-gray-500 text-sm mt-1">Full walkthrough of the branded booking site, deposit collection, and client experience we built in 48 hours.</p>
+              </div>
             </div>
 
             <div className="bg-detool-cream border border-gray-200 rounded-2xl p-8 mb-10">
