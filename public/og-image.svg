@@ -1,18 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <rect width="1200" height="630" fill="#0a0a0a"/>
-  <!-- Avatar mark -->
-  <circle cx="600" cy="200" r="72" fill="#e8702a"/>
-  <circle cx="600" cy="200" r="66" fill="url(#og-grad)"/>
-  <path d="M558 158 H598 C622 158 636 172 636 200 C636 228 622 242 598 242 H558 V158 Z M574 174 V226 H592 C606 226 614 216 614 200 C614 184 606 174 592 174 H574 Z" fill="white"/>
-  <path d="M648 138 L651 148 L661 151 L651 154 L648 164 L645 154 L635 151 L645 148 Z" fill="white" opacity="0.95"/>
-  <text x="600" y="360" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="900" letter-spacing="-2">
+  <circle cx="600" cy="200" r="100" fill="#e8702a" opacity="0.1"/>
+  <line x1="600" y1="118" x2="600" y2="148" stroke="#e8702a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="600" cy="112" r="7" fill="#e8702a"/>
+  <rect x="540" y="148" width="120" height="104" rx="28" fill="#0f1b2d"/>
+  <rect x="562" y="178" width="32" height="24" rx="6" fill="#e8702a"/>
+  <rect x="606" y="178" width="32" height="24" rx="6" fill="#e8702a"/>
+  <path d="M568 228 Q600 242 632 228" stroke="#e8702a" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M512 252 Q532 232 560 238 H640 Q668 232 688 252 V278 Q600 290 512 278 Z" fill="#1a2035"/>
+  <text x="600" y="400" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="900" letter-spacing="-2">
     <tspan fill="white">Detool</tspan><tspan fill="#e8702a">.AI</tspan>
   </text>
-  <text x="600" y="440" text-anchor="middle" fill="#ffffff" opacity="0.7" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Website Design &amp; Marketing For Beauty Businesses</text>
-  <defs>
-    <linearGradient id="og-grad" x1="534" y1="134" x2="666" y2="266" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f09040"/>
-      <stop offset="1" stop-color="#cf5e1a"/>
-    </linearGradient>
-  </defs>
+  <text x="600" y="480" text-anchor="middle" fill="#ffffff" opacity="0.7" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Website Design &amp; Marketing For Beauty Businesses</text>
 </svg>

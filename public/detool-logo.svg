@@ -1,13 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
   <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
-  <circle cx="256" cy="256" r="200" fill="#e8702a"/>
-  <circle cx="256" cy="256" r="184" fill="url(#grad)"/>
-  <path d="M160 128 H272 C328 128 368 168 368 256 C368 344 328 384 272 384 H160 V128 Z M224 192 V320 H264 C296 320 312 296 312 256 C312 216 296 192 264 192 H224 Z" fill="white"/>
-  <path d="M362 106 L368 128 L390 136 L368 144 L362 166 L356 144 L334 136 L356 128 Z" fill="white" opacity="0.95"/>
-  <defs>
-    <linearGradient id="grad" x1="88" y1="88" x2="424" y2="424" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f09040"/>
-      <stop offset="1" stop-color="#cf5e1a"/>
-    </linearGradient>
-  </defs>
+  <path fill="#e8702a" d="M256 42a32 32 0 0 1 32 32v32h-64V74a32 32 0 0 1 32-32Zm-128 118a106 106 0 0 1 106-106h172a106 106 0 0 1 106 106v128a106 106 0 0 1-106 106H234a106 106 0 0 1-106-106V160Zm64 106a32 32 0 0 0 32 32h84a32 32 0 0 0 32-32v-10a32 32 0 0 0-32-32h-84a32 32 0 0 0-32 32v10ZM85 384c0-42 37-74 85-74h172c48 0 85 32 85 74v21H85v-21Z"/>
 </svg>

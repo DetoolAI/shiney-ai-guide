@@ -62,7 +62,7 @@ const Index = () => {
       <Header />
 
       {/* Hero — Stone Systems style, beauty niche */}
-      <section className="bg-detool-dark pt-40 pb-24">
+      <section id="hero" className="bg-detool-dark pt-40 pb-24 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] max-w-5xl mx-auto mb-6">
             Website Design & Marketing For Beauty Businesses
@@ -109,12 +109,16 @@ const Index = () => {
         </div>
       </section>
 
-      <VideoTestimonialGrid showSeeAll />
+      <div id="testimonials">
+        <VideoTestimonialGrid showSeeAll />
+      </div>
 
-      <HomeFeatureSections />
+      <div id="features">
+        <HomeFeatureSections />
+      </div>
 
       {/* ROI */}
-      <section className="py-20 bg-detool-cream">
+      <section id="roi" className="py-20 bg-detool-cream scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">The Math Is Simple</h2>
@@ -142,7 +146,7 @@ const Index = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-20 bg-white">
+      <section id="industries" className="py-20 bg-white scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Serving all these beauty businesses and more...</h2>
@@ -162,7 +166,7 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-detool-cream">
+      <section id="how-it-works" className="py-20 bg-detool-cream scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
@@ -182,7 +186,7 @@ const Index = () => {
       </section>
 
       {/* Why Us */}
-      <section className="py-20 bg-white">
+      <section id="why-us" className="py-20 bg-white scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-14">
@@ -200,10 +204,12 @@ const Index = () => {
         </div>
       </section>
 
-      <PartnersSection />
+      <div id="partners">
+        <PartnersSection />
+      </div>
 
       {/* FAQ */}
-      <section className="py-20 bg-detool-cream">
+      <section id="faq" className="py-20 bg-detool-cream scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
@@ -216,7 +222,7 @@ const Index = () => {
 
       <VideoTestimonialGrid dark showSeeAll={false} title="Still not convinced? Hear it from them." />
 
-      <section className="bg-detool-dark py-20">
+      <section id="cta" className="bg-detool-dark py-20 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Want to schedule a time to talk?</h2>
           <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website design, marketing, and automations — all built to grow your beauty business.</p>

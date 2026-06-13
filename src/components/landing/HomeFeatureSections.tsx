@@ -1,10 +1,13 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Star } from "lucide-react";
 import IPhoneMockup from "@/components/landing/IPhoneMockup";
 import BookCallButton from "@/components/BookCallButton";
+import ConnectingScrollLine from "@/components/landing/ConnectingScrollLine";
 
 const features = [
   {
+    num: "01",
     title: "Branded Booking Website",
     subtitle: "Get a website that turns visitors into booked appointments — with deposits collected automatically.",
     slug: "/features/booking-website",
@@ -18,6 +21,7 @@ const features = [
     flip: false,
   },
   {
+    num: "02",
     title: "5 Star Magic Review Funnel",
     subtitle: "\"Sure I'll leave you a review\" — but people forget. We gently remind them until they do.",
     slug: "/features/review-funnel",
@@ -31,6 +35,7 @@ const features = [
     phoneDemo: "review" as const,
   },
   {
+    num: "03",
     title: "Missed Call Text Back",
     subtitle: "Everyone misses calls. Not everyone texts back. Be the salon that does.",
     slug: "/features/missed-call-text-back",
@@ -44,6 +49,7 @@ const features = [
     phoneDemo: "missed-call" as const,
   },
   {
+    num: "04",
     title: "One-Click Marketing Campaigns",
     subtitle: "Referrals and repeat clients are the best. Let's get you both — in one click.",
     slug: "/features/marketing-campaigns",
@@ -60,7 +66,6 @@ const features = [
 
 const WebsitePhoneDemo = () => (
   <div className="w-full h-full bg-[#faf8f5] overflow-y-auto">
-    {/* Hero */}
     <div className="bg-detool-dark px-3 pt-6 pb-4 text-center">
       <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 mx-auto mb-2 flex items-center justify-center">
         <span className="text-primary text-[8px] font-black">✦</span>
@@ -74,8 +79,6 @@ const WebsitePhoneDemo = () => (
         <span className="text-white/60 text-[7px] ml-1">4.9 · 127 reviews</span>
       </div>
     </div>
-
-    {/* Services */}
     <div className="px-3 py-3">
       <p className="text-[8px] font-bold text-gray-400 uppercase tracking-wider mb-2">Services</p>
       {[
@@ -89,8 +92,6 @@ const WebsitePhoneDemo = () => (
         </div>
       ))}
     </div>
-
-    {/* Gallery strip */}
     <div className="px-3 pb-2">
       <p className="text-[8px] font-bold text-gray-400 uppercase tracking-wider mb-2">Our Work</p>
       <div className="grid grid-cols-3 gap-1">
@@ -99,8 +100,6 @@ const WebsitePhoneDemo = () => (
         ))}
       </div>
     </div>
-
-    {/* Book CTA */}
     <div className="px-3 pb-4">
       <div className="bg-primary rounded-xl py-2 text-center">
         <p className="text-white text-[10px] font-black">Book Now · $20 Deposit</p>
@@ -168,49 +167,71 @@ const phoneDemoMap = {
 };
 
 const HomeFeatureSections = () => {
+  const anchor0 = useRef<HTMLDivElement>(null);
+  const anchor1 = useRef<HTMLDivElement>(null);
+  const anchor2 = useRef<HTMLDivElement>(null);
+  const anchor3 = useRef<HTMLDivElement>(null);
+  const anchors = [anchor0, anchor1, anchor2, anchor3];
+
   return (
-    <section className="py-8 bg-white">
+    <section className="py-8 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center py-16 border-b border-gray-100 mb-4">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-2">Simple systems that actually work</h2>
-          <p className="text-xl md:text-2xl font-bold text-gray-500">No tech degree required — just a salon to run</p>
+        <div className="max-w-4xl mx-auto py-16 md:py-24 mb-4">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-6">The System</p>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[1.05] mb-6">
+            Four parts.{" "}
+            <span className="bg-primary/90 text-white px-2 md:px-3 box-decoration-clone">One system.</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-500 max-w-xl leading-relaxed">
+            Each piece feeds the next. The line shows you how it connects.
+          </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {features.map((f, i) => (
-            <div
-              key={i}
-              className={`flex flex-col ${f.flip ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-12 md:gap-16 py-20 border-b border-gray-100 last:border-0`}
-            >
-              <div className="w-full md:w-5/12 flex-shrink-0">
-                <IPhoneMockup label={f.phoneDemo === "website" ? "Branded booking site" : undefined}>
-                  {phoneDemoMap[f.phoneDemo]}
-                </IPhoneMockup>
-              </div>
+          <ConnectingScrollLine anchorRefs={anchors}>
+            {features.map((f, i) => (
+              <div
+                key={i}
+                ref={anchors[i]}
+                className={`relative flex flex-col ${f.flip ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-12 md:gap-16 py-16 md:py-24`}
+              >
+                <span
+                  className="absolute -top-4 left-0 text-[7rem] md:text-[9rem] font-black text-gray-100 leading-none select-none pointer-events-none z-0"
+                  aria-hidden
+                >
+                  {f.num}
+                </span>
 
-              <div className="flex-1">
-                <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">{f.title}</h3>
-                <p className="text-lg italic text-gray-500 mb-8 leading-relaxed">"{f.subtitle}"</p>
-                <div className="space-y-5">
-                  {f.bullets.map((b, bi) => (
-                    <div key={bi}>
-                      <div className="flex items-center gap-2 mb-1">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                        <h4 className="font-bold text-primary text-base">{b.heading}</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed pl-7">{b.body}</p>
-                    </div>
-                  ))}
+                <div className="w-full md:w-5/12 flex-shrink-0 relative z-10">
+                  <IPhoneMockup label={f.phoneDemo === "website" ? "Branded booking site" : undefined}>
+                    {phoneDemoMap[f.phoneDemo]}
+                  </IPhoneMockup>
                 </div>
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <BookCallButton className="px-8 py-4 text-sm">See Short Demo</BookCallButton>
-                  <Link to={f.slug} className="inline-flex items-center text-primary font-semibold hover:underline text-sm py-4">
-                    Learn more →
-                  </Link>
+
+                <div className="flex-1 relative z-10">
+                  <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">{f.title}</h3>
+                  <p className="text-lg italic text-gray-500 mb-8 leading-relaxed">"{f.subtitle}"</p>
+                  <div className="space-y-5">
+                    {f.bullets.map((b, bi) => (
+                      <div key={bi}>
+                        <div className="flex items-center gap-2 mb-1">
+                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                          <h4 className="font-bold text-primary text-base">{b.heading}</h4>
+                        </div>
+                        <p className="text-gray-600 text-sm leading-relaxed pl-7">{b.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <BookCallButton className="px-8 py-4 text-sm">See Short Demo</BookCallButton>
+                    <Link to={f.slug} className="inline-flex items-center text-primary font-semibold hover:underline text-sm py-4">
+                      Learn more →
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </ConnectingScrollLine>
         </div>
       </div>
     </section>
