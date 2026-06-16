@@ -183,7 +183,7 @@ const HomeFeatureSections = () => {
             <span className="bg-primary/90 text-white px-2 md:px-3 box-decoration-clone">One system.</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-500 max-w-xl leading-relaxed">
-            Each piece feeds the next. The line shows you how it connects.
+            Each piece feeds the next. Move your cursor — the line shows you how it connects.
           </p>
         </div>
 

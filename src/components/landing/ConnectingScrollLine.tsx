@@ -2,17 +2,24 @@ import { useEffect, useRef, useState, useCallback, ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  /** Refs to each row/block the line should connect through */
   anchorRefs: React.RefObject<HTMLElement | null>[];
 };
 
-/** Serpentine SVG line that draws as you scroll — mattxwebb / Stone-style connector */
+type Point = { x: number; y: number };
+
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+/** Organic SVG line that bends toward the cursor — interactive connector through feature blocks */
 const ConnectingScrollLine = ({ children, anchorRefs }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+  const rafRef = useRef<number>(0);
+  const mouseRef = useRef<Point>({ x: 50, y: 50 });
+  const activeRef = useRef(false);
+
   const [pathD, setPathD] = useState("");
-  const [pathLen, setPathLen] = useState(0);
-  const [drawn, setDrawn] = useState(0);
+  const [cursor, setCursor] = useState<Point>({ x: 50, y: 50 });
+  const [active, setActive] = useState(false);
 
   const buildPath = useCallback(() => {
     const container = containerRef.current;
@@ -23,108 +30,160 @@ const ConnectingScrollLine = ({ children, anchorRefs }: Props) => {
     const ch = cRect.height;
     if (cw === 0 || ch === 0) return;
 
-    const points = anchorRefs
-      .map((ref) => {
+    const mouse = mouseRef.current;
+    const isActive = activeRef.current;
+
+    const anchors = anchorRefs
+      .map((ref, i) => {
         const el = ref.current;
         if (!el) return null;
         const r = el.getBoundingClientRect();
+        const centerX = r.left + r.width / 2 - cRect.left;
+        const weave = i % 2 === 0 ? -0.12 : 0.12;
         return {
-          x: ((r.left + r.width / 2 - cRect.left) / cw) * 100,
+          x: ((centerX / cw) + weave) * 100,
           y: ((r.top + r.height / 2 - cRect.top) / ch) * 100,
         };
       })
-      .filter(Boolean) as { x: number; y: number }[];
+      .filter(Boolean) as Point[];
 
-    if (points.length < 2) return;
+    if (anchors.length < 1) return;
 
-    const start = { x: 50, y: 0 };
-    let d = `M ${start.x} ${start.y}`;
-    d += ` C ${start.x} ${points[0].y * 0.4}, ${points[0].x} ${points[0].y * 0.4}, ${points[0].x} ${points[0].y}`;
+    const start: Point = { x: lerp(50, mouse.x, 0.25), y: 0 };
+    const end: Point = isActive
+      ? { x: mouse.x, y: mouse.y }
+      : anchors[anchors.length - 1];
 
-    for (let i = 1; i < points.length; i++) {
-      const prev = points[i - 1];
-      const curr = points[i];
+    const waypoints = [start, ...anchors];
+    if (isActive) waypoints.push(end);
+
+    let d = `M ${waypoints[0].x} ${waypoints[0].y}`;
+
+    for (let i = 1; i < waypoints.length; i++) {
+      const prev = waypoints[i - 1];
+      const curr = waypoints[i];
       const midY = (prev.y + curr.y) / 2;
-      d += ` C ${prev.x} ${midY}, ${curr.x} ${midY}, ${curr.x} ${curr.y}`;
+
+      const pull = isActive ? 0.55 : 0.2;
+      const c1x = lerp(prev.x, mouse.x, pull);
+      const c1y = lerp(midY, mouse.y, pull * 0.6);
+      const c2x = lerp(curr.x, mouse.x, pull);
+      const c2y = lerp(midY, mouse.y, pull * 0.6);
+
+      d += ` C ${c1x} ${c1y}, ${c2x} ${c2y}, ${curr.x} ${curr.y}`;
     }
+
     setPathD(d);
   }, [anchorRefs]);
 
-  const onScroll = useCallback(() => {
-    const container = containerRef.current;
-    const path = pathRef.current;
-    if (!container || !path) return;
+  const scheduleUpdate = useCallback(() => {
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(buildPath);
+  }, [buildPath]);
 
-    const len = path.getTotalLength();
-    if (len !== pathLen) setPathLen(len);
+  const onPointerMove = useCallback(
+    (e: PointerEvent) => {
+      const container = containerRef.current;
+      if (!container) return;
 
-    const rect = container.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const start = vh * 0.85;
-    const end = -rect.height * 0.15;
-    const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
-    setDrawn(len * progress);
-  }, [pathLen]);
+      const cRect = container.getBoundingClientRect();
+      const inside =
+        e.clientX >= cRect.left &&
+        e.clientX <= cRect.right &&
+        e.clientY >= cRect.top &&
+        e.clientY <= cRect.bottom;
+
+      if (!inside) {
+        activeRef.current = false;
+        setActive(false);
+        scheduleUpdate();
+        return;
+      }
+
+      activeRef.current = true;
+      setActive(true);
+      const x = ((e.clientX - cRect.left) / cRect.width) * 100;
+      const y = ((e.clientY - cRect.top) / cRect.height) * 100;
+      mouseRef.current = { x, y };
+      setCursor({ x, y });
+      scheduleUpdate();
+    },
+    [scheduleUpdate],
+  );
+
+  const onPointerLeave = useCallback(() => {
+    activeRef.current = false;
+    setActive(false);
+    scheduleUpdate();
+  }, [scheduleUpdate]);
 
   useEffect(() => {
     buildPath();
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", () => {
-      buildPath();
-      onScroll();
-    });
-    const t = setTimeout(() => {
-      buildPath();
-      onScroll();
-    }, 400);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", buildPath);
-      clearTimeout(t);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      cancelAnimationFrame(rafRef.current);
     };
-  }, [buildPath, onScroll]);
+  }, [buildPath, scheduleUpdate]);
 
   useEffect(() => {
-    if (pathRef.current && pathD) {
-      const len = pathRef.current.getTotalLength();
-      setPathLen(len);
-    }
-  }, [pathD]);
+    const container = containerRef.current;
+    if (!container) return;
+
+    container.addEventListener("pointermove", onPointerMove);
+    container.addEventListener("pointerleave", onPointerLeave);
+
+    const t = setTimeout(buildPath, 400);
+    return () => {
+      container.removeEventListener("pointermove", onPointerMove);
+      container.removeEventListener("pointerleave", onPointerLeave);
+      clearTimeout(t);
+    };
+  }, [buildPath, onPointerMove, onPointerLeave]);
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative md:cursor-crosshair">
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none hidden md:block z-0"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         aria-hidden
       >
-        {/* faint track */}
         {pathD && (
-          <path
-            d={pathD}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="0.35"
-            className="text-gray-200"
-            vectorEffect="non-scaling-stroke"
-          />
-        )}
-        {/* animated draw */}
-        {pathD && (
-          <path
-            ref={pathRef}
-            d={pathD}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="0.5"
-            className="text-gray-900"
-            strokeLinecap="round"
-            strokeDasharray={pathLen || 1000}
-            strokeDashoffset={Math.max(0, (pathLen || 1000) - drawn)}
-            vectorEffect="non-scaling-stroke"
-          />
+          <>
+            <path
+              d={pathD}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.35"
+              className="text-gray-200"
+              vectorEffect="non-scaling-stroke"
+            />
+            <path
+              ref={pathRef}
+              d={pathD}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.55"
+              className="text-gray-900 transition-opacity duration-300"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ opacity: active ? 1 : 0.65 }}
+              vectorEffect="non-scaling-stroke"
+            />
+            {active && (
+              <circle
+                cx={cursor.x}
+                cy={cursor.y}
+                r="1.2"
+                className="text-primary"
+                fill="currentColor"
+                vectorEffect="non-scaling-stroke"
+              />
+            )}
+          </>
         )}
       </svg>
       <div className="relative z-10">{children}</div>
