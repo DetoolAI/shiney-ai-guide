@@ -3,7 +3,6 @@ import LandingFooter from "@/components/landing/LandingFooter";
 import VideoTestimonialGrid from "@/components/landing/VideoTestimonialGrid";
 import PartnersSection from "@/components/landing/PartnersSection";
 import HomeFeatureSections from "@/components/landing/HomeFeatureSections";
-import PageScrollLine from "@/components/landing/PageScrollLine";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -62,9 +61,8 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <PageScrollLine>
       {/* Hero — Stone Systems style, beauty niche */}
-      <section id="hero" data-scroll-anchor className="bg-detool-dark pt-40 pb-24 scroll-mt-24">
+      <section id="hero" className="bg-detool-dark pt-40 pb-24 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] max-w-5xl mx-auto mb-6">
             Website Design & Marketing For Beauty Businesses
@@ -111,7 +109,7 @@ const Index = () => {
         </div>
       </section>
 
-      <div id="testimonials" data-scroll-anchor>
+      <div id="testimonials">
         <VideoTestimonialGrid showSeeAll />
       </div>
 
@@ -119,8 +117,8 @@ const Index = () => {
         <HomeFeatureSections />
       </div>
 
-      {/* ROI / Pricing */}
-      <section id="roi" data-scroll-anchor className="py-20 bg-detool-cream scroll-mt-24">
+      {/* ROI */}
+      <section id="roi" className="py-20 bg-detool-cream scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">The Math Is Simple</h2>
@@ -168,7 +166,7 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" data-scroll-anchor className="py-20 bg-detool-cream scroll-mt-24">
+      <section id="how-it-works" className="py-20 bg-detool-cream scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
@@ -176,7 +174,7 @@ const Index = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {steps.map((s, i) => (
-                <div key={i} data-scroll-anchor className="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+                <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6 text-center">
                   <div className="text-5xl font-black text-primary/20 mb-3">{s.num}</div>
                   <h3 className="font-bold text-gray-900 text-lg mb-3">{s.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
@@ -224,7 +222,7 @@ const Index = () => {
 
       <VideoTestimonialGrid dark showSeeAll={false} title="Still not convinced? Hear it from them." />
 
-      <section id="cta" data-scroll-anchor className="bg-detool-dark py-20 scroll-mt-24">
+      <section id="cta" className="bg-detool-dark py-20 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Want to schedule a time to talk?</h2>
           <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website design, marketing, and automations — all built to grow your beauty business.</p>
@@ -237,10 +235,7 @@ const Index = () => {
         </div>
       </section>
 
-      <div data-scroll-anchor>
-        <LandingFooter />
-      </div>
-      </PageScrollLine>
+      <LandingFooter />
     </div>
   );
 };
