@@ -114,9 +114,9 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4 flex-shrink-0">
-            <Link to="/auth" className="font-semibold text-base text-gray-800 hover:text-primary transition-colors">
+            <a href="https://app.detool.ai" className="font-semibold text-base text-gray-800 hover:text-primary transition-colors">
               Log In
-            </Link>
+            </a>
             <Button onClick={handleBookCall} className="rounded-lg px-7 py-3 text-base font-bold bg-primary hover:bg-primary/90 shadow-md h-auto">
               Book A Call
             </Button>
@@ -143,7 +143,7 @@ const Header = () => {
               <Link key={a.to} to={a.to} onClick={() => setOpen(false)} className="font-semibold text-gray-700 text-sm pl-2">{a.label}</Link>
             ))}
             <hr className="border-gray-200 my-1" />
-            <Link to="/auth" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Log In</Link>
+            <a href="https://app.detool.ai" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Log In</a>
             <Button onClick={handleBookCall} className="rounded-lg w-full font-bold mt-2 bg-primary hover:bg-primary/90">Book A Call</Button>
           </div>
         )}
