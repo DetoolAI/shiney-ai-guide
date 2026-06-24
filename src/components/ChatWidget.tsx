@@ -204,8 +204,8 @@ function getBotReply(input: string): Message {
   const trimmed = input.trim();
 
   // Check for book meeting suggestion click
-  if (trimmed === "📅 Book a Free Meeting →") {
-    window.open(BOOK_A_CALL_URL, "_blank");
+  if (trimmed === "📅 Book a Free Meeting →" || /^book a meeting$/i.test(trimmed)) {
+    window.open(BOOK_A_CALL_URL, "_blank", "noopener,noreferrer");
     return {
       from: "bot",
       text: "Opening our booking page now! 🚀 Schedule your free demo call and we'll show you everything live.",

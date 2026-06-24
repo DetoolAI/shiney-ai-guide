@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import BookCallLink from "@/components/BookCallLink";
 
 const HomeAboutSection = () => {
   return (
@@ -37,12 +37,9 @@ const HomeAboutSection = () => {
                   So I built the fix. A real website that makes you look like a legit business. Automated follow-up so you never miss a lead. Review requests that go out without you thinking about it. 150+ businesses are running on it. Yours can too.
                 </p>
               </div>
-              <Link
-                to="/contact"
-                className="inline-block mt-8 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors shadow-md"
-              >
+              <BookCallLink className="inline-block mt-8 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors shadow-md">
                 Work With Us
-              </Link>
+              </BookCallLink>
             </div>
           </div>
         </div>

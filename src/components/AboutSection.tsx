@@ -1,9 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import BookCallButton from "@/components/BookCallButton";
 
 const AboutSection = () => {
-  const navigate = useNavigate();
-
   return (
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -62,13 +59,9 @@ const AboutSection = () => {
           <p className="text-lg text-muted-foreground mb-8">
             Join us at Detool.AI and discover how intelligent automation can transform your business operations.
           </p>
-          <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            onClick={() => navigate('/contact')}
-          >
-            Learn More About Our Solutions
-          </Button>
+          <BookCallButton className="text-primary-foreground">
+            Book A Free Call
+          </BookCallButton>
         </div>
       </div>
     </section>

@@ -99,6 +99,11 @@ const Pricing = () => {
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4">Does $397/month make sense?</h2>
             <p className="text-gray-500 text-center mb-8">Drag the slider — see your deposit math in real time.</p>
             <DepositROICalculator />
+            <div className="text-center mt-8">
+              <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
+                Book A Free Call — Get Started
+              </BookCallLink>
+            </div>
             <p className="text-center text-gray-500 mt-4 text-sm">That's before counting the extra bookings from missed call recovery, marketing campaigns, and loyalty programs.</p>
           </div>
         </div>

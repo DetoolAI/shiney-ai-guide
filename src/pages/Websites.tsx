@@ -50,9 +50,9 @@ const Websites = () => {
             We're not going to hand you a Wix template and call it a day. We build custom websites designed specifically for your business to make you look established and turn visitors into paying clients.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="rounded-full px-10 py-6 text-base font-semibold shadow-warm">
-              <Link to="/contact">Get My Website <ArrowRight className="ml-2 w-4 h-4" /></Link>
-            </Button>
+            <BookCallLink className="inline-flex items-center justify-center rounded-full px-10 py-6 text-base font-semibold shadow-warm bg-primary text-white hover:bg-primary/90">
+              Get My Website <ArrowRight className="ml-2 w-4 h-4" />
+            </BookCallLink>
             <Link to="/pricing" className="text-primary font-medium hover:underline">
               See pricing →
             </Link>

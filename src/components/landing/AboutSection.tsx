@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import BookCallLink from "@/components/BookCallLink";
 
 const AboutSection = () => {
   return (
@@ -29,9 +28,9 @@ const AboutSection = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <Button className="bg-gradient-primary hover:opacity-90 shadow-glow" asChild>
-                  <Link to="/contact">Work With Me</Link>
-                </Button>
+                <BookCallLink className="inline-flex items-center justify-center bg-gradient-primary hover:opacity-90 shadow-glow text-white font-semibold px-6 py-3 rounded-md">
+                  Work With Me
+                </BookCallLink>
               </div>
             </div>
           </div>

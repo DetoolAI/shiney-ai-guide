@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import DetoolLogo from "@/components/DetoolLogo";
-import { BOOK_A_CALL_URL } from "@/lib/constants";
+import BookCallLink from "@/components/BookCallLink";
 
 const featureLinks = [
   { label: "Booking Website", to: "/features/booking-website" },
@@ -112,9 +111,9 @@ const Header = () => {
             <a href="https://app.detool.ai" className="font-semibold text-base text-gray-800 hover:text-primary transition-colors">
               Log In
             </a>
-            <Button asChild className="rounded-lg px-7 py-3 text-base font-bold bg-primary hover:bg-primary/90 shadow-md h-auto">
-              <a href={BOOK_A_CALL_URL}>Book A Call</a>
-            </Button>
+            <BookCallLink className="inline-flex items-center justify-center rounded-lg px-7 py-3 text-base font-bold bg-primary hover:bg-primary/90 shadow-md text-white">
+              Book A Call
+            </BookCallLink>
           </div>
 
           <button className="md:hidden ml-auto p-2 text-gray-700" onClick={() => setOpen(!open)}>
@@ -139,9 +138,9 @@ const Header = () => {
             ))}
             <hr className="border-gray-200 my-1" />
             <a href="https://app.detool.ai" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Log In</a>
-            <Button asChild className="rounded-lg w-full font-bold mt-2 bg-primary hover:bg-primary/90">
-              <a href={BOOK_A_CALL_URL} onClick={() => setOpen(false)}>Book A Call</a>
-            </Button>
+            <BookCallLink className="inline-flex items-center justify-center rounded-lg w-full font-bold mt-2 py-3 bg-primary hover:bg-primary/90 text-white" onClick={() => setOpen(false)}>
+              Book A Call
+            </BookCallLink>
           </div>
         )}
       </div>

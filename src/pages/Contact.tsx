@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, User, MapPin, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
+import BookCallLink from "@/components/BookCallLink";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -106,9 +107,12 @@ const Contact = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Get in <span className="text-primary">Touch</span>
             </h1>
-            <p className="text-xl text-gray-500 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-500 max-w-3xl mx-auto mb-8">
               Ready to transform your business with AI? Contact our team today for a personalized consultation.
             </p>
+            <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
+              Book A Free Call
+            </BookCallLink>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
