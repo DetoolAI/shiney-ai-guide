@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { BOOK_A_CALL_URL } from "@/lib/constants";
 import { MessageCircle, X, Send, Bot, ChevronRight } from "lucide-react";
 
