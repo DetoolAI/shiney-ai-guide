@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BookCallLink from "@/components/BookCallLink";
 import { Mail } from "lucide-react";
 import DetoolLogo from "@/components/DetoolLogo";
 
@@ -47,7 +48,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4 text-sm">Get Started</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/contact" className="hover:text-primary transition-colors">Book A Free Call</Link></li>
+              <li><BookCallLink className="hover:text-primary transition-colors">Book A Free Call</BookCallLink></li>
               <li><Link to="/pricing" className="hover:text-primary transition-colors">See Plans</Link></li>
               <li>
                 <a href="https://www.google.com/maps/place/Detool+ai/@40.6968967,-73.7422542,15z" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">

@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import DetoolLogo from "@/components/DetoolLogo";
+import { BOOK_A_CALL_URL } from "@/lib/constants";
 
 const featureLinks = [
   { label: "Booking Website", to: "/features/booking-website" },
@@ -71,14 +72,8 @@ const Header = () => {
   const [productsOpen, setProductsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const { pathname } = useLocation();
-  const navigate = useNavigate();
 
   const isActive = (path: string) => pathname === path;
-
-  const handleBookCall = () => {
-    setOpen(false);
-    navigate("/book-a-call");
-  };
 
   const closeDropdowns = () => {
     setProductsOpen(false);
@@ -117,8 +112,8 @@ const Header = () => {
             <a href="https://app.detool.ai" className="font-semibold text-base text-gray-800 hover:text-primary transition-colors">
               Log In
             </a>
-            <Button onClick={handleBookCall} className="rounded-lg px-7 py-3 text-base font-bold bg-primary hover:bg-primary/90 shadow-md h-auto">
-              Book A Call
+            <Button asChild className="rounded-lg px-7 py-3 text-base font-bold bg-primary hover:bg-primary/90 shadow-md h-auto">
+              <a href={BOOK_A_CALL_URL}>Book A Call</a>
             </Button>
           </div>
 
@@ -144,7 +139,9 @@ const Header = () => {
             ))}
             <hr className="border-gray-200 my-1" />
             <a href="https://app.detool.ai" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Log In</a>
-            <Button onClick={handleBookCall} className="rounded-lg w-full font-bold mt-2 bg-primary hover:bg-primary/90">Book A Call</Button>
+            <Button asChild className="rounded-lg w-full font-bold mt-2 bg-primary hover:bg-primary/90">
+              <a href={BOOK_A_CALL_URL} onClick={() => setOpen(false)}>Book A Call</a>
+            </Button>
           </div>
         )}
       </div>

@@ -2,9 +2,10 @@ import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import { Link } from "react-router-dom";
 import { Star, Check } from "lucide-react";
+import BookCallLink from "@/components/BookCallLink";
 
 const results = [
-  { label: "Setup Time", value: "48 Hours" },
+  { label: "Setup Time", value: "10 Days" },
   { label: "Deposit Collection", value: "Automated" },
   { label: "Review Rating", value: "5.0 ★" },
   { label: "Missed Calls Recovered", value: "100%" },
@@ -30,7 +31,7 @@ const OurWork = () => {
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/60 font-medium mb-2 uppercase tracking-wide text-sm">Case Study</p>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Crème de la Crème Nails</h1>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">How we designed a complete website and marketing system for a nail salon — in 48 hours.</p>
+          <p className="text-white/70 text-xl max-w-2xl mx-auto">How we designed a complete website and marketing system for a nail salon — in 10 days.</p>
         </div>
       </section>
 
@@ -77,7 +78,7 @@ const OurWork = () => {
               </video>
               <div className="px-6 py-4 bg-detool-cream border-t border-gray-200">
                 <p className="font-bold text-gray-900">Crème de la Crème Nails — Live Booking Website</p>
-                <p className="text-gray-500 text-sm mt-1">Full walkthrough of the branded booking site, deposit collection, and client experience we built in 48 hours.</p>
+                <p className="text-gray-500 text-sm mt-1">Full walkthrough of the branded booking site, deposit collection, and client experience we built in 10 days.</p>
               </div>
             </div>
 
@@ -100,7 +101,7 @@ const OurWork = () => {
                 We built them a fully branded booking website with automatic $25 deposit collection built in. We set up missed call text-back so that every missed call immediately gets a text with their booking link. We launched a post-visit review funnel so happy clients go straight to Google. And we set up a loyalty program to keep clients coming back.
               </p>
               <p>
-                The entire system was live in 48 hours. The launch call took 25 minutes. From that point on, it runs automatically.
+                The entire system was live in 10 days. The launch call took 25 minutes. From that point on, it runs automatically.
               </p>
             </div>
           </div>
@@ -111,9 +112,9 @@ const OurWork = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Want us to build this for your salon?</h2>
           <p className="text-white/70 text-lg mb-8">Book a free 20-minute call. We'll show you exactly what your system will look like.</p>
-          <Link to="/book-a-call" className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
+          <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
             Book A Free Call
-          </Link>
+          </BookCallLink>
         </div>
       </section>
 

@@ -1,12 +1,8 @@
-import { Button } from "@/components/ui/button";
+import BookCallButton from "@/components/BookCallButton";
 import { Star } from "lucide-react";
 import DetoolLogo from "@/components/DetoolLogo";
 
 const LandingHero = () => {
-  const scrollToForm = () => {
-    document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden pt-20" style={{ background: "#0f1b2d" }}>
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
@@ -35,12 +31,9 @@ const LandingHero = () => {
                   </div>
                 ))}
               </div>
-              <Button
-                onClick={scrollToForm}
-                className="rounded-lg px-8 py-4 text-base font-bold bg-primary hover:bg-primary/90 shadow-lg"
-              >
+              <BookCallButton className="rounded-lg px-8 py-4 text-base shadow-lg">
                 Book A Call
-              </Button>
+              </BookCallButton>
             </div>
 
             {/* Rating badges */}

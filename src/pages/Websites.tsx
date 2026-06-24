@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import BookCallLink from "@/components/BookCallLink";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
@@ -73,7 +74,7 @@ const Websites = () => {
                 Most agencies charge extra for every little thing. We don't. Your $297/mo covers the website, hosting, maintenance, and monthly updates. That's it.
               </p>
               <Button asChild className="rounded-full px-8 font-semibold">
-                <Link to="/contact">Book A Free Call</Link>
+                <BookCallLink className="hover:text-primary transition-colors">Book A Free Call</BookCallLink>
               </Button>
             </div>
             <div className="grid grid-cols-1 gap-3">
@@ -120,7 +121,7 @@ const Websites = () => {
             When someone Googles you and finds a clean, professional website, they call you. When they find nothing — or something that looks like it was built in 2009 — they call your competitor.
           </p>
           <Button asChild size="lg" className="rounded-full px-10 py-6 font-semibold shadow-warm">
-            <Link to="/contact">Book A Free Call</Link>
+            <BookCallLink className="hover:text-primary transition-colors">Book A Free Call</BookCallLink>
           </Button>
         </div>
       </section>

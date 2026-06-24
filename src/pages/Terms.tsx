@@ -7,7 +7,7 @@ const Terms = () => {
     <div className="min-h-screen bg-white">
       <SEO
         title="Terms of Service — Detool.AI"
-        description="Terms and conditions for Detool.AI booking and automation services for beauty businesses."
+        description="Terms and conditions for Detool.AI booking and automation services for local service businesses."
         path="/terms"
       />
       <Header />
@@ -26,7 +26,7 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Agreement</h2>
               <p>
                 By using Detool.AI services, you agree to these Terms of Service. Detool.AI provides
-                booking websites, marketing automations, and related tools for beauty businesses on a
+                booking websites, marketing automations, and related tools for local service businesses on a
                 month-to-month subscription basis.
               </p>
             </section>

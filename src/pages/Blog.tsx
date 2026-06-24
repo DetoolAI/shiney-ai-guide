@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import { Link } from "react-router-dom";
+import BookCallLink from "@/components/BookCallLink";
 
 const posts = [
   {
@@ -79,10 +80,10 @@ const Blog = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Ready to put this into action?</h2>
-          <p className="text-gray-500 text-lg mb-8">Stop reading about what works and start doing it. Book a free call and we'll build your system in 48 hours.</p>
-          <Link to="/book-a-call" className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
+          <p className="text-gray-500 text-lg mb-8">Stop reading about what works and start doing it. Book a free call and we'll build your system in 10 days.</p>
+          <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
             Book A Free Call
-          </Link>
+          </BookCallLink>
         </div>
       </section>
 

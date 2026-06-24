@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Instagram, Youtube } from "lucide-react";
 import DetoolLogo from "@/components/DetoolLogo";
+import BookCallLink from "@/components/BookCallLink";
 
 const LandingFooter = () => {
   return (
@@ -11,7 +12,7 @@ const LandingFooter = () => {
             <Link to="/" className="inline-flex mb-3">
               <DetoolLogo size="sm" />
             </Link>
-            <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for beauty businesses.</p>
+            <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for local businesses — nail salon specialists.</p>
             <div className="flex items-center gap-3">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
@@ -47,7 +48,7 @@ const LandingFooter = () => {
               <Link to="/our-work" className="block hover:text-primary transition-colors">Our Work</Link>
               <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
               <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
-              <Link to="/book-a-call" className="block hover:text-primary transition-colors">Book A Call</Link>
+              <BookCallLink className="block hover:text-primary transition-colors">Book A Call</BookCallLink>
               <Link to="/privacy" className="block hover:text-primary transition-colors">Privacy</Link>
               <Link to="/terms" className="block hover:text-primary transition-colors">Terms</Link>
             </div>
@@ -65,9 +66,9 @@ const LandingFooter = () => {
                 <Mail className="w-3.5 h-3.5" /> detoolai@gmail.com
               </a>
             </div>
-            <Link to="/book-a-call" className="inline-block mt-4 text-sm font-bold text-primary hover:text-primary/80">
+            <BookCallLink className="inline-block mt-4 text-sm font-bold text-primary hover:text-primary/80">
               Book A Call →
-            </Link>
+            </BookCallLink>
           </div>
         </div>
 

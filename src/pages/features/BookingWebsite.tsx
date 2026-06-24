@@ -14,7 +14,7 @@ const benefits = [
 const steps = [
   { title: "We design your site", desc: "Custom colors, your logo, your service menu, your prices. Looks like you hired a top design agency." },
   { title: "We connect your booking system", desc: "Real-time availability, automatic confirmations, reminders, and deposit collection all built in." },
-  { title: "You go live in 48 hours", desc: "Send your clients to your new booking link. Watch the appointments roll in." },
+  { title: "You go live in 10 days", desc: "Send your clients to your new booking link. Watch the appointments roll in." },
 ];
 
 const BookingWebsite = () => (

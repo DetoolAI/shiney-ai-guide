@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import BookCallButton from "@/components/BookCallButton";
 import { AlertCircle, DollarSign, Clock, TrendingDown, Calendar, MessageSquare } from "lucide-react";
 
 const ProblemsSection = () => {
@@ -125,9 +125,9 @@ const ProblemsSection = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4 shadow-glow">
+          <BookCallButton className="text-lg px-8 py-4 shadow-glow">
             Get Started Today
-          </Button>
+          </BookCallButton>
         </div>
       </div>
     </section>

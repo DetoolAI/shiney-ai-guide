@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import BookCallButton from "@/components/BookCallButton";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Calendar,
@@ -13,11 +13,6 @@ import {
 import DemoRequestForm from "@/components/landing/DemoRequestForm";
 import LandingFooter from "@/components/landing/LandingFooter";
 import SEO from "@/components/SEO";
-
-const scrollToForm = () => {
-  const el = document.getElementById("demo-form");
-  if (el) el.scrollIntoView({ behavior: "smooth" });
-};
 
 const Beauty = () => {
   const problems = [
@@ -110,13 +105,9 @@ const Beauty = () => {
               Beauty bars
             </p>
 
-            <Button
-              size="lg"
-              onClick={scrollToForm}
-              className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform"
-            >
+            <BookCallButton className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform">
               Book a Free Meeting
-            </Button>
+            </BookCallButton>
 
             <p className="text-sm text-gray-500 mt-6">
               See exactly how it would work for your salon — in under 20 minutes.
@@ -239,13 +230,9 @@ const Beauty = () => {
               review every single time. We build that system for you in days,
               not months.
             </p>
-            <Button
-              size="lg"
-              onClick={scrollToForm}
-              className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform"
-            >
+            <BookCallButton className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform">
               Book a Free Meeting
-            </Button>
+            </BookCallButton>
           </div>
         </div>
       </section>

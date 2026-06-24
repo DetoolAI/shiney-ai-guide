@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import BookCallLink from "@/components/BookCallLink";
 
 const included = [
   "Branded booking website on your own domain",
@@ -20,7 +21,7 @@ const included = [
   "Client member portal (book, manage, track rewards)",
   "No-show reduction workflows",
   "Re-engagement campaigns for lapsed clients",
-  "Onboarding call + 48-hour setup",
+  "Onboarding call + 10-day setup",
   "Monthly support and improvements",
   "No contracts — cancel any time",
 ];
@@ -30,7 +31,7 @@ const faqs = [
   { q: "What if I don't see results?", a: "Book the call and let's be honest with each other. If your business isn't a good fit, we'll tell you. We don't take money from people who won't benefit." },
   { q: "Are there any setup fees?", a: "No setup fees, ever. $397/month is all you pay." },
   { q: "Can I cancel any time?", a: "Yes. No contracts. No cancellation penalties. We earn your business every single month." },
-  { q: "What happens after I pay?", a: "We schedule your onboarding call, build your full system within 48 hours, and hop on a 25-minute launch call to go live together." },
+  { q: "What happens after I pay?", a: "We schedule your onboarding call, build your full system within 10 days, and hop on a 25-minute launch call to go live together." },
   { q: "Do I need a separate booking tool like Vagaro or Booksy?", a: "No. Our system replaces those tools and adds automation on top. Many of our clients switch over and immediately save money." },
 ];
 
@@ -55,7 +56,7 @@ const Pricing = () => {
       <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Simple Pricing.<br />No Surprises.</h1>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">One plan. Everything included. Done for you in 48 hours.</p>
+          <p className="text-white/70 text-xl max-w-2xl mx-auto">One plan. Everything included. Done for you in 10 days.</p>
         </div>
       </section>
 
@@ -81,12 +82,9 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/book-a-call"
-                  className="block w-full text-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-8 py-4 text-lg"
-                >
+                <BookCallLink className="block w-full text-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-8 py-4 text-lg">
                   Book A Free Call — Get Started
-                </Link>
+                </BookCallLink>
                 <p className="text-center text-gray-400 text-xs mt-3">20-minute call • No pressure • We'll show you the platform live</p>
               </div>
             </div>
@@ -122,9 +120,9 @@ const Pricing = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Ready to see if this is right for you?</h2>
           <p className="text-white/70 text-lg mb-8">Book a free 20-minute call. No pressure. We'll walk you through exactly what you'll get.</p>
-          <Link to="/book-a-call" className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
+          <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
             Book A Free Call
-          </Link>
+          </BookCallLink>
         </div>
       </section>
 

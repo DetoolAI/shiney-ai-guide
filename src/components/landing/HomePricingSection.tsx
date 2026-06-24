@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
+import BookCallLink from "@/components/BookCallLink";
 
 const plans = [
   {
@@ -104,8 +105,7 @@ const HomePricingSection = () => {
                 ))}
               </ul>
 
-              <Link
-                to="/contact"
+              <BookCallLink
                 className={`block text-center py-3.5 rounded-xl font-bold text-sm transition-all ${
                   plan.highlight
                     ? "bg-white text-primary hover:bg-gray-100"
@@ -113,7 +113,7 @@ const HomePricingSection = () => {
                 }`}
               >
                 {plan.cta}
-              </Link>
+              </BookCallLink>
               <p className={`text-xs text-center mt-3 ${plan.highlight ? "text-white/60" : "text-gray-400"}`}>
                 No contracts · Cancel anytime
               </p>

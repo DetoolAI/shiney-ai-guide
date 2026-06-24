@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import { Link } from "react-router-dom";
 import { Check, Star } from "lucide-react";
+import BookCallLink from "@/components/BookCallLink";
 
 type Step = { title: string; desc: string };
 
@@ -109,12 +110,9 @@ const FeaturePageLayout = ({
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{ctaTitle}</h2>
           <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">{ctaSubtitle}</p>
-          <Link
-            to="/book-a-call"
-            className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg"
-          >
+          <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
             Book A Free Call
-          </Link>
+          </BookCallLink>
         </div>
       </section>
 

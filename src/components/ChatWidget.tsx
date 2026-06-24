@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { BOOK_A_CALL_URL } from "@/lib/constants";
 import { MessageCircle, X, Send, Bot, ChevronRight } from "lucide-react";
 
 type Message = {
@@ -21,7 +21,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /what (is|are|does) detool|tell me about|what do you do|who are you|about detool/i,
     answer:
-      "Detool.AI is an AI-powered growth studio built for service businesses and sales teams. We handle:\n\n• 🤖 AI Lead Follow-Up — instant responses via SMS, email, Instagram & Facebook DMs\n• 📅 Automatic Booking — AI qualifies leads and books appointments to your calendar\n• 🎯 Lead Scraping — pulling fresh leads from Google Maps, Zillow, and across the web\n• 📣 Outreach Automation — SMS, email, and ringless voicemail campaigns\n• 💰 Paid Traffic — Facebook, Instagram, and Google Ads that drive high-intent buyers\n\nWe're trusted by 150+ agents and teams across the US. Setup takes under 3 days.",
+      "Detool.AI designs websites and runs marketing for local service businesses. We build and launch your full system — done for you.\n\n• 🌐 Custom booking website — professional, mobile-ready, live in 10 days\n• 🤖 AI chatbot on your site — answers questions and captures leads 24/7\n• 📞 Missed call text-back — never lose a lead to voicemail\n• ⭐ Automated review requests — more 5-star Google reviews on autopilot\n• 📣 One-click marketing campaigns — fill slow weeks fast\n• 🔍 On-site SEO + Google Business optimization\n\nWe specialize in nail salons — and also work with real estate, security, spas, and other local service businesses. Trusted by 150+ businesses across the US.",
     suggestions: ["Who is it for?", "How does setup work?", "What does it cost?"],
   },
 
@@ -29,23 +29,23 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /who is (it|this|detool) for|right for me|my business|qualify|do i qualify|does it work for/i,
     answer:
-      "Detool.AI is built for:\n\n✅ Real estate agents handling inbound leads\n✅ Sales professionals across any industry\n✅ Teams receiving 10+ leads per week\n✅ Anyone tired of manually chasing unresponsive leads\n\nIf you're missing leads because follow-up is slow or inconsistent, Detool.AI is made for you.",
-    suggestions: ["How does the AI follow-up work?", "What channels do you use?", "Book a meeting"],
+      "Detool.AI is built for local service businesses that book appointments or need more leads:\n\n✅ Nail salons, lash studios, spas, and beauty businesses\n✅ Real estate agents and property professionals\n✅ Security companies and home service businesses\n✅ Any local business tired of missed calls, no-shows, and slow weeks\n\nIf you need a professional website and marketing that actually runs — Detool.AI is for you.",
+    suggestions: ["How does setup work?", "What's in the $297 plan?", "Book a meeting"],
   },
 
   // How it works / setup
   {
     patterns: /how does it work|how it works|explain|walk me through|setup process|how do i start|get started|onboard/i,
     answer:
-      "Here's how we get you live in under 3 days:\n\n1️⃣ We learn your business — services, tone, and common questions\n2️⃣ We train the AI on your brand so it sounds just like you\n3️⃣ We connect your channels — SMS, email, Instagram, Facebook\n4️⃣ We activate and you start getting booked automatically\n\nYou review and approve everything before we go live. No tech skills needed on your end.",
-    suggestions: ["What channels do you connect?", "Will the AI sound like me?", "Book a meeting"],
+      "Here's how we get you live in 10 days:\n\n1️⃣ Demo call — we learn your business and show you live examples\n2️⃣ We build — booking website, automations, deposits, review funnels, and campaigns\n3️⃣ Launch call — we walk you through everything and go live together\n\nWe handle all the technical work. No coding or tech skills needed on your end.",
+    suggestions: ["What's in the $297 plan?", "Will the AI sound like me?", "Book a meeting"],
   },
 
   // Channels
   {
     patterns: /channel|sms|text|email|instagram|facebook|dm|social|platform|where/i,
     answer:
-      "Detool.AI responds and follows up across:\n\n📱 SMS — instant text replies\n📧 Email — high-converting emails that bypass spam\n📸 Instagram DMs — automated responses to inquiries\n👍 Facebook Messages — never miss a message again\n📞 Ringless Voicemail — drops a voicemail without ringing the phone\n\nAll conversations flow into one dashboard so nothing slips through.",
+      "Detool.AI connects your business across:\n\n📱 SMS — missed call text-back and client follow-ups\n📧 Email — booking confirmations and marketing campaigns\n📸 Instagram & Facebook — respond to DMs and inquiries\n📞 Ringless Voicemail — available on advanced marketing plans\n\nEverything flows into one dashboard so nothing slips through.",
     suggestions: ["Does it integrate with my CRM?", "What about outreach?", "How much does it cost?"],
   },
 
@@ -53,7 +53,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /scrape|scraper|lead extract|pull leads|find leads|google maps|zillow|where do leads come from/i,
     answer:
-      "Our AI Lead Scraper pulls fresh, targeted leads from:\n\n🗺️ Google Maps — any business category or city\n🏠 Zillow & Real Estate platforms — listings and agent data\n🌐 Web-wide extraction — business names, phone numbers, and emails straight into your Google Sheets\n\nNo more manual searching — just a constant stream of qualified prospects.",
+      "Lead generation is available on our Digital Marketing and Full Growth plans:\n\n🗺️ Google Maps lead scraping — any business category or city\n🏠 Real estate lead data — listings and agent prospects\n📣 Automated outreach — SMS, email, and voicemail campaigns\n\nThe $297/mo Starter plan focuses on your website, chatbot, missed call text-back, reviews, and one-click marketing. Book a call to see which plan fits your goals.",
     suggestions: ["What do you do with the leads?", "Tell me about outreach", "How much does it cost?"],
   },
 
@@ -61,7 +61,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /outreach|campaign|blast|send messages|automated message|voicemail|ringless/i,
     answer:
-      "Once leads are captured, Detool.AI launches automated multi-channel outreach:\n\n📱 Personalized SMS — lands directly in their pocket\n📧 Custom Emails — built to convert and bypass spam filters\n📞 Ringless Voicemails — professional drops straight to their inbox, no ringing\n\nEverything runs on autopilot. No manual work required from you.",
+      "On our marketing plans, Detool.AI launches automated multi-channel outreach:\n\n📱 Personalized SMS\n📧 Custom emails\n📞 Ringless voicemails\n\nEverything runs on autopilot. The $297 Starter plan includes one-click marketing campaigns to your existing client list.",
     suggestions: ["What about paid ads?", "How does booking work?", "Book a meeting"],
   },
 
@@ -69,7 +69,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /paid (traffic|ads?)|facebook ads?|instagram ads?|google ads?|advertising|roas|return on ad/i,
     answer:
-      "We run battle-tested paid ad campaigns on:\n\n📘 Facebook Ads — precision-targeted by behavior, interests, and purchase intent\n📸 Instagram Ads — scroll-stopping creative that converts browsers into buyers\n🔍 Google Ads — capturing buyers at the exact moment they're searching for your service\n\nOur average client sees 3–5x ROAS (return on ad spend). We only send you qualified, high-intent leads — no tire-kickers.",
+      "We run paid ad campaigns on our Digital Marketing and Full Growth plans:\n\n📘 Facebook Ads\n📸 Instagram Ads\n🔍 Google Ads\n\nAds drive traffic to your booking site and funnel — we handle creative, targeting, and follow-up. Book a call to discuss your market and budget.",
     suggestions: ["How does follow-up work?", "What does it cost?", "Book a meeting"],
   },
 
@@ -85,15 +85,15 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /book|appointment|calendar|schedule|meeting|slot/i,
     answer:
-      "The AI handles the entire booking flow automatically:\n\n1. Responds to the lead instantly\n2. Qualifies them with your key questions\n3. Offers available time slots based on your calendar\n4. Confirms the booking via SMS or email\n\nYou only spend time with leads who are already qualified and booked — no chasing.",
-    suggestions: ["What channels does it use?", "Does it work with my CRM?", "Book a meeting"],
+      "Your Detool system handles bookings automatically:\n\n1. Clients visit your professional booking website\n2. They pick a service and time slot\n3. Confirmations and reminders go out via SMS or email\n4. Deposits can be collected to reduce no-shows\n\nYou spend less time on the phone and more time doing the work.",
+    suggestions: ["What's in the $297 plan?", "Does it work with my CRM?", "Book a meeting"],
   },
 
   // CRM integration
   {
     patterns: /crm|gohighlevel|hubspot|follow up boss|integrate|integration|connect|sync/i,
     answer:
-      "Yes — Detool.AI integrates with the most popular CRMs including:\n\n• GoHighLevel\n• HubSpot\n• Follow Up Boss\n• And more\n\nIf you use something not on that list, reach out and we'll confirm compatibility. Setup includes full integration support at no extra cost.",
+      "Yes — Detool.AI is built on GoHighLevel and integrates with popular CRMs including:\n\n• GoHighLevel\n• HubSpot\n• And more\n\nYour booking site, automations, and client portal all connect seamlessly. Setup includes full integration support at no extra cost.",
     suggestions: ["How long does setup take?", "Is there a contract?", "What does it cost?"],
   },
 
@@ -101,7 +101,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /price|pricing|cost|how much|plan|fee|charge|pay|afford|budget|quote|297/i,
     answer:
-      "Here are our plans:\n\n🌐 Starter Website — $297/mo\nCustom website + AI chatbot + missed call text-back + automated review requests + one-click marketing + on-site SEO. Live in 3 days.\n\n📈 Digital Marketing — Custom\nEverything above + AI lead follow-up, automated booking, lead scraping, outreach campaigns, and paid ads (Facebook, Instagram, Google).\n\n✨ Full Growth Suite — Custom\nEvery tool we have, fully managed. Includes pipeline automation, A/B ad creatives, monthly strategy calls, and a 60-day ROI guarantee.\n\nAll plans: no contracts, no setup fees, cancel anytime.",
+      "Here are our plans:\n\n🌐 Starter Website — $297/mo\nCustom website + AI chatbot + missed call text-back + automated review requests + one-click marketing + on-site SEO. Live in 10 days.\n\n📈 Digital Marketing — Custom\nEverything above + AI lead follow-up, automated booking, lead scraping, outreach campaigns, and paid ads.\n\n✨ Full Growth Suite — Custom\nEvery tool we have, fully managed. Includes pipeline automation, ad creatives, monthly strategy calls, and a 60-day ROI guarantee.\n\nAll plans: no contracts, no setup fees, cancel anytime.",
     suggestions: ["What's in the $297 plan?", "Book a meeting", "Is there a contract?"],
   },
 
@@ -109,7 +109,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /297|starter|website plan|what.s included|what is included/i,
     answer:
-      "The $297/month Starter plan includes:\n\n🌐 Custom professional website\n🤖 AI chatbot on your site\n📞 Missed call text-back — auto-texts anyone who calls and you miss\n⭐ Automated review requests — texts clients asking for a Google review\n📣 One-click marketing campaigns\n🔍 On-site SEO setup\n📅 Setup in under 3 days\n🔓 No contracts, cancel anytime",
+      "The $297/month Starter plan includes:\n\n🌐 Custom professional website\n🤖 AI chatbot on your site\n📞 Missed call text-back — auto-texts anyone who calls and you miss\n⭐ Automated review requests — texts clients asking for a Google review\n📣 One-click marketing campaigns\n🔍 On-site SEO setup\n📅 Live in 10 days\n🔓 No contracts, cancel anytime",
     suggestions: ["How does missed call text-back work?", "How does review automation work?", "Book a meeting"],
   },
 
@@ -117,7 +117,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /missed call|text.?back|call back|miss a call/i,
     answer:
-      "Missed call text-back works like this:\n\n📞 Someone calls your business\n❌ You don't pick up\n📱 They instantly get a text:\n\n\"Hey! Sorry I missed your call. I'm Justin from Detool.AI — how can I help? Reply here and I'll get back to you ASAP.\"\n\nYou never lose a lead to a missed call again. Included in every plan.",
+      "Missed call text-back works like this:\n\n📞 Someone calls your business\n❌ You don't pick up\n📱 They instantly get a text:\n\n\"Hey! Sorry we missed your call — how can we help you today? Reply here and we'll get back to you ASAP.\"\n\nYou never lose a lead to a missed call again. Included in every plan.",
     suggestions: ["Tell me about review automation", "What's in the $297 plan?", "Book a meeting"],
   },
 
@@ -125,7 +125,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /review|reputation|google review|ask for review|review request/i,
     answer:
-      "Our automated review system works like this:\n\n✅ After working with a client, we auto-send them a text:\n\n\"Thanks for choosing Detool.AI! If you had a great experience, we'd love a Google review — it only takes 30 seconds: [your link]\"\n\nMore 5-star reviews = higher Google ranking = more clients finding you. Included in the $297/month plan.",
+      "Our automated review system works like this:\n\n✅ After a client visit, we auto-send them a text asking for a Google review with your direct link.\n\nMore 5-star reviews = higher Google ranking = more clients finding you. Included in the $297/month plan.",
     suggestions: ["Tell me about one-click marketing", "What's in the $297 plan?", "Book a meeting"],
   },
 
@@ -141,7 +141,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /contract|cancel|lock|month.to.month|commitment|leave|exit/i,
     answer:
-      "No long-term contracts. Detool.AI works month-to-month.\n\nIf you're not happy, you can cancel anytime — though most clients see a clear booking increase within the first two weeks and never look back. 😊",
+      "No long-term contracts. Detool.AI works month-to-month.\n\nIf you're not happy, you can cancel anytime — though most clients see results within the first few weeks and stay.",
     suggestions: ["What's the guarantee?", "How much does it cost?", "Book a meeting"],
   },
 
@@ -149,7 +149,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /guarantee|results|promise|roi|return|work|prove/i,
     answer:
-      "We back every plan with a full guarantee:\n\n✅ ROI guarantee within 60 days\n✅ Free migration from your existing system\n✅ No setup fees or hidden costs\n✅ Dedicated account manager included\n✅ 24/7 priority support\n\nIf you don't see results, we'll make it right. We're invested in your success.",
+      "We back our plans with real support and proven systems:\n\n✅ 60-day ROI guarantee on Full Growth plans\n✅ Free migration from your existing system\n✅ No setup fees or hidden costs\n✅ Dedicated support included\n\nIf you don't see results, we'll make it right. We're invested in your success.",
     suggestions: ["How much does it cost?", "Book a meeting", "How does it work?"],
   },
 
@@ -157,7 +157,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /how long|setup time|time to start|when can i|how fast|quick|days/i,
     answer:
-      "Most clients are fully live in under 3 days. Here's the timeline:\n\n• Day 1 — Onboarding call, we learn your business\n• Day 2 — AI training and channel setup\n• Day 3 — Review, approve, and go live\n\nWe handle all the technical work. You just show up for the onboarding call.",
+      "Most clients are fully live in 10 days. Here's the timeline:\n\n• Day 1 — Demo/onboarding call, we learn your business\n• Days 2–9 — We build your website, automations, and campaigns\n• Launch call — We walk you through everything and go live\n\nWe handle all the technical work. You just show up for the calls.",
     suggestions: ["What do I need to provide?", "How much does it cost?", "Book a meeting"],
   },
 
@@ -165,7 +165,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /hire|staff|employee|team|headcount|person|manage it|run it/i,
     answer:
-      "Zero extra staff needed. That's the whole point.\n\nDetool.AI runs 24/7 on autopilot — responding to leads, following up, and booking appointments without any manual input from you. It's like having a full follow-up team that never sleeps, never takes days off, and never misses a message.",
+      "Zero extra staff needed. That's the whole point.\n\nDetool.AI runs on autopilot — capturing leads, following up, sending review requests, and filling your calendar without manual work from you.",
     suggestions: ["How does it work?", "What channels does it use?", "Book a meeting"],
   },
 
@@ -173,7 +173,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /how many|clients|proof|reviews|trusted|results|stats|numbers|150/i,
     answer:
-      "Here's what our clients see:\n\n📈 150+ agents and teams served across the US\n📅 50% average booking increase\n⚡ Instant response time, 24/7\n⏱️ Setup in under 3 days\n\nWe also have 5-star Google reviews — check them out on our homepage or on Google Maps.",
+      "Here's what our clients see:\n\n📈 150+ local businesses served across the US\n📅 More bookings from missed call recovery and review automation\n🌐 Professional websites live in 10 days\n⭐ 5-star Google reviews from real clients\n\nCheck our Testimonials page or Google Maps to see verified reviews.",
     suggestions: ["What do clients say?", "Book a meeting", "How much does it cost?"],
   },
 
@@ -181,7 +181,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /contact|speak|human|real person|call|phone|email|reach|talk to someone/i,
     answer:
-      "You can reach us a few ways:\n\n📧 Email — detoolai@gmail.com\n📋 Contact form — detool.ai/contact\n📅 Book a call — click 'Book a Meeting' on the homepage\n\nWe typically respond within a few hours during business hours.",
+      "You can reach us a few ways:\n\n📧 Email — detoolai@gmail.com\n📋 Contact form — detool.ai/contact\n📅 Book a call — grow.detool.ai/landing-page\n\nWe typically respond within a few hours during business hours.",
     suggestions: ["Book a meeting", "What does it cost?", "How does it work?"],
   },
 
@@ -189,7 +189,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /book|meeting|call|demo|free consult|schedule a call|get started/i,
     answer:
-      "Awesome — let's get you booked! 🎉\n\nClick the button below to schedule your free strategy call. We'll walk you through exactly how Detool.AI works for your business, answer any questions, and put together a custom plan.\n\nNo obligations, no credit card required.",
+      "Awesome — let's get you booked! 🎉\n\nClick the button below to schedule your free demo call. We'll walk you through exactly how Detool.AI works for your business, answer any questions, and put together a custom plan.\n\nNo obligations, no credit card required.",
     suggestions: ["📅 Book a Free Meeting →"],
   },
 ];
@@ -205,10 +205,10 @@ function getBotReply(input: string): Message {
 
   // Check for book meeting suggestion click
   if (trimmed === "📅 Book a Free Meeting →") {
-    window.open("https://detool.ai/contact", "_blank");
+    window.open(BOOK_A_CALL_URL, "_blank");
     return {
       from: "bot",
-      text: "Opening our contact page now! 🚀 Fill out the form and we'll be in touch within a few hours to confirm your call.",
+      text: "Opening our booking page now! 🚀 Schedule your free demo call and we'll show you everything live.",
       suggestions: ["What does it cost?", "How does it work?", "What's included?"],
     };
   }
@@ -227,7 +227,7 @@ function getBotReply(input: string): Message {
 const INITIAL_MESSAGES: Message[] = [
   {
     from: "bot",
-    text: "Hey! 👋 I'm the Detool.AI assistant. I know everything about our services — ask me anything!",
+    text: "Hey! 👋 I'm the Detool.AI assistant. Ask me about websites, marketing, pricing, or how we help local businesses grow.",
     suggestions: ["What is Detool.AI?", "How much does it cost?", "Book a meeting"],
   },
 ];

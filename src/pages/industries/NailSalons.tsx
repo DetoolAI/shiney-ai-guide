@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
+import BookCallLink from "@/components/BookCallLink";
 
 const problems = [
   "No-shows costing you $50–$200 every single week",
@@ -74,10 +75,10 @@ const NailSalons = () => {
       <section className="bg-detool-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-white mb-4">Ready to run your nail salon smarter?</h2>
-          <p className="text-white/70 text-lg mb-8">Book a free call. We'll build your complete system in 48 hours.</p>
-          <Link to="/book-a-call" className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
+          <p className="text-white/70 text-lg mb-8">Book a free call. We'll build your complete system in 10 days.</p>
+          <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
             Book A Free Call
-          </Link>
+          </BookCallLink>
           <p className="text-white/40 mt-3 text-sm">$397/month · No contracts · Cancel any time</p>
         </div>
       </section>

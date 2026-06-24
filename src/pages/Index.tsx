@@ -6,6 +6,7 @@ import HomeFeatureSections from "@/components/landing/HomeFeatureSections";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import BookCallLink from "@/components/BookCallLink";
 
 const industries = [
   { name: "Nail Salons", slug: "/industries/nail-salons" },
@@ -18,7 +19,7 @@ const industries = [
 
 const steps = [
   { num: "01", title: "Demo Call (20 mins)", desc: "It's actually a sales call, we just didn't want to scare you. We'll answer every question and show you live client results." },
-  { num: "02", title: "We Build Your System (48 hours)", desc: "Fill out a quick onboarding form. We build your booking site, automations, deposits, and campaigns — done for you." },
+  { num: "02", title: "We Build Your System (10 days)", desc: "Fill out a quick onboarding form. We build your booking site, automations, deposits, and campaigns — done for you." },
   { num: "03", title: "Launch Call (25 mins)", desc: "We walk you through everything and go live together. After that, your system runs on autopilot." },
 ];
 
@@ -27,13 +28,13 @@ const whyUs = [
   { title: "Affordable", desc: "At $397/month, most clients make it back in the first week from deposit collections alone." },
   { title: "No Contracts", desc: "Month to month. If we don't deliver results, you shouldn't be stuck with us." },
   { title: "No BS", desc: "We don't over-promise. We tell you exactly what we're going to do — and we do it." },
-  { title: "We Have Proof", desc: "Real beauty businesses using our system right now. Read their reviews. See our work." },
-  { title: "Always Improving", desc: "We add new features monthly based on what beauty business owners actually need." },
+  { title: "We Have Proof", desc: "Real local businesses using our system right now. Read their reviews. See our work." },
+  { title: "Always Improving", desc: "We add new features monthly based on what local business owners actually need." },
 ];
 
 const faqs = [
   { q: "When am I going to start seeing results?", a: "It depends on your advertising, how long you've been in business, and whether you commit to using the system. Detool.AI gives you the foundation — deposits, follow-ups, reviews, and campaigns — but you still need to show up and do great work." },
-  { q: "How long does setup take?", a: "We build and launch your full system in 48 to 72 hours. The launch call takes about 25 minutes. After that you're live." },
+  { q: "How long does setup take?", a: "We build and launch your full system in 10 days. The launch call takes about 25 minutes. After that you're live." },
   { q: "Will this work for my type of salon?", a: "Yes. We work with nail salons, lash studios, spas, brow bars, hair salons, and waxing studios. If you book appointments and want more of them — this works for you." },
   { q: "Is there a contract?", a: "No. Month to month. Cancel any time. We're confident you'll stay because you're seeing results." },
   { q: "Why $397 and not cheaper?", a: "Because we don't just give you software. We set it all up, build your automations, and support you ongoing. You're buying a done-for-you system." },
@@ -65,19 +66,16 @@ const Index = () => {
       <section id="hero" className="bg-detool-dark pt-40 pb-24 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] max-w-5xl mx-auto mb-6">
-            Website Design & Marketing For Beauty Businesses
+            Website Design & Marketing For Local Businesses
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-            We design stunning websites and run marketing that fills your calendar — built for nail salons, lash studios, spas, and beauty pros.
+            We design stunning websites and run marketing that fills your calendar — specializing in nail salons, lash studios, and spas, plus real estate, security, and other local service businesses.
             No miracle fix. Just tools that work when you commit to using them.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <Link
-              to="/book-a-call"
-              className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg"
-            >
+            <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
               Book A Call
-            </Link>
+            </BookCallLink>
             <Link to="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-base underline underline-offset-4">
               See Our Work
             </Link>
@@ -89,7 +87,7 @@ const Index = () => {
                   <div key={i} className="w-9 h-9 rounded-full bg-primary/80 border-2 border-white flex items-center justify-center text-white font-bold text-sm">{l}</div>
                 ))}
               </div>
-              <span className="ml-3 text-white/70 text-sm">Trusted by beauty businesses across the US</span>
+              <span className="ml-3 text-white/70 text-sm">Trusted by local businesses across the US</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2">
@@ -149,7 +147,7 @@ const Index = () => {
       <section id="industries" className="py-20 bg-white scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Serving all these beauty businesses and more...</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Serving nail salons, spas, real estate, security, and more...</h2>
             <div className="flex flex-wrap justify-center gap-4 mt-10">
               {industries.map((ind, i) =>
                 ind.slug ? (
@@ -225,13 +223,10 @@ const Index = () => {
       <section id="cta" className="bg-detool-dark py-20 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Want to schedule a time to talk?</h2>
-          <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website design, marketing, and automations — all built to grow your beauty business.</p>
-          <Link
-            to="/book-a-call"
-            className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl"
-          >
+          <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website design, marketing, and automations — all built to grow your local business.</p>
+          <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl">
             Book A Call
-          </Link>
+          </BookCallLink>
         </div>
       </section>
 

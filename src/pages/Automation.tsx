@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
+import BookCallLink from "@/components/BookCallLink";
 import { Button } from "@/components/ui/button";
 import { Phone, Star, Megaphone, Bot, TrendingUp, Check } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -104,7 +104,7 @@ const Automation = () => {
             These tools run in the background 24/7 — responding to leads, asking for reviews, sending marketing texts — so you don't have to. No extra staff. No extra hours.
           </p>
           <Button asChild size="lg" className="rounded-full px-10 py-6 text-base font-semibold shadow-warm">
-            <Link to="/contact">Book A Free Call</Link>
+            <BookCallLink className="hover:text-primary transition-colors">Book A Free Call</BookCallLink>
           </Button>
           <p className="text-xs text-gray-500/60 mt-4">Most tools included in the $297/mo plan</p>
         </div>
@@ -159,7 +159,7 @@ const Automation = () => {
             Book a free call. We'll figure out which tools make sense for your business and get them running.
           </p>
           <Button asChild size="lg" className="rounded-full px-10 py-6 font-semibold shadow-warm">
-            <Link to="/contact">Book A Free Call</Link>
+            <BookCallLink className="hover:text-primary transition-colors">Book A Free Call</BookCallLink>
           </Button>
         </div>
       </section>
