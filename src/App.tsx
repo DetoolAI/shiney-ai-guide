@@ -17,6 +17,8 @@ import DemoThankYou from "./pages/DemoThankYou";
 import OurWork from "./pages/OurWork";
 import BookACall from "./pages/BookACall";
 import Blog from "./pages/Blog";
+import BlogCategory from "./pages/BlogCategory";
+import BlogPost from "./pages/BlogPost";
 
 // Feature pages
 import BookingWebsite from "./pages/features/BookingWebsite";
@@ -66,6 +68,8 @@ const App = () => (
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/book-a-call" element={<BookACall />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/category/:categorySlug" element={<BlogCategory />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
           {/* Feature pages */}
           <Route path="/features/booking-website" element={<BookingWebsite />} />

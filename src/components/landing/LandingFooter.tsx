@@ -46,6 +46,7 @@ const LandingFooter = () => {
               <Link to="/pricing" className="block hover:text-primary transition-colors">Pricing</Link>
               <Link to="/testimonials" className="block hover:text-primary transition-colors">Testimonials</Link>
               <Link to="/our-work" className="block hover:text-primary transition-colors">Our Work</Link>
+              <Link to="/blog" className="block hover:text-primary transition-colors">Blog</Link>
               <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
               <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
               <BookCallLink className="block hover:text-primary transition-colors">Book A Call</BookCallLink>
