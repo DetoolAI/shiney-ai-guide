@@ -12,7 +12,7 @@ const LandingFooter = () => {
             <Link to="/" className="inline-flex mb-3">
               <DetoolLogo size="sm" />
             </Link>
-            <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for local businesses — nail salon specialists.</p>
+            <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for car detailers — missed calls, quote forms, reviews, and follow-up on autopilot.</p>
             <div className="flex items-center gap-3">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
@@ -57,9 +57,9 @@ const LandingFooter = () => {
           <div>
             <p className="font-bold text-gray-900 text-sm mb-3">Industries</p>
             <div className="space-y-2 text-sm text-gray-500">
-              <Link to="/industries/nail-salons" className="block hover:text-primary transition-colors">Nail Salons</Link>
-              <Link to="/industries/lash-studios" className="block hover:text-primary transition-colors">Lash Studios</Link>
-              <Link to="/industries/spas" className="block hover:text-primary transition-colors">Spas</Link>
+              <Link to="/industries/car-detailers" className="block hover:text-primary transition-colors">Car Detailers</Link>
+              <Link to="/industries/mobile-detailers" className="block hover:text-primary transition-colors">Mobile Detailers</Link>
+              <Link to="/industries/detailing-shops" className="block hover:text-primary transition-colors">Detailing Shops</Link>
             </div>
             <div className="mt-6">
               <a href="mailto:detoolai@gmail.com" className="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1">
@@ -73,7 +73,7 @@ const LandingFooter = () => {
         </div>
 
         <div className="border-t border-gray-200 pt-5 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Detool.AI. All rights reserved. · Website Design & Marketing For Beauty Businesses.
+          © {new Date().getFullYear()} Detool.AI. All rights reserved. · Website Design & Marketing For Car Detailers.
         </div>
       </div>
     </footer>

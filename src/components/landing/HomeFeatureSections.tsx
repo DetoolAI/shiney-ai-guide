@@ -8,15 +8,15 @@ import ConnectingScrollLine from "@/components/landing/ConnectingScrollLine";
 const features = [
   {
     num: "01",
-    title: "Branded Booking Website",
-    subtitle: "Get a website that turns visitors into booked appointments — with deposits collected automatically.",
+    title: "Branded Detailing Website",
+    subtitle: "Get a website that turns visitors into quote requests — with a contact form that works while you're on the job.",
     slug: "/features/booking-website",
     phoneDemo: "website" as const,
     bullets: [
-      { heading: "Actually Get Found Online", body: "If a client Googles your salon and can't find you — that's awkward. We won't let that happen." },
-      { heading: "Showcase Your Best Work", body: "Your site shows your services, pricing, and reviews so clients trust you before they book." },
-      { heading: "Mobile Friendly", body: "87% of beauty clients book on their phone. Your site will look flawless on every device." },
-      { heading: "Deposits Built In", body: "Clients pay a deposit at booking. No-shows drop. Revenue goes up." },
+      { heading: "Actually Get Found Online", body: "If someone Googles 'detailer near me' and can't find you — that's money left on the table." },
+      { heading: "Showcase Your Best Work", body: "Your site shows your packages, before & after photos, and reviews so clients trust you before they call." },
+      { heading: "Mobile Friendly", body: "Most customers search on their phone. Your site will look flawless on every device." },
+      { heading: "Quote Form Built In", body: "Visitors request a quote 24/7. You follow up when you're done with the car." },
     ],
     flip: false,
   },
@@ -37,11 +37,11 @@ const features = [
   {
     num: "03",
     title: "Missed Call Text Back",
-    subtitle: "Everyone misses calls. Not everyone texts back. Be the salon that does.",
+    subtitle: "Everyone misses calls. Not everyone texts back. Be the detailer that does.",
     slug: "/features/missed-call-text-back",
     bullets: [
-      { heading: "Stand Out From Your Competition", body: "While competitors go to voicemail, you text back in 10 seconds with your booking link." },
-      { heading: "No More Lost Leads", body: "On a client? No problem — we fire off a text and start the conversation for you." },
+      { heading: "Stand Out From Your Competition", body: "While competitors go to voicemail, you text back in 10 seconds with your quote form link." },
+      { heading: "No More Lost Leads", body: "Hands deep in a detail? We fire off a text and start the conversation for you." },
       { heading: "Show Clients You Care", body: "Your clients hate being ignored. A quick text shows you're on it." },
       { heading: "Be Available 24/7", body: "Missed a call after hours? We make sure every lead feels looked after." },
     ],
@@ -54,10 +54,10 @@ const features = [
     subtitle: "Referrals and repeat clients are the best. Let's get you both — in one click.",
     slug: "/features/marketing-campaigns",
     bullets: [
-      { heading: "Done For You", body: "Pre-built beauty campaign templates. You press send — we handle the rest." },
+      { heading: "Done For You", body: "Pre-built detailing campaign templates. You press send — we handle the rest." },
       { heading: "Referral Campaigns", body: "Remind happy clients to tell their friends. Fill your calendar from word of mouth." },
       { heading: "Return Client Campaigns", body: "Bring back clients who haven't visited in 60+ days with one click." },
-      { heading: "Fill Slow Days Fast", body: "Slow Tuesday? Blast a promo to your list and watch slots fill in hours." },
+      { heading: "Fill Slow Weeks Fast", body: "Slow week? Blast a promo to your past customers and watch your schedule fill up." },
     ],
     flip: true,
     phoneDemo: "campaigns" as const,
@@ -70,8 +70,8 @@ const WebsitePhoneDemo = () => (
       <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 mx-auto mb-2 flex items-center justify-center">
         <span className="text-primary text-[8px] font-black">✦</span>
       </div>
-      <p className="text-white font-black text-[11px] leading-tight">Luxe Nail Studio</p>
-      <p className="text-white/50 text-[8px] mt-0.5">Premium Nails · Lashes · Brows</p>
+      <p className="text-white font-black text-[11px] leading-tight">ProShine Detailing</p>
+      <p className="text-white/50 text-[8px] mt-0.5">Mobile Auto Detailing · Ceramic Coating</p>
       <div className="flex justify-center gap-0.5 mt-2">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="w-2 h-2 fill-primary text-primary" />
@@ -82,9 +82,9 @@ const WebsitePhoneDemo = () => (
     <div className="px-3 py-3">
       <p className="text-[8px] font-bold text-gray-400 uppercase tracking-wider mb-2">Services</p>
       {[
-        { name: "Gel Manicure", price: "$45" },
-        { name: "Full Set Acrylics", price: "$65" },
-        { name: "Lash Fill", price: "$55" },
+        { name: "Full Detail", price: "$199" },
+        { name: "Interior + Exterior", price: "$149" },
+        { name: "Ceramic Coating", price: "$599" },
       ].map((s) => (
         <div key={s.name} className="flex items-center justify-between bg-white border border-gray-100 rounded-lg px-2 py-1.5 mb-1.5 shadow-sm">
           <span className="text-[9px] font-semibold text-gray-800">{s.name}</span>
@@ -102,9 +102,9 @@ const WebsitePhoneDemo = () => (
     </div>
     <div className="px-3 pb-4">
       <div className="bg-primary rounded-xl py-2 text-center">
-        <p className="text-white text-[10px] font-black">Book Now · $20 Deposit</p>
+        <p className="text-white text-[10px] font-black">Get A Free Quote</p>
       </div>
-      <p className="text-center text-[7px] text-gray-400 mt-1.5">Instant confirmation · Reminders included</p>
+      <p className="text-center text-[7px] text-gray-400 mt-1.5">We respond within minutes · Mobile service available</p>
     </div>
   </div>
 );

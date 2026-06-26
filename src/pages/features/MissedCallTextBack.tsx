@@ -28,7 +28,7 @@ const MissedCallTextBack = () => (
       <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-wide">Example text message</p>
       <div className="bg-white border border-gray-200 rounded-xl p-4 mb-3">
         <p className="text-gray-800 text-sm leading-relaxed">
-          "Hey! Sorry we missed your call — we're with a client right now. Book your appointment here: [your-salon].detool.ai. We'd love to see you!"
+          "Hey! Sorry we missed your call — we're on a detail right now. Request a free quote here: [your-site].detool.ai. We'll get back to you ASAP!"
         </p>
       </div>
       <p className="text-xs text-gray-400">Fires automatically within 10 seconds of any missed call</p>

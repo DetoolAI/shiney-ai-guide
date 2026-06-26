@@ -8,31 +8,29 @@ import { ChevronDown } from "lucide-react";
 import BookCallLink from "@/components/BookCallLink";
 
 const included = [
-  "Branded booking website on your own domain",
-  "Online appointment scheduling with real-time availability",
-  "Automatic deposit collection at time of booking",
-  "Confirmation texts and appointment reminders",
+  "Branded detailing website on your own domain",
+  "Quote & contact form — captures leads 24/7",
   "Missed call text-back (instant automated response)",
-  "5-star review funnel (automated post-visit requests)",
+  "Instant lead follow-up via SMS and email",
+  "5-star review funnel (automated post-service requests)",
   "One-click SMS & email marketing campaigns",
-  "Pre-written beauty campaign templates",
-  "Loyalty rewards program",
-  "Client membership & subscription billing",
-  "Client member portal (book, manage, track rewards)",
-  "No-show reduction workflows",
-  "Re-engagement campaigns for lapsed clients",
+  "Pre-written detailing campaign templates",
+  "Google Business Profile optimization",
+  "On-site SEO setup",
+  "Before & after gallery to showcase your work",
+  "Re-engagement campaigns for past customers",
   "Onboarding call + 10-day setup",
   "Monthly support and improvements",
   "No contracts — cancel any time",
 ];
 
 const faqs = [
-  { q: "Why $397 and not $97 like other apps?", a: "Because we don't just give you software. We set it all up for you, train you on it, build your automations, and support you ongoing. You're not buying a tool — you're buying a done-for-you system." },
+  { q: "Why $297 and not $97 like other apps?", a: "Because we don't just give you software. We set it all up for you, train you on it, build your automations, and support you ongoing. You're not buying a tool — you're buying a done-for-you system." },
   { q: "What if I don't see results?", a: "Book the call and let's be honest with each other. If your business isn't a good fit, we'll tell you. We don't take money from people who won't benefit." },
-  { q: "Are there any setup fees?", a: "No setup fees, ever. $397/month is all you pay." },
+  { q: "Are there any setup fees?", a: "No setup fees, ever. $297/month is all you pay." },
   { q: "Can I cancel any time?", a: "Yes. No contracts. No cancellation penalties. We earn your business every single month." },
   { q: "What happens after I pay?", a: "We schedule your onboarding call, build your full system within 10 days, and hop on a 25-minute launch call to go live together." },
-  { q: "Do I need a separate booking tool like Vagaro or Booksy?", a: "No. Our system replaces those tools and adds automation on top. Many of our clients switch over and immediately save money." },
+  { q: "Do I need a complicated booking system?", a: "No. Most detailers start with a quote form, missed-call text-back, and review funnel. We keep it simple — you can always add more later." },
 ];
 
 const FAQItem = ({ q, a }: { q: string; a: string }) => {
@@ -65,9 +63,9 @@ const Pricing = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white border-2 border-primary rounded-2xl shadow-sm overflow-hidden">
               <div className="bg-primary px-8 py-6 text-center">
-                <p className="text-white/80 font-medium mb-1">The Complete Beauty Business System</p>
+                <p className="text-white/80 font-medium mb-1">The Complete Car Detailer Lead System</p>
                 <div className="text-white">
-                  <span className="text-6xl font-black">$397</span>
+                  <span className="text-6xl font-black">$297</span>
                   <span className="text-xl font-medium">/month</span>
                 </div>
                 <p className="text-white/70 mt-1 text-sm">No contracts. No setup fees. Cancel any time.</p>
@@ -96,15 +94,15 @@ const Pricing = () => {
       <section className="py-20 bg-detool-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4">Does $397/month make sense?</h2>
-            <p className="text-gray-500 text-center mb-8">Drag the slider — see your deposit math in real time.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4">Does $297/month make sense?</h2>
+            <p className="text-gray-500 text-center mb-8">Drag the slider — see your detailing revenue math in real time.</p>
             <DepositROICalculator />
             <div className="text-center mt-8">
               <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
                 Book A Free Call — Get Started
               </BookCallLink>
             </div>
-            <p className="text-center text-gray-500 mt-4 text-sm">That's before counting the extra bookings from missed call recovery, marketing campaigns, and loyalty programs.</p>
+            <p className="text-center text-gray-500 mt-4 text-sm">That's before counting extra jobs from missed call recovery, faster follow-up, and review-driven Google traffic.</p>
           </div>
         </div>
       </section>

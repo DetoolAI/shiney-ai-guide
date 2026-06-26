@@ -5,7 +5,7 @@ import { CheckCircle2, Star } from "lucide-react";
 import BookCallLink from "@/components/BookCallLink";
 
 const values = [
-  "We don't oversell — we tell you what actually works for local service businesses",
+  "We don't oversell — we tell you what actually works for car detailers",
   "We build it, set it up, and support you after launch",
   "Month-to-month only — no long-term contracts, ever",
   "Real clients, real reviews — you can verify every one on Google",

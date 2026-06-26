@@ -22,7 +22,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /what (is|are|does) detool|tell me about|what do you do|who are you|about detool/i,
     answer:
-      "Detool.AI designs websites and runs marketing for local service businesses. We build and launch your full system — done for you.\n\n• 🌐 Custom booking website — professional, mobile-ready, live in 10 days\n• 🤖 AI chatbot on your site — answers questions and captures leads 24/7\n• 📞 Missed call text-back — never lose a lead to voicemail\n• ⭐ Automated review requests — more 5-star Google reviews on autopilot\n• 📣 One-click marketing campaigns — fill slow weeks fast\n• 🔍 On-site SEO + Google Business optimization\n\nWe specialize in nail salons — and also work with real estate, security, spas, and other local service businesses. Trusted by 150+ businesses across the US.",
+      "Detool.AI designs websites and runs marketing for car detailers. We build and launch your full system — done for you.\n\n• 🌐 Custom detailing website with quote form — professional, mobile-ready, live in 10 days\n• 📞 Missed call text-back — never lose a lead while you're on a job\n• ⭐ Automated review requests — more 5-star Google reviews on autopilot\n• 📣 One-click marketing campaigns — fill slow weeks fast\n• 🔍 On-site SEO + Google Business optimization\n\nWe specialize in mobile detailers, auto detailing shops, and ceramic coating businesses. Trusted by 150+ businesses across the US.",
     suggestions: ["Who is it for?", "How does setup work?", "What does it cost?"],
   },
 
@@ -30,7 +30,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /who is (it|this|detool) for|right for me|my business|qualify|do i qualify|does it work for/i,
     answer:
-      "Detool.AI is built for local service businesses that book appointments or need more leads:\n\n✅ Nail salons, lash studios, spas, and beauty businesses\n✅ Real estate agents and property professionals\n✅ Security companies and home service businesses\n✅ Any local business tired of missed calls, no-shows, and slow weeks\n\nIf you need a professional website and marketing that actually runs — Detool.AI is for you.",
+      "Detool.AI is built for car detailing businesses that need more leads and better follow-up:\n\n✅ Mobile auto detailers\n✅ Fixed-location detailing shops\n✅ Ceramic coating & paint correction specialists\n✅ One-man operations ready to scale\n\nIf you need a professional website, faster lead response, and more Google reviews — Detool.AI is for you.",
     suggestions: ["How does setup work?", "What's in the $297 plan?", "Book a meeting"],
   },
 
@@ -38,7 +38,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /how does it work|how it works|explain|walk me through|setup process|how do i start|get started|onboard/i,
     answer:
-      "Here's how we get you live in 10 days:\n\n1️⃣ Demo call — we learn your business and show you live examples\n2️⃣ We build — booking website, automations, deposits, review funnels, and campaigns\n3️⃣ Launch call — we walk you through everything and go live together\n\nWe handle all the technical work. No coding or tech skills needed on your end.",
+      "Here's how we get you live in 10 days:\n\n1️⃣ Demo call — we learn your detailing business and show you live examples\n2️⃣ We build — website with quote form, missed-call automations, review funnel, and campaigns\n3️⃣ Launch call — we walk you through everything and go live together\n\nWe handle all the technical work. No coding or tech skills needed on your end.",
     suggestions: ["What's in the $297 plan?", "Will the AI sound like me?", "Book a meeting"],
   },
 

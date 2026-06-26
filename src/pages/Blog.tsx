@@ -5,40 +5,40 @@ import BookCallLink from "@/components/BookCallLink";
 
 const posts = [
   {
-    title: "The $500/Week Trick That Beauty Salons Keep Ignoring",
+    title: "The $800/Month Trick Mobile Detailers Keep Ignoring",
     date: "June 5, 2026",
-    excerpt: "Deposits aren't just about protecting your time — they're a revenue stream. Here's the math on how 25 bookings a week at $20 each puts $2,000/month in your pocket before you even open your doors.",
+    excerpt: "One extra detailing job per week at $200 pays for your entire marketing system. Here's the math — and why missed calls are costing you more than you think.",
     tag: "Revenue",
   },
   {
-    title: "Why Nail Salons Lose 30% of Their Calls (And How to Fix It in 10 Minutes)",
+    title: "Why Detailers Lose 30% of Their Calls (And How to Fix It in 10 Minutes)",
     date: "May 28, 2026",
-    excerpt: "Most beauty business owners don't realize how many calls they're actually missing. We analyzed over 500 salons — here's what we found, and the one automation that solves it instantly.",
+    excerpt: "You're on a job. The phone rings. They call the next detailer on Google. We analyzed hundreds of detailing businesses — here's the one automation that fixes it instantly.",
     tag: "Automation",
   },
   {
-    title: "How to Build a Loyal Client Base Without Spending a Dollar on Ads",
+    title: "How to Get More Google Reviews Without Begging",
     date: "May 20, 2026",
-    excerpt: "Your existing clients are your best growth asset. Loyalty programs, birthday campaigns, and re-engagement texts cost almost nothing to run — and they keep your chair full.",
-    tag: "Retention",
-  },
-  {
-    title: "Membership Revenue: Why the Smartest Lash Studios Are Switching to Subscriptions",
-    date: "May 12, 2026",
-    excerpt: "Predictable monthly revenue changes everything. We break down how lash studios are using membership tiers to lock in $2,000–$5,000/month in guaranteed bookings.",
-    tag: "Memberships",
-  },
-  {
-    title: "5-Star Reviews on Autopilot: The Exact Funnel We Use for Beauty Businesses",
-    date: "May 4, 2026",
-    excerpt: "Getting more Google reviews isn't about asking harder — it's about asking smarter. Here's the timing, the message, and the system that gets more reviews without annoying your clients.",
+    excerpt: "Google Maps is everything for detailers. Automated review requests after every job stack 5-star reviews while you focus on the cars.",
     tag: "Reviews",
   },
   {
-    title: "Slow Tuesdays and Empty Chairs: The Campaign That Fills Them in 2 Hours",
-    date: "April 26, 2026",
-    excerpt: "Every salon has slow days. Most owners do nothing about it. Here's a proven SMS campaign framework that fills your schedule fast — without discounting your services.",
+    title: "Slow Week? The SMS Campaign That Fills Your Schedule in 2 Hours",
+    date: "May 12, 2026",
+    excerpt: "Every detailer has slow weeks. Most do nothing. Here's a proven one-click campaign that brings past customers back — without slashing your prices.",
     tag: "Marketing",
+  },
+  {
+    title: "5-Star Reviews on Autopilot: The Exact Funnel We Use for Detailers",
+    date: "May 4, 2026",
+    excerpt: "Getting more Google reviews isn't about asking harder — it's about asking at the right time. Here's the system that works for auto detailing businesses.",
+    tag: "Reviews",
+  },
+  {
+    title: "Quote Forms vs. Phone Tag: Why Detailers Need Both",
+    date: "April 26, 2026",
+    excerpt: "A professional website with a quote form captures leads 24/7. Pair it with missed-call text-back and you never lose a hot lead again.",
+    tag: "Leads",
   },
 ];
 
@@ -49,8 +49,8 @@ const Blog = () => {
 
       <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4">The Beauty Business Blog</h1>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">Practical advice for nail salons, lash studios, spas, and beauty pros who want more bookings and less stress.</p>
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-4">The Car Detailer Blog</h1>
+          <p className="text-white/70 text-xl max-w-2xl mx-auto">Practical advice for mobile detailers and detailing shops who want more leads, more reviews, and less phone tag.</p>
         </div>
       </section>
 

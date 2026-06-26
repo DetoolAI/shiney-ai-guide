@@ -43,7 +43,7 @@ const Terms = () => {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Billing & Cancellation</h2>
               <p>
-                Subscription fees are billed monthly at $397/month unless otherwise agreed in writing.
+                Subscription fees are billed monthly at $297/month unless otherwise agreed in writing.
                 There are no long-term contracts. You may cancel at any time. Upon cancellation, access
                 to platform features and managed services will end at the close of your billing period.
               </p>

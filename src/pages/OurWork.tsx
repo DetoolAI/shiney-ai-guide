@@ -6,20 +6,20 @@ import BookCallLink from "@/components/BookCallLink";
 
 const results = [
   { label: "Setup Time", value: "10 Days" },
-  { label: "Deposit Collection", value: "Automated" },
+  { label: "Lead Capture", value: "Quote Form" },
   { label: "Review Rating", value: "5.0 ★" },
   { label: "Missed Calls Recovered", value: "100%" },
 ];
 
 const built = [
-  "Branded booking website with custom domain",
-  "Online scheduling with real-time availability",
-  "Automatic $25 deposit collection at booking",
-  "Appointment confirmation & reminder texts",
+  "Branded detailing website with custom domain",
+  "Quote & contact form on every page",
   "Missed call text-back (fires within 10 seconds)",
-  "Post-visit review request funnel",
-  "One-click campaign for filling slow weeks",
-  "Client loyalty points system",
+  "Instant SMS follow-up on new leads",
+  "Post-service review request funnel",
+  "One-click campaign for slow weeks",
+  "Google Business Profile optimization",
+  "Re-engagement texts for past customers",
 ];
 
 const OurWork = () => {
@@ -30,8 +30,8 @@ const OurWork = () => {
       <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/60 font-medium mb-2 uppercase tracking-wide text-sm">Case Study</p>
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Crème de la Crème Nails</h1>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">How we designed a complete website and marketing system for a nail salon — in 10 days.</p>
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Mobile Detailer Lead System</h1>
+          <p className="text-white/70 text-xl max-w-2xl mx-auto">How we built a complete website and marketing system for a mobile auto detailer — in 10 days.</p>
         </div>
       </section>
 
@@ -58,7 +58,7 @@ const OurWork = () => {
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-black">C</div>
                 <div>
                   <p className="font-bold text-gray-900">Crème de la Crème N/LLC</p>
-                  <p className="text-xs text-gray-400">Nail Salon · Google Review</p>
+                  <p className="text-xs text-gray-400">Detailing Client · Google Review</p>
                 </div>
               </div>
             </div>
@@ -77,8 +77,8 @@ const OurWork = () => {
                 Your browser does not support the video tag.
               </video>
               <div className="px-6 py-4 bg-detool-cream border-t border-gray-200">
-                <p className="font-bold text-gray-900">Crème de la Crème Nails — Live Booking Website</p>
-                <p className="text-gray-500 text-sm mt-1">Full walkthrough of the branded booking site, deposit collection, and client experience we built in 10 days.</p>
+                <p className="font-bold text-gray-900">Mobile Detailer — Live Website & Automations</p>
+                <p className="text-gray-500 text-sm mt-1">Walkthrough of the branded site, quote form, missed-call text-back, and review funnel we built in 10 days.</p>
               </div>
             </div>
 
@@ -95,10 +95,10 @@ const OurWork = () => {
 
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                Crème de la Crème came to us as a growing nail salon with a real problem: clients would call, get voicemail, and never book. When clients did book, no-shows were eating into revenue because there was no deposit system in place.
+                This mobile detailer came to us with a familiar problem: leads called while they were on a job, went to voicemail, and booked someone else. Website visitors had no easy way to request a quote.
               </p>
               <p>
-                We built them a fully branded booking website with automatic $25 deposit collection built in. We set up missed call text-back so that every missed call immediately gets a text with their booking link. We launched a post-visit review funnel so happy clients go straight to Google. And we set up a loyalty program to keep clients coming back.
+                We built a branded website with a quote form, missed call text-back, and instant lead follow-up. We launched a post-service review funnel so happy customers go straight to Google. We set up one-click campaigns to bring past customers back during slow weeks.
               </p>
               <p>
                 The entire system was live in 10 days. The launch call took 25 minutes. From that point on, it runs automatically.
@@ -110,7 +110,7 @@ const OurWork = () => {
 
       <section className="bg-detool-dark py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Want us to build this for your salon?</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Want us to build this for your detailing business?</h2>
           <p className="text-white/70 text-lg mb-8">Book a free 20-minute call. We'll show you exactly what your system will look like.</p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
             Book A Free Call

@@ -29,7 +29,7 @@ const FeaturePageLayout = ({
   steps,
   testimonial,
   ctaTitle = "Ready to get started?",
-  ctaSubtitle = "Book a free call and we'll show you a live demo built for your type of salon.",
+  ctaSubtitle = "Book a free call and we'll show you a live demo built for your detailing business.",
   children,
 }: Props) => {
   return (

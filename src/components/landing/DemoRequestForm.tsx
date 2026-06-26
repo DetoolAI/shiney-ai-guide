@@ -10,7 +10,7 @@ const DemoRequestForm = () => {
               Book Your Free Meeting
             </h2>
             <p className="text-gray-500 mb-8">
-              See how Detool.AI can book more appointments for your salon — pick a time that works for you.
+              See how Detool.AI can get you more detailing leads — pick a time that works for you.
             </p>
             <BookCallButton className="w-full h-14 text-lg font-semibold">
               Book Your Free Meeting

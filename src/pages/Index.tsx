@@ -9,23 +9,23 @@ import { Link } from "react-router-dom";
 import BookCallLink from "@/components/BookCallLink";
 
 const industries = [
-  { name: "Nail Salons", slug: "/industries/nail-salons" },
-  { name: "Lash Studios", slug: "/industries/lash-studios" },
-  { name: "Spas", slug: "/industries/spas" },
-  { name: "Brow Bars", slug: null },
-  { name: "Hair Salons", slug: null },
-  { name: "Waxing Studios", slug: null },
+  { name: "Car Detailers", slug: "/industries/car-detailers" },
+  { name: "Mobile Detailers", slug: "/industries/mobile-detailers" },
+  { name: "Detailing Shops", slug: "/industries/detailing-shops" },
+  { name: "Ceramic Coating", slug: null },
+  { name: "Paint Correction", slug: null },
+  { name: "Fleet Detailing", slug: null },
 ];
 
 const steps = [
   { num: "01", title: "Demo Call (20 mins)", desc: "It's actually a sales call, we just didn't want to scare you. We'll answer every question and show you live client results." },
-  { num: "02", title: "We Build Your System (10 days)", desc: "Fill out a quick onboarding form. We build your booking site, automations, deposits, and campaigns — done for you." },
+  { num: "02", title: "We Build Your System (10 days)", desc: "We build your website with a quote form, missed-call automations, review funnel, and follow-up campaigns — done for you." },
   { num: "03", title: "Launch Call (25 mins)", desc: "We walk you through everything and go live together. After that, your system runs on autopilot." },
 ];
 
 const whyUs = [
   { title: "Simple To Use", desc: "No tech skills required. If you can send a text, you can run Detool.AI." },
-  { title: "Affordable", desc: "At $397/month, most clients make it back in the first week from deposit collections alone." },
+  { title: "Affordable", desc: "At $297/month, one extra detailing job per week pays for the entire system." },
   { title: "No Contracts", desc: "Month to month. If we don't deliver results, you shouldn't be stuck with us." },
   { title: "No BS", desc: "We don't over-promise. We tell you exactly what we're going to do — and we do it." },
   { title: "We Have Proof", desc: "Real local businesses using our system right now. Read their reviews. See our work." },
@@ -33,12 +33,12 @@ const whyUs = [
 ];
 
 const faqs = [
-  { q: "When am I going to start seeing results?", a: "It depends on your advertising, how long you've been in business, and whether you commit to using the system. Detool.AI gives you the foundation — deposits, follow-ups, reviews, and campaigns — but you still need to show up and do great work." },
+  { q: "When am I going to start seeing results?", a: "Most detailers see more leads captured and more reviews within the first few weeks. It depends on your traffic, follow-up, and how fast you respond to quotes — we give you the system, you close the jobs." },
   { q: "How long does setup take?", a: "We build and launch your full system in 10 days. The launch call takes about 25 minutes. After that you're live." },
-  { q: "Will this work for my type of salon?", a: "Yes. We work with nail salons, lash studios, spas, brow bars, hair salons, and waxing studios. If you book appointments and want more of them — this works for you." },
+  { q: "Will this work for my detailing business?", a: "Yes. We work with mobile detailers, fixed shops, ceramic coating specialists, and one-man operations. If you need more leads, more reviews, and faster follow-up — this works for you." },
   { q: "Is there a contract?", a: "No. Month to month. Cancel any time. We're confident you'll stay because you're seeing results." },
-  { q: "Why $397 and not cheaper?", a: "Because we don't just give you software. We set it all up, build your automations, and support you ongoing. You're buying a done-for-you system." },
-  { q: "How much can I make from deposits alone?", a: "25 deposits per week at $20 each = $2,000/month in secured revenue. That alone covers the platform cost — and then some." },
+  { q: "Why $297 and not cheaper?", a: "Because we don't just give you software. We set it all up, build your automations, and support you ongoing. You're buying a done-for-you system." },
+  { q: "How much can one extra job per week make?", a: "One $200 detail per week = $800/month in extra revenue. That alone covers the platform cost — and then some." },
 ];
 
 const FAQItem = ({ q, a }: { q: string; a: string }) => {
@@ -66,10 +66,10 @@ const Index = () => {
       <section id="hero" className="bg-detool-dark pt-40 pb-24 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] max-w-5xl mx-auto mb-6">
-            Website Design & Marketing For Local Businesses
+            Website Design & Marketing For Car Detailers
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-            We design stunning websites and run marketing that fills your calendar — specializing in nail salons, lash studios, and spas, plus real estate, security, and other local service businesses.
+            We build websites with quote forms, missed-call text-back, review funnels, and follow-up automations — so you capture every lead while you're on the job.
             No miracle fix. Just tools that work when you commit to using them.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
@@ -120,23 +120,23 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">The Math Is Simple</h2>
-            <p className="text-gray-500 text-lg mb-10">Even if deposits are the only feature you use, it pays for itself ten times over.</p>
+            <p className="text-gray-500 text-lg mb-10">One extra detailing job per week pays for the entire system.</p>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 text-left space-y-4 mb-8">
               <div className="flex justify-between items-center border-b border-gray-200 pb-4">
-                <span className="text-gray-700 font-medium">25 bookings/week × $20 deposit</span>
-                <span className="font-bold text-gray-900">$500/week</span>
+                <span className="text-gray-700 font-medium">1 extra job/week × $200 avg detail</span>
+                <span className="font-bold text-gray-900">$200/week</span>
               </div>
               <div className="flex justify-between items-center border-b border-gray-200 pb-4">
-                <span className="text-gray-700 font-medium">Monthly secured revenue</span>
-                <span className="font-bold text-gray-900">$2,000/month</span>
+                <span className="text-gray-700 font-medium">Monthly extra revenue</span>
+                <span className="font-bold text-gray-900">$800/month</span>
               </div>
               <div className="flex justify-between items-center border-b border-gray-200 pb-4">
                 <span className="text-gray-700 font-medium">Your investment</span>
-                <span className="font-bold text-primary">$397/month</span>
+                <span className="font-bold text-primary">$297/month</span>
               </div>
               <div className="flex justify-between items-center pt-2">
-                <span className="text-gray-900 font-bold text-lg">Monthly profit from deposits alone</span>
-                <span className="font-black text-primary text-xl">$1,603/month</span>
+                <span className="text-gray-900 font-bold text-lg">Monthly profit after Detool.AI</span>
+                <span className="font-black text-primary text-xl">$503/month</span>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@ const Index = () => {
       <section id="industries" className="py-20 bg-white scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Serving nail salons, spas, real estate, security, and more...</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Built for car detailers, mobile detailers, and detailing shops</h2>
             <div className="flex flex-wrap justify-center gap-4 mt-10">
               {industries.map((ind, i) =>
                 ind.slug ? (
@@ -223,7 +223,7 @@ const Index = () => {
       <section id="cta" className="bg-detool-dark py-20 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Want to schedule a time to talk?</h2>
-          <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website design, marketing, and automations — all built to grow your local business.</p>
+          <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website, lead capture, and automations — all built to grow your detailing business.</p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl">
             Book A Call
           </BookCallLink>

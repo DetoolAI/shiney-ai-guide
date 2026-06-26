@@ -1,5 +1,5 @@
 const businesses = [
-  "Real Estate Agents", "Nail Salons", "Barbershops", "Landscapers",
+  "Car Detailers", "Mobile Detailers", "Ceramic Coating", "Paint Correction",
   "Pressure Washers", "Pest Control", "Moving Companies", "HVAC",
   "Plumbers", "Electricians", "Handymen", "Painters",
   "Roofers", "Pool Services", "Auto Detailers", "Personal Trainers",

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import BookCallLink from "@/components/BookCallLink";
 
 const writtenReviews = [
-  { name: "Creme De La Creme N/LLC", rating: 5, date: "2 weeks ago", biz: "Nail Salon", text: "Justin does an amazing job at paying attention to detail and at making sure he achieves client satisfaction. Incredibly professional website design! Look no further!" },
-  { name: "Vanessa Iheme", rating: 5, date: "a month ago", biz: "Beauty Business Owner", text: "I had a great experience with Detool AI. He is such a professional and affordable marketing agency! He offered 24/7 support, delivered on time, and did an amazing job." },
+  { name: "Creme De La Creme N/LLC", rating: 5, date: "2 weeks ago", biz: "Detailing Client", text: "Justin does an amazing job at paying attention to detail and at making sure he achieves client satisfaction. Incredibly professional website design! Look no further!" },
+  { name: "Vanessa Iheme", rating: 5, date: "a month ago", biz: "Local Business Owner", text: "I had a great experience with Detool AI. He is such a professional and affordable marketing agency! He offered 24/7 support, delivered on time, and did an amazing job." },
   { name: "Leah M", rating: 5, date: "a month ago", biz: "Local Business", text: "Detool AI is the real deal. Smart strategies, fast results, and clear communication. If you want marketing that actually converts, this is it." },
 ];
 

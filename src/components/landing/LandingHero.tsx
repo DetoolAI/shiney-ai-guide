@@ -15,7 +15,7 @@ const LandingHero = () => {
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-tight mb-8">
               Website Design &<br />
               Marketing<br />
-              <span className="text-primary">For Beauty<br />Businesses.</span>
+              <span className="text-primary">For Car<br />Detailers.</span>
             </h1>
 
             <p className="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">

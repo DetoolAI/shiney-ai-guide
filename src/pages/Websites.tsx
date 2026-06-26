@@ -19,7 +19,7 @@ const included = [
 
 const examples = [
   { type: "Real Estate Agent", desc: "Lead capture, listings showcase, instant contact form" },
-  { type: "Nail Salon / Barbershop", desc: "Booking widget, gallery, services menu, hours" },
+  { type: "Mobile Auto Detailer", desc: "Quote form, gallery, service packages, service area map" },
   { type: "Landscaper / Contractor", desc: "Quote request form, project gallery, service area" },
   { type: "Cleaning Service", desc: "Online booking, pricing table, testimonials" },
   { type: "Personal Trainer", desc: "Program overview, client results, booking calendar" },
