@@ -46,6 +46,26 @@
   </head>
 
   <body>
+    <script>
+      (function () {
+        if (window.location.hostname === "www.detool.ai") {
+          window.location.replace(
+            "https://detool.ai" + window.location.pathname + window.location.search + window.location.hash
+          );
+          return;
+        }
+        window.addEventListener(
+          "error",
+          function (event) {
+            var target = event.target;
+            if (window.__detoolReloaded || !target || target.tagName !== "SCRIPT") return;
+            window.__detoolReloaded = true;
+            window.location.reload();
+          },
+          true
+        );
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
