@@ -30,13 +30,9 @@ const LandingFooter = () => {
             <p className="font-bold text-gray-900 text-sm mb-3">Products</p>
             <div className="space-y-2 text-sm text-gray-500">
               <Link to="/features/booking-website" className="block hover:text-primary transition-colors">Booking Website</Link>
-              <Link to="/features/deposit-collection" className="block hover:text-primary transition-colors">Deposit Collection</Link>
-              <Link to="/features/membership-system" className="block hover:text-primary transition-colors">Memberships</Link>
               <Link to="/features/missed-call-text-back" className="block hover:text-primary transition-colors">Missed Call Text Back</Link>
               <Link to="/features/review-funnel" className="block hover:text-primary transition-colors">Review Funnel</Link>
               <Link to="/features/marketing-campaigns" className="block hover:text-primary transition-colors">Campaigns</Link>
-              <Link to="/features/loyalty-rewards" className="block hover:text-primary transition-colors">Loyalty Rewards</Link>
-              <Link to="/features/member-portal" className="block hover:text-primary transition-colors">Member Portal</Link>
             </div>
           </div>
 
@@ -46,8 +42,8 @@ const LandingFooter = () => {
               <Link to="/pricing" className="block hover:text-primary transition-colors">Pricing</Link>
               <Link to="/testimonials" className="block hover:text-primary transition-colors">Testimonials</Link>
               <Link to="/our-work" className="block hover:text-primary transition-colors">Our Work</Link>
-              <Link to="/blog" className="block hover:text-primary transition-colors">Blog</Link>
               <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
+              <Link to="/blog" className="block hover:text-primary transition-colors">Blog</Link>
               <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
               <BookCallLink className="block hover:text-primary transition-colors">Book A Call</BookCallLink>
               <Link to="/privacy" className="block hover:text-primary transition-colors">Privacy</Link>

@@ -6,13 +6,9 @@ import BookCallLink from "@/components/BookCallLink";
 
 const featureLinks = [
   { label: "Booking Website", to: "/features/booking-website" },
-  { label: "Deposit Collection", to: "/features/deposit-collection" },
-  { label: "Membership System", to: "/features/membership-system" },
   { label: "Missed Call Text Back", to: "/features/missed-call-text-back" },
   { label: "Review Funnel", to: "/features/review-funnel" },
   { label: "Marketing Campaigns", to: "/features/marketing-campaigns" },
-  { label: "Loyalty Rewards", to: "/features/loyalty-rewards" },
-  { label: "Member Portal", to: "/features/member-portal" },
 ];
 
 const aboutLinks = [
@@ -98,6 +94,7 @@ const Header = () => {
             <Link to="/pricing" className={`font-semibold text-base transition-colors ${isActive("/pricing") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Pricing</Link>
             <Link to="/testimonials" className={`font-semibold text-base transition-colors ${isActive("/testimonials") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Testimonials</Link>
             <Link to="/our-work" className={`font-semibold text-base transition-colors ${isActive("/our-work") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Our Work</Link>
+            <Link to="/blog" className={`font-semibold text-base transition-colors ${pathname.startsWith("/blog") ? "text-primary" : "text-gray-800 hover:text-primary"}`}>Blog</Link>
             <DropdownMenu
               label="About"
               open={aboutOpen}
@@ -131,6 +128,7 @@ const Header = () => {
             <Link to="/pricing" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Pricing</Link>
             <Link to="/testimonials" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Testimonials</Link>
             <Link to="/our-work" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Our Work</Link>
+            <Link to="/blog" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Blog</Link>
             <hr className="border-gray-200 my-1" />
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wide px-1">About</p>
             {aboutLinks.map((a) => (
