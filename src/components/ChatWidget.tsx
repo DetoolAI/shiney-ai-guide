@@ -182,7 +182,7 @@ const KNOWLEDGE: { patterns: RegExp; answer: string; suggestions?: string[] }[] 
   {
     patterns: /contact|speak|human|real person|call|phone|email|reach|talk to someone/i,
     answer:
-      "You can reach us a few ways:\n\n📧 Email — detoolai@gmail.com\n📋 Contact form — detool.ai/contact\n📅 Book a call — grow.detool.ai/landing-page\n\nWe typically respond within a few hours during business hours.",
+      `You can reach us a few ways:\n\n📧 Email — detoolai@gmail.com\n📋 Contact form — detool.ai/contact\n📅 Book a call — ${BOOK_A_CALL_URL.replace("https://", "")}\n\nWe typically respond within a few hours during business hours.`,
     suggestions: ["Book a meeting", "What does it cost?", "How does it work?"],
   },
 

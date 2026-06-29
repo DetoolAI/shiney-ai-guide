@@ -1,1 +1,1 @@
-export const BOOK_A_CALL_URL = "https://grow.detool.ai/landing-page";
+export const BOOK_A_CALL_URL = "https://grow.detool.ai/auto-detailing-growth-page";
