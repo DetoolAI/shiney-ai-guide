@@ -54,8 +54,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <ThirdPartyScripts />
-      <ChatWidget />
       <BrowserRouter>
+        <ChatWidget />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/testimonials" element={<Testimonials />} />

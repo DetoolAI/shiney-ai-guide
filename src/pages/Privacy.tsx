@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import { Card, CardContent } from "@/components/ui/card";
 import SEO from "@/components/SEO";
+import { BUSINESS_EMAIL, BUSINESS_PHONE, BUSINESS_ADDRESS } from "@/lib/constants";
 
 const Privacy = () => {
   return (
@@ -200,8 +201,10 @@ const Privacy = () => {
                   For privacy-related questions or requests, contact our Data Protection Officer at:
                 </p>
                 <p className="text-gray-900 font-medium mt-2">
-                  Email: detoolai@gmail.com
+                  Email: {BUSINESS_EMAIL}
                 </p>
+                {BUSINESS_PHONE && <p className="text-gray-900 font-medium mt-1">Phone: {BUSINESS_PHONE}</p>}
+                {BUSINESS_ADDRESS && <p className="text-gray-900 font-medium mt-1">Address: {BUSINESS_ADDRESS}</p>}
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">

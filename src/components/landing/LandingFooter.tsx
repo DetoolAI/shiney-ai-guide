@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Mail, Instagram, Youtube } from "lucide-react";
+import { Mail, Instagram, Youtube, Phone, MapPin } from "lucide-react";
 import DetoolLogo from "@/components/DetoolLogo";
 import BookCallLink from "@/components/BookCallLink";
+import { BUSINESS_NAME, BUSINESS_EMAIL, BUSINESS_PHONE, BUSINESS_ADDRESS } from "@/lib/constants";
 
 const LandingFooter = () => {
   return (
@@ -58,10 +59,20 @@ const LandingFooter = () => {
               <Link to="/industries/mobile-detailers" className="block hover:text-primary transition-colors">Mobile Detailers</Link>
               <Link to="/industries/detailing-shops" className="block hover:text-primary transition-colors">Detailing Shops</Link>
             </div>
-            <div className="mt-6">
-              <a href="mailto:detoolai@gmail.com" className="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1">
-                <Mail className="w-3.5 h-3.5" /> detoolai@gmail.com
+            <div className="mt-6 space-y-2">
+              <a href={`mailto:${BUSINESS_EMAIL}`} className="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1">
+                <Mail className="w-3.5 h-3.5" /> {BUSINESS_EMAIL}
               </a>
+              {BUSINESS_PHONE && (
+                <a href={`tel:${BUSINESS_PHONE.replace(/\D/g, "")}`} className="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5" /> {BUSINESS_PHONE}
+                </a>
+              )}
+              {BUSINESS_ADDRESS && (
+                <p className="text-sm text-gray-500 flex items-start gap-1">
+                  <MapPin className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" /> {BUSINESS_ADDRESS}
+                </p>
+              )}
             </div>
             <BookCallLink className="inline-block mt-4 text-sm font-bold text-primary hover:text-primary/80">
               Book A Call →
@@ -70,7 +81,7 @@ const LandingFooter = () => {
         </div>
 
         <div className="border-t border-gray-200 pt-5 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Detool.AI. All rights reserved. · Website Design & Marketing For Car Detailers.
+          © {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved. · Website Design & Marketing For Car Detailers.
         </div>
       </div>
     </footer>

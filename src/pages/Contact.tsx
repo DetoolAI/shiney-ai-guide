@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, User, MapPin, Clock } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import BookCallLink from "@/components/BookCallLink";
@@ -18,7 +18,6 @@ const Contact = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
     company: '',
     message: ''
   });
@@ -59,7 +58,6 @@ const Contact = () => {
           firstName: formData.firstName.trim(),
           lastName: formData.lastName.trim(),
           email: formData.email.trim(),
-          phone: formData.phone.trim(),
           company: formData.company.trim(),
           message: formData.message.trim()
         }
@@ -80,7 +78,6 @@ const Contact = () => {
         firstName: '',
         lastName: '',
         email: '',
-        phone: '',
         company: '',
         message: ''
       });
@@ -188,17 +185,6 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input 
-                      id="phone" 
-                      type="tel" 
-                      placeholder="(555) 123-4567" 
-                      value={formData.phone}
-                      onChange={handleInputChange}
                     />
                   </div>
                   

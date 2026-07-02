@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import SEO from "@/components/SEO";
+import { BUSINESS_EMAIL, BUSINESS_PHONE, BUSINESS_ADDRESS } from "@/lib/constants";
 
 const Terms = () => {
   return (
@@ -72,11 +73,21 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Contact</h2>
               <p>
                 Questions about these terms? Email{" "}
-                <a href="mailto:detoolai@gmail.com" className="text-primary hover:underline">
-                  detoolai@gmail.com
+                <a href={`mailto:${BUSINESS_EMAIL}`} className="text-primary hover:underline">
+                  {BUSINESS_EMAIL}
                 </a>
+                {BUSINESS_PHONE && (
+                  <>
+                    {" "}
+                    or call{" "}
+                    <a href={`tel:${BUSINESS_PHONE.replace(/\D/g, "")}`} className="text-primary hover:underline">
+                      {BUSINESS_PHONE}
+                    </a>
+                  </>
+                )}
                 .
               </p>
+              {BUSINESS_ADDRESS && <p className="mt-2">{BUSINESS_ADDRESS}</p>}
             </section>
           </div>
         </div>
