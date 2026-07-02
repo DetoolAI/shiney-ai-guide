@@ -33,6 +33,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          test -f dist/index.html
+          test -f dist/404.html
+          test -f dist/CNAME
+          grep -q '/assets/index-' dist/index.html
+          ! grep -q '/src/main.tsx' dist/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
