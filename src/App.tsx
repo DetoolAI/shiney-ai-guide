@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
 import ChatWidget from "@/components/ChatWidget";
+import Favicon from "@/components/Favicon";
 import Index from "./pages/Index";
 import Testimonials from "./pages/Testimonials";
 import About from "./pages/About";
@@ -54,6 +55,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <ThirdPartyScripts />
+      <Favicon />
       <BrowserRouter>
         <ChatWidget />
         <Routes>
