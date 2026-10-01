@@ -8,13 +8,13 @@ import { ChevronDown } from "lucide-react";
 import BookCallLink from "@/components/BookCallLink";
 
 const included = [
-  "Branded detailing website on your own domain",
+  "Branded website on your own domain",
   "Quote & contact form — captures leads 24/7",
   "Missed call text-back (instant automated response)",
   "Instant lead follow-up via SMS and email",
   "5-star review funnel (automated post-service requests)",
   "One-click SMS & email marketing campaigns",
-  "Pre-written detailing campaign templates",
+  "Pre-written campaign templates for your business",
   "Google Business Profile optimization",
   "On-site SEO setup",
   "Before & after gallery to showcase your work",
@@ -30,7 +30,7 @@ const faqs = [
   { q: "Are there any setup fees?", a: "No setup fees, ever. $297/month is all you pay." },
   { q: "Can I cancel any time?", a: "Yes. No contracts. No cancellation penalties. We earn your business every single month." },
   { q: "What happens after I pay?", a: "We schedule your onboarding call, build your full system within 10 days, and hop on a 25-minute launch call to go live together." },
-  { q: "Do I need a complicated booking system?", a: "No. Most detailers start with a quote form, missed-call text-back, and review funnel. We keep it simple — you can always add more later." },
+  { q: "Do I need a complicated booking system?", a: "No. Most businesses start with a lead form, missed-call text-back, and review funnel. We keep it simple — you can always add more later." },
 ];
 
 const FAQItem = ({ q, a }: { q: string; a: string }) => {
@@ -63,7 +63,7 @@ const Pricing = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white border-2 border-primary rounded-2xl shadow-sm overflow-hidden">
               <div className="bg-primary px-8 py-6 text-center">
-                <p className="text-white/80 font-medium mb-1">The Complete Car Detailer Lead System</p>
+                <p className="text-white/80 font-medium mb-1">The Complete Business Lead System</p>
                 <div className="text-white">
                   <span className="text-6xl font-black">$297</span>
                   <span className="text-xl font-medium">/month</span>
@@ -95,7 +95,7 @@ const Pricing = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4">Does $297/month make sense?</h2>
-            <p className="text-gray-500 text-center mb-8">Drag the slider — see your detailing revenue math in real time.</p>
+            <p className="text-gray-500 text-center mb-8">Drag the slider — see your revenue math in real time.</p>
             <DepositROICalculator />
             <div className="text-center mt-8">
               <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">

@@ -8,7 +8,7 @@ const benefits = [
   "Cancel, pause, or upgrade memberships in one click",
   "Member-only booking windows so VIP clients always get a spot",
   "Track MRR (monthly recurring revenue) in your dashboard",
-  "Works for solo artists and multi-staff salons",
+  "Works for solo operators and multi-staff teams",
 ];
 
 const tiers = [

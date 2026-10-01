@@ -15,7 +15,7 @@ const DepositROICalculator = () => {
     <div className="bg-white border border-gray-200 rounded-2xl p-8 space-y-8">
       <div>
         <label className="block font-bold text-gray-900 mb-4">
-          How many detailing jobs per week?{" "}
+          How many customers per week?{" "}
           <span className="text-primary">{jobsPerWeek[0]}</span>
         </label>
         <Slider
@@ -35,7 +35,7 @@ const DepositROICalculator = () => {
       <div className="space-y-4">
         <div className="flex justify-between items-center border-b border-gray-200 pb-4">
           <span className="text-gray-700 font-medium">
-            {jobsPerWeek[0]} jobs/week × ${AVG_JOB_VALUE} avg job
+            {jobsPerWeek[0]} customers/week × ${AVG_JOB_VALUE} avg sale
           </span>
           <span className="font-bold text-gray-900">${weekly.toLocaleString()}/week</span>
         </div>

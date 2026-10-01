@@ -14,9 +14,9 @@ const Blog = () => {
     {
       "@context": "https://schema.org",
       "@type": "Blog",
-      name: "The Car Detailer Blog",
+      name: "The Detool.AI Blog",
       description:
-        "Practical advice for mobile detailers and detailing shops — leads, reviews, automation, marketing, and revenue.",
+        "Practical advice for local businesses — leads, reviews, automation, marketing, and revenue.",
       url: `${SITE}/blog`,
       publisher: {
         "@type": "Organization",
@@ -43,8 +43,8 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Car Detailer Blog — Leads, Reviews & Marketing Tips | Detool.AI"
-        description="Free guides for mobile detailers and detailing shops: get more Google reviews, capture missed calls, fill slow weeks, and grow revenue."
+        title="Business Blog — Leads, Reviews & Marketing Tips | Detool.AI"
+        description="Free guides for local businesses: get more Google reviews, capture missed calls, fill slow weeks, and grow revenue."
         path="/blog"
         jsonLd={jsonLd}
       />
@@ -52,10 +52,9 @@ const Blog = () => {
 
       <section className="bg-detool-dark pt-40 pb-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4">The Car Detailer Blog</h1>
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-4">The Detool.AI Blog</h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto">
-            Practical advice for mobile detailers and detailing shops who want more leads, more reviews, and less phone
-            tag.
+            Practical advice for any business that wants more leads, more reviews, and less phone tag.
           </p>
         </div>
       </section>

@@ -1,10 +1,9 @@
 const businesses = [
-  "Car Detailers", "Mobile Detailers", "Ceramic Coating", "Paint Correction",
-  "Pressure Washers", "Pest Control", "Moving Companies", "HVAC",
-  "Plumbers", "Electricians", "Handymen", "Painters",
-  "Roofers", "Pool Services", "Auto Detailers", "Personal Trainers",
-  "Cleaning Services", "Dog Groomers", "Tree Services", "General Contractors",
-  "Flooring & Carpet", "Home Builders",
+  "Home Services", "Salons & Spas", "Restaurants", "Retail",
+  "Health & Wellness", "Fitness", "Real Estate", "Contractors",
+  "HVAC", "Plumbers", "Electricians", "Cleaners",
+  "Med Spas", "Clinics", "Gyms", "Personal Trainers",
+  "Law Firms", "Agencies", "Auto Services", "Any Local Business",
 ];
 
 const WhoWeServeSection = () => {

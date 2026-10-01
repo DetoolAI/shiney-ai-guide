@@ -57,7 +57,7 @@ const BlogCategory = () => {
             <span className="mx-2">/</span>
             <span className="text-white/80">{category.name}</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{category.name} for Car Detailers</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{category.name}</h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">{category.description}</p>
         </div>
       </section>
@@ -85,7 +85,7 @@ const BlogCategory = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Want this built for your shop?</h2>
           <p className="text-gray-500 text-lg mb-8 max-w-2xl mx-auto">
-            Detool.AI sets up websites, automations, and review funnels for car detailers in about 10 days.
+            Detool.AI sets up websites, automations, and review funnels for any business in about 10 days.
           </p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
             Book A Free Call

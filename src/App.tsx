@@ -31,11 +31,6 @@ import MarketingCampaigns from "./pages/features/MarketingCampaigns";
 import LoyaltyRewards from "./pages/features/LoyaltyRewards";
 import MemberPortal from "./pages/features/MemberPortal";
 
-// Industry pages
-import CarDetailers from "./pages/industries/CarDetailers";
-import MobileDetailers from "./pages/industries/MobileDetailers";
-import DetailingShops from "./pages/industries/DetailingShops";
-
 // Legacy pages kept for existing links
 import Websites from "./pages/Websites";
 import Automation from "./pages/Automation";
@@ -83,13 +78,13 @@ const App = () => (
           <Route path="/features/loyalty-rewards" element={<LoyaltyRewards />} />
           <Route path="/features/member-portal" element={<MemberPortal />} />
 
-          {/* Industry pages */}
-          <Route path="/industries/car-detailers" element={<CarDetailers />} />
-          <Route path="/industries/mobile-detailers" element={<MobileDetailers />} />
-          <Route path="/industries/detailing-shops" element={<DetailingShops />} />
-          <Route path="/industries/nail-salons" element={<Navigate to="/industries/car-detailers" replace />} />
-          <Route path="/industries/lash-studios" element={<Navigate to="/industries/mobile-detailers" replace />} />
-          <Route path="/industries/spas" element={<Navigate to="/industries/detailing-shops" replace />} />
+          {/* Old industry URLs now point home — the site is for every business */}
+          <Route path="/industries/car-detailers" element={<Navigate to="/" replace />} />
+          <Route path="/industries/mobile-detailers" element={<Navigate to="/" replace />} />
+          <Route path="/industries/detailing-shops" element={<Navigate to="/" replace />} />
+          <Route path="/industries/nail-salons" element={<Navigate to="/" replace />} />
+          <Route path="/industries/lash-studios" element={<Navigate to="/" replace />} />
+          <Route path="/industries/spas" element={<Navigate to="/" replace />} />
 
           {/* Legacy routes */}
           <Route path="/websites" element={<Websites />} />
@@ -101,8 +96,8 @@ const App = () => (
           <Route path="/client-onboard-form" element={<ClientOnboardForm />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/beauty" element={<Navigate to="/industries/car-detailers" replace />} />
-          <Route path="/salons" element={<Navigate to="/industries/car-detailers" replace />} />
+          <Route path="/beauty" element={<Navigate to="/" replace />} />
+          <Route path="/salons" element={<Navigate to="/" replace />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

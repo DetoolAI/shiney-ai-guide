@@ -8,15 +8,15 @@ import ConnectingScrollLine from "@/components/landing/ConnectingScrollLine";
 const features = [
   {
     num: "01",
-    title: "Branded Detailing Website",
-    subtitle: "Get a website that turns visitors into quote requests — with a contact form that works while you're on the job.",
+    title: "Branded Business Website",
+    subtitle: "Get a website that turns visitors into leads — with a contact form that works while you're with a customer.",
     slug: "/features/booking-website",
     phoneDemo: "website" as const,
     bullets: [
-      { heading: "Actually Get Found Online", body: "If someone Googles 'detailer near me' and can't find you — that's money left on the table." },
-      { heading: "Showcase Your Best Work", body: "Your site shows your packages, before & after photos, and reviews so clients trust you before they call." },
+      { heading: "Actually Get Found Online", body: "If someone Googles your service and can't find you — that's money left on the table." },
+      { heading: "Showcase Your Best Work", body: "Your site shows your services, photos, and reviews so customers trust you before they call." },
       { heading: "Mobile Friendly", body: "Most customers search on their phone. Your site will look flawless on every device." },
-      { heading: "Quote Form Built In", body: "Visitors request a quote 24/7. You follow up when you're done with the car." },
+      { heading: "Lead Form Built In", body: "Visitors request a quote or book 24/7. You follow up when you're free." },
     ],
     flip: false,
   },
@@ -37,11 +37,11 @@ const features = [
   {
     num: "03",
     title: "Missed Call Text Back",
-    subtitle: "Everyone misses calls. Not everyone texts back. Be the detailer that does.",
+    subtitle: "Everyone misses calls. Not everyone texts back. Be the business that does.",
     slug: "/features/missed-call-text-back",
     bullets: [
       { heading: "Stand Out From Your Competition", body: "While competitors go to voicemail, you text back in 10 seconds with your quote form link." },
-      { heading: "No More Lost Leads", body: "Hands deep in a detail? We fire off a text and start the conversation for you." },
+      { heading: "No More Lost Leads", body: "With a customer? We fire off a text and start the conversation for you." },
       { heading: "Show Clients You Care", body: "Your clients hate being ignored. A quick text shows you're on it." },
       { heading: "Be Available 24/7", body: "Missed a call after hours? We make sure every lead feels looked after." },
     ],
@@ -54,7 +54,7 @@ const features = [
     subtitle: "Referrals and repeat clients are the best. Let's get you both — in one click.",
     slug: "/features/marketing-campaigns",
     bullets: [
-      { heading: "Done For You", body: "Pre-built detailing campaign templates. You press send — we handle the rest." },
+      { heading: "Done For You", body: "Pre-built campaign templates for your business. You press send — we handle the rest." },
       { heading: "Referral Campaigns", body: "Remind happy clients to tell their friends. Fill your calendar from word of mouth." },
       { heading: "Return Client Campaigns", body: "Bring back clients who haven't visited in 60+ days with one click." },
       { heading: "Fill Slow Weeks Fast", body: "Slow week? Blast a promo to your past customers and watch your schedule fill up." },
@@ -70,8 +70,8 @@ const WebsitePhoneDemo = () => (
       <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 mx-auto mb-2 flex items-center justify-center">
         <span className="text-primary text-[8px] font-black">✦</span>
       </div>
-      <p className="text-white font-black text-[11px] leading-tight">ProShine Detailing</p>
-      <p className="text-white/50 text-[8px] mt-0.5">Mobile Auto Detailing · Ceramic Coating</p>
+      <p className="text-white font-black text-[11px] leading-tight">Harbor & Co.</p>
+      <p className="text-white/50 text-[8px] mt-0.5">Local Service · Book Online</p>
       <div className="flex justify-center gap-0.5 mt-2">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="w-2 h-2 fill-primary text-primary" />
@@ -82,9 +82,9 @@ const WebsitePhoneDemo = () => (
     <div className="px-3 py-3">
       <p className="text-[8px] font-bold text-gray-400 uppercase tracking-wider mb-2">Services</p>
       {[
-        { name: "Full Detail", price: "$199" },
-        { name: "Interior + Exterior", price: "$149" },
-        { name: "Ceramic Coating", price: "$599" },
+        { name: "Standard Service", price: "$99" },
+        { name: "Full Service", price: "$199" },
+        { name: "Premium Package", price: "$349" },
       ].map((s) => (
         <div key={s.name} className="flex items-center justify-between bg-white border border-gray-100 rounded-lg px-2 py-1.5 mb-1.5 shadow-sm">
           <span className="text-[9px] font-semibold text-gray-800">{s.name}</span>
@@ -135,7 +135,7 @@ const MissedCallPhoneDemo = () => (
     </div>
     <div className="space-y-2 flex-1">
       <div className="bg-primary rounded-2xl rounded-tl-sm p-2 mr-8">
-        <p className="text-white text-[10px] leading-relaxed">Hey! Sorry we missed your call — book here: your-salon.detool.ai 💅</p>
+        <p className="text-white text-[10px] leading-relaxed">Hey! Sorry we missed your call — book here: yourbusiness.detool.ai</p>
       </div>
       <div className="bg-gray-700 rounded-2xl rounded-tr-sm p-2 ml-8">
         <p className="text-white text-[10px]">Perfect! Booking now</p>
@@ -147,7 +147,7 @@ const MissedCallPhoneDemo = () => (
 const CampaignPhoneDemo = () => (
   <div className="w-full h-full bg-gray-950 p-3 pt-8 flex flex-col">
     <p className="text-white/60 text-[10px] font-bold uppercase tracking-wider mb-2">Campaigns</p>
-    {["Slow Day Special ✨", "Refer a Friend 🤝", "We Miss You 💅"].map((c, i) => (
+    {["Slow Day Special", "Refer a Friend", "We Miss You"].map((c, i) => (
       <div key={i} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-2 py-2 mb-2">
         <div className={`w-3 h-3 rounded-full border-2 ${i === 0 ? "border-primary bg-primary/30" : "border-gray-500"}`} />
         <span className="text-white text-[10px] font-medium">{c}</span>

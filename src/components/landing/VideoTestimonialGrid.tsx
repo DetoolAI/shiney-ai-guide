@@ -10,12 +10,12 @@ export type VideoTestimonial = {
 const defaultTestimonials: VideoTestimonial[] = [
   {
     name: "Creme De La Creme N/LLC",
-    biz: "Car Detailer",
+    biz: "Local Business",
     quote: "Incredibly professional website design! Look no further!",
   },
   {
     name: "Vanessa Iheme",
-    biz: "Detailing Business Owner",
+    biz: "Business Owner",
     quote: "Professional, affordable, delivered on time. Amazing results.",
   },
   {

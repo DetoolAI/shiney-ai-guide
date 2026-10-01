@@ -13,7 +13,7 @@ const LandingFooter = () => {
             <Link to="/" className="inline-flex mb-3">
               <DetoolLogo size="sm" />
             </Link>
-            <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for car detailers — missed calls, quote forms, reviews, and follow-up on autopilot.</p>
+            <p className="text-xs text-gray-400 leading-relaxed mb-4">Website design & marketing for every business — missed calls, lead forms, reviews, and follow-up on autopilot.</p>
             <div className="flex items-center gap-3">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
@@ -53,11 +53,13 @@ const LandingFooter = () => {
           </div>
 
           <div>
-            <p className="font-bold text-gray-900 text-sm mb-3">Industries</p>
+            <p className="font-bold text-gray-900 text-sm mb-3">Who it's for</p>
             <div className="space-y-2 text-sm text-gray-500">
-              <Link to="/industries/car-detailers" className="block hover:text-primary transition-colors">Car Detailers</Link>
-              <Link to="/industries/mobile-detailers" className="block hover:text-primary transition-colors">Mobile Detailers</Link>
-              <Link to="/industries/detailing-shops" className="block hover:text-primary transition-colors">Detailing Shops</Link>
+              <p>Home services</p>
+              <p>Salons & spas</p>
+              <p>Restaurants & retail</p>
+              <p>Clinics & fitness</p>
+              <p>Any local business</p>
             </div>
             <div className="mt-6 space-y-2">
               <a href={`mailto:${BUSINESS_EMAIL}`} className="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1">
@@ -81,7 +83,7 @@ const LandingFooter = () => {
         </div>
 
         <div className="border-t border-gray-200 pt-5 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved. · Website Design & Marketing For Car Detailers.
+          © {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved. · Website Design & Marketing For Every Business.
         </div>
       </div>
     </footer>

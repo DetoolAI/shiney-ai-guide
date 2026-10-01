@@ -8,7 +8,7 @@ const benefits = [
   "Update contact info and notification preferences",
   "View invoices and payment history",
   "No app to download — works in any browser",
-  "Branded with your salon's colors and logo",
+  "Branded with your colors and logo",
 ];
 
 const MemberPortal = () => (

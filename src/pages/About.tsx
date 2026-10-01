@@ -5,7 +5,7 @@ import { CheckCircle2, Star } from "lucide-react";
 import BookCallLink from "@/components/BookCallLink";
 
 const values = [
-  "We don't oversell — we tell you what actually works for car detailers",
+  "We don't oversell — we tell you what actually works for local businesses",
   "We build it, set it up, and support you after launch",
   "Month-to-month only — no long-term contracts, ever",
   "Real clients, real reviews — you can verify every one on Google",
@@ -43,7 +43,7 @@ const About = () => {
             </div>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed flex-1">
             <p>
-              I started Detool.AI after seeing the same pattern over and over — local business owners working incredibly hard, doing great work, but losing clients because their systems were broken. We specialize in nail salons and also serve real estate, security, and other service businesses.
+              I started Detool.AI after seeing the same pattern over and over — local business owners working incredibly hard, doing great work, but losing clients because their systems were broken. The same system works for any business: home services, salons, restaurants, clinics, contractors, and one-person shops.
             </p>
             <p>
               No-shows killing revenue. Missed calls going to voicemail and never converting. Clients finishing an appointment and never hearing from the business again. Slow weeks with no way to fill them fast.

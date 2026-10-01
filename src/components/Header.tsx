@@ -14,9 +14,6 @@ const featureLinks = [
 const aboutLinks = [
   { label: "About Us", to: "/about" },
   { label: "Contact", to: "/contact" },
-  { label: "Car Detailers", to: "/industries/car-detailers" },
-  { label: "Mobile Detailers", to: "/industries/mobile-detailers" },
-  { label: "Detailing Shops", to: "/industries/detailing-shops" },
 ];
 
 const DropdownMenu = ({
