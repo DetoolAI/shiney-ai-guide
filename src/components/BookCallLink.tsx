@@ -1,14 +1,18 @@
-import { BOOK_A_CALL_URL } from "@/lib/constants";
+import { CHECKOUT_URL } from "@/lib/constants";
 
 interface BookCallLinkProps {
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
 
-const BookCallLink = ({ className = "", children, onClick }: BookCallLinkProps) => (
+const BookCallLink = ({
+  className = "",
+  children = "Get started - $297/mo",
+  onClick,
+}: BookCallLinkProps) => (
   <a
-    href={BOOK_A_CALL_URL}
+    href={CHECKOUT_URL}
     target="_blank"
     rel="noopener noreferrer"
     onClick={onClick}

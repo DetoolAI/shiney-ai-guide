@@ -106,7 +106,7 @@ const Beauty = () => {
             </p>
 
             <BookCallButton className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform">
-              Book a Free Meeting
+              Get started - $297/mo
             </BookCallButton>
 
             <p className="text-sm text-gray-500 mt-6">
@@ -231,7 +231,7 @@ const Beauty = () => {
               not months.
             </p>
             <BookCallButton className="text-lg px-10 py-7 font-semibold shadow-glow hover:scale-105 transition-transform">
-              Book a Free Meeting
+              Get started - $297/mo
             </BookCallButton>
           </div>
         </div>

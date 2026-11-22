@@ -199,7 +199,7 @@ const FeatureSections = () => {
                   ))}
                 </div>
                 <div className="mt-8">
-                  <BookCallButton className="px-8 py-4 text-sm">Book A Free Call</BookCallButton>
+                  <BookCallButton className="px-8 py-4 text-sm">Get started - $297/mo</BookCallButton>
                 </div>
               </div>
             </div>

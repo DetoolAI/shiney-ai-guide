@@ -43,7 +43,7 @@ const plans = [
       "Weekly performance reports",
     ],
     highlight: true,
-    cta: "Book A Call",
+    cta: "Get started - $297/mo",
   },
   {
     name: "Full Growth Suite",
@@ -64,7 +64,7 @@ const plans = [
       "Scales with your business",
     ],
     highlight: false,
-    cta: "Book A Call",
+    cta: "Get started - $297/mo",
   },
 ];
 

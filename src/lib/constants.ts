@@ -1,4 +1,7 @@
-export const BOOK_A_CALL_URL = "https://grow.detool.ai/auto-detailing-growth-page";
+export const CHECKOUT_URL = "https://buy.stripe.com/6oU8wP4Yn98m8GLbev9sk03";
+
+/** @deprecated Use CHECKOUT_URL — kept so older imports keep working */
+export const BOOK_A_CALL_URL = CHECKOUT_URL;
 
 /** Must match GHL / Twilio brand verification exactly */
 export const BUSINESS_NAME = "Detool.AI";

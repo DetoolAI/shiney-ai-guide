@@ -60,7 +60,7 @@ const AboutSection = () => {
             Join us at Detool.AI and discover how intelligent automation can transform your business operations.
           </p>
           <BookCallButton className="text-primary-foreground">
-            Book A Free Call
+            Get started - $297/mo
           </BookCallButton>
         </div>
       </div>

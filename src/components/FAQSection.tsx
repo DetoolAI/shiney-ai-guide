@@ -84,7 +84,7 @@ const FAQSection = () => {
             Still have questions? We're here to help!
           </p>
           <BookCallLink className="text-primary hover:underline font-medium">
-            Book a free call for personalized answers →
+            Get started - $297/mo →
           </BookCallLink>
         </div>
       </div>

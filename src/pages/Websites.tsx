@@ -74,7 +74,7 @@ const Websites = () => {
                 Most agencies charge extra for every little thing. We don't. Your $297/mo covers the website, hosting, maintenance, and monthly updates. That's it.
               </p>
               <Button asChild className="rounded-full px-8 font-semibold">
-                <BookCallLink className="hover:text-primary transition-colors">Book A Free Call</BookCallLink>
+                <BookCallLink className="hover:text-primary transition-colors">Get started - $297/mo</BookCallLink>
               </Button>
             </div>
             <div className="grid grid-cols-1 gap-3">
@@ -121,7 +121,7 @@ const Websites = () => {
             When someone Googles you and finds a clean, professional website, they call you. When they find nothing — or something that looks like it was built in 2009 — they call your competitor.
           </p>
           <Button asChild size="lg" className="rounded-full px-10 py-6 font-semibold shadow-warm">
-            <BookCallLink className="hover:text-primary transition-colors">Book A Free Call</BookCallLink>
+            <BookCallLink className="hover:text-primary transition-colors">Get started - $297/mo</BookCallLink>
           </Button>
         </div>
       </section>

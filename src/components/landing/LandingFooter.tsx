@@ -46,7 +46,7 @@ const LandingFooter = () => {
               <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
               <Link to="/blog" className="block hover:text-primary transition-colors">Blog</Link>
               <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
-              <BookCallLink className="block hover:text-primary transition-colors">Book A Call</BookCallLink>
+              <BookCallLink className="block hover:text-primary transition-colors">Get started - $297/mo</BookCallLink>
               <Link to="/privacy" className="block hover:text-primary transition-colors">Privacy</Link>
               <Link to="/terms" className="block hover:text-primary transition-colors">Terms</Link>
             </div>
@@ -77,7 +77,7 @@ const LandingFooter = () => {
               )}
             </div>
             <BookCallLink className="inline-block mt-4 text-sm font-bold text-primary hover:text-primary/80">
-              Book A Call →
+              Get started - $297/mo →
             </BookCallLink>
           </div>
         </div>

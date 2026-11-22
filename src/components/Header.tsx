@@ -106,7 +106,7 @@ const Header = () => {
               Log In
             </a>
             <BookCallLink className="inline-flex items-center justify-center rounded-lg px-7 py-3 text-base font-bold bg-primary hover:bg-primary/90 shadow-md text-white">
-              Book A Call
+              Get started - $297/mo
             </BookCallLink>
           </div>
 
@@ -134,7 +134,7 @@ const Header = () => {
             <hr className="border-gray-200 my-1" />
             <a href="https://app.detool.ai" onClick={() => setOpen(false)} className="font-semibold text-gray-800">Log In</a>
             <BookCallLink className="inline-flex items-center justify-center rounded-lg w-full font-bold mt-2 py-3 bg-primary hover:bg-primary/90 text-white" onClick={() => setOpen(false)}>
-              Book A Call
+              Get started - $297/mo
             </BookCallLink>
           </div>
         )}

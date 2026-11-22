@@ -111,7 +111,7 @@ const FeaturePageLayout = ({
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{ctaTitle}</h2>
           <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">{ctaSubtitle}</p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
-            Book A Free Call
+            Get started - $297/mo
           </BookCallLink>
         </div>
       </section>

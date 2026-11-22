@@ -3,21 +3,21 @@ import BookCallButton from "@/components/BookCallButton";
 const steps = [
   {
     number: "01",
-    title: "Free Demo Call",
-    time: "20 minutes",
-    desc: "We hop on a quick call, learn about your business, show you what we'd build, and answer any questions. No hard sell. Just a real conversation.",
+    title: "You check out",
+    time: "Instant",
+    desc: "Pay $297/mo and you're in. No demo call. No waiting for a sales slot.",
   },
   {
     number: "02",
-    title: "We Build Your System",
-    time: "7–10 days",
-    desc: "We build your website and set up whatever tools you need — chatbot, missed call text-back, review automation. You see it before it goes live.",
+    title: "We build your system (10 days)",
+    time: "10 days",
+    desc: "We build your website and set up whatever tools you need — chatbot, missed call text-back, review automation. Done for you.",
   },
   {
     number: "03",
-    title: "Launch & Get Clients",
-    time: "Launch call included",
-    desc: "We walk you through everything on a launch call so you know exactly how it works. Then you go live and start getting leads.",
+    title: "It goes live, you do nothing",
+    time: "We launch it",
+    desc: "We launch your system for you. After that it runs on autopilot while you run your business.",
   },
 ];
 
@@ -51,9 +51,9 @@ const ProcessSection = () => {
 
           <div className="text-center mt-12">
             <BookCallButton className="px-10 py-5 text-base">
-              Book A Free Call →
+              Get started - $297/mo →
             </BookCallButton>
-            <p className="text-xs text-gray-400 mt-3">20 minutes. No obligation. No credit card.</p>
+            <p className="text-xs text-gray-400 mt-3">$297/mo · Built in 10 days · No contracts</p>
           </div>
         </div>
       </div>

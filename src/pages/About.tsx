@@ -74,7 +74,7 @@ const About = () => {
 
           <div className="mt-12 text-center">
             <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
-              Book A Free Call
+              Get started - $297/mo
             </BookCallLink>
           </div>
         </div>

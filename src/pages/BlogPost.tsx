@@ -145,7 +145,7 @@ const BlogPost = () => {
             Stop reading about what works and start doing it. Book a free call and we'll build your system in 10 days.
           </p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
-            Book A Free Call
+            Get started - $297/mo
           </BookCallLink>
         </div>
       </section>

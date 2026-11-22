@@ -32,7 +32,7 @@ const LandingHero = () => {
                 ))}
               </div>
               <BookCallButton className="rounded-lg px-8 py-4 text-base shadow-lg">
-                Book A Call
+                Get started - $297/mo
               </BookCallButton>
             </div>
 

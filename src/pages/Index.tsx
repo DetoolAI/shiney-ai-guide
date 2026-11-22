@@ -22,9 +22,9 @@ const industries = [
 ];
 
 const steps = [
-  { num: "01", title: "Demo Call (20 mins)", desc: "It's actually a sales call, we just didn't want to scare you. We'll answer every question and show you live client results." },
-  { num: "02", title: "We Build Your System (10 days)", desc: "We build your website with a quote form, missed-call automations, review funnel, and follow-up campaigns — done for you." },
-  { num: "03", title: "Launch Call (25 mins)", desc: "We walk you through everything and go live together. After that, your system runs on autopilot." },
+  { num: "01", title: "You check out", desc: "Pay $297/mo and you're in. No demo call. No waiting for a sales slot." },
+  { num: "02", title: "We build your system (10 days)", desc: "We build your website with a quote form, missed-call automations, review funnel, and follow-up campaigns — done for you." },
+  { num: "03", title: "It goes live, you do nothing", desc: "We launch your system for you. After that it runs on autopilot while you run your business." },
 ];
 
 const whyUs = [
@@ -38,7 +38,7 @@ const whyUs = [
 
 const faqs = [
   { q: "When am I going to start seeing results?", a: "Most businesses see more leads captured and more reviews within the first few weeks. It depends on your traffic, follow-up, and how fast you respond — we give you the system, you close the customers." },
-  { q: "How long does setup take?", a: "We build and launch your full system in 10 days. The launch call takes about 25 minutes. After that you're live." },
+  { q: "How long does setup take?", a: "We build and launch your full system in 10 days. You check out, we build, it goes live — you don't have to do anything." },
   { q: "Will this work for my business?", a: "Yes. It works for any local business — home services, salons, restaurants, clinics, contractors, and one-person operations. If you need more leads, more reviews, and faster follow-up, this works for you." },
   { q: "Is there a contract?", a: "No. Month to month. Cancel any time. We're confident you'll stay because you're seeing results." },
   { q: "Why $297 and not cheaper?", a: "Because we don't just give you software. We set it all up, build your automations, and support you ongoing. You're buying a done-for-you system." },
@@ -78,7 +78,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
-              Book A Call
+              Get started - $297/mo
             </BookCallLink>
             <Link to="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-base underline underline-offset-4">
               See Our Work
@@ -221,10 +221,10 @@ const Index = () => {
 
       <section id="cta" className="bg-detool-dark py-20 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Want to schedule a time to talk?</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to get started?</h2>
           <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website, lead capture, and automations — all built to grow your business.</p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl">
-            Book A Call
+            Get started - $297/mo
           </BookCallLink>
         </div>
       </section>

@@ -74,7 +74,7 @@ const Spas = () => {
           <h2 className="text-3xl font-black text-white mb-4">Ready to elevate your spa's booking experience?</h2>
           <p className="text-white/70 text-lg mb-8">Book a free call. We'll build your complete system in 10 days.</p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
-            Book A Free Call
+            Get started - $297/mo
           </BookCallLink>
           <p className="text-white/40 mt-3 text-sm">$297/month · No contracts · Cancel any time</p>
         </div>

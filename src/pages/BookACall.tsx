@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { BOOK_A_CALL_URL } from "@/lib/constants";
+import { CHECKOUT_URL } from "@/lib/constants";
 
 const BookACall = () => {
   useEffect(() => {
-    window.location.replace(BOOK_A_CALL_URL);
+    window.location.replace(CHECKOUT_URL);
   }, []);
 
   return (
