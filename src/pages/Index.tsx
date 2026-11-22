@@ -7,6 +7,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import BookCallLink from "@/components/BookCallLink";
+import EmailCapture from "@/components/EmailCapture";
 
 const industries = [
   "Home Services",
@@ -226,6 +227,15 @@ const Index = () => {
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl">
             Get started - $297/mo
           </BookCallLink>
+          <div className="max-w-xl mx-auto mt-12 text-left">
+            <EmailCapture
+              title="Already paid? Get your onboarding link"
+              subtitle="Enter the email from checkout and we'll resend the form."
+              source="home-cta"
+              buttonLabel="Send onboarding link"
+              dark
+            />
+          </div>
         </div>
       </section>
 

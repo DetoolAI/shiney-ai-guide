@@ -8,6 +8,7 @@ export const config = {
 };
 
 const ONBOARDING_URL = process.env.ONBOARDING_FORM_URL || "https://links.detool.ai";
+const THANK_YOU_URL = process.env.THANK_YOU_URL || "https://www.detool.ai/thank-you";
 const TEAM_EMAIL = process.env.TEAM_NOTIFY_EMAIL || "detoolai@gmail.com";
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Detool.AI <onboarding@resend.dev>";
 
@@ -46,9 +47,18 @@ async function sendResendEmail(args: {
   to: string[];
   subject: string;
   html: string;
+  scheduledAt?: string;
 }): Promise<{ ok: boolean; id?: string; error?: string }> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return { ok: false, error: "Missing RESEND_API_KEY" };
+
+  const body: Record<string, unknown> = {
+    from: FROM_EMAIL,
+    to: args.to,
+    subject: args.subject,
+    html: args.html,
+  };
+  if (args.scheduledAt) body.scheduled_at = args.scheduledAt;
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -56,17 +66,56 @@ async function sendResendEmail(args: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      from: FROM_EMAIL,
-      to: args.to,
-      subject: args.subject,
-      html: args.html,
-    }),
+    body: JSON.stringify(body),
   });
 
   const data = (await res.json()) as { id?: string; message?: string };
   if (!res.ok) return { ok: false, error: data?.message || "Resend error" };
   return { ok: true, id: data.id };
+}
+
+function customerWelcomeHtml(name: string) {
+  return `
+    <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:560px">
+      <h2 style="margin:0 0 12px">You're in — Detool.AI</h2>
+      <p>Hi ${name},</p>
+      <p>Your <strong>$297/mo</strong> subscription is active. Stripe sent your receipt separately.</p>
+      <p style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 16px">
+        <strong>Reply with your logo + 3 photos and I start today.</strong>
+      </p>
+      <p>Then fill the onboarding form so we can build your system (10 days):</p>
+      <p style="margin:28px 0">
+        <a href="${ONBOARDING_URL}" style="background:#f97316;color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">
+          Complete onboarding form
+        </a>
+      </p>
+      <p style="color:#555;font-size:14px">
+        What happens next:<br/>
+        1) Form today → 2) We build (10 days) → 3) It goes live, you do nothing
+      </p>
+      <p style="color:#666;font-size:13px">
+        Thank-you page: <a href="${THANK_YOU_URL}">${THANK_YOU_URL}</a><br/>
+        Form: <a href="${ONBOARDING_URL}">${ONBOARDING_URL}</a>
+      </p>
+    </div>
+  `;
+}
+
+function nudgeHtml(name: string) {
+  return `
+    <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:560px">
+      <h2 style="margin:0 0 12px">Quick nudge — we can't start without your form</h2>
+      <p>Hi ${name},</p>
+      <p>You subscribed 48 hours ago, but we still don't have your onboarding form. That's where ~80% of delays happen.</p>
+      <p style="margin:28px 0">
+        <a href="${ONBOARDING_URL}" style="background:#f97316;color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">
+          Fill the form now (5 min)
+        </a>
+      </p>
+      <p><strong>Or reply with your logo + 3 photos and I start today.</strong></p>
+      <p style="color:#666;font-size:13px">Already sent it? Ignore this — we're on it.</p>
+    </div>
+  `;
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -109,52 +158,59 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const session = event.data.object;
-  const details = session.customer_details as { email?: string; name?: string } | null;
+  const details = session.customer_details as { email?: string; name?: string; phone?: string } | null;
   const email =
     details?.email ||
     (typeof session.customer_email === "string" ? session.customer_email : null);
   const name = details?.name || "there";
+  const phone = details?.phone || "";
   const amountTotal =
     typeof session.amount_total === "number"
       ? `$${(session.amount_total / 100).toFixed(2)}`
-      : "your plan";
+      : "$297.00";
 
   const results: Record<string, unknown> = { email };
 
   if (email) {
     results.customer = await sendResendEmail({
       to: [email],
-      subject: "You're in — finish Detool.AI onboarding",
-      html: `
-        <div style="font-family:Arial,sans-serif;line-height:1.5;color:#111">
-          <h2>Welcome to Detool.AI</h2>
-          <p>Hi ${name},</p>
-          <p>Your subscription is active. Next step: fill out the onboarding form so we can build your system in 10 days.</p>
-          <p style="margin:28px 0">
-            <a href="${ONBOARDING_URL}" style="background:#f97316;color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">
-              Complete onboarding form
-            </a>
-          </p>
-          <p>Or open this link: <a href="${ONBOARDING_URL}">${ONBOARDING_URL}</a></p>
-          <p style="color:#666;font-size:14px">Questions? Reply to this email or reach us at ${TEAM_EMAIL}.</p>
-        </div>
-      `,
+      subject: "You're in — check email + finish onboarding",
+      html: customerWelcomeHtml(name),
+    });
+
+    // 48h nudge if the form never comes back
+    const in48h = new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString();
+    results.nudge48h = await sendResendEmail({
+      to: [email],
+      subject: "Still need your Detool.AI onboarding form",
+      html: nudgeHtml(name),
+      scheduledAt: in48h,
     });
   } else {
     results.customer = { ok: false, error: "No customer email on session" };
   }
 
+  // New-order alert — build within the hour
   results.team = await sendResendEmail({
     to: [TEAM_EMAIL],
-    subject: `New Detool.AI subscriber${email ? ` — ${email}` : ""}`,
+    subject: `🚨 NEW ORDER — build within the hour${email ? ` — ${email}` : ""}`,
     html: `
-      <h2>New paid subscriber</h2>
-      <p><strong>Email:</strong> ${email || "unknown"}</p>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Amount:</strong> ${amountTotal}</p>
-      <p><strong>Session:</strong> ${session.id || "n/a"}</p>
-      <p><strong>Onboarding form:</strong> <a href="${ONBOARDING_URL}">${ONBOARDING_URL}</a></p>
-      <p>Customer ${email ? "was emailed the onboarding link" : "had no email — follow up manually"}.</p>
+      <div style="font-family:Arial,sans-serif;line-height:1.5;color:#111">
+        <h2 style="color:#c2410c">NEW ORDER — start within 1 hour</h2>
+        <p><strong>Email:</strong> ${email || "unknown"}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone:</strong> ${phone || "n/a"}</p>
+        <p><strong>Amount:</strong> ${amountTotal}/mo</p>
+        <p><strong>Session:</strong> ${session.id || "n/a"}</p>
+        <hr/>
+        <p><strong>Customer next steps we sent:</strong></p>
+        <ol>
+          <li>Receipt (Stripe) + reply with logo + 3 photos</li>
+          <li>Onboarding form: <a href="${ONBOARDING_URL}">${ONBOARDING_URL}</a></li>
+          <li>48h nudge scheduled if form not done</li>
+        </ol>
+        <p>Thank-you page: <a href="${THANK_YOU_URL}">${THANK_YOU_URL}</a></p>
+      </div>
     `,
   });
 

@@ -29,7 +29,7 @@ const faqs = [
   { q: "What if I don't see results?", a: "Book the call and let's be honest with each other. If your business isn't a good fit, we'll tell you. We don't take money from people who won't benefit." },
   { q: "Are there any setup fees?", a: "No setup fees, ever. $297/month is all you pay." },
   { q: "Can I cancel any time?", a: "Yes. No contracts. No cancellation penalties. We earn your business every single month." },
-  { q: "What happens after I pay?", a: "We schedule your onboarding call, build your full system within 10 days, and hop on a 25-minute launch call to go live together." },
+  { q: "What happens after I pay?", a: "You land on a thank-you page, get a receipt + onboarding form by email, we build your system in 10 days, then it goes live — you do nothing. Reply with your logo + 3 photos and we start the same day." },
   { q: "Do I need a complicated booking system?", a: "No. Most businesses start with a lead form, missed-call text-back, and review funnel. We keep it simple — you can always add more later." },
 ];
 

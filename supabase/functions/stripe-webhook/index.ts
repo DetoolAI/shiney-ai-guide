@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createHmac } from "https://deno.land/std@0.168.0/node/crypto.ts";
 
 const ONBOARDING_URL = Deno.env.get("ONBOARDING_FORM_URL") ?? "https://links.detool.ai";
+const THANK_YOU_URL = Deno.env.get("THANK_YOU_URL") ?? "https://www.detool.ai/thank-you";
 const TEAM_EMAIL = Deno.env.get("TEAM_NOTIFY_EMAIL") ?? "detoolai@gmail.com";
 const FROM_EMAIL = Deno.env.get("RESEND_FROM_EMAIL") ?? "Detool.AI <onboarding@resend.dev>";
 
@@ -29,12 +30,9 @@ function verifyStripeSignature(payload: string, header: string | null, secret: s
   const timestamp = parts["t"];
   const signature = parts["v1"];
   if (!timestamp || !signature) return false;
-
   const ageSec = Math.abs(Math.floor(Date.now() / 1000) - Number(timestamp));
   if (!Number.isFinite(ageSec) || ageSec > 300) return false;
-
-  const signed = `${timestamp}.${payload}`;
-  const expected = createHmac("sha256", secret).update(signed).digest("hex");
+  const expected = createHmac("sha256", secret).update(`${timestamp}.${payload}`).digest("hex");
   return timingSafeEqual(expected, signature);
 }
 
@@ -42,43 +40,29 @@ async function sendResendEmail(args: {
   to: string[];
   subject: string;
   html: string;
-}): Promise<{ ok: boolean; id?: string; error?: string }> {
+  scheduledAt?: string;
+}) {
   const apiKey = Deno.env.get("RESEND_API_KEY");
-  if (!apiKey) return { ok: false, error: "Missing RESEND_API_KEY" };
-
+  if (!apiKey) return { ok: false as const, error: "Missing RESEND_API_KEY" };
+  const body: Record<string, unknown> = {
+    from: FROM_EMAIL,
+    to: args.to,
+    subject: args.subject,
+    html: args.html,
+  };
+  if (args.scheduledAt) body.scheduled_at = args.scheduledAt;
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: FROM_EMAIL,
-      to: args.to,
-      subject: args.subject,
-      html: args.html,
-    }),
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify(body),
   });
-
   const data = await res.json();
-  if (!res.ok) return { ok: false, error: data?.message || "Resend error" };
-  return { ok: true, id: data.id };
-}
-
-function customerEmailFromSession(session: Record<string, unknown>): string | null {
-  const details = session.customer_details as { email?: string } | null;
-  if (details?.email) return details.email;
-  if (typeof session.customer_email === "string" && session.customer_email) {
-    return session.customer_email;
-  }
-  return null;
+  if (!res.ok) return { ok: false as const, error: data?.message || "Resend error" };
+  return { ok: true as const, id: data.id as string };
 }
 
 serve(async (req) => {
-  if (req.method === "OPTIONS") {
-    return new Response(null, { status: 200, headers: corsHeaders });
-  }
-
+  if (req.method === "OPTIONS") return new Response(null, { status: 200, headers: corsHeaders });
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
@@ -95,25 +79,14 @@ serve(async (req) => {
   }
 
   const payload = await req.text();
-  const signature = req.headers.get("stripe-signature");
-
-  if (!verifyStripeSignature(payload, signature, webhookSecret)) {
+  if (!verifyStripeSignature(payload, req.headers.get("stripe-signature"), webhookSecret)) {
     return new Response(JSON.stringify({ error: "Invalid signature" }), {
       status: 400,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });
   }
 
-  let event: { type: string; data: { object: Record<string, unknown> } };
-  try {
-    event = JSON.parse(payload);
-  } catch {
-    return new Response(JSON.stringify({ error: "Invalid JSON" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json", ...corsHeaders },
-    });
-  }
-
+  const event = JSON.parse(payload);
   if (event.type !== "checkout.session.completed") {
     return new Response(JSON.stringify({ received: true, ignored: event.type }), {
       status: 200,
@@ -122,51 +95,68 @@ serve(async (req) => {
   }
 
   const session = event.data.object;
-  const email = customerEmailFromSession(session);
-  const name =
-    (session.customer_details as { name?: string } | null)?.name ||
-    "there";
+  const details = session.customer_details || {};
+  const email = details.email || session.customer_email || null;
+  const name = details.name || "there";
+  const phone = details.phone || "";
   const amountTotal =
-    typeof session.amount_total === "number"
-      ? `$${(session.amount_total / 100).toFixed(2)}`
-      : "your plan";
+    typeof session.amount_total === "number" ? `$${(session.amount_total / 100).toFixed(2)}` : "$297.00";
 
   const results: Record<string, unknown> = { email };
 
   if (email) {
     results.customer = await sendResendEmail({
       to: [email],
-      subject: "You're in — finish Detool.AI onboarding",
+      subject: "You're in — check email + finish onboarding",
       html: `
-        <div style="font-family:Arial,sans-serif;line-height:1.5;color:#111">
-          <h2>Welcome to Detool.AI</h2>
+        <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:560px">
+          <h2>You're in — Detool.AI</h2>
           <p>Hi ${name},</p>
-          <p>Your subscription is active. Next step: fill out the onboarding form so we can build your system in 10 days.</p>
+          <p>Your <strong>$297/mo</strong> subscription is active. Stripe sent your receipt separately.</p>
+          <p style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 16px">
+            <strong>Reply with your logo + 3 photos and I start today.</strong>
+          </p>
           <p style="margin:28px 0">
             <a href="${ONBOARDING_URL}" style="background:#f97316;color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">
               Complete onboarding form
             </a>
           </p>
-          <p>Or open this link: <a href="${ONBOARDING_URL}">${ONBOARDING_URL}</a></p>
-          <p style="color:#666;font-size:14px">Questions? Reply to this email or reach us at ${TEAM_EMAIL}.</p>
+          <p style="color:#555;font-size:14px">1) Form today → 2) We build (10 days) → 3) It goes live</p>
         </div>
       `,
     });
-  } else {
-    results.customer = { ok: false, error: "No customer email on session" };
+
+    results.nudge48h = await sendResendEmail({
+      to: [email],
+      subject: "Still need your Detool.AI onboarding form",
+      scheduledAt: new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString(),
+      html: `
+        <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:560px">
+          <h2>Quick nudge — we can't start without your form</h2>
+          <p>Hi ${name},</p>
+          <p>You subscribed 48 hours ago, but we still don't have your onboarding form.</p>
+          <p style="margin:28px 0">
+            <a href="${ONBOARDING_URL}" style="background:#f97316;color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">
+              Fill the form now (5 min)
+            </a>
+          </p>
+          <p><strong>Or reply with your logo + 3 photos and I start today.</strong></p>
+        </div>
+      `,
+    });
   }
 
   results.team = await sendResendEmail({
     to: [TEAM_EMAIL],
-    subject: `New Detool.AI subscriber${email ? ` — ${email}` : ""}`,
+    subject: `🚨 NEW ORDER — build within the hour${email ? ` — ${email}` : ""}`,
     html: `
-      <h2>New paid subscriber</h2>
+      <h2 style="color:#c2410c">NEW ORDER — start within 1 hour</h2>
       <p><strong>Email:</strong> ${email || "unknown"}</p>
       <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Amount:</strong> ${amountTotal}</p>
-      <p><strong>Session:</strong> ${session.id || "n/a"}</p>
-      <p><strong>Onboarding form:</strong> <a href="${ONBOARDING_URL}">${ONBOARDING_URL}</a></p>
-      <p>Customer ${email ? "was emailed the onboarding link" : "had no email — follow up manually"}.</p>
+      <p><strong>Phone:</strong> ${phone || "n/a"}</p>
+      <p><strong>Amount:</strong> ${amountTotal}/mo</p>
+      <p>Form: <a href="${ONBOARDING_URL}">${ONBOARDING_URL}</a></p>
+      <p>Thank-you: <a href="${THANK_YOU_URL}">${THANK_YOU_URL}</a></p>
     `,
   });
 

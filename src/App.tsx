@@ -39,6 +39,7 @@ import Documentation from "./pages/Documentation";
 import MarketingTemplates from "./pages/MarketingTemplates";
 import PhoneScript from "./pages/PhoneScript";
 import Welcome from "./pages/Welcome";
+import ThankYou from "./pages/ThankYou";
 import Auth from "./pages/Auth";
 import ClientOnboardForm from "./pages/ClientOnboardForm";
 
@@ -95,6 +96,7 @@ const App = () => (
           <Route path="/phone-script" element={<PhoneScript />} />
           <Route path="/client-onboard-form" element={<ClientOnboardForm />} />
           <Route path="/welcome" element={<Welcome />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/beauty" element={<Navigate to="/" replace />} />
           <Route path="/salons" element={<Navigate to="/" replace />} />
