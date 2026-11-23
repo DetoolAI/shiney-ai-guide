@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const PIXEL_ID = '1423176479316771';
+const PIXEL_ID = '2078228012939965';
 const GOOGLE_ADS_ID = 'AW-17894527490';
 const GTM_ID = 'GTM-5C5R5KWC';
 
