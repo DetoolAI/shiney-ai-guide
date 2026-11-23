@@ -10,7 +10,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { trackLead } from "@/lib/metaPixel";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -72,17 +71,19 @@ const ClientOnboardForm = () => {
         content_category: 'Lead',
       });
       
-      // Send email via Supabase Edge Function
-      const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-onboard-email', {
-        body: data
+      // Notify team + customer ("we're building") and cancel 48h nudge
+      const response = await fetch("/api/onboard-complete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
-
-      if (emailError) {
-        console.error("Email error:", emailError);
-        throw new Error(emailError.message || "Failed to send email");
+      const emailResult = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        console.error("Onboard complete error:", emailResult);
+        throw new Error(emailResult.error || "Failed to send onboarding emails");
       }
 
-      console.log("Email sent successfully:", emailResult);
+      console.log("Onboarding complete emails sent:", emailResult);
       
       toast({
         title: "You're all set — we're building",

@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-const ONBOARDING_URL = process.env.ONBOARDING_FORM_URL || "https://links.detool.ai";
+const ONBOARDING_URL = process.env.ONBOARDING_FORM_URL || "https://www.detool.ai/client-onboard-form";
 const TEAM_EMAIL = process.env.TEAM_NOTIFY_EMAIL || "detoolai@gmail.com";
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Detool.AI <onboarding@resend.dev>";
 
