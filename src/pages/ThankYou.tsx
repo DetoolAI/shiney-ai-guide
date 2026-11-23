@@ -1,8 +1,11 @@
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { CheckCircle, Mail, ClipboardList, Hammer, Rocket } from "lucide-react";
 import { ONBOARDING_FORM_URL, BUSINESS_EMAIL } from "@/lib/constants";
 import EmailCapture from "@/components/EmailCapture";
 import SEO from "@/components/SEO";
 import DetoolLogo from "@/components/DetoolLogo";
+import { trackSubscribe } from "@/lib/metaPixel";
 
 const timeline = [
   {
@@ -32,6 +35,37 @@ const timeline = [
 ];
 
 const ThankYou = () => {
+  const [searchParams] = useSearchParams();
+  const sessionId = searchParams.get("session_id");
+  const paid = Boolean(sessionId);
+
+  // Subscribe fires only after Stripe redirects here with session_id — not on bare /thank-you visits.
+  useEffect(() => {
+    if (!sessionId) return;
+
+    const key = `meta_subscribe_${sessionId}`;
+    if (sessionStorage.getItem(key)) return;
+
+    const fire = () => {
+      if (typeof window === "undefined" || !window.fbq) return false;
+      trackSubscribe({ value: 297.0, currency: "USD" });
+      sessionStorage.setItem(key, "1");
+      return true;
+    };
+
+    if (fire()) return;
+
+    // Pixel may still be loading from ThirdPartyScripts
+    const id = window.setInterval(() => {
+      if (fire()) window.clearInterval(id);
+    }, 200);
+    const timeout = window.setTimeout(() => window.clearInterval(id), 8000);
+    return () => {
+      window.clearInterval(id);
+      window.clearTimeout(timeout);
+    };
+  }, [sessionId]);
+
   return (
     <div className="min-h-screen bg-detool-dark text-white">
       <SEO
@@ -48,9 +82,13 @@ const ThankYou = () => {
           <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-8 h-8 text-primary" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-black mb-4">You&apos;re in.</h1>
+          <h1 className="text-3xl md:text-5xl font-black mb-4">
+            {paid ? "You\u2019re in." : "You\u2019re almost in."}
+          </h1>
           <p className="text-lg md:text-xl text-white/70 mb-2">
-            Check your email — your build starts now.
+            {paid
+              ? "Check your email — your build starts now."
+              : "If you just paid, give it a second — or open your Stripe receipt email."}
           </p>
           <p className="text-white/50 text-sm">
             Stripe handles your $297/mo subscription + receipt. Next step is the onboarding form.

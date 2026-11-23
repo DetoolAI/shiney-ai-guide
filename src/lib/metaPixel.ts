@@ -44,3 +44,18 @@ export const trackCompleteRegistration = (data?: {
     window.fbq('track', 'CompleteRegistration', data);
   }
 };
+
+/** Fire only after a real Stripe checkout redirect (thank-you + session_id). */
+export const trackSubscribe = (data?: {
+  value?: number;
+  currency?: string;
+  content_name?: string;
+}) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'Subscribe', {
+      value: data?.value ?? 297.0,
+      currency: data?.currency ?? 'USD',
+      content_name: data?.content_name ?? 'Detool.AI $297/mo',
+    });
+  }
+};
