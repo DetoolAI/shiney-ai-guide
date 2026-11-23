@@ -49,13 +49,11 @@ export const trackCompleteRegistration = (data?: {
 export const trackSubscribe = (data?: {
   value?: number;
   currency?: string;
-  content_name?: string;
 }) => {
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'Subscribe', {
       value: data?.value ?? 297.0,
       currency: data?.currency ?? 'USD',
-      content_name: data?.content_name ?? 'Detool.AI $297/mo',
     });
   }
 };
