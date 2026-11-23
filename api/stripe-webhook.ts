@@ -43,6 +43,35 @@ function verifyStripeSignature(payload: Buffer, header: string | undefined, secr
   return timingSafeEqual(expectedBuf, signatureBuf);
 }
 
+async function registerNudgeWithOnboardingForm(
+  email: string,
+  resendId: string,
+): Promise<{ ok: boolean; error?: string }> {
+  if (!resendId) return { ok: false, error: "Missing resendId" };
+  const secret = process.env.ONBOARDING_NUDGE_SECRET || process.env.NUDGE_SECRET;
+  const endpoint =
+    process.env.ONBOARDING_NUDGE_URL || "https://links.detool.ai/api/register-nudge";
+  if (!secret) return { ok: false, error: "Missing ONBOARDING_NUDGE_SECRET" };
+
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${secret}`,
+      },
+      body: JSON.stringify({ email, resendId }),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      return { ok: false, error: text || `HTTP ${res.status}` };
+    }
+    return { ok: true };
+  } catch (error) {
+    return { ok: false, error: error instanceof Error ? error.message : "register failed" };
+  }
+}
+
 async function sendResendEmail(args: {
   to: string[];
   subject: string;
@@ -178,7 +207,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       html: customerWelcomeHtml(name),
     });
 
-    // 48h nudge if the form never comes back
+    // 48h nudge if the form never comes back (canceled when they submit onboarding)
     const in48h = new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString();
     results.nudge48h = await sendResendEmail({
       to: [email],
@@ -186,6 +215,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       html: nudgeHtml(name),
       scheduledAt: in48h,
     });
+
+    if (results.nudge48h && (results.nudge48h as { ok?: boolean; id?: string }).ok) {
+      results.nudgeRegistered = await registerNudgeWithOnboardingForm(
+        email,
+        (results.nudge48h as { id?: string }).id || "",
+      );
+    }
   } else {
     results.customer = { ok: false, error: "No customer email on session" };
   }

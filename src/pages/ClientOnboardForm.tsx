@@ -85,8 +85,8 @@ const ClientOnboardForm = () => {
       console.log("Email sent successfully:", emailResult);
       
       toast({
-        title: "Form Submitted Successfully!",
-        description: "We've received your onboarding information and will review it shortly.",
+        title: "You're all set — we're building",
+        description: "Check your email. The 10-day build starts now. Reply with your logo + 3 photos to speed it up.",
       });
       
       form.reset();

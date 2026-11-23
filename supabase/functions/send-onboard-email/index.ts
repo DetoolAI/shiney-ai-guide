@@ -6,88 +6,74 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS'
 }
 
+const TEAM_EMAIL = Deno.env.get("TEAM_NOTIFY_EMAIL") ?? "detoolai@gmail.com"
+const FROM_EMAIL = Deno.env.get("RESEND_FROM_EMAIL") ?? "Detool.AI <onboarding@resend.dev>"
+
 serve(async (req) => {
-  console.log('Client onboard email function called with method:', req.method)
-  
   if (req.method === 'OPTIONS') {
-    console.log('Handling CORS preflight')
-    return new Response(null, { 
-      status: 200,
-      headers: corsHeaders 
-    })
+    return new Response(null, { status: 200, headers: corsHeaders })
   }
 
   if (req.method !== 'POST') {
-    return new Response(
-      JSON.stringify({ error: 'Method not allowed' }),
-      { 
-        status: 405, 
-        headers: { 'Content-Type': 'application/json', ...corsHeaders } 
-      }
-    )
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+    })
   }
 
   try {
-    console.log('Processing client onboard form submission')
     const formData = await req.json()
-    console.log('Form data received:', Object.keys(formData))
-    
-    const { 
-      fullName, 
-      legalBusinessName, 
-      phone, 
-      email, 
-      openingHours, 
-      salesRepInfo, 
-      callsPerHour, 
-      forwardCalls, 
-      crmName, 
-      leadInfo, 
-      companyInfo, 
-      valuePropositions, 
-      specialPromotions 
+    const {
+      fullName,
+      legalBusinessName,
+      phone,
+      email,
+      openingHours,
+      salesRepInfo,
+      callsPerHour,
+      forwardCalls,
+      crmName,
+      leadInfo,
+      companyInfo,
+      valuePropositions,
+      specialPromotions,
     } = formData
-    
+
     if (!fullName || !email || !legalBusinessName) {
-      console.log('Missing required fields')
-      return new Response(
-        JSON.stringify({ error: 'Missing required fields' }),
-        { 
-          status: 400, 
-          headers: { 'Content-Type': 'application/json', ...corsHeaders } 
-        }
-      )
+      return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      })
     }
 
-    // Check if API key exists
     const apiKey = Deno.env.get("RESEND_API_KEY")
-    console.log('API key check:', !!apiKey, 'Length:', apiKey?.length || 0)
-    
     if (!apiKey) {
-      console.error('Missing RESEND_API_KEY')
-      return new Response(
-        JSON.stringify({ error: 'Email service not configured' }),
-        { 
-          status: 500, 
-          headers: { 'Content-Type': 'application/json', ...corsHeaders } 
-        }
-      )
+      return new Response(JSON.stringify({ error: 'Email service not configured' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      })
     }
 
-    // Send email using Resend API
-    console.log('Sending client onboard email via Resend API')
-    const emailRes = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Client Onboard <onboarding@resend.dev>',
-        to: ['detoolai@gmail.com'],
-        subject: `New Client Onboarding Submission - ${legalBusinessName}`,
-        html: `
-          <h2>New Client Onboarding Submission</h2>
+    const send = async (payload: Record<string, unknown>) => {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+      const data = await res.json()
+      return { ok: res.ok, data }
+    }
+
+    const team = await send({
+      from: FROM_EMAIL,
+      to: [TEAM_EMAIL],
+      subject: `✅ FORM DONE — build now: ${legalBusinessName}`,
+      html: `
+          <h2 style="color:#c2410c">Form complete — start building</h2>
+          <p>10-day clock starts now.</p>
           
           <h3>Basic Information</h3>
           <p><strong>Full Name:</strong> ${fullName}</p>
@@ -120,52 +106,75 @@ serve(async (req) => {
           <hr>
           <p><small>Submitted at: ${new Date().toISOString()}</small></p>
         `,
-      }),
     })
 
-    const emailData = await emailRes.json()
-    console.log('Resend response status:', emailRes.status)
-    console.log('Resend response:', emailData)
-
-    if (!emailRes.ok) {
-      console.error('Resend API error:', emailData)
-      return new Response(
-        JSON.stringify({ 
-          error: 'Failed to send email',
-          details: emailData.message || 'Unknown error'
-        }),
-        { 
-          status: 500, 
-          headers: { 'Content-Type': 'application/json', ...corsHeaders } 
-        }
-      )
+    if (!team.ok) {
+      return new Response(JSON.stringify({
+        error: 'Failed to send team email',
+        details: team.data?.message || 'Unknown error',
+      }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      })
     }
 
-    console.log('Client onboard email sent successfully!')
-    return new Response(
-      JSON.stringify({ 
-        message: 'Client onboard form submitted successfully!',
-        id: emailData.id 
-      }),
-      { 
-        status: 200, 
-        headers: { 'Content-Type': 'application/json', ...corsHeaders }
-      }
-    )
+    const customer = await send({
+      from: FROM_EMAIL,
+      to: [email],
+      subject: "We're building your Detool.AI system",
+      html: `
+        <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:560px">
+          <h2>We're building — you can relax</h2>
+          <p>Hi ${fullName},</p>
+          <p>We got your onboarding form for <strong>${legalBusinessName}</strong>. The 10-day build starts now.</p>
+          <p style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 16px">
+            <strong>What happens next</strong><br/>
+            Days 1–10: we build your system.<br/>
+            Day 10: it goes live — you do nothing.
+          </p>
+          <p>Reply with your logo + 3 photos if you haven't already.</p>
+        </div>
+      `,
+    })
 
-  } catch (error) {
-    console.error('Function error:', error.message)
-    console.error('Error stack:', error.stack)
-    
-    return new Response(
-      JSON.stringify({ 
-        error: 'Internal server error',
-        details: error.message
-      }),
-      { 
-        status: 500, 
-        headers: { 'Content-Type': 'application/json', ...corsHeaders } 
+    // Best-effort: cancel 48h nudge registered on links.detool.ai
+    let nudgeCanceled = false
+    const nudgeSecret = Deno.env.get("ONBOARDING_NUDGE_SECRET") || Deno.env.get("NUDGE_SECRET")
+    if (nudgeSecret) {
+      try {
+        const completeUrl = Deno.env.get("ONBOARDING_COMPLETE_URL") || "https://links.detool.ai/api/register-nudge"
+        const res = await fetch(completeUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${nudgeSecret}`,
+          },
+          body: JSON.stringify({ email, complete: true }),
+        })
+        const data = await res.json().catch(() => ({}))
+        nudgeCanceled = Boolean(res.ok && data?.canceled)
+      } catch {
+        nudgeCanceled = false
       }
-    )
+    }
+
+    return new Response(JSON.stringify({
+      message: 'Onboarding received — build started emails sent',
+      teamId: team.data?.id,
+      customerOk: customer.ok,
+      customerId: customer.data?.id,
+      nudgeCanceled,
+    }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+    })
+  } catch (error) {
+    return new Response(JSON.stringify({
+      error: 'Internal server error',
+      details: error.message,
+    }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+    })
   }
 })
