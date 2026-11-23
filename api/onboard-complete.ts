@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const TEAM_EMAIL = process.env.TEAM_NOTIFY_EMAIL || "detoolai@gmail.com";
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Detool.AI <onboarding@detool.ai>";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Detool.AI <onboarding@resend.dev>";
 const NUDGE_URL = process.env.ONBOARDING_NUDGE_URL || "https://links.detool.ai/api/register-nudge";
 
 async function sendResendEmail(args: {
