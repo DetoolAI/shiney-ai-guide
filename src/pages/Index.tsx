@@ -67,46 +67,41 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero — Stone Systems style, beauty niche */}
-      <section id="hero" className="bg-detool-dark pt-40 pb-24 scroll-mt-24">
+      {/* Hero — ad traffic: problem → offer → buy */}
+      <section id="hero" className="bg-detool-dark pt-36 pb-20 md:pt-40 md:pb-24 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black text-white leading-[1.1] max-w-5xl mx-auto mb-6">
-            Website Design & Marketing For Every Business
-          </h1>
-          <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-            We build websites with lead forms, missed-call text-back, review funnels, and follow-up automations — so you capture every lead while you're with a customer.
-            No miracle fix. Just tools that work when you commit to using them.
+          <p className="text-primary font-bold tracking-wide text-sm md:text-base mb-5">
+            Detool.AI — done-for-you growth system
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg">
-              Get started - $297/mo
+          <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-black text-white leading-[1.08] max-w-4xl mx-auto mb-6">
+            Stop Losing Customers To Missed Calls And Slow Follow-Up
+          </h1>
+          <p className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+            We build your website, lead form, missed-call text-back, review funnel, and follow-up — live in 10 days. You run the business. We run the system.
+          </p>
+          <div className="flex flex-col items-center gap-3 mb-4">
+            <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg w-full sm:w-auto">
+              Get started — $297/mo
             </BookCallLink>
-            <Link to="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-base underline underline-offset-4">
-              See Our Work
-            </Link>
+            <p className="text-white/55 text-sm md:text-base">
+              Cancel anytime · Live in 10 days · No contracts · We build it for you
+            </p>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="flex items-center">
-              <div className="flex -space-x-2">
-                {["A", "B", "C", "D", "E"].map((l, i) => (
-                  <div key={i} className="w-9 h-9 rounded-full bg-primary/80 border-2 border-white flex items-center justify-center text-white font-bold text-sm">{l}</div>
-                ))}
-              </div>
-              <span className="ml-3 text-white/70 text-sm">Trusted by local businesses across the US</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2">
-                <span className="text-yellow-400 text-sm font-bold">★★★★★</span>
-                <span className="text-white text-sm font-semibold">Google</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2">
-                <span className="text-yellow-400 text-sm font-bold">★★★★★</span>
-                <span className="text-white text-sm font-semibold">Facebook</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2">
-                <span className="text-yellow-400 text-sm font-bold">★★★★★</span>
-                <span className="text-white text-sm font-semibold">Trustpilot</span>
-              </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-8">
+            <Link to="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-sm underline underline-offset-4">
+              See real client work
+            </Link>
+            <span className="hidden sm:inline text-white/25">·</span>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-white text-xs font-semibold">
+                <span className="text-yellow-400">★★★★★</span> Google
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-white text-xs font-semibold">
+                <span className="text-yellow-400">★★★★★</span> Facebook
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-white text-xs font-semibold">
+                <span className="text-yellow-400">★★★★★</span> Trustpilot
+              </span>
             </div>
           </div>
         </div>
@@ -222,11 +217,12 @@ const Index = () => {
 
       <section id="cta" className="bg-detool-dark py-20 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to get started?</h2>
-          <p className="text-white/70 text-xl mb-8 max-w-2xl mx-auto">Website, lead capture, and automations — all built to grow your business.</p>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to stop losing leads?</h2>
+          <p className="text-white/70 text-xl mb-3 max-w-2xl mx-auto">Checkout today. We build for 10 days. Your system goes live — cancel anytime.</p>
           <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-5 text-xl">
-            Get started - $297/mo
+            Get started — $297/mo
           </BookCallLink>
+          <p className="text-white/45 text-sm mt-4">Month to month. No contracts. Done for you.</p>
           <div className="max-w-xl mx-auto mt-12 text-left">
             <EmailCapture
               title="Already paid? Get your onboarding link"
