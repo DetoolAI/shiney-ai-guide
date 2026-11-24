@@ -41,7 +41,14 @@ import PhoneScript from "./pages/PhoneScript";
 import Welcome from "./pages/Welcome";
 import ThankYou from "./pages/ThankYou";
 import Auth from "./pages/Auth";
-import ClientOnboardForm from "./pages/ClientOnboardForm";
+import { ONBOARDING_FORM_URL } from "@/lib/constants";
+
+const RedirectToOnboarding = () => {
+  if (typeof window !== "undefined") {
+    window.location.replace(ONBOARDING_FORM_URL);
+  }
+  return null;
+};
 
 const queryClient = new QueryClient();
 
@@ -94,7 +101,7 @@ const App = () => (
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/marketing" element={<MarketingTemplates />} />
           <Route path="/phone-script" element={<PhoneScript />} />
-          <Route path="/client-onboard-form" element={<ClientOnboardForm />} />
+          <Route path="/client-onboard-form" element={<RedirectToOnboarding />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/auth" element={<Auth />} />
