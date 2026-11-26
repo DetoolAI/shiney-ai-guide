@@ -69,47 +69,63 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero — ad traffic: problem → offer → buy */}
+      {/* Hero — two clear choices */}
       <section id="hero" className="bg-detool-dark pt-36 pb-20 md:pt-40 md:pb-24 scroll-mt-24">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-primary font-bold tracking-wide text-sm md:text-base mb-5">
-            Detool.AI — done-for-you growth system
-          </p>
-          <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-black text-white leading-[1.08] max-w-4xl mx-auto mb-6">
-            Stop Losing Customers To Missed Calls And Slow Follow-Up
+          <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-black text-white leading-[1.08] max-w-4xl mx-auto mb-5">
+            Get A Website That Brings You Customers
           </h1>
-          <p className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-            We build your website, lead form, missed-call text-back, review funnel, and follow-up — live in 10 days. You run the business. We run the system.
+          <p className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            Done for you in 10 days. Pick the plan that fits — upgrade any time.
           </p>
-          <div className="flex flex-col items-center gap-3 mb-4">
-            <BookCallLink className="inline-flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-10 py-4 text-lg w-full sm:w-auto">
-              Get started — $297/mo
-            </BookCallLink>
-            <p className="text-white/55 text-sm md:text-base">
-              Cancel anytime · Live in 10 days · No contracts · We build it for you
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-8">
-            <BookCallLink plan="website" className="text-white/80 hover:text-white font-semibold transition-colors text-sm underline underline-offset-4">
-              Just need a website? $99/mo →
-            </BookCallLink>
-            <span className="hidden sm:inline text-white/25">·</span>
-            <Link to="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-sm underline underline-offset-4">
-              See real client work
-            </Link>
-            <span className="hidden sm:inline text-white/25">·</span>
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-white text-xs font-semibold">
-                <span className="text-yellow-400">★★★★★</span> Google
+
+          <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto text-left">
+            {/* Website Only */}
+            <div className="bg-white rounded-2xl p-7 flex flex-col border-2 border-white shadow-lg">
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Website Only</p>
+              <p className="mb-3">
+                <span className="text-5xl font-black text-gray-900">$99</span>
+                <span className="text-gray-400">/mo</span>
+              </p>
+              <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
+                A custom-designed website with a lead form, basic SEO, hosting and maintenance.
+              </p>
+              <BookCallLink
+                plan="website"
+                className="block text-center bg-gray-900 text-white font-bold rounded-xl py-3.5 hover:bg-gray-800 transition-colors"
+              >
+                Get my website
+              </BookCallLink>
+            </div>
+
+            {/* Full System */}
+            <div className="relative bg-white rounded-2xl p-7 flex flex-col border-2 border-primary shadow-xl">
+              <span className="absolute -top-3 left-6 bg-primary text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Most popular
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-white text-xs font-semibold">
-                <span className="text-yellow-400">★★★★★</span> Facebook
-              </span>
-              <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 text-white text-xs font-semibold">
-                <span className="text-yellow-400">★★★★★</span> Trustpilot
-              </span>
+              <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Full System</p>
+              <p className="mb-3">
+                <span className="text-5xl font-black text-gray-900">$297</span>
+                <span className="text-gray-400">/mo</span>
+              </p>
+              <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
+                The website plus missed-call text-back, a review funnel, and automated follow-up.
+              </p>
+              <BookCallLink
+                plan="full"
+                className="block text-center bg-primary text-white font-bold rounded-xl py-3.5 hover:bg-primary/90 transition-colors shadow-md"
+              >
+                Get the full system
+              </BookCallLink>
             </div>
           </div>
+
+          <p className="text-white/55 text-sm mt-6">Cancel anytime · No contracts · We build it for you</p>
+          <p className="mt-4">
+            <a href="#pricing" className="text-white/70 hover:text-white text-sm font-medium underline underline-offset-4">
+              Compare plans
+            </a>
+          </p>
         </div>
       </section>
 

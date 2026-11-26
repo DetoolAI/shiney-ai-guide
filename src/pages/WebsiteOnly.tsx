@@ -80,7 +80,7 @@ const WebsiteOnly = () => (
           </BookCallLink>
           <p className="text-white/55 text-sm md:text-base">Cancel anytime · No contracts · No setup fees</p>
           <BookCallLink plan="full" className="mt-2 text-white/80 hover:text-white font-semibold text-sm underline underline-offset-4">
-            Want missed-call text-back, reviews and follow-up too? See the $297/mo Full System →
+            Want the automations too? See the $297/mo Full System →
           </BookCallLink>
         </div>
       </div>
