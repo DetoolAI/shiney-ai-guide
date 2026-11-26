@@ -2,32 +2,16 @@ import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import DepositROICalculator from "@/components/landing/DepositROICalculator";
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import BookCallLink from "@/components/BookCallLink";
-
-const included = [
-  "Branded website on your own domain",
-  "Quote & contact form — captures leads 24/7",
-  "Missed call text-back (instant automated response)",
-  "Instant lead follow-up via SMS and email",
-  "5-star review funnel (automated post-service requests)",
-  "One-click SMS & email marketing campaigns",
-  "Pre-written campaign templates for your business",
-  "Google Business Profile optimization",
-  "On-site SEO setup",
-  "Before & after gallery to showcase your work",
-  "Re-engagement campaigns for past customers",
-  "Onboarding call + 10-day setup",
-  "Monthly support and improvements",
-  "No contracts — cancel any time",
-];
+import PlansSection from "@/components/landing/PlansSection";
 
 const faqs = [
+  { q: "What's the difference between $99 and $297?", a: "$99/mo is Website Only — a custom-designed site (up to 5 pages) with a lead form, basic SEO, hosting and maintenance. $297/mo adds missed-call text-back, a review funnel, automated follow-up and marketing campaigns. Start with the website and upgrade any time." },
   { q: "Why $297 and not $97 like other apps?", a: "Because we don't just give you software. We set it all up for you, train you on it, build your automations, and support you ongoing. You're not buying a tool — you're buying a done-for-you system." },
   { q: "What if I don't see results?", a: "Book the call and let's be honest with each other. If your business isn't a good fit, we'll tell you. We don't take money from people who won't benefit." },
-  { q: "Are there any setup fees?", a: "No setup fees, ever. $297/month is all you pay." },
+  { q: "Are there any setup fees?", a: "No setup fees, ever. $99/month or $297/month is all you pay." },
   { q: "Can I cancel any time?", a: "Yes. No contracts. No cancellation penalties. We earn your business every single month." },
   { q: "What happens after I pay?", a: "You land on a thank-you page, get a receipt + onboarding form by email, we build your system in 10 days, then it goes live — you do nothing. Reply with your logo + 3 photos and we start the same day." },
   { q: "Do I need a complicated booking system?", a: "No. Most businesses start with a lead form, missed-call text-back, and review funnel. We keep it simple — you can always add more later." },
@@ -54,41 +38,11 @@ const Pricing = () => {
       <section className="bg-detool-dark pt-40 pb-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white mb-4">Simple Pricing.<br />No Surprises.</h1>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">One plan. Everything included. Done for you in 10 days.</p>
+          <p className="text-white/70 text-xl max-w-2xl mx-auto">Two plans. Both done for you in 10 days. Cancel anytime.</p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white border-2 border-primary rounded-2xl shadow-sm overflow-hidden">
-              <div className="bg-primary px-8 py-6 text-center">
-                <p className="text-white/80 font-medium mb-1">The Complete Business Lead System</p>
-                <div className="text-white">
-                  <span className="text-6xl font-black">$297</span>
-                  <span className="text-xl font-medium">/month</span>
-                </div>
-                <p className="text-white/70 mt-1 text-sm">No contracts. No setup fees. Cancel any time.</p>
-              </div>
-              <div className="px-8 py-8">
-                <p className="font-bold text-gray-900 mb-4">Everything included:</p>
-                <ul className="space-y-3 mb-8">
-                  {included.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700 text-sm">
-                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <BookCallLink className="block w-full text-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-md px-8 py-4 text-lg">
-                  Get started - $297/mo
-                </BookCallLink>
-                <p className="text-center text-gray-400 text-xs mt-3">20-minute call • No pressure • We'll show you the platform live</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PlansSection id="plans" title="Choose your plan" />
 
       {/* ROI Calculator */}
       <section className="py-20 bg-detool-cream">

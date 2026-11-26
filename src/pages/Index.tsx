@@ -8,6 +8,7 @@ import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import BookCallLink from "@/components/BookCallLink";
 import EmailCapture from "@/components/EmailCapture";
+import PlansSection from "@/components/landing/PlansSection";
 
 const industries = [
   "Home Services",
@@ -23,9 +24,9 @@ const industries = [
 ];
 
 const steps = [
-  { num: "01", title: "You check out", desc: "Pay $297/mo and you're in. No demo call. No waiting for a sales slot." },
-  { num: "02", title: "We build your system (10 days)", desc: "We build your website with a quote form, missed-call automations, review funnel, and follow-up campaigns — done for you." },
-  { num: "03", title: "It goes live, you do nothing", desc: "We launch your system for you. After that it runs on autopilot while you run your business." },
+  { num: "01", title: "You check out", desc: "Pick a plan and you're in. No demo call. No waiting for a sales slot." },
+  { num: "02", title: "Fill out a short form, we build (10 days)", desc: "You send us your info, logo and photos. We build your website — and on the $297 plan, the missed-call text-back, review funnel, and follow-up — done for you." },
+  { num: "03", title: "It goes live, you do nothing", desc: "We launch everything for you. After that it runs while you run your business." },
 ];
 
 const whyUs = [
@@ -42,6 +43,7 @@ const faqs = [
   { q: "How long does setup take?", a: "We build and launch your full system in 10 days. You check out, we build, it goes live — you don't have to do anything." },
   { q: "Will this work for my business?", a: "Yes. It works for any local business — home services, salons, restaurants, clinics, contractors, and one-person operations. If you need more leads, more reviews, and faster follow-up, this works for you." },
   { q: "Is there a contract?", a: "No. Month to month. Cancel any time. We're confident you'll stay because you're seeing results." },
+  { q: "What's the difference between the $99 and $297 plans?", a: "$99/mo is Website Only: a custom-designed website (up to 5 pages) with a lead form, basic SEO, hosting and maintenance. $297/mo is the Full System: the same website plus missed-call text-back, a 5-star review funnel, automated follow-up, and one-click marketing campaigns. You can start with the website and upgrade any time." },
   { q: "Why $297 and not cheaper?", a: "Because we don't just give you software. We set it all up, build your automations, and support you ongoing. You're buying a done-for-you system." },
   { q: "How much can one extra customer per week make?", a: "One extra $200 customer per week = $800/month in extra revenue. That alone covers the platform cost — and then some." },
 ];
@@ -88,6 +90,10 @@ const Index = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-8">
+            <BookCallLink plan="website" className="text-white/80 hover:text-white font-semibold transition-colors text-sm underline underline-offset-4">
+              Just need a website? $99/mo →
+            </BookCallLink>
+            <span className="hidden sm:inline text-white/25">·</span>
             <Link to="/our-work" className="text-white/70 hover:text-white font-medium transition-colors text-sm underline underline-offset-4">
               See real client work
             </Link>
@@ -142,6 +148,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <PlansSection id="pricing" />
 
       {/* Industries */}
       <section id="industries" className="py-20 bg-white scroll-mt-24">

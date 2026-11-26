@@ -43,9 +43,38 @@ function verifyStripeSignature(payload: Buffer, header: string | undefined, secr
   return timingSafeEqual(expectedBuf, signatureBuf);
 }
 
+type Plan = "website" | "full";
+
+function detectPlan(session: Record<string, unknown>): Plan {
+  const meta = session.metadata as Record<string, string> | null | undefined;
+  if (meta?.plan === "website") return "website";
+  if (meta?.plan === "full") return "full";
+  // Fallback: infer from amount ($99 = website only)
+  if (session.amount_total === 9900) return "website";
+  return "full";
+}
+
+const PLAN_INFO: Record<Plan, { name: string; price: string; includes: string; notIncluded: string; build: string }> = {
+  website: {
+    name: "Website Only",
+    price: "$99/mo",
+    includes: "a custom-designed website (up to 5 pages), a lead/contact form that emails you, basic SEO, and hosting + SSL + maintenance",
+    notIncluded: "Missed-call text-back, the review funnel, follow-up automations and campaigns are not part of this plan — you can upgrade to the $297/mo Full System any time.",
+    build: "We design and build your website in 10 days.",
+  },
+  full: {
+    name: "Full System",
+    price: "$297/mo",
+    includes: "your custom website, lead forms, missed-call text-back, review funnel, follow-up automations, and marketing campaigns",
+    notIncluded: "",
+    build: "We build your full system in 10 days.",
+  },
+};
+
 async function registerNudgeWithOnboardingForm(
   email: string,
   resendId: string,
+  plan: Plan,
 ): Promise<{ ok: boolean; error?: string }> {
   if (!resendId) return { ok: false, error: "Missing resendId" };
   const secret = process.env.ONBOARDING_NUDGE_SECRET || process.env.NUDGE_SECRET;
@@ -60,7 +89,7 @@ async function registerNudgeWithOnboardingForm(
         "Content-Type": "application/json",
         Authorization: `Bearer ${secret}`,
       },
-      body: JSON.stringify({ email, resendId }),
+      body: JSON.stringify({ email, resendId, plan }),
     });
     if (!res.ok) {
       const text = await res.text();
@@ -103,16 +132,19 @@ async function sendResendEmail(args: {
   return { ok: true, id: data.id };
 }
 
-function customerWelcomeHtml(name: string) {
+function customerWelcomeHtml(name: string, plan: Plan) {
+  const info = PLAN_INFO[plan];
   return `
     <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:560px">
       <h2 style="margin:0 0 12px">You're in — Detool.AI</h2>
       <p>Hi ${name},</p>
-      <p>Your <strong>$297/mo</strong> subscription is active. Stripe sent your receipt separately.</p>
+      <p>Your <strong>${info.name} (${info.price})</strong> subscription is active. Stripe sent your receipt separately.</p>
+      <p><strong>What you get:</strong> ${info.includes}.</p>
+      ${info.notIncluded ? `<p style="color:#666;font-size:14px">${info.notIncluded}</p>` : ""}
       <p style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 16px">
         <strong>Reply with your logo + 3 photos and I start today.</strong>
       </p>
-      <p>Then fill the onboarding form so we can build your system (10 days):</p>
+      <p>Then fill the onboarding form so we can start your build (10 days):</p>
       <p style="margin:28px 0">
         <a href="${ONBOARDING_URL}" style="background:#f97316;color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">
           Complete onboarding form
@@ -130,7 +162,7 @@ function customerWelcomeHtml(name: string) {
   `;
 }
 
-function nudgeHtml(name: string) {
+function nudgeHtml(name: string, _plan: Plan) {
   return `
     <div style="font-family:Arial,sans-serif;line-height:1.55;color:#111;max-width:560px">
       <h2 style="margin:0 0 12px">Quick nudge — we can't start without your form</h2>
@@ -198,13 +230,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       ? `$${(session.amount_total / 100).toFixed(2)}`
       : "$297.00";
 
-  const results: Record<string, unknown> = { email };
+  const plan = detectPlan(session);
+  const planInfo = PLAN_INFO[plan];
+  const results: Record<string, unknown> = { email, plan };
 
   if (email) {
     results.customer = await sendResendEmail({
       to: [email],
       subject: "You're in — check email + finish onboarding",
-      html: customerWelcomeHtml(name),
+      html: customerWelcomeHtml(name, plan),
     });
 
     // 48h nudge if the form never comes back (canceled when they submit onboarding)
@@ -212,7 +246,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     results.nudge48h = await sendResendEmail({
       to: [email],
       subject: "Still need your Detool.AI onboarding form",
-      html: nudgeHtml(name),
+      html: nudgeHtml(name, plan),
       scheduledAt: in48h,
     });
 
@@ -220,6 +254,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       results.nudgeRegistered = await registerNudgeWithOnboardingForm(
         email,
         (results.nudge48h as { id?: string }).id || "",
+        plan,
       );
     }
   } else {
@@ -229,10 +264,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // New-order alert — build within the hour
   results.team = await sendResendEmail({
     to: [TEAM_EMAIL],
-    subject: `🚨 NEW ORDER — build within the hour${email ? ` — ${email}` : ""}`,
+    subject: `🚨 NEW ORDER (${planInfo.name} ${planInfo.price}) — build within the hour${email ? ` — ${email}` : ""}`,
     html: `
       <div style="font-family:Arial,sans-serif;line-height:1.5;color:#111">
-        <h2 style="color:#c2410c">NEW ORDER — start within 1 hour</h2>
+        <h2 style="color:#c2410c">NEW ORDER — ${planInfo.name} (${planInfo.price}) — start within 1 hour</h2>
+        <p><strong>Plan:</strong> ${planInfo.name} — ${planInfo.includes}</p>
         <p><strong>Email:</strong> ${email || "unknown"}</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Phone:</strong> ${phone || "n/a"}</p>

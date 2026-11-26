@@ -40,6 +40,7 @@ import MarketingTemplates from "./pages/MarketingTemplates";
 import PhoneScript from "./pages/PhoneScript";
 import Welcome from "./pages/Welcome";
 import ThankYou from "./pages/ThankYou";
+import WebsiteOnly from "./pages/WebsiteOnly";
 import Auth from "./pages/Auth";
 import { ONBOARDING_FORM_URL } from "@/lib/constants";
 
@@ -67,6 +68,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/website" element={<WebsiteOnly />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/demo-thank-you" element={<DemoThankYou />} />

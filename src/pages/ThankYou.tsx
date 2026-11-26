@@ -1,13 +1,22 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CheckCircle, Mail, ClipboardList, Hammer, Rocket } from "lucide-react";
-import { ONBOARDING_FORM_URL, BUSINESS_EMAIL } from "@/lib/constants";
+import { ONBOARDING_FORM_URL, BUSINESS_EMAIL, PLANS, type PlanId } from "@/lib/constants";
 import EmailCapture from "@/components/EmailCapture";
 import SEO from "@/components/SEO";
 import DetoolLogo from "@/components/DetoolLogo";
 import { trackSubscribe } from "@/lib/metaPixel";
 
-const timeline = [
+const buildDesc: Record<PlanId, string> = {
+  full: "Website, lead forms, missed-call text-back, review funnel, and follow-up — done for you.",
+  website: "We design and build your custom website, with a lead form that emails you every inquiry.",
+};
+const liveDesc: Record<PlanId, string> = {
+  full: "We launch it. You do nothing. Your system runs while you run the business.",
+  website: "We launch your website. You do nothing — just start getting found and getting leads.",
+};
+
+const getTimeline = (plan: PlanId) => [
   {
     icon: Mail,
     when: "Right now",
@@ -23,14 +32,14 @@ const timeline = [
   {
     icon: Hammer,
     when: "Days 1–10",
-    title: "We build your system",
-    desc: "Website, lead forms, missed-call text-back, review funnel, and follow-up — done for you.",
+    title: plan === "website" ? "We build your website" : "We build your system",
+    desc: buildDesc[plan],
   },
   {
     icon: Rocket,
     when: "Day 10",
     title: "It goes live",
-    desc: "We launch it. You do nothing. Your system runs while you run the business.",
+    desc: liveDesc[plan],
   },
 ];
 
@@ -38,6 +47,9 @@ const ThankYou = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const paid = Boolean(sessionId);
+  const plan: PlanId = searchParams.get("plan") === "website" ? "website" : "full";
+  const planInfo = PLANS[plan];
+  const timeline = getTimeline(plan);
 
   // Subscribe fires only after Stripe redirects here with session_id — not on bare /thank-you visits.
   useEffect(() => {
@@ -48,7 +60,7 @@ const ThankYou = () => {
 
     const fire = () => {
       if (typeof window === "undefined" || !window.fbq) return false;
-      trackSubscribe({ value: 297.0, currency: "USD" });
+      trackSubscribe({ value: planInfo.price, currency: "USD" });
       sessionStorage.setItem(key, "1");
       return true;
     };
@@ -64,7 +76,7 @@ const ThankYou = () => {
       window.clearInterval(id);
       window.clearTimeout(timeout);
     };
-  }, [sessionId]);
+  }, [sessionId, planInfo.price]);
 
   return (
     <div className="min-h-screen bg-detool-dark text-white">
@@ -91,7 +103,7 @@ const ThankYou = () => {
               : "If you just paid, give it a second — or open your Stripe receipt email."}
           </p>
           <p className="text-white/50 text-sm">
-            Stripe handles your $297/mo subscription + receipt. Next step is the onboarding form.
+            Stripe handles your {planInfo.name} subscription (${planInfo.price}/mo) + receipt. Next step is the onboarding form.
           </p>
         </div>
 
