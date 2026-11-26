@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import LandingFooter from "@/components/landing/LandingFooter";
 import VideoTestimonialGrid from "@/components/landing/VideoTestimonialGrid";
 import BookCallLink from "@/components/BookCallLink";
+import PlansSection from "@/components/landing/PlansSection";
 import SEO from "@/components/SEO";
 const included = [
   "Custom-designed website — no cookie-cutter templates",
@@ -78,6 +79,9 @@ const WebsiteOnly = () => (
             Get my website — $99/mo
           </BookCallLink>
           <p className="text-white/55 text-sm md:text-base">Cancel anytime · No contracts · No setup fees</p>
+          <BookCallLink plan="full" className="mt-2 text-white/80 hover:text-white font-semibold text-sm underline underline-offset-4">
+            Want missed-call text-back, reviews and follow-up too? See the $297/mo Full System →
+          </BookCallLink>
         </div>
       </div>
     </section>
@@ -104,7 +108,7 @@ const WebsiteOnly = () => (
               </ul>
               <p className="text-sm text-gray-500 mt-3">
                 Want those too? The{" "}
-                <a href="/#pricing" className="text-primary font-semibold hover:underline">$297/mo Full System</a>{" "}
+                <a href="#plans" className="text-primary font-semibold hover:underline">$297/mo Full System</a>{" "}
                 includes everything.
               </p>
             </div>
@@ -136,6 +140,8 @@ const WebsiteOnly = () => (
       </div>
     </section>
 
+    <PlansSection id="plans" title="Compare plans" subtitle="Start with the website, or get the full system. Both are done for you and cancel anytime." />
+
     <VideoTestimonialGrid showSeeAll />
 
     <section className="py-20 bg-detool-cream">
@@ -159,6 +165,11 @@ const WebsiteOnly = () => (
         >
           Get my website — $99/mo
         </BookCallLink>
+        <p className="mt-5">
+          <BookCallLink plan="full" className="text-white/80 hover:text-white font-semibold underline underline-offset-4">
+            Or get the Full System — $297/mo →
+          </BookCallLink>
+        </p>
       </div>
     </section>
 
